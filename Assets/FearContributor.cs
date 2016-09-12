@@ -38,6 +38,7 @@ public class FearContributor : MonoBehaviour {
 
         if(fearLevel > shakeThreshold)
         {
+            //Slides the item around as if its being haunted.
             transform.position = new Vector3(Mathf.Sin(Time.time * shakeSpeed), transform.position.y, transform.position.z);
         }
 
