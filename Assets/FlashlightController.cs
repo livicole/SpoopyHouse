@@ -19,20 +19,14 @@ public class FlashlightController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        inputX = (Input.GetAxis("Horizontal") + 1) / 2;
+        inputX = (Input.GetAxis("HorizontalFlashLight") + 1) / 2;
         if(inputX == 1)
         {
             inputX = 0.99f;
         }
-        //Debug.Log(controlAnimator.GetTime());
 
         Debug.Log((double)(inputX));
         controlAnimator.SetTime((double)(inputX));
-        //controlAnimator.SetTime(1.0);
-       
-
-        //controlAnimation.GetComponent<Speed>() = 0.0f;
-
 
 
         if (Input.GetKey(KeyCode.Space))
