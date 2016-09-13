@@ -5,6 +5,7 @@ using System.Collections;
 public class FearInfo : MonoBehaviour {
 
     public float fearLevel = 0;
+    public Text death;
 
     public Scrollbar fearMeter;
 
@@ -20,9 +21,10 @@ public class FearInfo : MonoBehaviour {
 	    if(fearMeter.size >= 1)
         {
             isAlive = false;
+            death.text = "YOU DIED";
             Debug.Log("You dead.");
         }
 
-        fearMeter.size += fearLevel / 5000;
+        fearMeter.size += fearLevel / 10000;
 	}
 }

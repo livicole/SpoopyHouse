@@ -22,26 +22,16 @@ public class PlayerMovement : MonoBehaviour {
         float xAxis = Input.GetAxis("HorizontalMovement");
         float yAxis = -Input.GetAxis("VerticalMovement");
 
-        charCont.Move(transform.forward * walkingSpeed * yAxis);
-        transform.Rotate(new Vector3(0, turningSpeed * xAxis, 0));
 
-        /**
-        if (Input.GetKey(KeyCode.W))
-        {
-            charCont.Move(transform.forward * walkingSpeed);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            charCont.Move(transform.forward * -walkingSpeed);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Rotate(new Vector3(0, -turningSpeed, 0));
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Rotate(new Vector3(0, turningSpeed, 0));
-            //charCont.Move(transform.right * walkingSpeed);
-        }**/
+
+        charCont.Move((transform.forward * walkingSpeed * yAxis) + (transform.right * walkingSpeed * xAxis));
+        //transform.Rotate(new Vector3(0, turningSpeed * xAxis, 0));
+
+        float camXAxis = Input.GetAxis("HorizontalCamera");
+        float camYAxis = Input.GetAxis("VerticalCamera");
+        transform.Rotate(new Vector3(0, turningSpeed * camXAxis, 0));
+
+
+
 	}
 }

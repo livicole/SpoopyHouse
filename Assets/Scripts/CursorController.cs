@@ -23,7 +23,7 @@ public class CursorController : MonoBehaviour {
 
         GetComponent<CharacterController>().Move(new Vector3(inputX, 0, -inputY) * speed);
 
-        if (Input.GetButton("Spawn"))
+        if (Input.GetButtonDown("Spawn"))
         {
             Debug.Log("Detected");
             Ray verticalRay = new Ray(transform.position, Vector3.down * 100f);
