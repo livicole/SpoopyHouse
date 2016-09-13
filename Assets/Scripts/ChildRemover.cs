@@ -3,6 +3,12 @@ using System.Collections;
 
 public class ChildRemover : MonoBehaviour {
 
+    [SerializeField]
+    float heightDifference;
+
+    [SerializeField]
+    float detectDistance;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -12,13 +18,18 @@ public class ChildRemover : MonoBehaviour {
 	void Update () {
         if (Input.GetButton("Use"))
         {
-            Ray forwardRay = new Ray(transform.position, Vector3.forward);
-            RaycastHit forwardRayHit = new RaycastHit();
+            Vector3 rayPosition = new Vector3(transform.position.x, transform.position.y - heightDifference, transform.position.z);
 
-            if (Physics.Raycast(forwardRay, out forwardRayHit, 100f))
+            Ray forwardRay = new Ray(rayPosition, transform.forward);
+            RaycastHit forwardRayHit = new RaycastHit();
+            Debug.DrawRay(rayPosition, transform.forward * detectDistance, Color.red);
+
+            if (Physics.Raycast(forwardRay, out forwardRayHit, detectDistance))
             {
-                if (forwardRayHit.collider.gameObject.layer.Equals("Haunted"))
+                Debug.Log(forwardRayHit.collider.gameObject.layer);
+                if (forwardRayHit.collider.gameObject.layer == 11)
                 {
+                    
                     Destroy(forwardRayHit.collider.gameObject);
                 }
             }

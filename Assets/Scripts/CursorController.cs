@@ -23,12 +23,14 @@ public class CursorController : MonoBehaviour {
 
         if (Input.GetButton("Spawn"))
         {
-            Ray verticalRay = new Ray(transform.position, Vector3.down);
+            Debug.Log("Detected");
+            Ray verticalRay = new Ray(transform.position, Vector3.down * 100f);
+            Debug.DrawRay(transform.position, Vector3.down * 100f, Color.red);
             RaycastHit verticalRayHit = new RaycastHit();
 
             if (Physics.Raycast(verticalRay, out verticalRayHit, 100f))
             {
-                if (verticalRayHit.collider.gameObject.layer.Equals("Floor"))
+                if (verticalRayHit.collider.gameObject.layer == 10)
                 {
                     Instantiate(spawn, verticalRayHit.point, Quaternion.identity);
                 }
