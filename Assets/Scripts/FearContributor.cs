@@ -54,7 +54,7 @@ public class FearContributor : MonoBehaviour {
         else
         {
             timer = 0;
-            child.GetComponent<FearInfo>().fearLevel += fearGain;
+            //child.GetComponent<FearInfo>().fearLevel += fearGain;
             fearLevel += fearGain;
         }
 

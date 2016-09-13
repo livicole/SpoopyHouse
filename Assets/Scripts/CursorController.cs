@@ -6,12 +6,14 @@ public class CursorController : MonoBehaviour {
     [SerializeField]
     float speed;
 
+    Transform child;
+
     [SerializeField]
     Transform spawn;
 
 	// Use this for initialization
 	void Start () {
-	
+        child = GameObject.Find("ChildPlayer").transform;
 	}
 	
 	// Update is called once per frame
@@ -32,7 +34,9 @@ public class CursorController : MonoBehaviour {
             {
                 if (verticalRayHit.collider.gameObject.layer == 10)
                 {
-                    Instantiate(spawn, verticalRayHit.point, Quaternion.identity);
+                    Vector3 spawnPosition = new Vector3(verticalRayHit.point.x, 1, verticalRayHit.point.z);
+                    Instantiate(spawn, spawnPosition, Quaternion.identity);
+                    child.GetComponent<FearInfo>().fearLevel += 1;
                 }
             }
         }
