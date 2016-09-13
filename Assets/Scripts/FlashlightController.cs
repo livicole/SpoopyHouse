@@ -19,13 +19,18 @@ public class FlashlightController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        inputX = (Input.GetAxis("HorizontalFlashLight") + 1) / 2;
+        Debug.Log("Trigger: " + Input.GetAxis("LeftTrigger"));
+        float left = -Input.GetAxis("LeftTrigger"); //-1 -> 0
+        float right = Input.GetAxis("RightTrigger"); //0 -> 1
+        float combination = left + right;
+        //inputX = Input.GetAxis("LeftTrigger");
+        inputX = (combination + 1) / 2;
         if(inputX == 1)
         {
             inputX = 0.99f;
         }
 
-        Debug.Log((double)(inputX));
+        //Debug.Log("Input X: " + (double)(inputX));
         controlAnimator.SetTime((double)(inputX));
 
 
