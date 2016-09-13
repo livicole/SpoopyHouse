@@ -1,63 +1,15 @@
 fileFormatVersion: 2
-guid: 5e23b47b4557e1648b1bb4936af02f30
-timeCreated: 1473699175
+guid: 7bf89b0860a74e34898401d556fa24be
+timeCreated: 1473797037
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: back
-    100002: bottom
-    100004: clock
-    100006: clock1
-    100008: clock2
-    100010: //RootNode
-    100012: imagePlane2
-    100014: left
-    100016: pCube1
-    100018: pCube2
-    100020: pCube3
-    100022: pCube4
-    100024: pCube5
-    100026: pCube8
-    100028: pCylinder1
-    100030: side1
-    100032: transform1
-    100034: transform2
-    100036: transform3
-    100038: transform4
-    100040: transform5
-    100042: transform6
-    100044: transform7
-    100046: transform8
-    100048: transform9
-    400000: back
-    400002: bottom
-    400004: clock
-    400006: clock1
-    400008: clock2
-    400010: //RootNode
-    400012: imagePlane2
-    400014: left
-    400016: pCube1
-    400018: pCube2
-    400020: pCube3
-    400022: pCube4
-    400024: pCube5
-    400026: pCube8
-    400028: pCylinder1
-    400030: side1
-    400032: transform1
-    400034: transform2
-    400036: transform3
-    400038: transform4
-    400040: transform5
-    400042: transform6
-    400044: transform7
-    400046: transform8
-    400048: transform9
-    2300000: pCube8
-    3300000: pCube8
-    4300000: pCube8
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: polySurface1
     9500000: //RootNode
   materials:
     importMaterials: 1
