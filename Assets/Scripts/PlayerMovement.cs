@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour {
 
         float camXAxis = Input.GetAxis("HorizontalCamera");
         float camYAxis = Input.GetAxis("VerticalCamera");
-        transform.Rotate(new Vector3(0, turningSpeed * camXAxis, 0));
+        transform.Rotate(new Vector3(turningSpeed * camYAxis, turningSpeed * camXAxis, 0));
 
 
 
