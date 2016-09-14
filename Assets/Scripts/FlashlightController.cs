@@ -3,9 +3,10 @@ using System.Collections;
 
 public class FlashlightController : MonoBehaviour {
 
+    /*
     [SerializeField]
     float flashLightSpeed;
-
+    **/
     [SerializeField]
     float minimumRange;
 
