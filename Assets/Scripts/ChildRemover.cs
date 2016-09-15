@@ -35,7 +35,7 @@ public class ChildRemover : MonoBehaviour {
 
         if (Input.GetButton("Use"))
         {
-            if (coolingdown)
+            if (!coolingdown)
             {
                 //Vector3 rayPosition = new Vector3(transform.position.x, transform.position.y - heightDifference, transform.position.z);
                 Vector3 rayPosition = flashlight.transform.position;

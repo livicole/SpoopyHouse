@@ -15,10 +15,12 @@ public class GhostCameraController : MonoBehaviour {
 	void Update () {
 
         float inputX = Input.GetAxis("HorizontalCamera2");
-        float inputY = Input.GetAxis("VerticalCamera2");
+        float inputY = -Input.GetAxis("VerticalCamera2");
 
         Vector3 movementVector = new Vector3(inputX, 0, inputY);
         movementVector = movementVector.normalized * panSpeed;
+
+        transform.position += movementVector * Time.deltaTime;
 	
 	}
 }
