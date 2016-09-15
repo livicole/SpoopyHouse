@@ -23,8 +23,9 @@ public class CursorController : MonoBehaviour {
 
         GetComponent<CharacterController>().Move(new Vector3(inputX, 0, -inputY) * speed);
 
-        if (Input.GetButtonDown("Spawn"))
+        if (Input.GetButtonDown("CreateObject"))
         {
+            
             Debug.Log("Detected");
             Ray verticalRay = new Ray(transform.position, Vector3.down * 100f);
             Debug.DrawRay(transform.position, Vector3.down * 100f, Color.red);

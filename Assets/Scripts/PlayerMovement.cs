@@ -22,13 +22,15 @@ public class PlayerMovement : MonoBehaviour {
         float xAxis = Input.GetAxis("HorizontalMovement");
         float yAxis = -Input.GetAxis("VerticalMovement");
 
+        Vector3 moveVector = ((transform.forward * yAxis) + (transform.right * xAxis)).normalized * walkingSpeed;
+
 
 
         charCont.Move((transform.forward * walkingSpeed * yAxis) + (transform.right * walkingSpeed * xAxis));
         //transform.Rotate(new Vector3(0, turningSpeed * xAxis, 0));
 
         float camXAxis = Input.GetAxis("HorizontalCamera");
-        float camYAxis = Input.GetAxis("VerticalCamera");
+       
         transform.Rotate(new Vector3(0, turningSpeed * camXAxis, 0));
 
 

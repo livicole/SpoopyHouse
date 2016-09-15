@@ -3,18 +3,40 @@ using System.Collections;
 
 public class FlashlightController : MonoBehaviour {
 
+    /*
     [SerializeField]
     float flashLightSpeed;
+    **/
+    [SerializeField]
+    float minimumRange;
+
+    [SerializeField]
+    float maximumRange;
+
+    [SerializeField]
+    float minimumAngle;
+
+    [SerializeField]
+    float maximumAngle;
+
+    [SerializeField]
+    float timeFromMinToMax;
 
     private float inputX;
     private Animator controlAnimator;
+    private Light flashlight;
+    private float angleChange, rangeChange;
 
     // Use this for initialization
     void Start() {
 
         controlAnimator = GetComponent<Animator>();
-        //controlAnimator.speed = 0.0f;
+        flashlight = GetComponent<Light>();
 
+        angleChange = (maximumAngle - minimumAngle) / timeFromMinToMax;
+        rangeChange = (maximumRange - minimumRange) / timeFromMinToMax;
+        Debug.Log("Range :" + rangeChange);
+ 
     }
     // Update is called once per frame
     void Update()
@@ -39,28 +61,26 @@ public class FlashlightController : MonoBehaviour {
             GetComponent<Animator>().StartPlayback();
             //GetComponent<Animator>().Play("ControlAnimation", 0);
         }
+        
+        //Increased range and narrower beam.
+        if (Input.GetButton("LeftBumper"))
+        {
+            if(flashlight.range <= maximumRange)
+            {
+                flashlight.range += rangeChange * Time.deltaTime;
+                flashlight.spotAngle -= angleChange * Time.deltaTime;
+            }
+        }
 
-        /**
-            controlAnimation.GetComponent<Time>(). = inputX;
-            controlAnimation.speed = 0.0f;
-            */
-        /**
-        if (Input.GetKey(KeyCode.UpArrow))
+        //Decreased range and wider beam.
+        if (Input.GetButton("RightBumper"))
         {
-            transform.Rotate(new Vector3(-flashLightSpeed, 0, 0));
+            if (flashlight.range >= minimumRange)
+            {
+                flashlight.range -= rangeChange * Time.deltaTime;
+                flashlight.spotAngle += angleChange * Time.deltaTime;
+            }
         }
-        else if(Input.GetKey(KeyCode.DownArrow))
-        {
-            transform.Rotate(new Vector3(flashLightSpeed, 0, 0));
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.Rotate(new Vector3(0, -flashLightSpeed, 0));
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.Rotate(new Vector3(0, flashLightSpeed, 0));
-        }*/
     }
 
 }
