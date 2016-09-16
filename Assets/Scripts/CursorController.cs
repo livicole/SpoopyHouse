@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System;
 
 public class CursorController : MonoBehaviour {
 
@@ -11,20 +13,207 @@ public class CursorController : MonoBehaviour {
     [SerializeField]
     Transform spawn;
 
+    [SerializeField]
+    Transform detectionSphere;
+
+    //1 is actions, 2 is Passive, 3 is Active, 4 is Environmental
+    enum inputModes { Actions, Passive, Active, Environmental };
+    private inputModes inputMode;
+
+    //3 of the 4 categories of placeable objects. Last one, interactions, does not need a list of objects.
+
+    //Dpad Right are actions
+    [SerializeField]
+    List<Transform> Actions;
+    private bool holding = false, destroyable = false;
+    private Transform holdingObject;
+
+    //Dpad Up
+    [SerializeField]
+    List<Transform> PassiveObjects;
+    
+    //Dpad Down
+    [SerializeField]
+    List<Transform> ActiveObjects;
+
+    //Dpad Left
+    [SerializeField]
+    List<Transform> EnvironmentalEffects;
+
 	// Use this for initialization
 	void Start () {
         child = GameObject.Find("ChildPlayer").transform;
+        
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update() {
         float inputX = Input.GetAxis("HorizontalMovement2");
         float inputY = Input.GetAxis("VerticalMovement2");
 
         GetComponent<CharacterController>().Move(new Vector3(inputX, 0, -inputY) * speed);
 
-        if (Input.GetButtonDown("CreateObject"))
+        float dpadX = Input.GetAxis("Ghost DPad X");
+        float dpadY = Input.GetAxis("Ghost DPad Y");
+
+        //Left on DPad
+        if (dpadX < 0)
         {
+            inputMode = inputModes.Environmental;
+        }
+        //Right on DPad
+        else if (dpadX > 0)
+        {
+            inputMode = inputModes.Actions;
+        }
+        //Down on DPad
+        if (dpadY < 0)
+        {
+            inputMode = inputModes.Active;
+        }
+        //Up on DPad
+        else if(dpadY > 0)
+        {
+            inputMode = inputModes.Passive;
+        }
+
+        int layermask = 1 << 5; layermask = ~layermask;
+        Ray verticalRay = new Ray(transform.position, Vector3.down * 100f);
+        RaycastHit verticalRayHit = new RaycastHit();
+
+        Transform detectedObj = detectionSphere.GetComponent<DetectionSphereController>().detectedObject;
+
+        //If in Actions mode
+        if (inputMode == inputModes.Actions)
+        {
+            if (Input.GetButtonDown("Ghost Button A"))
+            {
+                if (!handleHolding())
+                {
+                    if (!holding && holdingObject == null)
+                    {
+                        if(detectedObj != null)
+                        {
+                            holdingObject = detectedObj;
+                            holdingObject.GetComponent<Rigidbody>().isKinematic = true;
+                            holdingObject.transform.parent = transform;
+                            holding = true;
+                            destroyable = false;
+                        }
+                    }
+                }
+            }
+
+            //Smash things around. Currently works kind of like a wrecking ball.
+            if (Input.GetButtonDown("Ghost Button B"))
+            {
+                if (!handleHolding())
+                {
+                    if (!holding && holdingObject == null)
+                    {
+                        if (Physics.Raycast(verticalRay, out verticalRayHit, 100f, layermask))
+                        {
+                            if (verticalRayHit.collider.gameObject.layer == 10)
+                            {
+                                //Debug.Log("Spawning");
+                                Vector3 spawnPosition = new Vector3(verticalRayHit.point.x, 1, verticalRayHit.point.z);
+                                holdingObject = (Transform)(Instantiate(Actions[0], spawnPosition, Quaternion.identity));
+                                holdingObject.parent = transform;
+                                holding = true;
+                                destroyable = true;
+                            }
+                        }
+                    }
+                }        
+            }
+
+            if(Input.GetButton("Ghost Button X"))
+            {
+
+            }
+
+            if(Input.GetButton("Ghost Button Y"))
+            {
+
+            }
+
+        }
+        //If in Passive mode
+        else if (inputMode == inputModes.Passive)
+        {
+            if (Input.GetButton("Ghost Button A"))
+            {
+
+            }
+
+            if (Input.GetButton("Ghost Button B"))
+            {
+
+            }
+
+            if (Input.GetButton("Ghost Button X"))
+            {
+
+            }
+
+            if (Input.GetButton("Ghost Button Y"))
+            {
+
+            }
+        }
+        //If in Active mode
+        else if (inputMode == inputModes.Active)
+        {
+            if (Input.GetButton("Ghost Button A"))
+            {
+
+            }
+
+            if (Input.GetButton("Ghost Button B"))
+            {
+
+            }
+
+            if (Input.GetButton("Ghost Button X"))
+            {
+
+            }
+
+            if (Input.GetButton("Ghost Button Y"))
+            {
+
+            }
+        }
+        //If in Environmental mode
+        else if (inputMode == inputModes.Environmental)
+        {
+            if (Input.GetButton("Ghost Button A"))
+            {
+
+            }
+
+            if (Input.GetButton("Ghost Button B"))
+            {
+
+            }
+
+            if (Input.GetButton("Ghost Button X"))
+            {
+
+            }
+
+            if (Input.GetButton("Ghost Button Y"))
+            {
+
+            }
+        }
+
+
+        /** Old Code
+        if (Input.GetButtonDown("Ghost Button A"))
+        {
+           
+
             
             Debug.Log("Detected");
             Ray verticalRay = new Ray(transform.position, Vector3.down * 100f);
@@ -40,6 +229,28 @@ public class CursorController : MonoBehaviour {
                     child.GetComponent<FearInfo>().fearLevel += 1;
                 }
             }
-        }
+        }*/
 	}
+
+   public bool handleHolding()
+   {
+        if (holding && destroyable)
+        {
+            Destroy(holdingObject.gameObject);
+            holdingObject = null;
+            holding = false;
+            Debug.Log("Despawning");
+            return true;
+        }
+
+        if (holding && !destroyable)
+        {
+            holdingObject.transform.parent = null;
+            holdingObject = null;
+            holding = false;
+            Debug.Log("Dropping");
+            return true;
+        }
+        return false;
+   }
 }
