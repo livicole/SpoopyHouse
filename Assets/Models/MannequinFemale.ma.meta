@@ -1,0 +1,233 @@
+fileFormatVersion: 2
+guid: c09e71ee7fe12e94da1715345ff497c6
+timeCreated: 1474042657
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Col_CalfL
+    100002: Col_CalfL 1
+    100004: Col_CalfR
+    100006: Col_FootL
+    100008: Col_FootL 1
+    100010: Col_FootR
+    100012: Col_ForeArmL
+    100014: Col_ForeArmL 1
+    100016: Col_ForeArmR
+    100018: Col_HandL
+    100020: Col_HandL 1
+    100022: Col_HandR
+    100024: Col_Neck
+    100026: Col_Neck 1
+    100028: Col_Torso
+    100030: Col_Torso 1
+    100032: Col_UpperArmL
+    100034: Col_UpperArmL 1
+    100036: Col_UpperArmR
+    100038: Col_UpperLegL
+    100040: Col_UpperLegL 1
+    100042: Col_UpperLegR
+    100044: collision
+    100046: collision 1
+    100048: collision 2
+    100050: collision 3
+    100052: cryExportNode_Mannequin_Arm
+    100054: cryExportNode_Mannequin_Headless
+    100056: cryExportNode_Mannequin_Leg
+    100058: cryExportNode_Mannequin_Torso
+    100060: Mannequin_Arm
+    100062: Mannequin_Arm_group
+    100064: Mannequin_Headless
+    100066: Mannequin_Headless_group
+    100068: Mannequin_Leg
+    100070: Mannequin_Leg_group
+    100072: Mannequin_Torso
+    100074: Mannequin_Torso_group
+    100076: //RootNode
+    100078: Person_Scale
+    400000: Col_CalfL
+    400002: Col_CalfL 1
+    400004: Col_CalfR
+    400006: Col_FootL
+    400008: Col_FootL 1
+    400010: Col_FootR
+    400012: Col_ForeArmL
+    400014: Col_ForeArmL 1
+    400016: Col_ForeArmR
+    400018: Col_HandL
+    400020: Col_HandL 1
+    400022: Col_HandR
+    400024: Col_Neck
+    400026: Col_Neck 1
+    400028: Col_Torso
+    400030: Col_Torso 1
+    400032: Col_UpperArmL
+    400034: Col_UpperArmL 1
+    400036: Col_UpperArmR
+    400038: Col_UpperLegL
+    400040: Col_UpperLegL 1
+    400042: Col_UpperLegR
+    400044: collision
+    400046: collision 1
+    400048: collision 2
+    400050: collision 3
+    400052: cryExportNode_Mannequin_Arm
+    400054: cryExportNode_Mannequin_Headless
+    400056: cryExportNode_Mannequin_Leg
+    400058: cryExportNode_Mannequin_Torso
+    400060: Mannequin_Arm
+    400062: Mannequin_Arm_group
+    400064: Mannequin_Headless
+    400066: Mannequin_Headless_group
+    400068: Mannequin_Leg
+    400070: Mannequin_Leg_group
+    400072: Mannequin_Torso
+    400074: Mannequin_Torso_group
+    400076: //RootNode
+    400078: Person_Scale
+    2300000: Col_CalfL
+    2300002: Col_CalfL 1
+    2300004: Col_CalfR
+    2300006: Col_FootL
+    2300008: Col_FootL 1
+    2300010: Col_FootR
+    2300012: Col_ForeArmL
+    2300014: Col_ForeArmL 1
+    2300016: Col_ForeArmR
+    2300018: Col_HandL
+    2300020: Col_HandL 1
+    2300022: Col_HandR
+    2300024: Col_Neck
+    2300026: Col_Neck 1
+    2300028: Col_Torso
+    2300030: Col_Torso 1
+    2300032: Col_UpperArmL
+    2300034: Col_UpperArmL 1
+    2300036: Col_UpperArmR
+    2300038: Col_UpperLegL
+    2300040: Col_UpperLegL 1
+    2300042: Col_UpperLegR
+    2300044: Mannequin_Arm
+    2300046: Mannequin_Headless
+    2300048: Mannequin_Leg
+    2300050: Mannequin_Torso
+    2300052: Person_Scale
+    3300000: Col_CalfL
+    3300002: Col_CalfL 1
+    3300004: Col_CalfR
+    3300006: Col_FootL
+    3300008: Col_FootL 1
+    3300010: Col_FootR
+    3300012: Col_ForeArmL
+    3300014: Col_ForeArmL 1
+    3300016: Col_ForeArmR
+    3300018: Col_HandL
+    3300020: Col_HandL 1
+    3300022: Col_HandR
+    3300024: Col_Neck
+    3300026: Col_Neck 1
+    3300028: Col_Torso
+    3300030: Col_Torso 1
+    3300032: Col_UpperArmL
+    3300034: Col_UpperArmL 1
+    3300036: Col_UpperArmR
+    3300038: Col_UpperLegL
+    3300040: Col_UpperLegL 1
+    3300042: Col_UpperLegR
+    3300044: Mannequin_Arm
+    3300046: Mannequin_Headless
+    3300048: Mannequin_Leg
+    3300050: Mannequin_Torso
+    3300052: Person_Scale
+    4300000: Person_Scale
+    4300002: Mannequin_Headless
+    4300004: Col_HandL
+    4300006: Col_HandR
+    4300008: Col_Torso
+    4300010: Col_UpperLegL
+    4300012: Col_CalfL
+    4300014: Col_FootL
+    4300016: Col_UpperLegR
+    4300018: Col_CalfR
+    4300020: Col_FootR
+    4300022: Col_ForeArmL
+    4300024: Col_ForeArmR
+    4300026: Col_UpperArmL
+    4300028: Col_UpperArmR
+    4300030: Col_Neck
+    4300032: Mannequin_Leg
+    4300034: Col_UpperLegL
+    4300036: Col_CalfL
+    4300038: Col_FootL
+    4300040: Mannequin_Torso
+    4300042: Col_Torso
+    4300044: Col_Neck
+    4300046: Mannequin_Arm
+    4300048: Col_ForeArmL
+    4300050: Col_HandL
+    4300052: Col_UpperArmL
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
