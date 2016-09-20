@@ -27,6 +27,7 @@ public class CursorController : MonoBehaviour {
     List<Transform> Actions;
     private bool holding = false, destroyable = false;
     private Transform holdingObject;
+    public Vector3 targetLocation;
 
     //Dpad Up
     [SerializeField]
@@ -79,7 +80,7 @@ public class CursorController : MonoBehaviour {
             inputMode = inputModes.Passive;
         }
 
-        int layermask = 1 << 5; layermask = ~layermask;
+        int layermask = 1 << 5; layermask = ~layermask; // Ignoring UI layer
         Ray verticalRay = new Ray(transform.position, Vector3.down * 100f);
         RaycastHit verticalRayHit = new RaycastHit();
 
@@ -96,9 +97,11 @@ public class CursorController : MonoBehaviour {
                     {
                         if(detectedObj != null)
                         {
+                            Debug.Log("Pickup");
                             holdingObject = detectedObj;
-                            holdingObject.GetComponent<Rigidbody>().isKinematic = true;
-                            holdingObject.transform.parent = transform;
+                            if(holdingObject.GetComponent<Rigidbody>() != null)
+                            { holdingObject.GetComponent<Rigidbody>().isKinematic = true; }
+                            holdingObject.transform.parent = detectionSphere.transform;
                             holding = true;
                             destroyable = false;
                         }
@@ -107,26 +110,20 @@ public class CursorController : MonoBehaviour {
             }
 
             //Smash things around. Currently works kind of like a wrecking ball.
-            if (Input.GetButtonDown("Ghost Button B"))
+            if (Input.GetButton("Ghost Button B"))
             {
                 if (!handleHolding())
                 {
-                    if (!holding && holdingObject == null)
+                    if (Physics.Raycast(verticalRay, out verticalRayHit, 100f, layermask))
                     {
-                        if (Physics.Raycast(verticalRay, out verticalRayHit, 100f, layermask))
-                        {
-                            if (verticalRayHit.collider.gameObject.layer == 10)
-                            {
-                                //Debug.Log("Spawning");
-                                Vector3 spawnPosition = new Vector3(verticalRayHit.point.x, -1, verticalRayHit.point.z);
-                                holdingObject = (Transform)(Instantiate(Actions[0], spawnPosition, Quaternion.identity));
-                                holdingObject.parent = transform;
-                                holding = true;
-                                destroyable = true;
-                            }
-                        }
+                        targetLocation = verticalRayHit.point;
+                        detectionSphere.GetComponent<DetectionSphereController>().moving = true;
                     }
-                }        
+                }
+            }
+            else if (Input.GetButtonUp("Ghost Button B"))
+            {
+                detectionSphere.GetComponent<DetectionSphereController>().moving = false;
             }
 
             if(Input.GetButton("Ghost Button X"))
