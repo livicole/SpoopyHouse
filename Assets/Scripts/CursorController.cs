@@ -40,6 +40,8 @@ public class CursorController : MonoBehaviour {
     [SerializeField]
     List<Transform> EnvironmentalEffects;
 
+
+
 	// Use this for initialization
 	void Start () {
         child = GameObject.Find("ChildPlayer").transform;
@@ -116,7 +118,7 @@ public class CursorController : MonoBehaviour {
                             if (verticalRayHit.collider.gameObject.layer == 10)
                             {
                                 //Debug.Log("Spawning");
-                                Vector3 spawnPosition = new Vector3(verticalRayHit.point.x, 1, verticalRayHit.point.z);
+                                Vector3 spawnPosition = new Vector3(verticalRayHit.point.x, -1, verticalRayHit.point.z);
                                 holdingObject = (Transform)(Instantiate(Actions[0], spawnPosition, Quaternion.identity));
                                 holdingObject.parent = transform;
                                 holding = true;
@@ -253,4 +255,6 @@ public class CursorController : MonoBehaviour {
         }
         return false;
    }
+
+  
 }
