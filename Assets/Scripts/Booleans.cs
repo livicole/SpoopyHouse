@@ -64,7 +64,7 @@ public class Booleans : MonoBehaviour {
 
         if (hasOne)
         {
-
+            //Debug.Log("I have Key1");
         }
         if (hasTwo)
         {
