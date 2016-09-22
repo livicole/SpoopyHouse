@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour {
         }
         
 
-        Vector3 moveVector = ((transform.forward * yAxis) + (transform.right * xAxis)).normalized * walkingSpeed;
+        Vector3 moveVector = (((transform.forward * yAxis) + (transform.right * xAxis)).normalized + (-transform.up * 9.8f)) * walkingSpeed;
         charCont.Move(moveVector);
 
       

@@ -7,17 +7,13 @@ public class InventoryScript : MonoBehaviour
 {
 
 
-    List<GameObject> inventoryList = new List<GameObject>();
-
-    public bool hasOne, hasTwo, hasThree, hasFour, hasFive, hasSix, hasSeven, hasEight, hasNine, hasTen;
-
-    public bool isOne, isTwo, isThree, isFour, isFive, isSix, isSeven, isEight, isNine, isTen;
+    public List<GameObject> inventoryList = new List<GameObject>();
 
     int activeObjectIndex = 0;
 
     public Transform child;
 
-    public Text activeItemText, debugCount, debugIndex;
+    public Text activeItemText;
 
     // Use this for initialization
     void Start()
@@ -28,94 +24,8 @@ public class InventoryScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        debugCount.text = "Count: " + inventoryList.Count.ToString();
-        debugIndex.text = "Index: " + activeObjectIndex.ToString();
 
 
-        if (isOne)
-        {
-
-        }
-        if (isTwo)
-        {
-
-        }
-        if (isThree)
-        {
-
-        }
-        if (isFour)
-        {
-
-        }
-        if (isFive)
-        {
-
-        }
-        if (isSix)
-        {
-
-        }
-        if (isSeven)
-        {
-
-        }
-        if (isEight)
-        {
-
-        }
-        if (isNine)
-        {
-
-        }
-        if (isTen)
-        {
-
-        }
-        /////////////////////////////////////////
-
-        if (hasOne)
-        {
-            //Debug.Log("I have Key1");
-        }
-        if (hasTwo)
-        {
-
-        }
-        if (hasThree)
-        {
-
-        }
-        if (hasFour)
-        {
-
-        }
-        if (hasFive)
-        {
-
-        }
-        if (hasSix)
-        {
-
-        }
-        if (hasSeven)
-        {
-
-        }
-        if (hasEight)
-        {
-
-        }
-        if (hasNine)
-        {
-
-        }
-        if (hasTen)
-        {
-
-        }
-
-        //////////////
     }
 
     public void pickUp(GameObject myObject)
@@ -132,7 +42,7 @@ public class InventoryScript : MonoBehaviour
 
         if (inventoryList.Count==5)
         {
-            activeItemText.text = "You win!";
+            activeItemText.text = "You have 5 items";
         }
     }
 
@@ -148,7 +58,7 @@ public class InventoryScript : MonoBehaviour
             if (inventoryList.Count == 0)
             {
                 activeObjectIndex = 0;
-                activeItemText.text = "No item.";
+                activeItemText.text = "";
             }
             else
             {
