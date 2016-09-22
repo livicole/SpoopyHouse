@@ -53,7 +53,6 @@ public class WeepingAngelController : MonoBehaviour {
         Vector3 playerForward = player.forward;
         if (stareTimer >= maxTime)
         {
-
             exorciseAngel();
         }
         else if (stareTimer >= shakeThreshold)
@@ -81,6 +80,8 @@ public class WeepingAngelController : MonoBehaviour {
             {
                 navMesh.Stop();
                 stareTimer += Time.deltaTime;
+                originalPos = transform.position;
+                originalPos.y = -0.3801455f;
             }
             else
             {

@@ -38,11 +38,14 @@ public class ControlInvertterController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         player = GameObject.Find("ChildPlayer").transform;
-	}
+        originalPos = transform.position;
+        originalPos.y = 0;
+    }
 	
 	// Update is called once per frame
 	void Update () {
         distance = Mathf.Abs(Vector3.Distance(transform.position, player.position));
+        transform.position = originalPos;
 
         if (stareTimer >= maxTime)
         {
@@ -54,7 +57,6 @@ public class ControlInvertterController : MonoBehaviour {
             shake = true;
         }
 
-
         if (shake)
         {
             shakeSpeed = originalShakeSpeed + shakeGain * (stareTimer / shakeGainRate);
@@ -64,13 +66,15 @@ public class ControlInvertterController : MonoBehaviour {
                 originalPos.y, originalPos.z + (randomValues.y * shakeSpeed));
         }
 
-        if (distance < radiusOfEffect)
+        if (distance < radiusOfEffect - 1)
         {
             player.GetComponent<PlayerMovement>().invert = true;
+            Debug.Log("Inverted!");
         }
-        else
+        else if(distance > radiusOfEffect)
         {
             player.GetComponent<PlayerMovement>().invert = false;
+            Debug.Log("Uninvert");
         }
 
 

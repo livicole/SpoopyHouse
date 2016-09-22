@@ -19,16 +19,17 @@ public class PlayerMovement : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
+        float xAxis, yAxis;
         CharacterController charCont = GetComponent<CharacterController>();
         if (!invert)
         {
-            float xAxis = Input.GetAxis("HorizontalMovement");
-            float yAxis = -Input.GetAxis("VerticalMovement");
+            xAxis = Input.GetAxis("HorizontalMovement");
+            yAxis = -Input.GetAxis("VerticalMovement");
         }
         else
         {
-            float xAxis = -Input.GetAxis("HorizontalMovement");
-            float yAxis = Input.GetAxis("VerticalMovement");
+            xAxis = -Input.GetAxis("HorizontalMovement");
+            yAxis = Input.GetAxis("VerticalMovement");
         }
         
 
