@@ -14,6 +14,9 @@ public class ChildRemover : MonoBehaviour {
     private float destroyTimer;
     private bool coolingdown;
 
+    public Transform inventoryObject;
+
+
 	// Use this for initialization
 	void Start () {
         flashlight = GameObject.Find("Flashlight").transform;
@@ -52,12 +55,31 @@ public class ChildRemover : MonoBehaviour {
                         coolingdown = true;
                         Destroy(forwardRayHit.collider.gameObject);
                     }
+
+                    else if (forwardRayHit.collider.gameObject.tag == "Item")
+                    {
+
+                        inventoryObject.GetComponent<InventoryScript>().pickUp(forwardRayHit.collider.gameObject);
+
+                        forwardRayHit.collider.gameObject.SetActive(false);
+                        
+                    }
                 }
             }
             else
             {
                 Debug.Log("On Cooldown");
             }
+        }
+
+        if (Input.GetButtonDown("Drop"))
+        {
+            inventoryObject.GetComponent<InventoryScript>().dropItem();
+        }
+
+        if (Input.GetButtonDown("Cycle"))
+        {
+            inventoryObject.GetComponent<InventoryScript>().cycleActiveItem();
         }
     }
 }
