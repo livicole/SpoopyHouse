@@ -28,6 +28,8 @@ public class CursorController : MonoBehaviour {
     private bool holding = false, destroyable = false;
     private Transform holdingObject;
     public Vector3 targetLocation;
+    public float angelCount = 0;
+    public float inverterCount = 0;
 
     //Dpad Up
     [SerializeField]
@@ -126,14 +128,33 @@ public class CursorController : MonoBehaviour {
                 detectionSphere.GetComponent<DetectionSphereController>().moving = false;
             }
 
-            if(Input.GetButton("Ghost Button X"))
+            if(Input.GetButtonDown("Ghost Button X"))
             {
-
+                if(!handleHolding())
+                {
+                    if (Physics.Raycast(verticalRay, out verticalRayHit, 100f, layermask))
+                    {
+                        if (verticalRayHit.collider.gameObject.layer == 10 && angelCount <= 0)
+                        {
+                            Instantiate(Actions[2], verticalRayHit.point, Quaternion.identity);
+                            angelCount++;
+                        }
+                    }
+                }
             }
-
             if(Input.GetButton("Ghost Button Y"))
             {
-
+                if(!handleHolding())
+                {
+                    if(Physics.Raycast(verticalRay, out verticalRayHit, 100f, layermask))
+                    {
+                        if(verticalRayHit.collider.gameObject.layer == 10 && inverterCount <= 0)
+                        {
+                            Instantiate(Actions[3], verticalRayHit.point, Quaternion.identity);
+                            inverterCount++;
+                        }
+                    }
+                }
             }
 
         }

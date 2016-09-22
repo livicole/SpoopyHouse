@@ -18,6 +18,7 @@ public class DetectionSphereController : MonoBehaviour {
     void Update()
     {
         Physics.IgnoreLayerCollision(5, 12, true);
+        Physics.IgnoreLayerCollision(5, 13, true);
         Physics.IgnoreCollision(GetComponent<Collider>(), GameObject.Find("ChildPlayer").GetComponent<Collider>(), true);
 
         if (moving)
@@ -40,7 +41,7 @@ public class DetectionSphereController : MonoBehaviour {
             GetComponent<Collider>().isTrigger = true;
             GetComponent<Rigidbody>().isKinematic = true;
             GetComponent<DetectionSphereController>().moving = false;
-            transform.position = GameObject.Find("GhostCursor").transform.position - new Vector3(0, 5, 0);
+            transform.position = GameObject.Find("GhostCursor").transform.position - new Vector3(0, 9, 0);
         }
 
 
