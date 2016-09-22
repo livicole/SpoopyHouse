@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using System;
 
 public class CursorController : MonoBehaviour {
@@ -40,6 +41,9 @@ public class CursorController : MonoBehaviour {
     //Dpad Left
     [SerializeField]
     List<Transform> EnvironmentalEffects;
+
+	public Image BButton, AButton;
+	public Sprite bButtonUp, bButtonDown, aButtonUp, aButtonDown;
 
 
 
@@ -89,29 +93,30 @@ public class CursorController : MonoBehaviour {
         //If in Actions mode
         if (inputMode == inputModes.Actions)
         {
-            if (Input.GetButtonDown("Ghost Button A"))
-            {
-                if (!handleHolding())
-                {
-                    if (!holding && holdingObject == null)
-                    {
-                        if(detectedObj != null)
-                        {
-                            Debug.Log("Pickup");
-                            holdingObject = detectedObj;
-                            if(holdingObject.GetComponent<Rigidbody>() != null)
-                            { holdingObject.GetComponent<Rigidbody>().isKinematic = true; }
-                            holdingObject.transform.parent = detectionSphere.transform;
-                            holding = true;
-                            destroyable = false;
-                        }
-                    }
-                }
-            }
+			if (Input.GetButtonDown ("Ghost Button A")) {
+				AButton.sprite = aButtonDown;
+				if (!handleHolding ()) {
+					if (!holding && holdingObject == null) {
+						if (detectedObj != null) {
+							Debug.Log ("Pickup");
+							holdingObject = detectedObj;
+							if (holdingObject.GetComponent<Rigidbody> () != null) {
+								holdingObject.GetComponent<Rigidbody> ().isKinematic = true;
+							}
+							holdingObject.transform.parent = detectionSphere.transform;
+							holding = true;
+							destroyable = false;
+						}
+					}
+				} else {
+					AButton.sprite = aButtonUp;
+				}
+			} 
 
             //Smash things around. Currently works kind of like a wrecking ball.
             if (Input.GetButton("Ghost Button B"))
             {
+				BButton.sprite = bButtonDown;
                 if (!handleHolding())
                 {
                     if (Physics.Raycast(verticalRay, out verticalRayHit, 100f, layermask))
@@ -123,6 +128,7 @@ public class CursorController : MonoBehaviour {
             }
             else if (Input.GetButtonUp("Ghost Button B"))
             {
+				BButton.sprite = bButtonUp;
                 detectionSphere.GetComponent<DetectionSphereController>().moving = false;
             }
 
