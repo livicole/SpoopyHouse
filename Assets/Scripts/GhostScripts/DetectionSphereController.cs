@@ -20,6 +20,7 @@ public class DetectionSphereController : MonoBehaviour {
         Physics.IgnoreLayerCollision(5, 12, true);
         Physics.IgnoreLayerCollision(5, 13, true);
         Physics.IgnoreLayerCollision(5, 10, true);
+        Physics.IgnoreLayerCollision(5, 5, true);
         Physics.IgnoreCollision(GetComponent<Collider>(), GameObject.Find("ChildPlayer").GetComponent<Collider>(), true);
 
         if (moving)

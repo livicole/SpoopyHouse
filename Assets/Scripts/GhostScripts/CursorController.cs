@@ -78,6 +78,7 @@ public class CursorController : MonoBehaviour {
         //Down on DPad
         if (dpadY < 0)
         {
+            Debug.Log("active mode");
             inputMode = inputModes.Active;
         }
         //Up on DPad
@@ -96,7 +97,7 @@ public class CursorController : MonoBehaviour {
         if (inputMode == inputModes.Actions)
         {
 			if (Input.GetButtonDown ("Ghost Button A")) {
-				AButton.sprite = aButtonDown;
+				//AButton.sprite = aButtonDown;
 				if (!handleHolding ()) {
 					if (!holding && holdingObject == null) {
 						if (detectedObj != null) {
@@ -111,7 +112,7 @@ public class CursorController : MonoBehaviour {
 						}
 					}
 				} else {
-					AButton.sprite = aButtonUp;
+					//AButton.sprite = aButtonUp;
 				}
 			} 
 
@@ -190,8 +191,24 @@ public class CursorController : MonoBehaviour {
         //If in Active mode
         else if (inputMode == inputModes.Active)
         {
-            if (Input.GetButton("Ghost Button A"))
+            if (Input.GetButtonDown("Ghost Button A"))
             {
+                if (Physics.Raycast(verticalRay, out verticalRayHit, 100f, layermask))
+                {
+                    //Layer 14 is gridlocked.
+                    if(verticalRayHit.collider.gameObject.layer == 14)
+                    {
+                        Debug.Log("Correct");
+                        holdingObject = verticalRayHit.collider.gameObject.transform;
+                        holdingObject.GetComponent<GridLocker>().locked = false;
+                        holdingObject.parent = detectionSphere;
+                    }
+                }
+            }
+            else if(Input.GetButtonUp("Ghost Button A"))
+            {
+                holdingObject.parent = null;
+                holdingObject.GetComponent<GridLocker>().locked = true;
 
             }
 
