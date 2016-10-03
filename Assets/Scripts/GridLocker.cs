@@ -4,7 +4,19 @@ using System.Collections.Generic;
 
 public class GridLocker : MonoBehaviour {
 
-    
+    /**NOTE: In order to use this script certain steps need to be followed when making rooms.
+
+    1.Create an empty gameobject and set to 0,0,0.
+    2.Create a square box that will house all the smaller blocks that are in your room. 
+            i.e. A room that like the W-Room needs a box that is 3(60x60) boxes wide and tall. Short-L Rooms need a 2x2 (40x40).
+    3.Set the name of the box to Room Filler. Then disable it's mesh renderer. Leave the collider.
+    4.Create boxes of size actual 20x20, and place them within the box, each taking up one of the 20x20 grid spaces in it.
+    5.On the empty gameobject, add the script GridLocker. Under CoordinatesOccupied, set the size to the number of blocks in your invisible box.
+    6.For each small box in the big box, put in their corresponding coordinates /20 for the grid coordinate. 
+            i.e. A block at X: 20 and Z: 40 is the equivalent to coordinate 1, 0, 2. Note the Y value is always 0.
+    7. Parent the big, invisible box to the empty object. Parent all small boxes inside the invisible box.
+
+    **/
     Transform gridBase;
 
     [SerializeField]
