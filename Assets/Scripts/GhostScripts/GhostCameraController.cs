@@ -28,7 +28,7 @@ public class GhostCameraController : MonoBehaviour {
         float combination = left + right;
         //inputX = Input.GetAxis("LeftTrigger");
         float inputZ = combination;
-        Debug.Log(inputZ);
+        //Debug.Log(inputZ);
 
         Vector3 movementVector = new Vector3(inputX, 0, inputY);
         movementVector = movementVector.normalized * panSpeed;

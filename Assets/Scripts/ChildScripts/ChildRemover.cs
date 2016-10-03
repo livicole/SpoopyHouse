@@ -49,7 +49,7 @@ public class ChildRemover : MonoBehaviour {
 
                 if (Physics.Raycast(forwardRay, out forwardRayHit, detectDistance))
                 {
-                    Debug.Log(forwardRayHit.collider.gameObject.layer);
+                    //Debug.Log(forwardRayHit.collider.gameObject.layer);
                     if (forwardRayHit.collider.gameObject.layer == 11)
                     {
                         coolingdown = true;

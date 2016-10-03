@@ -35,7 +35,7 @@ public class FlashlightController : MonoBehaviour {
 
         angleChange = (maximumAngle - minimumAngle) / timeFromMinToMax;
         rangeChange = (maximumRange - minimumRange) / timeFromMinToMax;
-        Debug.Log("Range :" + rangeChange);
+        //Debug.Log("Range :" + rangeChange);
  
     }
     // Update is called once per frame
