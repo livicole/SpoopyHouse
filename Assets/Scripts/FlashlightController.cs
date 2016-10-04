@@ -11,7 +11,7 @@ public class FlashlightController : MonoBehaviour {
     float minimumRange;
 
     [SerializeField]
-    float maximumRange;
+    public float maximumRange;
 
     [SerializeField]
     float minimumAngle;

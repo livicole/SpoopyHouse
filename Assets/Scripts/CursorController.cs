@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
@@ -46,15 +47,25 @@ public class CursorController : MonoBehaviour {
 	public Sprite bButtonUp, bButtonDown, aButtonUp, aButtonDown;
 
 
+    public Transform toySpawnLocation;
+    public GameObject[] ghostToys = new GameObject[3];
+    int activeToyIndex;
+    public Text activeToyText;
+
+
 
 	// Use this for initialization
 	void Start () {
+        activeToyText.text = ghostToys[0].name;
         child = GameObject.Find("ChildPlayer").transform;
-        
+        toySpawnLocation = GameObject.Find("ToySpawnLocation").transform;
 	}
 
     // Update is called once per frame
     void Update() {
+
+
+
         float inputX = Input.GetAxis("HorizontalMovement2");
         float inputY = Input.GetAxis("VerticalMovement2");
 
@@ -132,13 +143,19 @@ public class CursorController : MonoBehaviour {
                 detectionSphere.GetComponent<DetectionSphereController>().moving = false;
             }
 
-            if(Input.GetButton("Ghost Button X"))
+            if(Input.GetButtonDown("Ghost Button X"))
             {
+                Debug.Log("I pressed x");
+                Instantiate(ghostToys[activeToyIndex], toySpawnLocation.position, Quaternion.identity);
 
             }
 
-            if(Input.GetButton("Ghost Button Y"))
+            if(Input.GetButtonDown("Ghost Button Y"))
             {
+                Debug.Log("i pressed y");
+                activeToyIndex = (activeToyIndex+1) % 3;
+                activeToyText.text = ghostToys[activeToyIndex].name;
+                Debug.Log(activeToyIndex);
 
             }
 
