@@ -23,5 +23,7 @@ public class Timer : MonoBehaviour {
 			minuteCount++;
 			secondsCount = 0;   
 		}
+
+        //if(timerText.text == "")
 	}
 }
