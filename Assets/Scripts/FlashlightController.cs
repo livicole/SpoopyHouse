@@ -23,9 +23,11 @@ public class FlashlightController : MonoBehaviour {
     float timeFromMinToMax;
 
     private float inputX;
-    private Animator controlAnimator;
+	private Animator controlAnimator;
+	public Animator dresserAnimator;
     private Light flashlight;
     private float angleChange, rangeChange;
+	public bool drawerOpen;
 
     // Use this for initialization
     void Start() {
@@ -41,6 +43,28 @@ public class FlashlightController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+		Ray drawerRay = new Ray (transform.position, transform.forward);
+		RaycastHit rayHitInfo = new RaycastHit ();
+		if (Physics.Raycast (drawerRay, out rayHitInfo, 1000f)) {
+			Debug.DrawRay (transform.position, transform.forward * 1000f, Color.blue);
+			Debug.Log (rayHitInfo.collider.name);
+			if (rayHitInfo.transform.tag == "Drawer") {
+				Debug.Log ("it hit");
+				if (Input.GetButton ("Ghost Button A") && drawerOpen == false) {
+					Debug.Log ("open drawer");
+					dresserAnimator.SetBool ("DrawerIsOpen", true);
+					dresserAnimator.SetBool ("DrawerIsClosed", false);
+					drawerOpen = true;
+				}
+				if (Input.GetButton ("Ghost Button A") && drawerOpen == true) {
+					Debug.Log ("close drawer");
+					dresserAnimator.SetBool ("DrawerIsOpen", false);
+					dresserAnimator.SetBool ("DrawerIsClosed", true);
+					drawerOpen = false;
+				}
+			}
+		}
+
         Debug.Log("Trigger: " + Input.GetAxis("LeftTrigger"));
         float left = -Input.GetAxis("LeftTrigger"); //-1 -> 0
         float right = Input.GetAxis("RightTrigger"); //0 -> 1
