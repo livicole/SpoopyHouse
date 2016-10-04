@@ -128,34 +128,37 @@ public class CursorController : MonoBehaviour {
 
         if(holdingObject != null)
         {
-            if (Input.GetButtonDown("LeftBumper"))
+            if (holdingObject.FindChild("ChildPlayer") == null)
             {
-                //Layer 14 is gridlocked items i.e. rooms
-                if(holdingObject.gameObject.layer == 14)
+                if (Input.GetButtonDown("LeftBumper"))
                 {
-                    holdingObject.transform.eulerAngles += new Vector3(0, -90, 0);
-                    holdingObject.GetComponent<GridLocker>().UpdateCoordinates(-90);
-                    //holdingObject.GetChild(0).transform.eulerAngles += new Vector3(0, -90, 0);
-                    
+                    //Layer 14 is gridlocked items i.e. rooms
+                    if (holdingObject.gameObject.layer == 14)
+                    {
+                        holdingObject.transform.eulerAngles += new Vector3(0, -90, 0);
+                        holdingObject.GetComponent<GridLocker>().UpdateCoordinates(-90);
+                        //holdingObject.GetChild(0).transform.eulerAngles += new Vector3(0, -90, 0);
+
+                    }
+                    else
+                    {
+                        holdingObject.eulerAngles += new Vector3(0, -90, 0);
+
+                    }
+
                 }
-                else
+                if (Input.GetButtonDown("RightBumper"))
                 {
-                    holdingObject.eulerAngles += new Vector3(0, -90, 0);
-                    
-                }
-                
-            }
-            if (Input.GetButtonDown("RightBumper"))
-            {
-                if (holdingObject.gameObject.layer == 14)
-                {
-                    holdingObject.transform.eulerAngles += new Vector3(0, 90, 0);
-                    holdingObject.GetComponent<GridLocker>().UpdateCoordinates(90);
-                    //holdingObject.GetChild(0).transform.eulerAngles += new Vector3(0, 90, 0);
-                }
-                else
-                {
-                    holdingObject.eulerAngles += new Vector3(0, 90, 0);
+                    if (holdingObject.gameObject.layer == 14)
+                    {
+                        holdingObject.transform.eulerAngles += new Vector3(0, 90, 0);
+                        holdingObject.GetComponent<GridLocker>().UpdateCoordinates(90);
+                        //holdingObject.GetChild(0).transform.eulerAngles += new Vector3(0, 90, 0);
+                    }
+                    else
+                    {
+                        holdingObject.eulerAngles += new Vector3(0, 90, 0);
+                    }
                 }
             }
         }

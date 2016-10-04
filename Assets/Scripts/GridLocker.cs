@@ -52,7 +52,7 @@ public class GridLocker : MonoBehaviour {
         }
         //adjustmentVector = transform.FindChild("RoomFiller").localScale / 2;
         //adjustmentVector = new Vector3(adjustmentVector.z, 0, adjustmentVector.x);
-        Debug.Log(adjustmentVector);
+        //Debug.Log(adjustmentVector);
         originalRoomFillerPosition = transform.FindChild("RoomFiller").localPosition;
 
        
