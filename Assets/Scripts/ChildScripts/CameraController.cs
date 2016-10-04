@@ -15,6 +15,12 @@ public class CameraController : MonoBehaviour {
 	void Update () {
         float camYAxis = Input.GetAxis("VerticalCamera");
 
+        
+
         transform.Rotate(new Vector3(turningSpeed * camYAxis, 0, 0));
+        
+        {
+
+        }
     }
 }

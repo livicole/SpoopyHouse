@@ -12,12 +12,21 @@ public class DetectionSphereController : MonoBehaviour {
     public Transform detectedObject;
 
     private Vector3 targetLocation;
-    public bool moving = false;
+    public bool moving = false, invisGrid = false;
 
 
     void Update()
     {
         Physics.IgnoreLayerCollision(5, 12, true);
+        Physics.IgnoreLayerCollision(5, 13, true);
+        if (!invisGrid)
+        {
+            Physics.IgnoreLayerCollision(5, 15, true);
+        }
+        Physics.IgnoreLayerCollision(5, 10, true);
+        Physics.IgnoreLayerCollision(5, 5, true);
+
+       // Physics.IgnoreCollision(GetComponent<Collider>(), cursor.GetComponent<CursorController>().holdingObject.GetComponent<Collider>());
         Physics.IgnoreCollision(GetComponent<Collider>(), GameObject.Find("ChildPlayer").GetComponent<Collider>(), true);
 
         if (moving)
@@ -40,7 +49,7 @@ public class DetectionSphereController : MonoBehaviour {
             GetComponent<Collider>().isTrigger = true;
             GetComponent<Rigidbody>().isKinematic = true;
             GetComponent<DetectionSphereController>().moving = false;
-            transform.position = GameObject.Find("GhostCursor").transform.position - new Vector3(0, 5, 0);
+            transform.position = cursor.GetComponent<CursorController>().targetLocation;
         }
 
 
@@ -52,7 +61,7 @@ public class DetectionSphereController : MonoBehaviour {
         detectedObject = other.gameObject.transform;
 	}
 
-    void OnTriggerExit (Collider other)
+    void OnTriggerExit(Collider other)
     {
         detectedObject = null;
     }

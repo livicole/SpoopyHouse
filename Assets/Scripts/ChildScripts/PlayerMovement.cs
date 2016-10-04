@@ -9,24 +9,35 @@ public class PlayerMovement : MonoBehaviour {
     [SerializeField]
     public float turningSpeed;
 
+    public bool invert = false;
+
     // Use this for initialization
     void Start()
     {
-
+        Physics.IgnoreLayerCollision(17, 14);
 
     }
 	// Update is called once per frame
 	void Update () {
+        float xAxis, yAxis;
         CharacterController charCont = GetComponent<CharacterController>();
+        if (!invert)
+        {
+            xAxis = Input.GetAxis("HorizontalMovement");
+            yAxis = -Input.GetAxis("VerticalMovement");
+        }
+        else
+        {
+            xAxis = -Input.GetAxis("HorizontalMovement");
+            yAxis = Input.GetAxis("VerticalMovement");
+        }
+        
 
-        float xAxis = Input.GetAxis("HorizontalMovement");
-        float yAxis = -Input.GetAxis("VerticalMovement");
+        Vector3 moveVector = (((transform.forward * yAxis) + (transform.right * xAxis)).normalized + (-transform.up * 9.8f)) * walkingSpeed;
+        charCont.Move(moveVector);
 
-        Vector3 moveVector = ((transform.forward * yAxis) + (transform.right * xAxis)).normalized * walkingSpeed;
+      
 
-
-
-        charCont.Move((transform.forward * walkingSpeed * yAxis) + (transform.right * walkingSpeed * xAxis));
         //transform.Rotate(new Vector3(0, turningSpeed * xAxis, 0));
 
         float camXAxis = Input.GetAxis("HorizontalCamera");
