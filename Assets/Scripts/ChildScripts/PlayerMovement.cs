@@ -4,10 +4,10 @@ using System.Collections;
 public class PlayerMovement : MonoBehaviour {
 
     [SerializeField]
-    float walkingSpeed;
+    public float walkingSpeed;
 
     [SerializeField]
-    float turningSpeed;
+    public float turningSpeed;
 
     public bool invert = false;
 
