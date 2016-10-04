@@ -12,7 +12,7 @@ public class GridInfo : MonoBehaviour {
     float gridSize;
 
     [SerializeField]
-    float blockLength;
+    public float blockLength;
 
     public float gridMax, gridMin;
 

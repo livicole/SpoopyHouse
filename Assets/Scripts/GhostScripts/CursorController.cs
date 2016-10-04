@@ -7,6 +7,9 @@ using System;
 public class CursorController : MonoBehaviour {
 
     [SerializeField]
+    LayerMask inRoomLayerMask;
+
+    [SerializeField]
     Camera ghostCam;
 
     [SerializeField]
@@ -198,7 +201,7 @@ public class CursorController : MonoBehaviour {
 				BButton.sprite = bButtonDown;
                 if (!handleHolding())
                 {
-                    if (Physics.Raycast(verticalRay, out verticalRayHit, 100f, layermask))
+                    if (Physics.Raycast(verticalRay, out verticalRayHit, 100f, inRoomLayerMask))
                     {
                         targetLocation = verticalRayHit.point;
                         detectionSphere.GetComponent<DetectionSphereController>().moving = true;
@@ -215,10 +218,12 @@ public class CursorController : MonoBehaviour {
             {
                 if(!handleHolding())
                 {
-                    if (Physics.Raycast(verticalRay, out verticalRayHit, 100f, layermask))
+                    if (Physics.Raycast(verticalRay, out verticalRayHit, 100f, inRoomLayerMask))
                     {
+                        Debug.Log(verticalRayHit.collider.name);
                         if (verticalRayHit.collider.gameObject.layer == 10 && angelCount <= 0)
                         {
+                            Debug.Log("Angel spawn.");
                             Instantiate(Actions[2], verticalRayHit.point, Quaternion.identity);
                             angelCount++;
                         }
@@ -229,7 +234,7 @@ public class CursorController : MonoBehaviour {
             {
                 if(!handleHolding())
                 {
-                    if(Physics.Raycast(verticalRay, out verticalRayHit, 100f, layermask))
+                    if(Physics.Raycast(verticalRay, out verticalRayHit, 100f, inRoomLayerMask))
                     {
                         if(verticalRayHit.collider.gameObject.layer == 10 && inverterCount <= 0)
                         {
@@ -302,6 +307,7 @@ public class CursorController : MonoBehaviour {
                     holdingObject.transform.GetComponent<GridLocker>().UpdateNewBlocks();
                     detectionSphere.GetComponent<DetectionSphereController>().invisGrid = true;
                     holdingObject = null;
+                    
                 }
             }
 
