@@ -8,9 +8,9 @@ public class Timer : MonoBehaviour {
 	public float totalTime;
 
 	void Update(){
-		string timerTextInSeconds = string.Format ("{1:00}", Mathf.Floor (totalTime / 60), totalTime % 60);
+		string timerTextInSeconds = string.Format ("{0}:{1}", Mathf.Floor (totalTime / 60), Mathf.Floor(totalTime % 60));
 		totalTime -= Time.deltaTime;
-		timerText.text = timerTextInSeconds.ToString ();
+        timerText.text = timerTextInSeconds;
 
 		if (totalTime <= 0) {
 			//child loses
