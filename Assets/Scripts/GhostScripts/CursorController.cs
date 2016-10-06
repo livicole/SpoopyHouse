@@ -35,15 +35,27 @@ public class CursorController : MonoBehaviour {
     //3 of the 4 categories of placeable objects. Last one, interactions, does not need a list of objects.
 
     //Dpad Right are actions
+    /**
     [SerializeField]
-    List<Transform> Actions;
+    List<Transform> Actions;**/
     private bool holding = false, destroyable = false;
+    [HideInInspector]
     public Transform holdingObject;
     private int previousLayer;
+    [HideInInspector]
     public Vector3 targetLocation;
+    [HideInInspector]
     public float angelCount = 0;
+    [HideInInspector]
     public float inverterCount = 0;
 
+    [SerializeField]
+    List<Transform> ghostToys;
+    private int selector;
+    private Text selectedObjectText;
+    private bool isYAxisInUse = false;
+
+    /** Redundant lists.
     //Dpad Up
     [SerializeField]
     List<Transform> PassiveObjects;
@@ -55,6 +67,7 @@ public class CursorController : MonoBehaviour {
     //Dpad Left
     [SerializeField]
     List<Transform> EnvironmentalEffects;
+    **/
 
 	public Image BButton, AButton;
 	public Sprite bButtonUp, bButtonDown, aButtonUp, aButtonDown;
@@ -64,7 +77,7 @@ public class CursorController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         child = GameObject.Find("ChildPlayer").transform;
-        
+        selectedObjectText = GameObject.Find("SelectedToy").GetComponent<Text>();
 	}
 
     // Update is called once per frame
@@ -85,11 +98,44 @@ public class CursorController : MonoBehaviour {
         GetComponent<RectTransform>().position = newPos;
 
 
-        float dpadX = Input.GetAxis("Ghost DPad X");
-        float dpadY = Input.GetAxis("Ghost DPad Y");
+        //float dpadX = Input.GetAxisRaw("Ghost DPad X");
+        //Code below does two things. 
+        //1. Makes the DPad act as a button
+        //2. Modify the selector index to cycle through our objects.
+        if(Input.GetAxisRaw("Ghost DPad Y") != 0)
+        {
+            if (!isYAxisInUse)
+            {
+                //Press up
+                if(Input.GetAxisRaw("Ghost DPad Y") > 0)
+                {
+                    selector = (selector + 1) % ghostToys.Count;
+                }
+                //Press down
+                else if(Input.GetAxisRaw("Ghost DPad Y") < 0)
+                {
+                    if(selector != 0)
+                    {
+                        selector--;
+                    }
+                    else
+                    {
+                        selector = ghostToys.Count - 1;
+                    }
+                    
+                }
+                isYAxisInUse = true;
+            }
+        }
+        if(Input.GetAxisRaw("Ghost DPad Y") == 0)
+        {
+            isYAxisInUse = false;
+        }
+        //Debug.Log(selector);
         //Debug.Log("DPadX: " + dpadX + " DPadY: " + dpadY);
 
         //Left on DPad
+        /**Redundant inputmode Select
         if (dpadX < 0)
         {
             inputMode = inputModes.Environmental;
@@ -109,8 +155,12 @@ public class CursorController : MonoBehaviour {
         else if(dpadY > 0)
         {
             inputMode = inputModes.Passive;
-        }
+        }**/
 
+        //Display the selected object on screen.
+        selectedObjectText.text = ghostToys[selector].name;
+
+        //Some preliminary code to set up the ability to drop objects.
         int layermask = 1 << 5; layermask = ~layermask; // Ignoring UI layer      
         Vector2 screenPoint = RectTransformUtility.WorldToScreenPoint(null, transform.position);
         //Debug.Log("Screen point: " + screenPoint);
@@ -128,8 +178,77 @@ public class CursorController : MonoBehaviour {
             
         }
         //Debug.Log("Input Mode: " + inputMode);
+        //Moving rooms using button A
+        if (Input.GetButtonDown("Ghost Button A"))
+        {
+            //Debug.Log("A BUTTON");
+            if (Physics.Raycast(verticalRay, out verticalRayHit, 10000f, layermask))
+            {
+                Debug.Log("Hitting object: " + verticalRayHit.collider.gameObject.name);
 
-        if(holdingObject != null)
+                //Layer 14 is gridlocked.
+                if (verticalRayHit.collider.gameObject.layer == 14)
+                {
+                    Debug.Log("Correct");
+                    holdingObject = verticalRayHit.collider.gameObject.transform.parent;
+                    Debug.Log(holdingObject);
+                    //holdingObject.gameObject.layer = 5;
+                    //holdingObject.GetComponent<GridLocker>().locked = false;
+                    holdingObject.parent = detectionSphere;
+                    detectionSphere.GetComponent<DetectionSphereController>().invisGrid = false;
+                    holdingObject.transform.GetComponent<GridLocker>().locked = false;
+                    holdingObject.transform.GetComponent<GridLocker>().ClearOldBlocks();
+
+                }
+            }
+        }
+        else if (Input.GetButtonUp("Ghost Button A"))
+        {
+            if (holdingObject != null)
+            {
+                holdingObject.parent = null;
+                //holdingObject.gameObject.layer = 14; 
+                //holdingObject.GetComponent<GridLocker>().locked = true;
+                holdingObject.transform.GetComponent<GridLocker>().locked = true;
+                holdingObject.transform.GetComponent<GridLocker>().UpdateNewBlocks();
+                detectionSphere.GetComponent<DetectionSphereController>().invisGrid = true;
+                holdingObject = null;
+
+            }
+        }
+        //Smashing things with button B
+        if (Input.GetButton("Ghost Button B"))
+        {
+            //BButton.sprite = bButtonDown;
+            if (!handleHolding())
+            {
+                if (Physics.Raycast(verticalRay, out verticalRayHit, 100f, inRoomLayerMask))
+                {
+                    targetLocation = verticalRayHit.point;
+                    detectionSphere.GetComponent<DetectionSphereController>().moving = true;
+                }
+            }
+        }
+        else if (Input.GetButtonUp("Ghost Button B"))
+        {
+            //BButton.sprite = bButtonUp;
+            detectionSphere.GetComponent<DetectionSphereController>().moving = false;
+        }
+        //Using toys with button X
+        if(Input.GetButtonDown("Ghost Button X"))
+        {
+            if (!handleHolding())
+            {
+                if (Physics.Raycast(verticalRay, out verticalRayHit, 100f, inRoomLayerMask))
+                {
+                    Vector3 targetSpawn = verticalRayHit.point;
+                    Instantiate(ghostToys[selector], targetSpawn, Quaternion.identity);
+                }
+            }
+        }
+
+        //Rotating rooms while held.
+        if (holdingObject != null)
         {
             if (holdingObject.FindChild("ChildPlayer") == null)
             {
@@ -170,6 +289,10 @@ public class CursorController : MonoBehaviour {
 
         Debug.DrawRay(transform.position, verticalRay.direction * 1000f, Color.red);
 
+
+
+
+        /** Old code for DPad mode selection.
         //If in Actions mode
         if (inputMode == inputModes.Actions)
         {
@@ -247,6 +370,7 @@ public class CursorController : MonoBehaviour {
 
         }
         //If in Passive mode
+       
         else if (inputMode == inputModes.Passive)
         {
             if (Input.GetButton("Ghost Button A"))
@@ -348,7 +472,7 @@ public class CursorController : MonoBehaviour {
             {
 
             }
-        }
+        }**/
 
 
         /** Old Code

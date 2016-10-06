@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿    using UnityEngine;
 using System.Collections;
 
 public class ControlInvertterController : MonoBehaviour {
@@ -39,7 +39,7 @@ public class ControlInvertterController : MonoBehaviour {
     void Start () {
         player = GameObject.Find("ChildPlayer").transform;
         originalPos = transform.position;
-        originalPos.y = 0;
+        originalPos.y = 2;
     }
 	
 	// Update is called once per frame
