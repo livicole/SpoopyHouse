@@ -27,8 +27,6 @@ public class ToyReceptor : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        //randomDiff = Random.Range(0, 3f);
-        //upWithDiff = new Vector3 (0, 1+randomDiff, 0);
         randomNumber = Random.Range(0, 4);
         startSinHeight = 1.9f + randomNumber;
         hoverHeight = 2f + randomNumber;
@@ -49,16 +47,11 @@ public class ToyReceptor : MonoBehaviour
 
         if (shouldIHover)
         {
-            Debug.Log("shouldihover");
-          //transform.position = Vector3.Lerp(transform.position, originalPosition + upWithDiff * hoverHeight, lerpT);
             transform.position = Vector3.Lerp(transform.position, originalPosition + Vector3.up * hoverHeight, lerpT);
         }
-
-        //if (transform.position.y > originalPosition.y + startSinHeight + randomDiff)
+        
         if (transform.position.y > originalPosition.y + startSinHeight)
         {
-            Debug.Log("transform.position.y");
-
             preventInitialLerp = true;
             shouldIHover = false;
             startSinWave = true;
@@ -67,7 +60,6 @@ public class ToyReceptor : MonoBehaviour
 
         if (startSinWave)
         {
-            Debug.Log("startsinwave");
             transform.position += new Vector3(0, (Mathf.Sin(timer)) / sinRange, 0);
         }
 
@@ -76,18 +68,12 @@ public class ToyReceptor : MonoBehaviour
     public void raycastFound()
     {
         startTimer = true;
-        Debug.Log("raycastfound");
         fuckYou = true;
         GetComponent<Rigidbody>().useGravity = false;
         originalPosition = transform.position;
         Debug.Log(transform.position);
         shouldIHover = true;
         
-        //totalHeight = originalPosition + upWithDiff * hoverHeight;
-        //float yDistance = Mathf.Abs( totalHeight.y - originalPosition.y);
-        //Debug.Log("y distance: " + yDistance);
-        //lerpT = (yDistance -2) * -.003f + .03f;
-
     }
 
 

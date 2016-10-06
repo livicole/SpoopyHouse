@@ -35,6 +35,11 @@ public class RoomParenter : MonoBehaviour {
             {
                 GameObject.Find("Defeat").GetComponent<Text>().text = "Child Escaped!";
             }
+
+            if (transform.name == "GravityToy")
+            {
+                GetComponent<GravityToyScript>().hasSetParent = true;
+            }
         }
 	}
 }
