@@ -55,6 +55,10 @@ public class CursorController : MonoBehaviour {
     private Text selectedObjectText;
     private bool isYAxisInUse = false;
 
+    private float rotateTimer;
+    [SerializeField]
+    float rotateCD;
+
     /** Redundant lists.
     //Dpad Up
     [SerializeField]
@@ -239,18 +243,25 @@ public class CursorController : MonoBehaviour {
         {
             if (!handleHolding())
             {
-                if (Physics.Raycast(verticalRay, out verticalRayHit, 100f, inRoomLayerMask))
+                if (Physics.Raycast(verticalRay, out verticalRayHit, 1000f, inRoomLayerMask))
                 {
-                    Vector3 targetSpawn = verticalRayHit.point;
+                    Vector3 targetSpawn = verticalRayHit.point + new Vector3(0, 2, 0);
                     Instantiate(ghostToys[selector], targetSpawn, Quaternion.identity);
                 }
             }
         }
 
         //Rotating rooms while held.
+        //Some preliminary setup to add a cooldown to rotate 
+        if(rotateTimer < rotateCD)
+        {
+            rotateTimer += Time.deltaTime;
+        }
+        
+
         if (holdingObject != null)
         {
-            if (holdingObject.FindChild("ChildPlayer") == null)
+            if (rotateTimer >= rotateCD)
             {
                 if (Input.GetButtonDown("LeftBumper"))
                 {
@@ -260,6 +271,7 @@ public class CursorController : MonoBehaviour {
                         holdingObject.transform.eulerAngles += new Vector3(0, -90, 0);
                         holdingObject.GetComponent<GridLocker>().UpdateCoordinates(-90);
                         //holdingObject.GetChild(0).transform.eulerAngles += new Vector3(0, -90, 0);
+                        rotateTimer = 0;
 
                     }
                     else
@@ -276,6 +288,7 @@ public class CursorController : MonoBehaviour {
                         holdingObject.transform.eulerAngles += new Vector3(0, 90, 0);
                         holdingObject.GetComponent<GridLocker>().UpdateCoordinates(90);
                         //holdingObject.GetChild(0).transform.eulerAngles += new Vector3(0, 90, 0);
+                        rotateTimer = 0;
                     }
                     else
                     {
