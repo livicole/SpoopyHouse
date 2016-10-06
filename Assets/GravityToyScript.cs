@@ -5,6 +5,7 @@ public class GravityToyScript : MonoBehaviour
 {
 
     GameObject theChild;
+    public bool hasSetParent = false;
 
 
     public Transform theRoom;
@@ -18,7 +19,10 @@ public class GravityToyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (hasSetParent)
+        {
+            theRoom = transform.parent;
+        }
 
         Ray rayToPlayer = new Ray(transform.position, theChild.transform.position - transform.position);
         RaycastHit rayToPlayerHit = new RaycastHit();
@@ -29,9 +33,12 @@ public class GravityToyScript : MonoBehaviour
             {
                 foreach (Transform anObject in theRoom)
                 {
-                    if (anObject.GetComponent<ToyReceptor>().fuckYou == false)
+                    if (anObject.GetComponent<ToyReceptor>() != null)
                     {
-                        anObject.GetComponent<ToyReceptor>().raycastFound();
+                        if (anObject.GetComponent<ToyReceptor>().fuckYou == false)
+                        {
+                            anObject.GetComponent<ToyReceptor>().raycastFound();
+                        }
                     }
                 }
             }
