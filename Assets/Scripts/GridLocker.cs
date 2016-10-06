@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 
 public class GridLocker : MonoBehaviour {
 
@@ -40,11 +41,13 @@ public class GridLocker : MonoBehaviour {
     private float gridXPosition, gridYPosition;
     private Vector3 currentLocation, adjustmentVector, originalRoomFillerPosition, currentRoomFillerPosition;
     private GridInfo gridInfo;
+    private float blockLength;
 
 
 	// Use this for initialization
 	void Start () {
         gridBase = GameObject.Find("GridBase").transform;
+      
         currentLocation = CalculateGridToReal(gridLocation);
         foreach (Vector3 takenBlock in coordinatesOccupied)
         {
@@ -57,6 +60,7 @@ public class GridLocker : MonoBehaviour {
 
        
         gridInfo = gridBase.GetComponent<GridInfo>();
+        blockLength = gridInfo.blockLength;
     }
 
     // Update is called once per framsdse
@@ -105,6 +109,7 @@ public class GridLocker : MonoBehaviour {
             currentLocation = CalculateGridToReal(gridLocation);
             Debug.Log(CalculateGridToReal(gridLocation));
             transform.position = currentLocation;
+            NavMeshBuilder.BuildNavMesh();
 
             //currentRoomFillerPosition = transform.FindChild("RoomFiller").localPosition;
         }
@@ -120,6 +125,7 @@ public class GridLocker : MonoBehaviour {
                 gridLocation = position;
                 //gridInfo.usedGridBlocks.Add(gridLocation);
                 rotation = transform.rotation.eulerAngles.y;
+               
             }
             else
             {
@@ -268,7 +274,7 @@ public class GridLocker : MonoBehaviour {
         coordinates = new Vector3(Mathf.Clamp(coordinates.x, gridInfo.gridMin, gridInfo.gridMax),
                                     coordinates.y,
                                     Mathf.Clamp(coordinates.z, gridInfo.gridMin, gridInfo.gridMax));
-        location = new Vector3(coordinates.x * 20, height, coordinates.z * 20);
+        location = new Vector3(coordinates.x * blockLength, height, coordinates.z * blockLength);
         return location;
     }
 
@@ -276,8 +282,18 @@ public class GridLocker : MonoBehaviour {
     {
         Vector3 coordinates;
         gridInfo = gridBase.GetComponent<GridInfo>();
-        gridXPosition = Mathf.Clamp((int)(position.x / 20), gridInfo.gridMin, gridInfo.gridMax);
-        gridYPosition = Mathf.Clamp((int)(position.z / 20), gridInfo.gridMin, gridInfo.gridMax);
+        float remainderX = position.x % blockLength;
+        float remainderY = position.y % blockLength;
+        gridXPosition = Mathf.Clamp((int)(position.x / blockLength), gridInfo.gridMin, gridInfo.gridMax);
+        gridYPosition = Mathf.Clamp((int)(position.z / blockLength), gridInfo.gridMin, gridInfo.gridMax);
+        if (remainderX >= blockLength/2)
+        {
+            gridXPosition++;
+        }
+        if(remainderY >= blockLength/2)
+        {
+            gridYPosition++;
+        }
         coordinates = new Vector3(gridXPosition, height, gridYPosition); 
 
         return coordinates;

@@ -40,9 +40,9 @@ public class InventoryScript : MonoBehaviour
 
         Debug.Log("Picked up " + myObject.name + " and I'm holding " + inventoryList.Count + " items. It's at position " + inventoryList.IndexOf(myObject));
 
-        if (inventoryList.Count==5)
+        if (inventoryList.Count==3)
         {
-            activeItemText.text = "You have 5 items";
+            activeItemText.text = "You have 3 items";
         }
     }
 

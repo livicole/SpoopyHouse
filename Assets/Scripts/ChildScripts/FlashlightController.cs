@@ -24,7 +24,6 @@ public class FlashlightController : MonoBehaviour {
 
     private float inputX;
 	private Animator controlAnimator;
-	public Animator dresserAnimator;
     private Light flashlight;
     private float angleChange, rangeChange;
 
@@ -42,8 +41,11 @@ public class FlashlightController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Trigger: " + Input.GetAxis("LeftTrigger"));
+		Debug.Log("Trigger: " + Input.GetAxis("LeftTrigger"));
         //Debug.Log("Trigger: " + Input.GetAxis("LeftTrigger"));
+        //Debug.Log("Trigger: " + Input.GetAxis("LeftTrigger"));
+        //Debug.Log("Trigger: " + Input.GetAxis("LeftTrigger"));
+
         float left = -Input.GetAxis("LeftTrigger"); //-1 -> 0
         float right = Input.GetAxis("RightTrigger"); //0 -> 1
         float combination = left + right;
