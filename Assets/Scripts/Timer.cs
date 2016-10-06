@@ -5,25 +5,15 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour {
 
 	public Text timerText;
-	private float secondsCount;
-	private float minuteCount;
+	public float totalTime;
 
 	void Update(){
-		UpdateTimerUI();
-	}
+		string timerTextInSeconds = string.Format ("{1:00}", Mathf.Floor (totalTime / 60), totalTime % 60);
+		totalTime -= Time.deltaTime;
+		timerText.text = timerTextInSeconds.ToString ();
 
-	public void UpdateTimerUI(){
-		//set timer UI
-
-		string minutes = minuteCount.ToString("00");
-		string seconds = Mathf.Floor(secondsCount % 60).ToString("00");
-		secondsCount += Time.deltaTime;
-		timerText.text = minutes + ":" + seconds;
-		if (secondsCount >= 60) {
-			minuteCount++;
-			secondsCount = 0;   
+		if (totalTime <= 0) {
+			//child loses
 		}
-
-        //if(timerText.text == "")
 	}
 }
