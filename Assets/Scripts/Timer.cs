@@ -5,10 +5,10 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour {
 
 	public Text timerText;
-	public float totalTime;
+	private float totalTime = 300f;
 
 	void Update(){
-		string timerTextInSeconds = string.Format ("{1:00}", Mathf.Floor (totalTime / 60), totalTime % 60);
+		string timerTextInSeconds = string.Format ("{0}:{1}", Mathf.Floor (totalTime / 60), Mathf.Floor (totalTime % 60));
 		totalTime -= Time.deltaTime;
 		timerText.text = timerTextInSeconds.ToString ();
 
