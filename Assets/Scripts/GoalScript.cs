@@ -9,7 +9,7 @@ public class GoalScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+        winText = GameObject.Find("WinText").GetComponent<Text>();
 	}
 	
 	// Update is called once per frame
@@ -25,7 +25,7 @@ public class GoalScript : MonoBehaviour {
         if (col.gameObject.name == "ChildPlayer")
         {
             //Debug.Log("Its the kid!");
-            if (col.gameObject.GetComponentInChildren<InventoryScript>().inventoryList.Count == 5)
+            if (col.gameObject.GetComponentInChildren<InventoryScript>().inventoryList.Count == 3)
             {
                 //Debug.Log("He won!");
                 winText.text = "You Win!";
