@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿    using UnityEngine;
 using System.Collections;
 
 public class ControlInvertterController : MonoBehaviour {
@@ -39,13 +39,13 @@ public class ControlInvertterController : MonoBehaviour {
     void Start () {
         player = GameObject.Find("ChildPlayer").transform;
         originalPos = transform.position;
-        //originalPos.y = 0;
+        originalPos.y = 2;
     }
 	
 	// Update is called once per frame
 	void Update () {
         distance = Mathf.Abs(Vector3.Distance(transform.position, player.position));
-        //transform.position = originalPos;
+        transform.position = originalPos;
 
         if (stareTimer >= maxTime)
         {
@@ -57,14 +57,14 @@ public class ControlInvertterController : MonoBehaviour {
             shake = true;
         }
 
-        /*if (shake)
+        if (shake)
         {
             shakeSpeed = originalShakeSpeed + shakeGain * (stareTimer / shakeGainRate);
             //Debug.Log("Shake speed: " + shakeSpeed);
             Vector2 randomValues = Random.insideUnitCircle;
             transform.position = new Vector3(originalPos.x + (randomValues.x * shakeSpeed),
                 originalPos.y, originalPos.z + (randomValues.y * shakeSpeed));
-        }*/
+        }
 
         if (distance < radiusOfEffect - 1)
         {
