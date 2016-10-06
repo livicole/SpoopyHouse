@@ -18,20 +18,20 @@ public class RoomParenter : MonoBehaviour {
 
         if(Physics.Raycast(verticalRay, out verticalInfo, 100f))
         {
-            Debug.Log(verticalInfo.collider.gameObject.layer);
+            //Debug.Log(verticalInfo.collider.gameObject.layer);
             if(verticalInfo.collider.gameObject.layer == 10)
             {
                 Transform temp = verticalInfo.collider.transform;
                 while(temp.gameObject.layer != 14)
                 {
                     temp = temp.parent;
-                    Debug.Log("Changing parent...");
+                    //Debug.Log("Changing parent...");
                 }
                 temp = temp.parent; //One more from the RoomFiller to parent.
 
                 transform.parent = temp;
             }
-            else if(verticalInfo.collider.gameObject.name == "GridBase")
+            else if(verticalInfo.collider.gameObject.name == "GridBase" && transform.name == "ChildPlayer")
             {
                 GameObject.Find("Defeat").GetComponent<Text>().text = "Child Escaped!";
             }

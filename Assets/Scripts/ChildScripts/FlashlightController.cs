@@ -43,7 +43,7 @@ public class FlashlightController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-<<<<<<< HEAD:Assets/Scripts/FlashlightController.cs
+
 		Ray drawerRay = new Ray (transform.position, transform.forward);
 		RaycastHit rayHitInfo = new RaycastHit ();
 		if (Physics.Raycast (drawerRay, out rayHitInfo, 1000f)) {
@@ -66,10 +66,9 @@ public class FlashlightController : MonoBehaviour {
 			}
 		}
 
-        Debug.Log("Trigger: " + Input.GetAxis("LeftTrigger"));
-=======
         //Debug.Log("Trigger: " + Input.GetAxis("LeftTrigger"));
->>>>>>> 28218bc79c956be422c1b7e1bc30c784a23f4b20:Assets/Scripts/ChildScripts/FlashlightController.cs
+        //Debug.Log("Trigger: " + Input.GetAxis("LeftTrigger"));
+
         float left = -Input.GetAxis("LeftTrigger"); //-1 -> 0
         float right = Input.GetAxis("RightTrigger"); //0 -> 1
         float combination = left + right;
