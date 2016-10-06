@@ -24,10 +24,11 @@ public class RoomParenter : MonoBehaviour {
                 Transform temp = verticalInfo.collider.transform;
                 while(temp.gameObject.layer != 14)
                 {
+                    Debug.Log("Changing parent from: " + temp.name);
                     temp = temp.parent;
-                    //Debug.Log("Changing parent...");
+                    
                 }
-                temp = temp.parent; //One more from the RoomFiller to parent.
+                //temp = temp.parent; //One more from the RoomFiller to parent.
 
                 transform.parent = temp;
             }

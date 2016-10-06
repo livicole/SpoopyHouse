@@ -61,6 +61,7 @@ public class GridLocker : MonoBehaviour {
        
         gridInfo = gridBase.GetComponent<GridInfo>();
         blockLength = gridInfo.blockLength;
+        Physics.IgnoreLayerCollision(12, 14, true);
     }
 
     // Update is called once per framsdse
