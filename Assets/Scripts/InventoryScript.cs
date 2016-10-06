@@ -40,10 +40,10 @@ public class InventoryScript : MonoBehaviour
 
         Debug.Log("Picked up " + myObject.name + " and I'm holding " + inventoryList.Count + " items. It's at position " + inventoryList.IndexOf(myObject));
 
-        if (inventoryList.Count==3)
+       /* if (inventoryList.Count==3)
         {
             activeItemText.text = "You have 3 items";
-        }
+        }*/
     }
 
     public void dropItem()
