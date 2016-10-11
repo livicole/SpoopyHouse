@@ -24,7 +24,7 @@ GameObject:
   - 23: {fileID: 23000010307854780}
   - 114: {fileID: 114000010720934990}
   - 114: {fileID: 114000012694462042}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FlashlightToy
   m_TagString: Untagged
   m_Icon: {fileID: 0}

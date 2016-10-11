@@ -9,12 +9,12 @@ public class ToyReceptor : MonoBehaviour
     bool preventInitialLerp = false;
     bool startSinWave = false;
     float timer = 1;
-    public float sinRange;
-    public float timerIncrement;
-    public float hoverHeight;
-    public float startSinHeight;
+    public float sinRange = 100f;
+    public float timerIncrement = .02f;
+    public float hoverHeight = 2f;
+    public float startSinHeight = 1.9f;
     float randomDiff;
-    public float lerpT;
+    public float lerpT = .02f;
 
     float randomNumber;
 
