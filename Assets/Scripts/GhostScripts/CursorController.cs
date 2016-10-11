@@ -263,7 +263,7 @@ public class CursorController : MonoBehaviour {
         {
             if (rotateTimer >= rotateCD)
             {
-                if (Input.GetButtonDown("LeftBumper"))
+                if (Input.GetButtonDown("GhostLeftBumper"))
                 {
                     //Layer 14 is gridlocked items i.e. rooms
                     if (holdingObject.gameObject.layer == 14)
@@ -281,7 +281,7 @@ public class CursorController : MonoBehaviour {
                     }
 
                 }
-                if (Input.GetButtonDown("RightBumper"))
+                if (Input.GetButtonDown("GhostRightBumper"))
                 {
                     if (holdingObject.gameObject.layer == 14)
                     {
