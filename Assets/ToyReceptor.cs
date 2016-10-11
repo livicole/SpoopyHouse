@@ -55,7 +55,7 @@ public class ToyReceptor : MonoBehaviour
             preventInitialLerp = true;
             shouldIHover = false;
             startSinWave = true;
-            Debug.Log(transform.position);
+            //Debug.Log(transform.position);
         }
 
         if (startSinWave)

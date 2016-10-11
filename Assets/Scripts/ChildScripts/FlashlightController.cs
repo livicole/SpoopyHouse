@@ -41,10 +41,7 @@ public class FlashlightController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-		Debug.Log("Trigger: " + Input.GetAxis("LeftTrigger"));
-        //Debug.Log("Trigger: " + Input.GetAxis("LeftTrigger"));
-        //Debug.Log("Trigger: " + Input.GetAxis("LeftTrigger"));
-        //Debug.Log("Trigger: " + Input.GetAxis("LeftTrigger"));
+		//Debug.Log("Trigger: " + Input.GetAxis("LeftTrigger"));
 
         float left = -Input.GetAxis("LeftTrigger"); //-1 -> 0
         float right = Input.GetAxis("RightTrigger"); //0 -> 1

@@ -23,8 +23,8 @@ public class GhostCameraController : MonoBehaviour {
         float inputX = Input.GetAxis("HorizontalCamera2");
         float inputY = -Input.GetAxis("VerticalCamera2");
 
-        float left = -Input.GetAxis("LeftTrigger"); //-1 -> 0
-        float right = Input.GetAxis("RightTrigger"); //0 -> 1
+        float left = -Input.GetAxis("GhostLeftTrigger"); //-1 -> 0
+        float right = Input.GetAxis("GhostRightTrigger"); //0 -> 1
         float combination = left + right;
         //inputX = Input.GetAxis("LeftTrigger");
         float inputZ = combination;

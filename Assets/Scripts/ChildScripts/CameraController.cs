@@ -14,7 +14,7 @@ public class CameraController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         float camYAxis = Input.GetAxis("VerticalCamera");
-        Debug.Log(Mathf.Abs(transform.eulerAngles.x));
+        //Debug.Log(Mathf.Abs(transform.eulerAngles.x));
         transform.Rotate(new Vector3(turningSpeed * camYAxis, 0, 0));
         /**
         if (Mathf.Abs(transform.localEulerAngles.x) > 50)
