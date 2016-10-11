@@ -34,7 +34,7 @@ public class RoomParenter : MonoBehaviour {
             }
             else if(verticalInfo.collider.gameObject.name == "GridBase" && transform.name == "ChildPlayer")
             {
-                GameObject.Find("Defeat").GetComponent<Text>().text = "Child Escaped!";
+                //GameObject.Find("Defeat").GetComponent<Text>().text = "Child Escaped!";
             }
 
             if (transform.name == "GravityToy")
