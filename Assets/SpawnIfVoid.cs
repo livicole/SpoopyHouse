@@ -4,6 +4,7 @@ using System.Collections;
 public class SpawnIfVoid : MonoBehaviour {
 
     Vector3[] cardinals;
+    public LayerMask layermask;
 
 
     // Use this for initialization
@@ -15,6 +16,8 @@ public class SpawnIfVoid : MonoBehaviour {
         cardinals[2] = new Vector3(0, 0, -1); // Down direction
         cardinals[3] = new Vector3(-1, 0, 0);// Left direction
         */
+        //Physics.IgnoreLayerCollision(18, 14, true);
+        //Physics.IgnoreLayerCollision(18, 12, true);
     }
 	
 	// Update is called once per frame
@@ -25,19 +28,20 @@ public class SpawnIfVoid : MonoBehaviour {
             RaycastHit rayHitInfo = new RaycastHit();
             if(Physics.Raycast(rayDetect, out rayHitInfo, 5f))
             {
-                Debug.Log(rayHitInfo.collider.name);
+                Debug.Log("Door next to something: " + rayHitInfo.collider.name);
                 empty = false;
             }
 
 
         if(empty)
         {
-            GetComponent<MeshRenderer>().enabled = true;
+            transform.FindChild("DoubleDoor_Full").FindChild("doubleDoor").GetComponent<Rigidbody>().constraints =
+                    RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
         }
         else
         {
-            GetComponent<MeshRenderer>().enabled = false;
+            transform.FindChild("DoubleDoor_Full").FindChild("doubleDoor").GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         }
-        Debug.Log(empty);
+        //Debug.Log(empty);
     }
 }

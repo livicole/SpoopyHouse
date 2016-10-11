@@ -21,8 +21,8 @@ public class Dresser : MonoBehaviour
 		Ray drawerRay = new Ray (flaslight.position, flaslight.forward);
 		RaycastHit rayHitInfo = new RaycastHit ();
 		if (Physics.Raycast (drawerRay, out rayHitInfo, 1000f)) {
-			Debug.DrawRay (flaslight.position, flaslight.forward * 1000f, Color.blue);
-			Debug.Log (rayHitInfo.collider.name);
+			//Debug.DrawRay (flaslight.position, flaslight.forward * 1000f, Color.blue);
+			//Debug.Log (rayHitInfo.collider.name);
 			if (rayHitInfo.collider.gameObject  == this.gameObject) {
 				Debug.Log ("it hit");
 				if (Input.GetButton ("Ghost Button A")) {

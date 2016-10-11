@@ -178,7 +178,7 @@ public class GridLocker : MonoBehaviour {
             Vector3 tempCoordinate = coordinate - updateVector;
             if(tempCoordinate.x < 0 || tempCoordinate.y < 0 || tempCoordinate.z < 0)
             {
-                Debug.Log("ERROR!!! Shouldn't allow negative coordinate values!");
+                //Debug.Log("ERROR!!! Shouldn't allow negative coordinate values!");
             }
             tempList.Add(tempCoordinate);
         }
@@ -190,7 +190,7 @@ public class GridLocker : MonoBehaviour {
     {
         foreach(Vector3 temp in coordinatesOccupied)
         {
-            Debug.Log("Adding: " + (temp + gridLocation));
+            //Debug.Log("Adding: " + (temp + gridLocation));
             gridInfo.AddBlock(temp + gridLocation, roomNumber);
         }
     }
@@ -200,7 +200,7 @@ public class GridLocker : MonoBehaviour {
     {
         foreach(Vector3 temp in coordinatesOccupied)
         {
-            Debug.Log("Removing: " + (temp + gridLocation));
+            //Debug.Log("Removing: " + (temp + gridLocation));
             gridInfo.RemoveBlock(temp + gridLocation, roomNumber);
         }
     }
