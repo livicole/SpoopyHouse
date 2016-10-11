@@ -24,7 +24,7 @@ public class RoomParenter : MonoBehaviour {
                 Transform temp = verticalInfo.collider.transform;
                 while(temp.gameObject.layer != 14)
                 {
-                    Debug.Log("Changing parent from: " + temp.name);
+                    //Debug.Log("Changing parent from: " + temp.name);
                     temp = temp.parent;
                     
                 }
@@ -34,7 +34,7 @@ public class RoomParenter : MonoBehaviour {
             }
             else if(verticalInfo.collider.gameObject.name == "GridBase" && transform.name == "ChildPlayer")
             {
-                GameObject.Find("Defeat").GetComponent<Text>().text = "Child Escaped!";
+                //GameObject.Find("Defeat").GetComponent<Text>().text = "Child Escaped!";
             }
 
             if (transform.name == "GravityToy")
