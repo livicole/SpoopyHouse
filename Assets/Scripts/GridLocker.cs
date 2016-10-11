@@ -108,7 +108,7 @@ public class GridLocker : MonoBehaviour {
         if (CalculateGridToReal(gridLocation) != transform.position && locked)
         {
             currentLocation = CalculateGridToReal(gridLocation);
-            Debug.Log(CalculateGridToReal(gridLocation));
+            //Debug.Log(CalculateGridToReal(gridLocation));
             transform.position = currentLocation;
             NavMeshBuilder.BuildNavMesh();
 
