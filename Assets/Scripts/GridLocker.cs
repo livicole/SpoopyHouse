@@ -18,6 +18,7 @@ public class GridLocker : MonoBehaviour {
     7. Parent the big, invisible box to the empty object. Parent all small boxes inside the invisible box.
 
     **/
+
     Transform gridBase;
 
     [SerializeField]

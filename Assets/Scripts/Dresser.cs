@@ -5,7 +5,7 @@ public class Dresser : MonoBehaviour
 {
 
 	private Animator dresserAnimator;
-	public Transform flaslight; 
+	Transform flashlight; 
 	public static bool drawerOpen;
 
 	// Use this for initialization
@@ -13,12 +13,14 @@ public class Dresser : MonoBehaviour
 	{
 		drawerOpen = false;
 		dresserAnimator = GetComponent<Animator> ();
+        flashlight = GameObject.Find("Flashlight").transform;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		Ray drawerRay = new Ray (flaslight.position, flaslight.forward);
+        flashlight = GameObject.Find("Flashlight").transform;
+        Ray drawerRay = new Ray (flashlight.position, flashlight.forward);
 		RaycastHit rayHitInfo = new RaycastHit ();
 		if (Physics.Raycast (drawerRay, out rayHitInfo, 1000f)) {
 			//Debug.DrawRay (flaslight.position, flaslight.forward * 1000f, Color.blue);

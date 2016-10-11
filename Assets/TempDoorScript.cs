@@ -20,6 +20,6 @@ public class TempDoorScript : MonoBehaviour {
 
     void OnTriggerExit(Collider col)
     {
-        transform.FindChild("Cube").gameObject.SetActive(true);
+        transform.FindChild("Cube").gameObject.SetActive(true); 
     }
 }
