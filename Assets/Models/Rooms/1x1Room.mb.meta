@@ -1,15 +1,113 @@
 fileFormatVersion: 2
-guid: 8ca065f0be43d3d408be9b3ef43affc7
-timeCreated: 1476382785
+guid: c79688282acd0564ba105c8706ef2a22
+timeCreated: 1476386582
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: group
+    100004: pasted__polySurface15
+    100006: pasted__polySurface16
+    100008: pasted__polySurface17
+    100010: pasted__polySurface18
+    100012: pasted__polySurface19
+    100014: pasted__polySurface20
+    100016: pasted__polySurface21
+    100018: pasted__polySurface22
+    100020: pasted__polySurface23
+    100022: pasted__polySurface24
+    100024: pasted__polySurface25
+    100026: pasted__polySurface26
+    100028: pasted__polySurface27
+    100030: pasted__polySurface28
+    100032: pasted__polySurface29
+    100034: pasted__polySurface30
+    100036: pasted__polySurface31
+    100038: pasted__polySurface32
+    100040: pasted__polySurface33
+    100042: pasted__polySurface34
+    100044: pasted__polySurface4
+    100046: pasted__polySurface5
+    100048: pasted__polySurface6
+    100050: pasted__polySurface7
+    100052: pasted__transform10
+    100054: pasted__transform11
+    100056: pasted__transform12
+    100058: pasted__transform13
+    100060: pasted__transform14
+    100062: pasted__transform15
+    100064: pasted__transform16
+    100066: pasted__transform17
+    100068: pasted__transform18
+    100070: pasted__transform19
+    100072: pasted__transform20
+    100074: pasted__transform21
+    100076: pasted__transform22
+    100078: pasted__transform23
+    100080: pasted__transform24
+    100082: pasted__transform25
+    100084: pasted__transform26
+    100086: pasted__transform27
+    100088: pasted__transform28
+    100090: pasted__transform29
+    100092: pasted__transform30
+    100094: pasted__transform31
+    100096: pasted__transform32
+    100098: pCube12
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: pCube7
+    400002: group
+    400004: pasted__polySurface15
+    400006: pasted__polySurface16
+    400008: pasted__polySurface17
+    400010: pasted__polySurface18
+    400012: pasted__polySurface19
+    400014: pasted__polySurface20
+    400016: pasted__polySurface21
+    400018: pasted__polySurface22
+    400020: pasted__polySurface23
+    400022: pasted__polySurface24
+    400024: pasted__polySurface25
+    400026: pasted__polySurface26
+    400028: pasted__polySurface27
+    400030: pasted__polySurface28
+    400032: pasted__polySurface29
+    400034: pasted__polySurface30
+    400036: pasted__polySurface31
+    400038: pasted__polySurface32
+    400040: pasted__polySurface33
+    400042: pasted__polySurface34
+    400044: pasted__polySurface4
+    400046: pasted__polySurface5
+    400048: pasted__polySurface6
+    400050: pasted__polySurface7
+    400052: pasted__transform10
+    400054: pasted__transform11
+    400056: pasted__transform12
+    400058: pasted__transform13
+    400060: pasted__transform14
+    400062: pasted__transform15
+    400064: pasted__transform16
+    400066: pasted__transform17
+    400068: pasted__transform18
+    400070: pasted__transform19
+    400072: pasted__transform20
+    400074: pasted__transform21
+    400076: pasted__transform22
+    400078: pasted__transform23
+    400080: pasted__transform24
+    400082: pasted__transform25
+    400084: pasted__transform26
+    400086: pasted__transform27
+    400088: pasted__transform28
+    400090: pasted__transform29
+    400092: pasted__transform30
+    400094: pasted__transform31
+    400096: pasted__transform32
+    400098: pCube12
+    2300000: pCube12
+    3300000: pCube12
+    4300000: pCube12
     9500000: //RootNode
   materials:
     importMaterials: 1
