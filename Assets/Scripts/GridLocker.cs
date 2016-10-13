@@ -43,10 +43,13 @@ public class GridLocker : MonoBehaviour {
     private Vector3 currentLocation, adjustmentVector, originalRoomFillerPosition, currentRoomFillerPosition;
     private GridInfo gridInfo;
     private float blockLength;
+    public float moveTick;
+    private float moveCooldownTimer = 0;
+    private float rotationY;
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         gridBase = GameObject.Find("GridBase").transform;
       
         currentLocation = CalculateGridToReal(gridLocation);
@@ -63,9 +66,18 @@ public class GridLocker : MonoBehaviour {
         gridInfo = gridBase.GetComponent<GridInfo>();
         blockLength = gridInfo.blockLength;
         Physics.IgnoreLayerCollision(12, 14, true);
+        moveTick = gridInfo.moveTick;
+
+       
+        Debug.Log(gridLocation);
+        Debug.Log(CalculateGridToReal(gridLocation));
+        transform.position = CalculateGridToReal(gridLocation);
+        rotationY = transform.eulerAngles.y;
+        //UpdateNewBlocks();
+
     }
 
-    // Update is called once per framsdse
+    // Update is called once per framsdses
     void Update()
     {
         gridBase = GameObject.Find("GridBase").transform;
@@ -73,14 +85,28 @@ public class GridLocker : MonoBehaviour {
         //adjustmentVector = transform.FindChild("RoomFiller").localScale / 2;
         //3adjustmentVector = new Vector3(adjustmentVector.z, 0, adjustmentVector.x);
         //Debug.Log(gridBase.GetComponent<GridInfo>().gridMax);
-
+        if (moveCooldownTimer <= moveTick && moveCooldownTimer >= 0)
+        {
+            moveCooldownTimer -= Time.deltaTime;
+        }
 
         //Move pivot on rotation.   
-        float rotationY = transform.eulerAngles.y;
+        
+        if (rotationY == 360)
+        {
+            rotationY = 0;
+        }
+        if (rotationY == -90)
+        {
+            rotationY = 270;
+        }
 
+        Debug.Log("Rotation: " + rotationY);
         if (rotationY == 0)
         {
             //Debug.Log("No rotation.");
+            Vector3 newFillerPosition = originalRoomFillerPosition;
+            Debug.Log("Original: " + originalRoomFillerPosition);
             transform.FindChild("RoomFiller").localPosition = originalRoomFillerPosition;
         }
         else if (rotationY == 90)
@@ -93,6 +119,7 @@ public class GridLocker : MonoBehaviour {
         }
         else if (rotationY == 180)
         {
+           
             Vector3 newFillerPosition = originalRoomFillerPosition;
             newFillerPosition = new Vector3(-newFillerPosition.x, newFillerPosition.y, -newFillerPosition.z);
             transform.FindChild("RoomFiller").localPosition = newFillerPosition;
@@ -105,6 +132,9 @@ public class GridLocker : MonoBehaviour {
             transform.FindChild("RoomFiller").localPosition = newFillerPosition;
         }
 
+
+
+        /*
         //Check if gridLocation is not where our real position is AND we are supposed to be locked, recalculate grid position.
         if (CalculateGridToReal(gridLocation) != transform.position && locked)
         {
@@ -144,6 +174,37 @@ public class GridLocker : MonoBehaviour {
                 }
                 transform.eulerAngles = oldRotation;
             }
+        }*/
+    }
+
+    public void MoveDirection( Vector3 direction)
+    {
+        //Move when off cooldown, so it moves one block every second.
+        if(moveCooldownTimer <= 0)
+        {
+            //Remove from the list.
+            ClearOldBlocks();
+            //Check if we can move the origin in that direction.
+            if(CheckAvailableOrigin(gridLocation + direction, gridLocation) == gridLocation + direction)
+            {
+                gridLocation += direction;
+                gridLocation = new Vector3(Mathf.Clamp(gridLocation.x, gridInfo.gridMin, gridInfo.gridMax), 0, Mathf.Clamp(gridLocation.z, gridInfo.gridMin, gridInfo.gridMax));
+                Debug.Log(gridLocation);
+                //Check if available with updated gridlocation.
+                if (CheckFullAvailability(coordinatesOccupied))
+                {
+                    transform.position = CalculateGridToReal(gridLocation);
+                    Debug.Log(transform.position);
+                    //Reset cooldown since we actually moved.
+                    moveCooldownTimer = moveTick;
+                    
+                }
+                else //Not available. Revert to old grid location.
+                {
+                    gridLocation -= direction;
+                }     
+            }
+            UpdateNewBlocks();
         }
     }
 
@@ -183,7 +244,7 @@ public class GridLocker : MonoBehaviour {
             }
             tempList.Add(tempCoordinate);
         }
-
+        rotationY += rotation;
         coordinatesOccupied = tempList;
     }
 
@@ -233,7 +294,7 @@ public class GridLocker : MonoBehaviour {
             {
                 Vector3 coordinate = new Vector3(location.x, location.y, location.z);
 
-                if (coordinate.Equals(takenBlock + CalculateRealToGrid(transform.position)))
+                if (coordinate.Equals(takenBlock + gridLocation))
                 {
                     //Debug.Log("Offshoot block: " + (takenBlock + CalculateRealToGrid(transform.position)) + " can't be moved here: " + location);
                     return false;
