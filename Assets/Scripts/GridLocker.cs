@@ -222,11 +222,11 @@ public class GridLocker : MonoBehaviour {
         //Find the bottom left coordinate.
         foreach (Vector3 coordinate in newList)
         {
-            if(coordinate.x < lowestX)
+            if (coordinate.x < lowestX)
             {
                 lowestX = coordinate.x;
             }
-            if(coordinate.z < lowestZ)
+            if (coordinate.z < lowestZ)
             {
                 lowestZ = coordinate.z;
             }
@@ -238,14 +238,21 @@ public class GridLocker : MonoBehaviour {
         foreach (Vector3 coordinate in newList)
         {
             Vector3 tempCoordinate = coordinate - updateVector;
-            if(tempCoordinate.x < 0 || tempCoordinate.y < 0 || tempCoordinate.z < 0)
+            if (tempCoordinate.x < 0 || tempCoordinate.y < 0 || tempCoordinate.z < 0)
             {
                 //Debug.Log("ERROR!!! Shouldn't allow negative coordinate values!");
             }
             tempList.Add(tempCoordinate);
         }
-        rotationY += rotation;
-        coordinatesOccupied = tempList;
+        
+        if (CheckFullAvailability(tempList))
+        {
+            Debug.Log("Rotate!");
+            coordinatesOccupied = tempList;
+            transform.localEulerAngles += new Vector3(0, rotation, 0);
+            rotationY += rotation;
+        }
+       
     }
 
     public void UpdateNewBlocks()
