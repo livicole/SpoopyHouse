@@ -45,10 +45,11 @@ public class GridLocker : MonoBehaviour {
     private float blockLength;
     public float moveTick;
     private float moveCooldownTimer = 0;
+    private float rotationY;
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         gridBase = GameObject.Find("GridBase").transform;
       
         currentLocation = CalculateGridToReal(gridLocation);
@@ -71,7 +72,7 @@ public class GridLocker : MonoBehaviour {
         Debug.Log(gridLocation);
         Debug.Log(CalculateGridToReal(gridLocation));
         transform.position = CalculateGridToReal(gridLocation);
-
+        rotationY = transform.eulerAngles.y;
         //UpdateNewBlocks();
 
     }
@@ -90,11 +91,22 @@ public class GridLocker : MonoBehaviour {
         }
 
         //Move pivot on rotation.   
-        float rotationY = transform.eulerAngles.y;
+        
+        if (rotationY == 360)
+        {
+            rotationY = 0;
+        }
+        if (rotationY == -90)
+        {
+            rotationY = 270;
+        }
 
+        Debug.Log("Rotation: " + rotationY);
         if (rotationY == 0)
         {
             //Debug.Log("No rotation.");
+            Vector3 newFillerPosition = originalRoomFillerPosition;
+            Debug.Log("Original: " + originalRoomFillerPosition);
             transform.FindChild("RoomFiller").localPosition = originalRoomFillerPosition;
         }
         else if (rotationY == 90)
@@ -107,8 +119,9 @@ public class GridLocker : MonoBehaviour {
         }
         else if (rotationY == 180)
         {
+           
             Vector3 newFillerPosition = originalRoomFillerPosition;
-            newFillerPosition = new Vector3(-newFillerPosition.x, newFillerPosition.y, -newFillerPosition.z);
+            newFillerPosition = new Vector3(-newFillerPosition.x, newFillerPosition.y, 0);
             transform.FindChild("RoomFiller").localPosition = newFillerPosition;
         }
         else if (rotationY == 270)
@@ -231,7 +244,7 @@ public class GridLocker : MonoBehaviour {
             }
             tempList.Add(tempCoordinate);
         }
-
+        rotationY += rotation;
         coordinatesOccupied = tempList;
     }
 
