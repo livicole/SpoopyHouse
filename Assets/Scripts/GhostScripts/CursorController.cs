@@ -254,7 +254,7 @@ public class CursorController : MonoBehaviour {
             {
                 if (Input.GetButtonDown("GhostLeftBumper"))
                 {
-                    holdingObject.transform.eulerAngles += new Vector3(0, -90, 0);
+                   
                     holdingObject.GetComponent<GridLocker>().ClearOldBlocks();
                     holdingObject.GetComponent<GridLocker>().UpdateCoordinates(-90);
                     holdingObject.GetComponent<GridLocker>().UpdateNewBlocks();
@@ -263,7 +263,7 @@ public class CursorController : MonoBehaviour {
                 }
                 if (Input.GetButtonDown("GhostRightBumper"))
                 {
-                    holdingObject.transform.eulerAngles += new Vector3(0, 90, 0);
+                   
                     holdingObject.GetComponent<GridLocker>().ClearOldBlocks();
                     holdingObject.GetComponent<GridLocker>().UpdateCoordinates(90);
                     holdingObject.GetComponent<GridLocker>().UpdateNewBlocks();
