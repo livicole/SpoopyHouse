@@ -14,7 +14,9 @@ public class GridInfo : MonoBehaviour {
     [SerializeField]
     public float blockLength;
 
-    public float gridMax, gridMin;
+    public float gridMax, gridMin = 0;
+
+    public float moveTick;
 
 	// Use this for initialization
 	void Start () {

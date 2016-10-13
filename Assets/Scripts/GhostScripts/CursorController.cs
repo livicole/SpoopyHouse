@@ -75,6 +75,7 @@ public class CursorController : MonoBehaviour {
 
 	public Image BButton, AButton;
 	public Sprite bButtonUp, bButtonDown, aButtonUp, aButtonDown;
+    private bool holdingRoom = false;
 
 
 
@@ -183,6 +184,7 @@ public class CursorController : MonoBehaviour {
         }
         //Debug.Log("Input Mode: " + inputMode);
         //Moving rooms using button A
+     
         if (Input.GetButtonDown("Ghost Button A"))
         {
             //Debug.Log("A BUTTON");
@@ -193,6 +195,10 @@ public class CursorController : MonoBehaviour {
                 //Layer 14 is gridlocked.
                 if (verticalRayHit.collider.gameObject.layer == 14)
                 {
+                    holdingRoom = true;
+                    holdingObject = verticalRayHit.collider.gameObject.transform.parent;
+                    Debug.Log(holdingObject);
+                    /* Old pickup code.
                     Debug.Log("Correct");
                     holdingObject = verticalRayHit.collider.gameObject.transform.parent;
                     Debug.Log(holdingObject);
@@ -202,7 +208,7 @@ public class CursorController : MonoBehaviour {
                     detectionSphere.GetComponent<DetectionSphereController>().invisGrid = false;
                     holdingObject.transform.GetComponent<GridLocker>().locked = false;
                     holdingObject.transform.GetComponent<GridLocker>().ClearOldBlocks();
-
+                    */
                 }
             }
         }
@@ -210,6 +216,9 @@ public class CursorController : MonoBehaviour {
         {
             if (holdingObject != null)
             {
+                holdingRoom = false;
+                holdingObject = null;
+                /*
                 holdingObject.parent = null;
                 //holdingObject.gameObject.layer = 14; 
                 //holdingObject.GetComponent<GridLocker>().locked = true;
@@ -217,9 +226,57 @@ public class CursorController : MonoBehaviour {
                 holdingObject.transform.GetComponent<GridLocker>().UpdateNewBlocks();
                 detectionSphere.GetComponent<DetectionSphereController>().invisGrid = true;
                 holdingObject = null;
-
+                */
             }
         }
+
+        if (holdingRoom)
+        {
+            //Debug.Log("Holding the room.");
+            GetComponent<Image>().enabled = false;
+            Vector3 directionToMove;
+            //Read in left stick input. If it moves record it. If both X and Y are used, then set Y to 0 and assume using X.
+            float roundedX = inputX, roundedY= -inputY;
+            //Debug.Log("RoundedX: " + roundedX + " RoundedY: " + roundedY);
+            if (roundedX > 0) { roundedX = 1; } else if (roundedX < 0) { roundedX = -1; }
+            if (roundedY > 0) { roundedY = 1; } else if (roundedY < 0) { roundedY = -1; }
+            if(roundedX != 0  && roundedY != 0)
+            {
+                roundedY = 0;
+            }
+            else if(roundedX != 0 || roundedY != 0)
+            {
+                directionToMove = new Vector3(roundedX, 0, roundedY);
+                Debug.Log("Moving the room! Direction: " + directionToMove);
+                holdingObject.GetComponent<GridLocker>().MoveDirection(directionToMove);
+            }
+            if (rotateTimer >= rotateCD)
+            {
+                if (Input.GetButtonDown("GhostLeftBumper"))
+                {
+                    holdingObject.transform.eulerAngles += new Vector3(0, -90, 0);
+                    holdingObject.GetComponent<GridLocker>().ClearOldBlocks();
+                    holdingObject.GetComponent<GridLocker>().UpdateCoordinates(-90);
+                    holdingObject.GetComponent<GridLocker>().UpdateNewBlocks();
+                        //holdingObject.GetChild(0).transform.eulerAngles += new Vector3(0, -90, 0);
+                        rotateTimer = 0;
+                }
+                if (Input.GetButtonDown("GhostRightBumper"))
+                {
+                    holdingObject.transform.eulerAngles += new Vector3(0, 90, 0);
+                    holdingObject.GetComponent<GridLocker>().ClearOldBlocks();
+                    holdingObject.GetComponent<GridLocker>().UpdateCoordinates(90);
+                    holdingObject.GetComponent<GridLocker>().UpdateNewBlocks();
+                    //holdingObject.GetChild(0).transform.eulerAngles += new Vector3(0, 90, 0);
+                    rotateTimer = 0;
+                }
+            }
+        }
+        else
+        {
+            GetComponent<Image>().enabled = true;
+        }
+
         //Smashing things with button B
         if (Input.GetButton("Ghost Button B"))
         {
@@ -257,46 +314,7 @@ public class CursorController : MonoBehaviour {
         {
             rotateTimer += Time.deltaTime;
         }
-        
 
-        if (holdingObject != null)
-        {
-            if (rotateTimer >= rotateCD)
-            {
-                if (Input.GetButtonDown("GhostLeftBumper"))
-                {
-                    //Layer 14 is gridlocked items i.e. rooms
-                    if (holdingObject.gameObject.layer == 14)
-                    {
-                        holdingObject.transform.eulerAngles += new Vector3(0, -90, 0);
-                        holdingObject.GetComponent<GridLocker>().UpdateCoordinates(-90);
-                        //holdingObject.GetChild(0).transform.eulerAngles += new Vector3(0, -90, 0);
-                        rotateTimer = 0;
-
-                    }
-                    else
-                    {
-                        holdingObject.eulerAngles += new Vector3(0, -90, 0);
-
-                    }
-
-                }
-                if (Input.GetButtonDown("GhostRightBumper"))
-                {
-                    if (holdingObject.gameObject.layer == 14)
-                    {
-                        holdingObject.transform.eulerAngles += new Vector3(0, 90, 0);
-                        holdingObject.GetComponent<GridLocker>().UpdateCoordinates(90);
-                        //holdingObject.GetChild(0).transform.eulerAngles += new Vector3(0, 90, 0);
-                        rotateTimer = 0;
-                    }
-                    else
-                    {
-                        holdingObject.eulerAngles += new Vector3(0, 90, 0);
-                    }
-                }
-            }
-        }
 
         //Debug.Log("Input Mode: " + inputMode);
 
