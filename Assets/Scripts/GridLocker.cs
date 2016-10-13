@@ -121,7 +121,7 @@ public class GridLocker : MonoBehaviour {
         {
            
             Vector3 newFillerPosition = originalRoomFillerPosition;
-            newFillerPosition = new Vector3(-newFillerPosition.x, newFillerPosition.y, 0);
+            newFillerPosition = new Vector3(-newFillerPosition.x, newFillerPosition.y, -newFillerPosition.z);
             transform.FindChild("RoomFiller").localPosition = newFillerPosition;
         }
         else if (rotationY == 270)
@@ -294,7 +294,7 @@ public class GridLocker : MonoBehaviour {
             {
                 Vector3 coordinate = new Vector3(location.x, location.y, location.z);
 
-                if (coordinate.Equals(takenBlock + CalculateRealToGrid(transform.position)))
+                if (coordinate.Equals(takenBlock + gridLocation))
                 {
                     //Debug.Log("Offshoot block: " + (takenBlock + CalculateRealToGrid(transform.position)) + " can't be moved here: " + location);
                     return false;
