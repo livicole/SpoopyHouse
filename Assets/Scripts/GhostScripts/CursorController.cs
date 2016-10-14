@@ -100,6 +100,35 @@ public class CursorController : MonoBehaviour {
         newPos = new Vector3(Mathf.Clamp(newPos.x, minX, maxX),
                             Mathf.Clamp(newPos.y, minY, maxY),
                             0);
+        GhostCameraController ghostCamController = ghostCam.GetComponent<GhostCameraController>();
+        
+        if (newPos.x <= minX + 0.1f)
+        {
+            ghostCam.transform.position = new Vector3(ghostCam.transform.position.x - (ghostCamController.panSpeed * Time.deltaTime), 
+                ghostCam.transform.position.y, 
+                ghostCam.transform.position.z); 
+        }
+        else if(newPos.x >= maxX - 0.1f)
+        {
+            ghostCam.transform.position = new Vector3(ghostCam.transform.position.x + (ghostCamController.panSpeed * Time.deltaTime),
+               ghostCam.transform.position.y,
+               ghostCam.transform.position.z);
+        }
+
+        if (newPos.y <= minY + 0.1f)
+        {
+            ghostCam.transform.position = new Vector3(ghostCam.transform.position.x,
+                ghostCam.transform.position.y,
+                ghostCam.transform.position.z - (ghostCamController.panSpeed * Time.deltaTime));
+        }
+        else if (newPos.y >= maxY - 0.1f)
+        {
+            ghostCam.transform.position = new Vector3(ghostCam.transform.position.x,
+                ghostCam.transform.position.y,
+                ghostCam.transform.position.z + (ghostCamController.panSpeed * Time.deltaTime));
+        }
+
+
         GetComponent<RectTransform>().position = newPos;
 
 

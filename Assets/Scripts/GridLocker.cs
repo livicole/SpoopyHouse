@@ -69,8 +69,8 @@ public class GridLocker : MonoBehaviour {
         moveTick = gridInfo.moveTick;
 
        
-        Debug.Log(gridLocation);
-        Debug.Log(CalculateGridToReal(gridLocation));
+        //Debug.Log(gridLocation);
+        //Debug.Log(CalculateGridToReal(gridLocation));
         transform.position = CalculateGridToReal(gridLocation);
         rotationY = transform.eulerAngles.y;
         //UpdateNewBlocks();
@@ -100,35 +100,41 @@ public class GridLocker : MonoBehaviour {
         {
             rotationY = 270;
         }
+        float positiveMultiplier, negativeMultiplier;
+        //Positive should be smaller.
+        positiveMultiplier = 0.999f;//.0009995f;
+        //Negative should be more negative;
+        negativeMultiplier = 0.999f;//0.9990005f;
 
-        Debug.Log("Rotation: " + rotationY);
+        //Debug.Log("Rotation: " + rotationY);
         if (rotationY == 0)
         {
             //Debug.Log("No rotation.");
             Vector3 newFillerPosition = originalRoomFillerPosition;
-            Debug.Log("Original: " + originalRoomFillerPosition);
-            transform.FindChild("RoomFiller").localPosition = originalRoomFillerPosition;
+            //Debug.Log("Original: " + originalRoomFillerPosition);
+            newFillerPosition = new Vector3(newFillerPosition.x * positiveMultiplier, newFillerPosition.y, newFillerPosition.z * positiveMultiplier);
+            transform.FindChild("RoomFiller").localPosition = newFillerPosition;
         }
         else if (rotationY == 90)
         {
             //Debug.Log("detected rotation");
             Vector3 newFillerPosition = originalRoomFillerPosition;
-            Vector3 fillerScale = transform.FindChild("RoomFiller").localScale;
-            newFillerPosition += new Vector3(-(fillerScale.x), 0, 0);
+           
+            newFillerPosition = new Vector3(-newFillerPosition.x * negativeMultiplier, newFillerPosition.y, newFillerPosition.z * positiveMultiplier);
             transform.FindChild("RoomFiller").localPosition = newFillerPosition;
         }
         else if (rotationY == 180)
         {
            
             Vector3 newFillerPosition = originalRoomFillerPosition;
-            newFillerPosition = new Vector3(-newFillerPosition.x, newFillerPosition.y, -newFillerPosition.z);
+            newFillerPosition = new Vector3(-newFillerPosition.x * negativeMultiplier, newFillerPosition.y, -newFillerPosition.z * negativeMultiplier);
             transform.FindChild("RoomFiller").localPosition = newFillerPosition;
         }
         else if (rotationY == 270)
         {
             Vector3 newFillerPosition = originalRoomFillerPosition;
-            Vector3 fillerScale = transform.FindChild("RoomFiller").localScale;
-            newFillerPosition += new Vector3(0, 0, -fillerScale.z);
+
+            newFillerPosition = new Vector3(newFillerPosition.x * positiveMultiplier, newFillerPosition.y, -newFillerPosition.z * negativeMultiplier);
             transform.FindChild("RoomFiller").localPosition = newFillerPosition;
         }
 
@@ -196,7 +202,7 @@ public class GridLocker : MonoBehaviour {
                     transform.position = CalculateGridToReal(gridLocation);
                     Debug.Log(transform.position);
                     //Reset cooldown since we actually moved.
-                    moveCooldownTimer = moveTick;
+                    moveCooldownTimer = moveTick;   
                     
                 }
                 else //Not available. Revert to old grid location.
