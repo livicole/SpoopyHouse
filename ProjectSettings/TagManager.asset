@@ -11,6 +11,7 @@ TagManager:
   - RoomFiller
   - Drawer
   - Decor
+  - Door
   layers:
   - Default
   - TransparentFX

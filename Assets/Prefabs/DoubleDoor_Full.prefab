@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 431524}
   - 95: {fileID: 9503562}
+  - 54: {fileID: 54000010121290188}
   m_Layer: 0
   m_Name: doorFrame
   m_TagString: Untagged
@@ -25,9 +26,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 491938}
   - 114: {fileID: 114000012520966280}
+  - 65: {fileID: 65000011921028300}
   m_Layer: 0
   m_Name: DoubleDoor_Full
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,10 +118,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155690}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.005, y: -3.6006, z: 4.89}
-  m_LocalScale: {x: 0.24921484, y: 0.26479074, z: 0.24921481}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 160.215, y: 1.9471779, z: 72.363}
+  m_LocalScale: {x: 0.24921484, y: 0.26479074, z: 0.61791945}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_Children:
   - {fileID: 431524}
   - {fileID: 436438}
@@ -218,11 +220,11 @@ HingeJoint:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 195354}
-  m_ConnectedBody: {fileID: 0}
+  m_ConnectedBody: {fileID: 54000010121290188}
   m_Anchor: {x: 2.34, y: 0.62, z: -0.57}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.58107615, y: -4.8589697, z: 4.251845}
+  m_ConnectedAnchor: {x: 2.0658844, y: 0.19156244, z: -0.22764738}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -301,6 +303,33 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 155690}
   m_IsPrefabParent: 1
+--- !u!54 &54000010121290188
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 142494}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &65000011921028300
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155690}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.2694519, y: 3.4881568, z: 3.0835485}
+  m_Center: {x: -0.023113245, y: 0.39571664, z: -0.56269807}
 --- !u!114 &114000012520966280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -312,3 +341,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afc1edde1e2bd7043a4ad9efb8eaa0d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  otherDoor: {fileID: 0}
+  priority: 0
