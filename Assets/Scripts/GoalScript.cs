@@ -11,21 +11,12 @@ public class GoalScript : MonoBehaviour {
 	void Start () {
         winText = GameObject.Find("WinText").GetComponent<Text>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-      
-
-
-	}
 
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.name == "ChildPlayer")
         {
-            //Debug.Log("Its the kid!");
-            if (col.gameObject.GetComponentInChildren<InventoryScript>().inventoryList.Count == 3)
+			if (col.gameObject.GetComponentInChildren<NewInventoryScript>().itemsCollected == 5)
             {
                 //Debug.Log("He won!");
                 winText.text = "You Win!";

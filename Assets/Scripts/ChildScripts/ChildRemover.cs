@@ -14,7 +14,7 @@ public class ChildRemover : MonoBehaviour {
     private float destroyTimer;
     private bool coolingdown;
 
-    public Transform inventoryObject;
+    //public Transform inventoryObject;
 
 
 	// Use this for initialization
