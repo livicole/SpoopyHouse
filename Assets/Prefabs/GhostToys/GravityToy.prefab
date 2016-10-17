@@ -27,7 +27,7 @@ GameObject:
   - 114: {fileID: 114000013534631102}
   m_Layer: 11
   m_Name: GravityToy
-  m_TagString: Untagged
+  m_TagString: Toys
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

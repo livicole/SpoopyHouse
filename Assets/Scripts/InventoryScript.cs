@@ -13,20 +13,7 @@ public class InventoryScript : MonoBehaviour
 
     public Transform child;
 
-    public Text activeItemText;
-
-    // Use this for initialization
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-
-    }
+	public Text activeItemText;
 
     public void pickUp(GameObject myObject)
     {
@@ -35,7 +22,7 @@ public class InventoryScript : MonoBehaviour
 
         if (inventoryList.Count == 1)
         {
-            activeItemText.text = myObject.name;
+           // activeItemText.text = myObject.name;
         }
 
         Debug.Log("Picked up " + myObject.name + " and I'm holding " + inventoryList.Count + " items. It's at position " + inventoryList.IndexOf(myObject));
@@ -58,7 +45,7 @@ public class InventoryScript : MonoBehaviour
             if (inventoryList.Count == 0)
             {
                 activeObjectIndex = 0;
-                activeItemText.text = "";
+                //activeItemText.text = "";
             }
             else
             {
@@ -67,7 +54,7 @@ public class InventoryScript : MonoBehaviour
                 {
                     activeObjectIndex = inventoryList.Count - 1;
                 }
-                activeItemText.text = inventoryList[activeObjectIndex].name;
+                //activeItemText.text = inventoryList[activeObjectIndex].name;
             }
         }
 
@@ -85,7 +72,7 @@ public class InventoryScript : MonoBehaviour
             {
                 activeObjectIndex = 0;
             }
-            activeItemText.text = inventoryList[activeObjectIndex].name;
+            //activeItemText.text = inventoryList[activeObjectIndex].name;
         }
     }
 

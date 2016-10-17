@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour {
 
     public bool invert = false;
 
+	public AudioSource walkingSound;
+
     // Use this for initialization
     void Start()
     {
@@ -44,7 +46,13 @@ public class PlayerMovement : MonoBehaviour {
        
         transform.Rotate(new Vector3(0, turningSpeed * camXAxis, 0));
 
-
+		if (charCont.velocity == Vector3.zero) {
+			walkingSound.enabled = false;
+			walkingSound.loop = false;
+		} else {
+			walkingSound.enabled = true;
+			walkingSound.loop = true;
+		}
 
 	}
 }
