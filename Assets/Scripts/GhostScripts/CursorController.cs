@@ -248,8 +248,17 @@ public class CursorController : MonoBehaviour {
         {
             if (holdingObject != null)
             {
+                foreach (Transform myDoor in holdingObject.transform.GetChild(0))
+                {
+                    if (myDoor.tag == "Door")
+                    {
+
+                        myDoor.GetComponent<DoorScript>().ResetDoors();
+                    }
+                }
                 holdingRoom = false;
                 holdingObject = null;
+
                 /*
                 holdingObject.parent = null;
                 //holdingObject.gameObject.layer = 14; 
