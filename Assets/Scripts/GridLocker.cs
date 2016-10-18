@@ -19,6 +19,8 @@ public class GridLocker : MonoBehaviour {
 
     **/
 
+    GameObject[] doors = new GameObject[30];
+
     Transform gridBase;
 
     [SerializeField]
@@ -46,7 +48,7 @@ public class GridLocker : MonoBehaviour {
     public float moveTick;
     private float moveCooldownTimer = 0;
     private float rotationY;
-
+    int counter;
 
     // Use this for initialization
     void Start () {
@@ -74,6 +76,18 @@ public class GridLocker : MonoBehaviour {
         transform.position = CalculateGridToReal(gridLocation);
         rotationY = transform.eulerAngles.y;
         //UpdateNewBlocks();
+
+        Debug.Log(name);
+        /*foreach (Transform child in transform.GetChild(0))
+        {
+            if (child.tag == "Door")
+            {
+                child.GetComponent<DoorScript>().ResetDoors();
+            }
+
+        }*/
+
+
 
     }
 
