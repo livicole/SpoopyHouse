@@ -59,6 +59,9 @@ public class CursorController : MonoBehaviour {
     [SerializeField]
     float rotateCD;
 
+    [SerializeField]
+    float panEdgeSize;
+
     /** Redundant lists.
     //Dpad Up
     [SerializeField]
@@ -102,26 +105,26 @@ public class CursorController : MonoBehaviour {
                             0);
         GhostCameraController ghostCamController = ghostCam.GetComponent<GhostCameraController>();
         
-        if (newPos.x <= minX + 0.1f)
+        if (newPos.x <= minX + panEdgeSize)
         {
             ghostCam.transform.position = new Vector3(ghostCam.transform.position.x - (ghostCamController.panSpeed * Time.deltaTime), 
                 ghostCam.transform.position.y, 
                 ghostCam.transform.position.z); 
         }
-        else if(newPos.x >= maxX - 0.1f)
+        else if(newPos.x >= maxX - panEdgeSize)
         {
             ghostCam.transform.position = new Vector3(ghostCam.transform.position.x + (ghostCamController.panSpeed * Time.deltaTime),
                ghostCam.transform.position.y,
                ghostCam.transform.position.z);
         }
 
-        if (newPos.y <= minY + 0.1f)
+        if (newPos.y <= minY + panEdgeSize)
         {
             ghostCam.transform.position = new Vector3(ghostCam.transform.position.x,
                 ghostCam.transform.position.y,
                 ghostCam.transform.position.z - (ghostCamController.panSpeed * Time.deltaTime));
         }
-        else if (newPos.y >= maxY - 0.1f)
+        else if (newPos.y >= maxY - panEdgeSize)
         {
             ghostCam.transform.position = new Vector3(ghostCam.transform.position.x,
                 ghostCam.transform.position.y,
