@@ -24,7 +24,6 @@ GameObject:
   - 23: {fileID: 23000014052807364}
   - 114: {fileID: 114000010532556046}
   - 114: {fileID: 114000012496344090}
-  - 114: {fileID: 114000013534631102}
   m_Layer: 11
   m_Name: GravityToy
   m_TagString: Toys
@@ -40,7 +39,7 @@ Transform:
   m_GameObject: {fileID: 1000012905271300}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.97, y: 0, z: 10.58}
-  m_LocalScale: {x: 1, y: 1, z: 2.5377383}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -106,18 +105,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasSetParent: 0
   theRoom: {fileID: 0}
+  decoration: {fileID: 0}
 --- !u!114 &114000012496344090
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012905271300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 791eb0f562324bb4aad890ab492898d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114000013534631102
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

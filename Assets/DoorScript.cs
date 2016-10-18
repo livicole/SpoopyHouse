@@ -51,29 +51,32 @@ public class DoorScript : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
-        
-        if (col.transform.parent.tag == "Door")
+        if (col.transform.parent != null)
         {
-            Debug.Log("I am" + name + " colliding with " + col.transform.parent.transform.name);
-            if (priority > col.GetComponentInParent<DoorScript>().priority)
+            if (col.transform.parent.tag == "Door")
             {
-                if (col.GetComponentInParent<DoorScript>().otherDoor != null)
+                //Debug.Log("I am" + name + " colliding with " + col.transform.parent.transform.name);
+                if (priority > col.GetComponentInParent<DoorScript>().priority)
                 {
-                    Debug.Log("ERROR! Reading an old other door. Replacing....");
-                    col.GetComponentInParent<DoorScript>().otherDoor.GetComponent<DoorScript>().ResetThisDoor();
-                    col.GetComponentInParent<DoorScript>().otherDoor.GetComponent<DoorScript>().check = true;
+                    if (col.GetComponentInParent<DoorScript>().otherDoor != null)
+                    {
+                        //Debug.Log("ERROR! Reading an old other door. Replacing....");
+                        col.GetComponentInParent<DoorScript>().otherDoor.GetComponent<DoorScript>().ResetThisDoor();
+                        col.GetComponentInParent<DoorScript>().otherDoor.GetComponent<DoorScript>().check = true;
+                    }
+                    otherDoor = col.transform.parent.transform;
+                    col.GetComponentInParent<DoorScript>().otherDoor = transform;
+                    //Debug.Log("I am " + gameObject.name + " with P" + priority + " being turned off by " + col.transform.parent.name + " with P" + priority);
+                    col.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                    gameObject.SetActive(false);
                 }
-                otherDoor = col.transform.parent.transform;
-                col.GetComponentInParent<DoorScript>().otherDoor = transform;
-                Debug.Log("I am " + gameObject.name + " with P" + priority + " being turned off by " + col.transform.parent.name + " with P" + priority);
-                col.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-                gameObject.SetActive(false);
-            }
-            else
-            {
-                Debug.Log("Incorrect object: " + col.transform.parent.name);
+                else
+                {
+                    // Debug.Log("Incorrect object: " + col.transform.parent.name);
+                }
             }
         }
+        
     }
 
     public void ResetDoors()
@@ -86,7 +89,7 @@ public class DoorScript : MonoBehaviour {
 
     public void ResetThisDoor()
     {
-        Debug.Log("Resetting " + name);
+        //Debug.Log("Resetting " + name);
         gameObject.SetActive(true);
         transform.GetChild(1).transform.localPosition = originalOrientation;
         transform.GetChild(1).GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;

@@ -257,19 +257,19 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 295393964}
+    m_TransformParent: {fileID: 619302404}
     m_Modifications:
     - target: {fileID: 4000012532947956, guid: dd5f3977f7ae9c042802121835007f55, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000012532947956, guid: dd5f3977f7ae9c042802121835007f55, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.69
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000012532947956, guid: dd5f3977f7ae9c042802121835007f55, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000012532947956, guid: dd5f3977f7ae9c042802121835007f55, type: 2}
       propertyPath: m_LocalRotation.x
@@ -289,7 +289,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012532947956, guid: dd5f3977f7ae9c042802121835007f55, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 114000013681549728, guid: dd5f3977f7ae9c042802121835007f55,
         type: 2}
@@ -321,7 +321,21 @@ Prefab:
       propertyPath: Lights.Array.data[0]
       value: 
       objectReference: {fileID: 1012603518}
-    m_RemovedComponents: []
+    - target: {fileID: 4000012532947956, guid: dd5f3977f7ae9c042802121835007f55, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.03336671
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012532947956, guid: dd5f3977f7ae9c042802121835007f55, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.16000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012532947956, guid: dd5f3977f7ae9c042802121835007f55, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.03336671
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114000013529485478, guid: dd5f3977f7ae9c042802121835007f55, type: 2}
+    - {fileID: 114000013723218082, guid: dd5f3977f7ae9c042802121835007f55, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: dd5f3977f7ae9c042802121835007f55, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &37487599 stripped
@@ -1628,7 +1642,6 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 619302404}
-  - {fileID: 37487599}
   m_Father: {fileID: 0}
   m_RootOrder: 14
 --- !u!1001 &317217405
@@ -3498,6 +3511,7 @@ Transform:
   - {fileID: 1925703066}
   - {fileID: 1778073497}
   - {fileID: 1115786268}
+  - {fileID: 37487599}
   m_Father: {fileID: 295393964}
   m_RootOrder: 0
 --- !u!23 &619302405
@@ -8773,6 +8787,7 @@ MonoBehaviour:
   - {fileID: 4000010258436626, guid: 757eafe1b1bd9c64dbfa76565674d5e5, type: 2}
   - {fileID: 4000013749453258, guid: c41cf47b9fea09d4c93f31a3b0d8d5a5, type: 2}
   rotateCD: 0.5
+  panEdgeSize: 0
   BButton: {fileID: 0}
   AButton: {fileID: 0}
   bButtonUp: {fileID: 21300000, guid: 6dffdc349d65d63418c30c7abb06d838, type: 3}

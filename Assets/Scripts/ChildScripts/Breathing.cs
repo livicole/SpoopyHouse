@@ -18,7 +18,7 @@ public class Breathing : MonoBehaviour {
 		foreach (GameObject target in ghostToys) {
 
 			float distance = Vector3.Distance (target.transform.position, transform.position);
-			Debug.Log (distance + " to " + target.name);
+			//Debug.Log (distance + " to " + target.name);
 			if (distance <= 20) {
 				if (!hasBeenPlaying) {
 					hasBeenPlaying = true;
