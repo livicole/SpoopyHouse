@@ -9,8 +9,9 @@ public class DoorTracker : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         doors = GameObject.FindGameObjectsWithTag("Door");
-        for (int i=0; i<10; i++)
+        for (int i=0; i<22; i++)
         {
+
             doors[i].GetComponent<DoorScript>().priority = i;
         }
 	}
