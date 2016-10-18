@@ -51,6 +51,7 @@ GameObject:
   - 114: {fileID: 114000011026276748}
   - 114: {fileID: 114000013681549728}
   - 114: {fileID: 114000013723218082}
+  - 114: {fileID: 114000013529485478}
   m_Layer: 17
   m_Name: ChildPlayer
   m_TagString: Untagged
@@ -308,7 +309,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1783710276512a4438fa8d35f2102266, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -522,6 +523,17 @@ MonoBehaviour:
   minimumAngle: 50
   maximumAngle: 100
   timeFromMinToMax: 2
+--- !u!114 &114000013529485478
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012645851668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 791eb0f562324bb4aad890ab492898d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000013662028082
 MonoBehaviour:
   m_ObjectHideFlags: 1
