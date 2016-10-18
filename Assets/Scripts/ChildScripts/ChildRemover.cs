@@ -14,7 +14,7 @@ public class ChildRemover : MonoBehaviour {
     private float destroyTimer;
     private bool coolingdown;
 
-    public Transform inventoryObject;
+    //public Transform inventoryObject;
 
 
 	// Use this for initialization
@@ -58,11 +58,10 @@ public class ChildRemover : MonoBehaviour {
 
                     else if (forwardRayHit.collider.gameObject.tag == "Item")
                     {
-
-                        inventoryObject.GetComponent<InventoryScript>().pickUp(forwardRayHit.collider.gameObject);
-
+                        //inventoryObject.GetComponent<InventoryScript>().pickUp(forwardRayHit.collider.gameObject);
                         forwardRayHit.collider.gameObject.SetActive(false);
-                        
+						NewInventoryScript invScript = this.gameObject.GetComponent<NewInventoryScript> ();
+						invScript.itemsCollected++;                        
                     }
                 }
             }
@@ -71,15 +70,16 @@ public class ChildRemover : MonoBehaviour {
                 Debug.Log("On Cooldown");
             }
         }
+	}
 
-        if (Input.GetButtonDown("Drop"))
-        {
-            inventoryObject.GetComponent<InventoryScript>().dropItem();
-        }
-
-        if (Input.GetButtonDown("Cycle"))
-        {
-            inventoryObject.GetComponent<InventoryScript>().cycleActiveItem();
-        }
-    }
+//        if (Input.GetButtonDown("Drop"))
+//        {
+//            inventoryObject.GetComponent<InventoryScript>().dropItem();
+//        }
+//
+//        if (Input.GetButtonDown("Cycle"))
+//        {
+//            inventoryObject.GetComponent<InventoryScript>().cycleActiveItem();
+//        }
+//    }
 }

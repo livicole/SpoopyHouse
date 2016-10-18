@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011755816180}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: group1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010575740036}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: transform8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   - 33: {fileID: 33000012842060192}
   - 23: {fileID: 23000012118510276}
   - 64: {fileID: 64000012937991894}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_BottleLong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011676740676}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011970075744}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: side1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013495392780}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: cryExportNode_Mannequin_Torso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010668986610}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   - 33: {fileID: 33000010080531752}
   - 23: {fileID: 23000012183114006}
   - 64: {fileID: 64000011266104202}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Pillow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   - 33: {fileID: 33000011127078580}
   - 65: {fileID: 65000013151624474}
   - 23: {fileID: 23000010136318410}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013495642638}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: transform7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012986565668}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +193,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010998083506}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011836516936}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pCube3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010969167510}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Candle Full Lit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +238,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012290386664}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pCube4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,7 +253,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010920061850}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: transform6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013709298430}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: collision 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,7 +284,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010613632554}
   - 95: {fileID: 95000010274331426}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: grandfatherClock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +302,7 @@ GameObject:
   - 33: {fileID: 33000012852721210}
   - 23: {fileID: 23000013483434660}
   - 64: {fileID: 64000010951767804}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Candle_half
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -317,7 +317,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012559336032}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,7 +332,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011767604830}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,7 +347,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012916413168}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pCube1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,7 +365,7 @@ GameObject:
   - 33: {fileID: 33000012928492174}
   - 23: {fileID: 23000013602426560}
   - 64: {fileID: 64000010082652112}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Pillow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -381,7 +381,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010485600730}
   - 95: {fileID: 95000013812767606}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: cardboardBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -401,7 +401,7 @@ GameObject:
   - 65: {fileID: 65000012974087510}
   - 95: {fileID: 95000012239179144}
   - 114: {fileID: 114000012896875868}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: DRAWER
   m_TagString: Drawer
   m_Icon: {fileID: 0}
@@ -416,7 +416,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010328098478}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: transform6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -431,7 +431,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013867883814}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: CandleCup (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,7 +446,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011867611064}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pCube5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -463,7 +463,7 @@ GameObject:
   - 4: {fileID: 4000010430138014}
   - 33: {fileID: 33000013266735666}
   - 23: {fileID: 23000012323300946}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__pCube6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -478,7 +478,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012597267918}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: group2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -493,7 +493,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013607838136}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: transform2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -508,7 +508,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013454505010}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: transform5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -523,7 +523,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010711564746}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: cryExportNode_Mannequin_Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -541,6 +541,7 @@ GameObject:
   - 33: {fileID: 33000010479817112}
   - 23: {fileID: 23000012645947908}
   - 95: {fileID: 95000011561288902}
+  - 64: {fileID: 64000014011396126}
   m_Layer: 0
   m_Name: 3x3Room2
   m_TagString: Untagged
@@ -559,7 +560,7 @@ GameObject:
   - 33: {fileID: 33000013659538464}
   - 23: {fileID: 23000011280218986}
   - 64: {fileID: 64000010574835612}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_TableRound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -574,7 +575,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012010631802}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -589,8 +590,27 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013888656872}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface13
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000011117247376
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000013044407898}
+  - 33: {fileID: 33000011269383936}
+  - 65: {fileID: 65000012733278680}
+  - 23: {fileID: 23000013969644146}
+  - 122: {fileID: 122000010671551308}
+  m_Layer: 0
+  m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -604,7 +624,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012964097002}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -637,7 +657,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011594136050}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: CandleSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -652,7 +672,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010814902540}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -667,7 +687,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010757900844}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TableRound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -682,7 +702,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012973498646}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: group2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -702,7 +722,7 @@ GameObject:
   - 65: {fileID: 65000011994208178}
   - 95: {fileID: 95000010910454048}
   - 114: {fileID: 114000012755592660}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: DRAWER
   m_TagString: Drawer
   m_Icon: {fileID: 0}
@@ -720,7 +740,7 @@ GameObject:
   - 33: {fileID: 33000014014037986}
   - 23: {fileID: 23000012455474128}
   - 64: {fileID: 64000011364048668}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_CandleStand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -735,7 +755,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012550805282}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: CandleStand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -750,7 +770,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012555724566}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -765,7 +785,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000014189342046}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: transform9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -780,7 +800,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012403284886}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bottle Long
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -795,7 +815,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013338405426}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: collision 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -810,7 +830,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012375877190}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: group1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -825,7 +845,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011560079764}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -843,7 +863,7 @@ GameObject:
   - 33: {fileID: 33000012414325230}
   - 23: {fileID: 23000013612426048}
   - 64: {fileID: 64000013101148562}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Pillow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -858,7 +878,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000014026134416}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pCube4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -873,7 +893,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012055045462}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -891,7 +911,7 @@ GameObject:
   - 33: {fileID: 33000010733464998}
   - 23: {fileID: 23000011121427852}
   - 64: {fileID: 64000012066549378}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_TableRound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -907,7 +927,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013652064840}
   - 95: {fileID: 95000012887462982}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: MannequinFemale (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -922,7 +942,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011946255442}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Pillow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -937,7 +957,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012479190016}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -952,7 +972,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012091637496}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: clock1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -967,7 +987,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010302969342}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -985,7 +1005,7 @@ GameObject:
   - 33: {fileID: 33000014246003246}
   - 65: {fileID: 65000012314116792}
   - 23: {fileID: 23000011168121016}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1000,7 +1020,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011320055396}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1015,7 +1035,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010539926130}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Candle Half Lit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1033,7 +1053,7 @@ GameObject:
   - 33: {fileID: 33000012599602250}
   - 65: {fileID: 65000013257312360}
   - 23: {fileID: 23000012929232420}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1051,7 +1071,7 @@ GameObject:
   - 33: {fileID: 33000012415500128}
   - 65: {fileID: 65000013477469302}
   - 23: {fileID: 23000011395016444}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Mirror (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1067,7 +1087,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011441420352}
   - 95: {fileID: 95000013148343158}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: cardboardBox (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1085,7 +1105,7 @@ GameObject:
   - 33: {fileID: 33000012931647432}
   - 65: {fileID: 65000011949252072}
   - 23: {fileID: 23000013608750556}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1118,7 +1138,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012769599238}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: SouthBedDecor
   m_TagString: Decor
   m_Icon: {fileID: 0}
@@ -1135,7 +1155,7 @@ GameObject:
   - 4: {fileID: 4000010643910682}
   - 33: {fileID: 33000011621102454}
   - 23: {fileID: 23000013029108664}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__pCube6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1150,7 +1170,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012940018214}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pCube2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1165,7 +1185,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011065142344}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1182,7 +1202,7 @@ GameObject:
   - 4: {fileID: 4000013374834060}
   - 33: {fileID: 33000013744960428}
   - 23: {fileID: 23000013043348684}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__pCube1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1197,7 +1217,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013433538232}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1212,7 +1232,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012513619470}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1227,7 +1247,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012961513052}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: transform9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1242,7 +1262,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011274524336}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1259,7 +1279,7 @@ GameObject:
   - 4: {fileID: 4000010239294100}
   - 33: {fileID: 33000012766916944}
   - 23: {fileID: 23000014147708722}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__pCube1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1274,7 +1294,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010327701668}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1289,7 +1309,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013445270566}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: cryExportNode_Mannequin_Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1304,7 +1324,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011187800904}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: transform7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1319,7 +1339,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010131229650}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: cryExportNode_Mannequin_Headless
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1334,7 +1354,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010197933768}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Bottle Short
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1349,7 +1369,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000014190496508}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1364,7 +1384,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011419379658}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1379,7 +1399,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011627869914}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: transform8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1394,7 +1414,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011263256340}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TableRound (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1412,7 +1432,7 @@ GameObject:
   - 33: {fileID: 33000013258804712}
   - 65: {fileID: 65000011602016522}
   - 23: {fileID: 23000010631423482}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Mirror (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1427,7 +1447,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012344565364}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1442,7 +1462,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011189549288}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Mannequin_Arm_group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1457,7 +1477,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012728520254}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1472,7 +1492,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013808493858}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1490,7 +1510,7 @@ GameObject:
   - 33: {fileID: 33000013998736782}
   - 65: {fileID: 65000013709606310}
   - 23: {fileID: 23000010650255852}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1505,7 +1525,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012360918392}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1523,7 +1543,7 @@ GameObject:
   - 33: {fileID: 33000013524314818}
   - 23: {fileID: 23000012572625808}
   - 64: {fileID: 64000013189476834}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_BottleShort
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1538,7 +1558,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011731751876}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: transform5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1553,7 +1573,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010405854612}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: collision 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1571,7 +1591,7 @@ GameObject:
   - 33: {fileID: 33000010365925212}
   - 65: {fileID: 65000010746708274}
   - 23: {fileID: 23000012196220486}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Mirror (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1586,7 +1606,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011399229290}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1601,7 +1621,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011642122794}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1616,7 +1636,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010161102490}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1631,7 +1651,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010006069974}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1648,7 +1668,7 @@ GameObject:
   - 4: {fileID: 4000010573920736}
   - 33: {fileID: 33000013330501634}
   - 23: {fileID: 23000011366163632}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pCylinder2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1663,7 +1683,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012972851674}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1678,7 +1698,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011697258470}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: dresser1drawer (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1696,7 +1716,7 @@ GameObject:
   - 33: {fileID: 33000013981562396}
   - 23: {fileID: 23000012064580920}
   - 64: {fileID: 64000013749389844}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Candle_full
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1711,7 +1731,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013652752374}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1726,7 +1746,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012287795352}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1741,7 +1761,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011032617686}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Pillow (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1756,7 +1776,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012095838242}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1771,7 +1791,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011171169542}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pCube3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1786,7 +1806,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011755985662}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1802,7 +1822,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010583049872}
   - 95: {fileID: 95000013568785478}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: grandfatherClock (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1817,7 +1837,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012503553330}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1835,7 +1855,7 @@ GameObject:
   - 33: {fileID: 33000012086665344}
   - 23: {fileID: 23000010862559838}
   - 64: {fileID: 64000012368200296}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_CandleCup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1850,7 +1870,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012462791732}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Pillow (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1865,7 +1885,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010407673016}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: dresser1drawer (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1880,7 +1900,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012212164672}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1897,7 +1917,7 @@ GameObject:
   - 4: {fileID: 4000012261747358}
   - 33: {fileID: 33000010677495674}
   - 23: {fileID: 23000013658073656}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Mannequin_Headless
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1912,7 +1932,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000014087312948}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1929,7 +1949,7 @@ GameObject:
   - 4: {fileID: 4000011105804560}
   - 33: {fileID: 33000010693735568}
   - 23: {fileID: 23000012054244404}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pCylinder2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1944,7 +1964,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011169141310}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1959,7 +1979,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010359066806}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pCube5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1974,7 +1994,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010588493646}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Mannequin_Leg_group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1992,7 +2012,7 @@ GameObject:
   - 33: {fileID: 33000010832307520}
   - 65: {fileID: 65000014100055294}
   - 23: {fileID: 23000011988956430}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2007,7 +2027,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010064450028}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Mannequin_Headless_group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2022,9 +2042,28 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012478354122}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: clock1
   m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000013790410538
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000010046861668}
+  - 33: {fileID: 33000013895668164}
+  - 65: {fileID: 65000012960673486}
+  - 23: {fileID: 23000013580145952}
+  - 82: {fileID: 82000012235028822}
+  m_Layer: 13
+  m_Name: KeyItem
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2037,7 +2076,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011050703474}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: imagePlane2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2052,7 +2091,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000014263361336}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pCube2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2067,7 +2106,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010631734712}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: side1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2082,7 +2121,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011341454698}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: imagePlane2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2097,7 +2136,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012950283356}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pCube1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2112,7 +2151,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011901250746}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: transform2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2127,7 +2166,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011849434072}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Mannequin_Torso_group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2142,7 +2181,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010500973818}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: CandleSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2157,7 +2196,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013553258360}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2172,7 +2211,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011597068426}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2187,7 +2226,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010634671738}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2207,6 +2246,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000010583049872}
   m_RootOrder: 4
+--- !u!4 &4000010046861668
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013790410538}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -0.823, y: -2.668, z: -3.75}
+  m_LocalScale: {x: 0.10010011, y: 0.1, z: 0.10010011}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 4000013044407898}
+  m_Father: {fileID: 4000012769599238}
+  m_RootOrder: 0
 --- !u!4 &4000010064450028
 Transform:
   m_ObjectHideFlags: 1
@@ -2263,7 +2316,7 @@ Transform:
   m_Children:
   - {fileID: 4000012404839634}
   m_Father: {fileID: 4000012769599238}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!4 &4000010216738958
 Transform:
   m_ObjectHideFlags: 1
@@ -2349,10 +2402,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011062322938}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -19.9, y: 0, z: 60}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.033333335, y: 0.2, z: 0.033333335}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000012769599238}
   m_Father: {fileID: 0}
@@ -2400,7 +2453,7 @@ Transform:
   - {fileID: 4000012597267918}
   - {fileID: 4000010305384894}
   m_Father: {fileID: 4000012769599238}
-  m_RootOrder: 12
+  m_RootOrder: 13
 --- !u!4 &4000010430138014
 Transform:
   m_ObjectHideFlags: 1
@@ -2427,7 +2480,7 @@ Transform:
   m_Children:
   - {fileID: 4000010430138014}
   m_Father: {fileID: 4000012769599238}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!4 &4000010500973818
 Transform:
   m_ObjectHideFlags: 1
@@ -2519,7 +2572,7 @@ Transform:
   - {fileID: 4000010573920736}
   - {fileID: 4000010631734712}
   m_Father: {fileID: 4000012769599238}
-  m_RootOrder: 14
+  m_RootOrder: 15
 --- !u!4 &4000010588493646
 Transform:
   m_ObjectHideFlags: 1
@@ -2558,7 +2611,7 @@ Transform:
   - {fileID: 4000011105804560}
   - {fileID: 4000011970075744}
   m_Father: {fileID: 4000012769599238}
-  m_RootOrder: 18
+  m_RootOrder: 19
 --- !u!4 &4000010631734712
 Transform:
   m_ObjectHideFlags: 1
@@ -2632,13 +2685,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011249583324}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.937389, y: -0.9539953, z: 4.3155994}
+  m_LocalPosition: {x: 12.937389, y: -1.13, z: 4.3155994}
   m_LocalScale: {x: 0.699355, y: 0.699355, z: 0.699355}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000013348558288}
   m_Father: {fileID: 4000012769599238}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!4 &4000010814902540
 Transform:
   m_ObjectHideFlags: 1
@@ -2820,13 +2873,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012296475028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.937389, y: -0.96099526, z: -1.2889729}
+  m_LocalPosition: {x: 12.937389, y: -1.14, z: -1.2889729}
   m_LocalScale: {x: 0.699355, y: 0.699355, z: 0.699355}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000011727354342}
   m_Father: {fileID: 4000012769599238}
-  m_RootOrder: 10
+  m_RootOrder: 11
 --- !u!4 &4000011274524336
 Transform:
   m_ObjectHideFlags: 1
@@ -2861,7 +2914,7 @@ Transform:
   - {fileID: 4000011032617686}
   - {fileID: 4000012462791732}
   m_Father: {fileID: 4000012769599238}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!4 &4000011290108010
 Transform:
   m_ObjectHideFlags: 1
@@ -2955,7 +3008,7 @@ Transform:
   m_Children:
   - {fileID: 4000010643910682}
   m_Father: {fileID: 4000012769599238}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!4 &4000011560079764
 Transform:
   m_ObjectHideFlags: 1
@@ -3053,7 +3106,7 @@ Transform:
   - {fileID: 4000012973498646}
   - {fileID: 4000011882778016}
   m_Father: {fileID: 4000012769599238}
-  m_RootOrder: 11
+  m_RootOrder: 12
 --- !u!4 &4000011727354342
 Transform:
   m_ObjectHideFlags: 1
@@ -3350,7 +3403,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_Children: []
   m_Father: {fileID: 4000012769599238}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!4 &4000012320495782
 Transform:
   m_ObjectHideFlags: 1
@@ -3417,7 +3470,7 @@ Transform:
   m_Children:
   - {fileID: 4000012320495782}
   m_Father: {fileID: 4000012769599238}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!4 &4000012404839634
 Transform:
   m_ObjectHideFlags: 1
@@ -3514,7 +3567,7 @@ Transform:
   - {fileID: 4000011594136050}
   - {fileID: 4000013263788466}
   m_Father: {fileID: 4000012769599238}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!4 &4000012555724566
 Transform:
   m_ObjectHideFlags: 1
@@ -3549,12 +3602,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011813759128}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.26, y: 0.17, z: -12.19}
+  m_LocalPosition: {x: 23.26, y: -1.07, z: -12.19}
   m_LocalScale: {x: 1.6310812, y: 2.3109488, z: 0.1564788}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000012769599238}
-  m_RootOrder: 13
+  m_RootOrder: 14
 --- !u!4 &4000012597267918
 Transform:
   m_ObjectHideFlags: 1
@@ -3619,6 +3672,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 4000010046861668}
   - {fileID: 4000012307808436}
   - {fileID: 4000011286750818}
   - {fileID: 4000012550805282}
@@ -3749,6 +3803,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000012503553330}
   m_RootOrder: 0
+--- !u!4 &4000013044407898
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011117247376}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 200, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000010046861668}
+  m_RootOrder: 0
 --- !u!4 &4000013083491612
 Transform:
   m_ObjectHideFlags: 1
@@ -3756,12 +3823,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012367623022}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.73, y: 0.17, z: -12.19}
+  m_LocalPosition: {x: 16.73, y: -1.07, z: -12.19}
   m_LocalScale: {x: 1.6310811, y: 2.3109488, z: 0.1564788}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000012769599238}
-  m_RootOrder: 16
+  m_RootOrder: 17
 --- !u!4 &4000013147572448
 Transform:
   m_ObjectHideFlags: 1
@@ -3769,12 +3836,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012597122768}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.9, y: 0.17, z: -12.19}
+  m_LocalPosition: {x: 9.9, y: -1.07, z: -12.19}
   m_LocalScale: {x: 1.631081, y: 2.3109488, z: 0.1564788}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000012769599238}
-  m_RootOrder: 17
+  m_RootOrder: 18
 --- !u!4 &4000013263788466
 Transform:
   m_ObjectHideFlags: 1
@@ -3800,7 +3867,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_Children: []
   m_Father: {fileID: 4000012769599238}
-  m_RootOrder: 15
+  m_RootOrder: 16
 --- !u!4 &4000013338405426
 Transform:
   m_ObjectHideFlags: 1
@@ -3962,7 +4029,7 @@ Transform:
   - {fileID: 4000010711564746}
   - {fileID: 4000013495392780}
   m_Father: {fileID: 4000012769599238}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!4 &4000013652752374
 Transform:
   m_ObjectHideFlags: 1
@@ -4036,14 +4103,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010920297302}
   m_LocalRotation: {x: 0, y: 0.36421043, z: 0, w: 0.93131673}
-  m_LocalPosition: {x: 13.119793, y: -0.19900686, z: 4.527133}
+  m_LocalPosition: {x: 13.119793, y: -0.39, z: 4.527133}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000010500973818}
   - {fileID: 4000012718223786}
   m_Father: {fileID: 4000012769599238}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!4 &4000013888656872
 Transform:
   m_ObjectHideFlags: 1
@@ -4893,6 +4960,35 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!23 &23000013580145952
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013790410538}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: f31163de881715649aafaaa04e0fb1c3, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!23 &23000013602426560
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -5000,6 +5096,35 @@ MeshRenderer:
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!23 &23000013969644146
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011117247376}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: f31163de881715649aafaaa04e0fb1c3, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_SelectedWireframeHidden: 0
@@ -5122,6 +5247,13 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010339196566}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &33000011269383936
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011117247376}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33000011621102454
 MeshFilter:
@@ -5263,6 +5395,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012006890256}
   m_Mesh: {fileID: 4300000, guid: b78a55bb873d5e04386eed86fef079a6, type: 3}
+--- !u!33 &33000013895668164
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013790410538}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33000013981562396
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -5423,6 +5562,18 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: e9dcdb949b4d69e4ea7f4b8a05daeb15, type: 3}
+--- !u!64 &64000014011396126
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011062322938}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: 62d3ed38c3863e2488fe7fae884b9c16, type: 3}
 --- !u!65 &65000010111860832
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -5489,6 +5640,30 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011749939870}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65000012733278680
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011117247376}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65000012960673486
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013790410538}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -5579,6 +5754,100 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &82000012235028822
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013790410538}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1f3c4c2ac10d2aa418825d9f26b57189, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 25
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0.42172998
+      inSlope: -1.8346491
+      outSlope: -1.8346491
+      tangentMode: 0
+    - time: 0.11911384
+      value: 0.25822785
+      inSlope: -0.90083706
+      outSlope: -0.90083706
+      tangentMode: 0
+    - time: 0.25057662
+      value: 0.15274264
+      inSlope: -1.0250082
+      outSlope: -1.0250082
+      tangentMode: 0
+    - time: 0.45329446
+      value: 0.058333352
+      inSlope: -0.2860566
+      outSlope: -0.2860566
+      tangentMode: 0
+    - time: 0.7579775
+      value: 0.016666668
+      inSlope: -0.20923753
+      outSlope: -0.20923753
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: -0.31201154
+      outSlope: -0.31201154
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95000010274331426
 Animator:
   serializedVersion: 3
@@ -5737,3 +6006,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f011f83bfff09248a4af3b46c975068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!122 &122000010671551308
+Halo:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011117247376}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4278250235
+  m_Size: 2
