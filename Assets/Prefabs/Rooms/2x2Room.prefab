@@ -22,7 +22,7 @@ GameObject:
   - 33: {fileID: 33000014023201776}
   - 23: {fileID: 23000012374089864}
   - 64: {fileID: 64000012193767458}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Tomato
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010608697882}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - 33: {fileID: 33000013775668886}
   - 23: {fileID: 23000011514745884}
   - 64: {fileID: 64000013360125604}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Candle_half
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011198005620}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - 4: {fileID: 4000013029240166}
   - 33: {fileID: 33000013803504868}
   - 23: {fileID: 23000012164666594}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_AnimalRug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   - 33: {fileID: 33000010296632834}
   - 23: {fileID: 23000013853619974}
   - 64: {fileID: 64000012089870902}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - 33: {fileID: 33000013823370624}
   - 23: {fileID: 23000011907566506}
   - 64: {fileID: 64000010339286758}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Apple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013878756582}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,7 +153,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010322016120}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012059083862}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: group2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,8 +183,27 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011090256968}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform9
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000010233725350
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000011578794714}
+  - 33: {fileID: 33000010058420918}
+  - 65: {fileID: 65000012789254678}
+  - 23: {fileID: 23000013437475690}
+  - 122: {fileID: 122000013361640744}
+  m_Layer: 0
+  m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -198,7 +217,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010541097882}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,7 +235,7 @@ GameObject:
   - 33: {fileID: 33000012264408340}
   - 23: {fileID: 23000013287742294}
   - 64: {fileID: 64000013274725324}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_BottleShort
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +253,7 @@ GameObject:
   - 33: {fileID: 33000013402335430}
   - 23: {fileID: 23000014000588722}
   - 64: {fileID: 64000012176352746}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Candle_half
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,7 +268,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010770321654}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +283,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010261177206}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +298,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011874696224}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +313,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011060731774}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,7 +345,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013868718140}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -341,7 +360,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011445503774}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -390,9 +409,28 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011547699158}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: group2
   m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000010401778536
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000012000699100}
+  - 33: {fileID: 33000012707988790}
+  - 65: {fileID: 65000011675007048}
+  - 23: {fileID: 23000012646020866}
+  - 82: {fileID: 82000013738828582}
+  m_Layer: 13
+  m_Name: KeyItem
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -408,7 +446,7 @@ GameObject:
   - 33: {fileID: 33000013360259780}
   - 23: {fileID: 23000011242411312}
   - 64: {fileID: 64000010705519106}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_TableExtraLong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,7 +464,7 @@ GameObject:
   - 33: {fileID: 33000013492699022}
   - 23: {fileID: 23000013392653662}
   - 64: {fileID: 64000013668877060}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Cheese
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -441,7 +479,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012922785530}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -459,7 +497,7 @@ GameObject:
   - 33: {fileID: 33000010145762954}
   - 23: {fileID: 23000010616709426}
   - 64: {fileID: 64000014109240794}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -508,7 +546,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010561702332}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -543,7 +581,7 @@ GameObject:
   - 33: {fileID: 33000010870220010}
   - 23: {fileID: 23000014154390044}
   - 64: {fileID: 64000011440711652}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Apple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -575,7 +613,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011330436528}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -593,7 +631,7 @@ GameObject:
   - 33: {fileID: 33000012239900704}
   - 23: {fileID: 23000011961990706}
   - 64: {fileID: 64000012025024136}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_ChairSimple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -625,7 +663,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010057937750}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -640,7 +678,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012735165338}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -658,7 +696,7 @@ GameObject:
   - 33: {fileID: 33000011813585376}
   - 23: {fileID: 23000010957679578}
   - 64: {fileID: 64000013771846346}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Pantry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -673,7 +711,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011395566242}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -691,7 +729,7 @@ GameObject:
   - 33: {fileID: 33000013400347690}
   - 23: {fileID: 23000013385921698}
   - 64: {fileID: 64000011804630858}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -706,7 +744,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012455668760}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -721,7 +759,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012495443816}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -736,7 +774,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011595502136}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -754,7 +792,7 @@ GameObject:
   - 33: {fileID: 33000012237208326}
   - 23: {fileID: 23000011034501550}
   - 64: {fileID: 64000010967302198}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_ChairSimple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -772,7 +810,7 @@ GameObject:
   - 33: {fileID: 33000011283500600}
   - 23: {fileID: 23000010784578128}
   - 64: {fileID: 64000010363781580}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_ChairSimple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -790,7 +828,7 @@ GameObject:
   - 33: {fileID: 33000012138979832}
   - 23: {fileID: 23000010406164708}
   - 64: {fileID: 64000010482028358}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Barrel (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -808,7 +846,7 @@ GameObject:
   - 33: {fileID: 33000011540950800}
   - 23: {fileID: 23000013707386748}
   - 64: {fileID: 64000010682785704}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_FlourSack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -823,7 +861,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013251592332}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -875,7 +913,7 @@ GameObject:
   - 33: {fileID: 33000011849154548}
   - 23: {fileID: 23000010718233896}
   - 64: {fileID: 64000010435839168}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Barrel (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -893,7 +931,7 @@ GameObject:
   - 33: {fileID: 33000013815858014}
   - 23: {fileID: 23000011101388020}
   - 64: {fileID: 64000012816619916}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_CupMetal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -911,7 +949,7 @@ GameObject:
   - 33: {fileID: 33000010786469680}
   - 23: {fileID: 23000011196754336}
   - 64: {fileID: 64000010675798592}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -926,7 +964,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013505280730}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -944,7 +982,7 @@ GameObject:
   - 33: {fileID: 33000010477861460}
   - 23: {fileID: 23000010935942506}
   - 64: {fileID: 64000012408276588}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Tomato
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1013,7 +1051,7 @@ GameObject:
   - 33: {fileID: 33000014077209778}
   - 23: {fileID: 23000010886740394}
   - 64: {fileID: 64000012491630308}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Tomato
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1028,7 +1066,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012958037666}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1063,7 +1101,7 @@ GameObject:
   - 33: {fileID: 33000012213781870}
   - 23: {fileID: 23000013627973566}
   - 64: {fileID: 64000012015712190}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_BottleLong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1081,7 +1119,7 @@ GameObject:
   - 33: {fileID: 33000013031394942}
   - 23: {fileID: 23000013111963274}
   - 64: {fileID: 64000011883942464}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Cheese
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1116,7 +1154,7 @@ GameObject:
   - 33: {fileID: 33000012561564656}
   - 23: {fileID: 23000012746867704}
   - 64: {fileID: 64000013168791842}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1131,7 +1169,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000014064997668}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1146,7 +1184,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012996033196}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1163,7 +1201,7 @@ GameObject:
   - 4: {fileID: 4000012053366884}
   - 33: {fileID: 33000010602393422}
   - 23: {fileID: 23000010115141086}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__pCube1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1178,7 +1216,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011793969696}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1196,7 +1234,7 @@ GameObject:
   - 33: {fileID: 33000014245333502}
   - 23: {fileID: 23000013434357646}
   - 64: {fileID: 64000014065558860}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Bowl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1211,7 +1249,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011435051304}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1226,7 +1264,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013628651494}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1244,7 +1282,7 @@ GameObject:
   - 33: {fileID: 33000011614933194}
   - 23: {fileID: 23000013448635150}
   - 64: {fileID: 64000014252442510}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Tomato
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1259,7 +1297,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011860188256}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1291,7 +1329,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011488249354}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1309,7 +1347,7 @@ GameObject:
   - 33: {fileID: 33000013291364868}
   - 23: {fileID: 23000010094494372}
   - 64: {fileID: 64000012231238874}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1324,7 +1362,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011660925074}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1342,7 +1380,7 @@ GameObject:
   - 33: {fileID: 33000011986832822}
   - 23: {fileID: 23000012803557760}
   - 64: {fileID: 64000013903319238}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_ChairSimple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1374,7 +1412,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011280927196}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1392,7 +1430,7 @@ GameObject:
   - 33: {fileID: 33000011106951194}
   - 23: {fileID: 23000011009484014}
   - 64: {fileID: 64000010658496946}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Candle_full
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1407,7 +1445,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011331695852}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1425,7 +1463,7 @@ GameObject:
   - 33: {fileID: 33000011732743218}
   - 23: {fileID: 23000013773282880}
   - 64: {fileID: 64000011032417148}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1494,7 +1532,7 @@ GameObject:
   - 33: {fileID: 33000010527459112}
   - 23: {fileID: 23000011262147394}
   - 64: {fileID: 64000011408764504}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1529,7 +1567,7 @@ GameObject:
   - 33: {fileID: 33000013368357898}
   - 23: {fileID: 23000011588546824}
   - 64: {fileID: 64000012204268198}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1544,7 +1582,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012872798722}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1559,7 +1597,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012205646490}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1577,7 +1615,7 @@ GameObject:
   - 33: {fileID: 33000011325648810}
   - 23: {fileID: 23000013584924926}
   - 64: {fileID: 64000011881690182}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_CupMetal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1592,7 +1630,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011444969594}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1627,7 +1665,7 @@ GameObject:
   - 33: {fileID: 33000011413389694}
   - 23: {fileID: 23000010722215830}
   - 64: {fileID: 64000010976588044}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1642,7 +1680,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011410816506}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: DiningDecor
   m_TagString: Decor
   m_Icon: {fileID: 0}
@@ -1657,7 +1695,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013165088074}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1675,7 +1713,7 @@ GameObject:
   - 33: {fileID: 33000013141095050}
   - 23: {fileID: 23000012975878458}
   - 64: {fileID: 64000013893887594}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Carrot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1707,7 +1745,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012011455756}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1759,7 +1797,7 @@ GameObject:
   - 33: {fileID: 33000011559369468}
   - 23: {fileID: 23000012989529434}
   - 64: {fileID: 64000010807297696}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_CupMetal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1808,7 +1846,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012527435356}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: group1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1843,7 +1881,7 @@ GameObject:
   - 33: {fileID: 33000013989008798}
   - 23: {fileID: 23000012919491748}
   - 64: {fileID: 64000010486402470}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Pantry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1878,7 +1916,7 @@ GameObject:
   - 33: {fileID: 33000010624863338}
   - 23: {fileID: 23000012019791784}
   - 64: {fileID: 64000011432931994}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1910,7 +1948,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011992908128}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1925,7 +1963,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010382928468}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2011,7 +2049,7 @@ GameObject:
   - 33: {fileID: 33000012073804962}
   - 23: {fileID: 23000010612547228}
   - 64: {fileID: 64000012904455586}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Barrel (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2029,7 +2067,7 @@ GameObject:
   - 33: {fileID: 33000011891686626}
   - 23: {fileID: 23000011268471202}
   - 64: {fileID: 64000012739939026}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Apple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2049,7 +2087,7 @@ GameObject:
   - 65: {fileID: 65000013840592942}
   - 95: {fileID: 95000012032384918}
   - 114: {fileID: 114000010589403704}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: DRAWER
   m_TagString: Drawer
   m_Icon: {fileID: 0}
@@ -2064,7 +2102,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013669368072}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: group1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2079,7 +2117,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011684441964}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2097,7 +2135,7 @@ GameObject:
   - 33: {fileID: 33000012004512394}
   - 23: {fileID: 23000010946780366}
   - 64: {fileID: 64000013837624890}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_BarStool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2134,7 +2172,7 @@ GameObject:
   - 65: {fileID: 65000013486424994}
   - 95: {fileID: 95000011346022034}
   - 114: {fileID: 114000013263323176}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: DRAWER
   m_TagString: Drawer
   m_Icon: {fileID: 0}
@@ -2183,7 +2221,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000014218261866}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: group2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2218,7 +2256,7 @@ GameObject:
   - 33: {fileID: 33000013888391660}
   - 23: {fileID: 23000010589153664}
   - 64: {fileID: 64000012295923456}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Apple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2233,7 +2271,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013459151160}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2248,7 +2286,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010346733048}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2263,7 +2301,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012866471092}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2278,7 +2316,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013104248250}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2296,7 +2334,7 @@ GameObject:
   - 33: {fileID: 33000010859414624}
   - 23: {fileID: 23000012966004066}
   - 64: {fileID: 64000010911979738}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Apple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2313,7 +2351,7 @@ GameObject:
   - 4: {fileID: 4000011193420468}
   - 33: {fileID: 33000012603261038}
   - 23: {fileID: 23000011715326544}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__pCube1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2331,7 +2369,7 @@ GameObject:
   - 33: {fileID: 33000010018778276}
   - 23: {fileID: 23000010072117964}
   - 64: {fileID: 64000010267993240}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Jug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2366,7 +2404,7 @@ GameObject:
   - 33: {fileID: 33000010962698916}
   - 23: {fileID: 23000011167570844}
   - 64: {fileID: 64000012162796596}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2381,7 +2419,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013864699438}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2416,7 +2454,7 @@ GameObject:
   - 33: {fileID: 33000010021803950}
   - 23: {fileID: 23000012461851048}
   - 64: {fileID: 64000013152733324}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Candle_half
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2431,7 +2469,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011647497226}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2449,7 +2487,7 @@ GameObject:
   - 33: {fileID: 33000011284098122}
   - 23: {fileID: 23000013795265382}
   - 64: {fileID: 64000014135260688}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2464,7 +2502,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011212392354}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2496,7 +2534,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000014217973496}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2511,7 +2549,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012490022526}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2526,7 +2564,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013656065084}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2544,7 +2582,7 @@ GameObject:
   - 33: {fileID: 33000013244188130}
   - 23: {fileID: 23000012283156298}
   - 64: {fileID: 64000013216780776}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_SmallStool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2559,7 +2597,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012045634524}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2577,7 +2615,7 @@ GameObject:
   - 33: {fileID: 33000014053489708}
   - 23: {fileID: 23000013372771064}
   - 64: {fileID: 64000012231983272}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_ChairSimple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2612,7 +2650,7 @@ GameObject:
   - 33: {fileID: 33000013214871336}
   - 23: {fileID: 23000011377132752}
   - 64: {fileID: 64000013092361736}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_CupMetal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2630,7 +2668,7 @@ GameObject:
   - 33: {fileID: 33000012728406110}
   - 23: {fileID: 23000014050337870}
   - 64: {fileID: 64000010811581438}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Barrel (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2648,7 +2686,7 @@ GameObject:
   - 33: {fileID: 33000010337628772}
   - 23: {fileID: 23000010277604628}
   - 64: {fileID: 64000012190255646}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_CupMetal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2680,7 +2718,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011563442008}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2698,7 +2736,7 @@ GameObject:
   - 33: {fileID: 33000010483458340}
   - 23: {fileID: 23000010865463670}
   - 64: {fileID: 64000013595254322}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_CupMetal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2716,7 +2754,7 @@ GameObject:
   - 33: {fileID: 33000012682189616}
   - 23: {fileID: 23000012272076836}
   - 64: {fileID: 64000011959655494}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_BottleLong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2734,7 +2772,7 @@ GameObject:
   - 33: {fileID: 33000012282127092}
   - 23: {fileID: 23000012102983200}
   - 64: {fileID: 64000013904419484}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_FlourSack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2749,7 +2787,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012175780326}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2767,7 +2805,7 @@ GameObject:
   - 33: {fileID: 33000013850378050}
   - 23: {fileID: 23000012198793100}
   - 64: {fileID: 64000011256884480}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_CupMetal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2782,7 +2820,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011358296338}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2831,7 +2869,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012933011104}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: group1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2849,7 +2887,7 @@ GameObject:
   - 33: {fileID: 33000011619319620}
   - 23: {fileID: 23000013971314170}
   - 64: {fileID: 64000012171788714}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2881,7 +2919,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010759375770}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2899,7 +2937,7 @@ GameObject:
   - 33: {fileID: 33000013500659234}
   - 23: {fileID: 23000012582177364}
   - 64: {fileID: 64000010127996538}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_ChairSimple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2931,7 +2969,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010525574680}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2949,7 +2987,7 @@ GameObject:
   - 33: {fileID: 33000011922995546}
   - 23: {fileID: 23000010963449732}
   - 64: {fileID: 64000010116831230}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_BarrelStand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2984,7 +3022,7 @@ GameObject:
   - 33: {fileID: 33000013403064782}
   - 23: {fileID: 23000013922775534}
   - 64: {fileID: 64000012885288214}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_ChairSimple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3002,7 +3040,7 @@ GameObject:
   - 33: {fileID: 33000012184757684}
   - 23: {fileID: 23000013145299902}
   - 64: {fileID: 64000012871365570}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3020,7 +3058,7 @@ GameObject:
   - 33: {fileID: 33000012556153822}
   - 23: {fileID: 23000011351633572}
   - 64: {fileID: 64000014062947746}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Pantry (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3055,7 +3093,7 @@ GameObject:
   - 33: {fileID: 33000011514234334}
   - 23: {fileID: 23000013915387300}
   - 64: {fileID: 64000011733039978}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_CupboardDoor_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3087,7 +3125,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013934412318}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3153,7 +3191,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010922639698}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3168,7 +3206,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012298430612}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3217,7 +3255,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010609481004}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: group1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3232,7 +3270,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010377141706}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3250,7 +3288,7 @@ GameObject:
   - 33: {fileID: 33000011497218676}
   - 23: {fileID: 23000010854211082}
   - 64: {fileID: 64000012983604032}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3267,7 +3305,7 @@ GameObject:
   - 4: {fileID: 4000013303473870}
   - 33: {fileID: 33000011881573736}
   - 23: {fileID: 23000011934728776}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__pCube1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3333,7 +3371,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010777518512}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3348,7 +3386,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010751078482}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3366,7 +3404,7 @@ GameObject:
   - 33: {fileID: 33000013015946644}
   - 23: {fileID: 23000010243054704}
   - 64: {fileID: 64000011756715928}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Cupboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3384,6 +3422,7 @@ GameObject:
   - 33: {fileID: 33000010339567784}
   - 23: {fileID: 23000010474783302}
   - 95: {fileID: 95000011856249814}
+  - 64: {fileID: 64000012969115306}
   m_Layer: 0
   m_Name: 2x2Room
   m_TagString: Untagged
@@ -3402,7 +3441,7 @@ GameObject:
   - 33: {fileID: 33000014157715928}
   - 23: {fileID: 23000010659337324}
   - 64: {fileID: 64000010345154892}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3417,7 +3456,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011462246140}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3434,7 +3473,7 @@ GameObject:
   - 4: {fileID: 4000010119897494}
   - 33: {fileID: 33000010789456002}
   - 23: {fileID: 23000010164507688}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__pCube1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3449,7 +3488,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010589560114}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3464,7 +3503,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010193416494}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Right Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3479,7 +3518,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011898390194}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3511,7 +3550,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012201599702}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3529,7 +3568,7 @@ GameObject:
   - 33: {fileID: 33000012375144990}
   - 23: {fileID: 23000010709903558}
   - 64: {fileID: 64000012665900416}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_BottleLong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3544,7 +3583,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012711938458}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: group2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3630,7 +3669,7 @@ GameObject:
   - 33: {fileID: 33000011961821864}
   - 23: {fileID: 23000011462647318}
   - 64: {fileID: 64000013267171728}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_CupboardDoor_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3667,7 +3706,7 @@ GameObject:
   - 65: {fileID: 65000010987248912}
   - 95: {fileID: 95000010249723312}
   - 114: {fileID: 114000010778342694}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: DRAWER
   m_TagString: Drawer
   m_Icon: {fileID: 0}
@@ -3685,7 +3724,7 @@ GameObject:
   - 33: {fileID: 33000013392360140}
   - 23: {fileID: 23000012755207770}
   - 64: {fileID: 64000011795538706}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3720,7 +3759,7 @@ GameObject:
   - 33: {fileID: 33000012902989082}
   - 23: {fileID: 23000013410617842}
   - 64: {fileID: 64000012021074700}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_CupMetal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3735,7 +3774,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011544863678}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3750,7 +3789,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010208830298}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3836,7 +3875,7 @@ GameObject:
   - 33: {fileID: 33000013069640122}
   - 23: {fileID: 23000011228570192}
   - 64: {fileID: 64000011285079850}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_FlourSack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3854,7 +3893,7 @@ GameObject:
   - 33: {fileID: 33000013466594526}
   - 23: {fileID: 23000010300814374}
   - 64: {fileID: 64000013682444420}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: trn_ChairSimple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3869,7 +3908,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013948846218}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__polySurface10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3901,7 +3940,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011853662334}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__transform8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3933,7 +3972,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011940213226}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Left Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3953,7 +3992,7 @@ GameObject:
   - 65: {fileID: 65000011268098516}
   - 95: {fileID: 95000014192628632}
   - 114: {fileID: 114000012510315646}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: DRAWER
   m_TagString: Drawer
   m_Icon: {fileID: 0}
@@ -3986,7 +4025,7 @@ Transform:
   m_Children:
   - {fileID: 4000012748933876}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 19
+  m_RootOrder: 20
 --- !u!4 &4000010023363174
 Transform:
   m_ObjectHideFlags: 1
@@ -4000,7 +4039,7 @@ Transform:
   m_Children:
   - {fileID: 4000013457615890}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 38
+  m_RootOrder: 39
 --- !u!4 &4000010057937750
 Transform:
   m_ObjectHideFlags: 1
@@ -4093,7 +4132,7 @@ Transform:
   m_Children:
   - {fileID: 4000014004298398}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!4 &4000010208830298
 Transform:
   m_ObjectHideFlags: 1
@@ -4146,7 +4185,7 @@ Transform:
   m_Children:
   - {fileID: 4000013029240166}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 56
+  m_RootOrder: 57
 --- !u!4 &4000010261177206
 Transform:
   m_ObjectHideFlags: 1
@@ -4199,7 +4238,7 @@ Transform:
   m_Children:
   - {fileID: 4000013415597860}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 12
+  m_RootOrder: 13
 --- !u!4 &4000010335659406
 Transform:
   m_ObjectHideFlags: 1
@@ -4405,7 +4444,7 @@ Transform:
   m_Children:
   - {fileID: 4000010335659406}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 58
+  m_RootOrder: 59
 --- !u!4 &4000010579643364
 Transform:
   m_ObjectHideFlags: 1
@@ -4421,7 +4460,7 @@ Transform:
   - {fileID: 4000011940213226}
   - {fileID: 4000010193416494}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 55
+  m_RootOrder: 56
 --- !u!4 &4000010589560114
 Transform:
   m_ObjectHideFlags: 1
@@ -4496,7 +4535,7 @@ Transform:
   m_Children:
   - {fileID: 4000010442776434}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 34
+  m_RootOrder: 35
 --- !u!4 &4000010622617042
 Transform:
   m_ObjectHideFlags: 1
@@ -4510,7 +4549,7 @@ Transform:
   m_Children:
   - {fileID: 4000014177791630}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 41
+  m_RootOrder: 42
 --- !u!4 &4000010638711558
 Transform:
   m_ObjectHideFlags: 1
@@ -4537,7 +4576,7 @@ Transform:
   m_Children:
   - {fileID: 4000012091065534}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 22
+  m_RootOrder: 23
 --- !u!4 &4000010653042516
 Transform:
   m_ObjectHideFlags: 1
@@ -4551,7 +4590,7 @@ Transform:
   m_Children:
   - {fileID: 4000013913259642}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 49
+  m_RootOrder: 50
 --- !u!4 &4000010676551926
 Transform:
   m_ObjectHideFlags: 1
@@ -4565,7 +4604,7 @@ Transform:
   m_Children:
   - {fileID: 4000013074980224}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!4 &4000010705096474
 Transform:
   m_ObjectHideFlags: 1
@@ -4579,7 +4618,7 @@ Transform:
   m_Children:
   - {fileID: 4000013670421986}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 40
+  m_RootOrder: 41
 --- !u!4 &4000010713274890
 Transform:
   m_ObjectHideFlags: 1
@@ -4593,7 +4632,7 @@ Transform:
   m_Children:
   - {fileID: 4000011031449798}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 18
+  m_RootOrder: 19
 --- !u!4 &4000010751078482
 Transform:
   m_ObjectHideFlags: 1
@@ -4662,7 +4701,7 @@ Transform:
   m_Children:
   - {fileID: 4000010901853976}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 37
+  m_RootOrder: 38
 --- !u!4 &4000010777518512
 Transform:
   m_ObjectHideFlags: 1
@@ -4710,7 +4749,7 @@ Transform:
   m_Children:
   - {fileID: 4000012358841868}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 66
+  m_RootOrder: 67
 --- !u!4 &4000010801669882
 Transform:
   m_ObjectHideFlags: 1
@@ -4763,7 +4802,7 @@ Transform:
   m_Children:
   - {fileID: 4000011510018396}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 14
+  m_RootOrder: 15
 --- !u!4 &4000010877105022
 Transform:
   m_ObjectHideFlags: 1
@@ -4803,7 +4842,7 @@ Transform:
   m_Children:
   - {fileID: 4000010212803416}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 43
+  m_RootOrder: 44
 --- !u!4 &4000010922639698
 Transform:
   m_ObjectHideFlags: 1
@@ -4843,7 +4882,7 @@ Transform:
   m_Children:
   - {fileID: 4000012098781384}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 39
+  m_RootOrder: 40
 --- !u!4 &4000011013227324
 Transform:
   m_ObjectHideFlags: 1
@@ -4922,7 +4961,7 @@ Transform:
   m_Children:
   - {fileID: 4000010751200354}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 16
+  m_RootOrder: 17
 --- !u!4 &4000011178089820
 Transform:
   m_ObjectHideFlags: 1
@@ -4936,7 +4975,7 @@ Transform:
   m_Children:
   - {fileID: 4000010363308828}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 42
+  m_RootOrder: 43
 --- !u!4 &4000011184145152
 Transform:
   m_ObjectHideFlags: 1
@@ -4976,7 +5015,7 @@ Transform:
   m_Children:
   - {fileID: 4000010298088560}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 35
+  m_RootOrder: 36
 --- !u!4 &4000011198005620
 Transform:
   m_ObjectHideFlags: 1
@@ -5017,7 +5056,7 @@ Transform:
   m_Children:
   - {fileID: 4000011750276870}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 32
+  m_RootOrder: 33
 --- !u!4 &4000011235090202
 Transform:
   m_ObjectHideFlags: 1
@@ -5031,7 +5070,7 @@ Transform:
   m_Children:
   - {fileID: 4000011752540982}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 48
+  m_RootOrder: 49
 --- !u!4 &4000011280927196
 Transform:
   m_ObjectHideFlags: 1
@@ -5072,7 +5111,7 @@ Transform:
   m_Children:
   - {fileID: 4000010801669882}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 29
+  m_RootOrder: 30
 --- !u!4 &4000011326803406
 Transform:
   m_ObjectHideFlags: 1
@@ -5089,7 +5128,7 @@ Transform:
   - {fileID: 4000012059083862}
   - {fileID: 4000013835359894}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 69
+  m_RootOrder: 70
 --- !u!4 &4000011329018704
 Transform:
   m_ObjectHideFlags: 1
@@ -5103,7 +5142,7 @@ Transform:
   m_Children:
   - {fileID: 4000010815522382}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 28
+  m_RootOrder: 29
 --- !u!4 &4000011330436528
 Transform:
   m_ObjectHideFlags: 1
@@ -5144,7 +5183,7 @@ Transform:
   m_Children:
   - {fileID: 4000012264611198}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 30
+  m_RootOrder: 31
 --- !u!4 &4000011358296338
 Transform:
   m_ObjectHideFlags: 1
@@ -5172,7 +5211,7 @@ Transform:
   m_Children:
   - {fileID: 4000010504282732}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 20
+  m_RootOrder: 21
 --- !u!4 &4000011383973370
 Transform:
   m_ObjectHideFlags: 1
@@ -5186,7 +5225,7 @@ Transform:
   m_Children:
   - {fileID: 4000013312939434}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 57
+  m_RootOrder: 58
 --- !u!4 &4000011395566242
 Transform:
   m_ObjectHideFlags: 1
@@ -5211,6 +5250,7 @@ Transform:
   m_LocalScale: {x: 0.30000037, y: 0.3, z: 0.30000037}
   m_LocalEulerAnglesHint: {x: 0, y: 360, z: 0}
   m_Children:
+  - {fileID: 4000012000699100}
   - {fileID: 4000011590512460}
   - {fileID: 4000012719334122}
   - {fileID: 4000010204879502}
@@ -5324,7 +5364,7 @@ Transform:
   m_Children:
   - {fileID: 4000013046303616}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 26
+  m_RootOrder: 27
 --- !u!4 &4000011444969594
 Transform:
   m_ObjectHideFlags: 1
@@ -5393,7 +5433,7 @@ Transform:
   m_Children:
   - {fileID: 4000010877105022}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 17
+  m_RootOrder: 18
 --- !u!4 &4000011510018396
 Transform:
   m_ObjectHideFlags: 1
@@ -5420,7 +5460,7 @@ Transform:
   m_Children:
   - {fileID: 4000011013227324}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!4 &4000011544863678
 Transform:
   m_ObjectHideFlags: 1
@@ -5476,6 +5516,19 @@ Transform:
   - {fileID: 4000011992908128}
   m_Father: {fileID: 4000014217973496}
   m_RootOrder: 0
+--- !u!4 &4000011578794714
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010233725350}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 200, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000012000699100}
+  m_RootOrder: 0
 --- !u!4 &4000011590512460
 Transform:
   m_ObjectHideFlags: 1
@@ -5489,7 +5542,7 @@ Transform:
   m_Children:
   - {fileID: 4000012430429588}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!4 &4000011595502136
 Transform:
   m_ObjectHideFlags: 1
@@ -5517,7 +5570,7 @@ Transform:
   m_Children:
   - {fileID: 4000013331123440}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 50
+  m_RootOrder: 51
 --- !u!4 &4000011632130198
 Transform:
   m_ObjectHideFlags: 1
@@ -5531,7 +5584,7 @@ Transform:
   m_Children:
   - {fileID: 4000013669060366}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 52
+  m_RootOrder: 53
 --- !u!4 &4000011647497226
 Transform:
   m_ObjectHideFlags: 1
@@ -5599,7 +5652,7 @@ Transform:
   m_Children:
   - {fileID: 4000010397357576}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 31
+  m_RootOrder: 32
 --- !u!4 &4000011737515740
 Transform:
   m_ObjectHideFlags: 1
@@ -5613,7 +5666,7 @@ Transform:
   m_Children:
   - {fileID: 4000013235230334}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 62
+  m_RootOrder: 63
 --- !u!4 &4000011738207152
 Transform:
   m_ObjectHideFlags: 1
@@ -5640,7 +5693,7 @@ Transform:
   m_Children:
   - {fileID: 4000010401028300}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 47
+  m_RootOrder: 48
 --- !u!4 &4000011750276870
 Transform:
   m_ObjectHideFlags: 1
@@ -5759,6 +5812,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000011563442008}
   m_RootOrder: 0
+--- !u!4 &4000012000699100
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010401778536}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 86.795, y: -3.233, z: 133.9}
+  m_LocalScale: {x: 0.10010011, y: 0.1, z: 0.10010011}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 4000011578794714}
+  m_Father: {fileID: 4000011410816506}
+  m_RootOrder: 0
 --- !u!4 &4000012011455756
 Transform:
   m_ObjectHideFlags: 1
@@ -5785,7 +5852,7 @@ Transform:
   m_Children:
   - {fileID: 4000014220559760}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!4 &4000012029345180
 Transform:
   m_ObjectHideFlags: 1
@@ -5799,7 +5866,7 @@ Transform:
   m_Children:
   - {fileID: 4000012342966322}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!4 &4000012045634524
 Transform:
   m_ObjectHideFlags: 1
@@ -5839,7 +5906,7 @@ Transform:
   m_Children:
   - {fileID: 4000012738981016}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 54
+  m_RootOrder: 55
 --- !u!4 &4000012059083862
 Transform:
   m_ObjectHideFlags: 1
@@ -5976,7 +6043,7 @@ Transform:
   - {fileID: 4000012711938458}
   - {fileID: 4000011079693624}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 68
+  m_RootOrder: 69
 --- !u!4 &4000012331537894
 Transform:
   m_ObjectHideFlags: 1
@@ -5990,7 +6057,7 @@ Transform:
   m_Children:
   - {fileID: 4000012692452562}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 46
+  m_RootOrder: 47
 --- !u!4 &4000012342966322
 Transform:
   m_ObjectHideFlags: 1
@@ -6043,7 +6110,7 @@ Transform:
   m_Children:
   - {fileID: 4000013492698320}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 59
+  m_RootOrder: 60
 --- !u!4 &4000012430429588
 Transform:
   m_ObjectHideFlags: 1
@@ -6097,7 +6164,7 @@ Transform:
   m_Children:
   - {fileID: 4000012138489832}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!4 &4000012490022526
 Transform:
   m_ObjectHideFlags: 1
@@ -6165,7 +6232,7 @@ Transform:
   m_Children:
   - {fileID: 4000013874346594}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 51
+  m_RootOrder: 52
 --- !u!4 &4000012619324678
 Transform:
   m_ObjectHideFlags: 1
@@ -6179,7 +6246,7 @@ Transform:
   m_Children:
   - {fileID: 4000010603811170}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 64
+  m_RootOrder: 65
 --- !u!4 &4000012692452562
 Transform:
   m_ObjectHideFlags: 1
@@ -6206,7 +6273,7 @@ Transform:
   m_Children:
   - {fileID: 4000012760972742}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 15
+  m_RootOrder: 16
 --- !u!4 &4000012711938458
 Transform:
   m_ObjectHideFlags: 1
@@ -6247,7 +6314,7 @@ Transform:
   m_Children:
   - {fileID: 4000014076106166}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!4 &4000012726719400
 Transform:
   m_ObjectHideFlags: 1
@@ -6264,7 +6331,7 @@ Transform:
   - {fileID: 4000011547699158}
   - {fileID: 4000010095517050}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 70
+  m_RootOrder: 71
 --- !u!4 &4000012730780310
 Transform:
   m_ObjectHideFlags: 1
@@ -6278,7 +6345,7 @@ Transform:
   m_Children:
   - {fileID: 4000013324613468}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 36
+  m_RootOrder: 37
 --- !u!4 &4000012735165338
 Transform:
   m_ObjectHideFlags: 1
@@ -6305,7 +6372,7 @@ Transform:
   m_Children:
   - {fileID: 4000011738207152}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 33
+  m_RootOrder: 34
 --- !u!4 &4000012738981016
 Transform:
   m_ObjectHideFlags: 1
@@ -6332,7 +6399,7 @@ Transform:
   m_Children:
   - {fileID: 4000010339711708}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 21
+  m_RootOrder: 22
 --- !u!4 &4000012748933876
 Transform:
   m_ObjectHideFlags: 1
@@ -6398,7 +6465,7 @@ Transform:
   m_Children:
   - {fileID: 4000013928904236}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 65
+  m_RootOrder: 66
 --- !u!4 &4000012822761304
 Transform:
   m_ObjectHideFlags: 1
@@ -6415,7 +6482,7 @@ Transform:
   - {fileID: 4000014218261866}
   - {fileID: 4000011184145152}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 67
+  m_RootOrder: 68
 --- !u!4 &4000012829397210
 Transform:
   m_ObjectHideFlags: 1
@@ -6429,7 +6496,7 @@ Transform:
   m_Children:
   - {fileID: 4000011665210118}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 24
+  m_RootOrder: 25
 --- !u!4 &4000012866471092
 Transform:
   m_ObjectHideFlags: 1
@@ -6564,7 +6631,7 @@ Transform:
   m_Children:
   - {fileID: 4000012796431432}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 53
+  m_RootOrder: 54
 --- !u!4 &4000013104248250
 Transform:
   m_ObjectHideFlags: 1
@@ -6592,7 +6659,7 @@ Transform:
   m_Children:
   - {fileID: 4000010415962158}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 13
+  m_RootOrder: 14
 --- !u!4 &4000013165088074
 Transform:
   m_ObjectHideFlags: 1
@@ -6633,7 +6700,7 @@ Transform:
   m_Children:
   - {fileID: 4000012435835448}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!4 &4000013251592332
 Transform:
   m_ObjectHideFlags: 1
@@ -6660,7 +6727,7 @@ Transform:
   m_Children:
   - {fileID: 4000014113106884}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 45
+  m_RootOrder: 46
 --- !u!4 &4000013303473870
 Transform:
   m_ObjectHideFlags: 1
@@ -6739,7 +6806,7 @@ Transform:
   m_Children:
   - {fileID: 4000010169657314}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 25
+  m_RootOrder: 26
 --- !u!4 &4000013415597860
 Transform:
   m_ObjectHideFlags: 1
@@ -6759,9 +6826,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013702838412}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.5, y: 0, z: 46.6}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.05, y: 0.2, z: 0.05}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000011410816506}
@@ -6833,7 +6900,7 @@ Transform:
   m_Children:
   - {fileID: 4000010827577062}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!4 &4000013628651494
 Transform:
   m_ObjectHideFlags: 1
@@ -6861,7 +6928,7 @@ Transform:
   m_Children:
   - {fileID: 4000014124345980}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 63
+  m_RootOrder: 64
 --- !u!4 &4000013644740480
 Transform:
   m_ObjectHideFlags: 1
@@ -6875,7 +6942,7 @@ Transform:
   m_Children:
   - {fileID: 4000010157868762}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 23
+  m_RootOrder: 24
 --- !u!4 &4000013656065084
 Transform:
   m_ObjectHideFlags: 1
@@ -6902,7 +6969,7 @@ Transform:
   m_Children:
   - {fileID: 4000012503459226}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 27
+  m_RootOrder: 28
 --- !u!4 &4000013669060366
 Transform:
   m_ObjectHideFlags: 1
@@ -6973,7 +7040,7 @@ Transform:
   - {fileID: 4000012714523136}
   - {fileID: 4000010209939024}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 61
+  m_RootOrder: 62
 --- !u!4 &4000013800709810
 Transform:
   m_ObjectHideFlags: 1
@@ -6988,7 +7055,7 @@ Transform:
   - {fileID: 4000012399496670}
   - {fileID: 4000012763772296}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 60
+  m_RootOrder: 61
 --- !u!4 &4000013835359894
 Transform:
   m_ObjectHideFlags: 1
@@ -7068,7 +7135,7 @@ Transform:
   m_Children:
   - {fileID: 4000010001860728}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 11
+  m_RootOrder: 12
 --- !u!4 &4000013913259642
 Transform:
   m_ObjectHideFlags: 1
@@ -7108,7 +7175,7 @@ Transform:
   m_Children:
   - {fileID: 4000013680347836}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 10
+  m_RootOrder: 11
 --- !u!4 &4000013934412318
 Transform:
   m_ObjectHideFlags: 1
@@ -7135,7 +7202,7 @@ Transform:
   m_Children:
   - {fileID: 4000011291221808}
   m_Father: {fileID: 4000011410816506}
-  m_RootOrder: 44
+  m_RootOrder: 45
 --- !u!4 &4000013948846218
 Transform:
   m_ObjectHideFlags: 1
@@ -8815,6 +8882,35 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!23 &23000012646020866
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010401778536}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: f31163de881715649aafaaa04e0fb1c3, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!23 &23000012746867704
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -9279,6 +9375,35 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!23 &23000013437475690
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010233725350}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: f31163de881715649aafaaa04e0fb1c3, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!23 &23000013448635150
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -9699,6 +9824,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012652535858}
   m_Mesh: {fileID: 4300000, guid: e5833b2f4ae584245897d5470d13d259, type: 3}
+--- !u!33 &33000010058420918
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010233725350}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33000010145762954
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -10042,6 +10174,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012845021346}
   m_Mesh: {fileID: 4300004, guid: 417aa8d359720a745b338e7a9c487904, type: 3}
+--- !u!33 &33000012707988790
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010401778536}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33000012728406110
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -11955,6 +12094,18 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: 371ac998b6d51ac4c8c09b047d8b28a5, type: 3}
+--- !u!64 &64000012969115306
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013702838412}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: d88e42196ba84dd4cb560faad65d87d7, type: 3}
 --- !u!64 &64000012983604032
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -12231,6 +12382,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.347934, y: 1.2855358, z: 3.335531}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65000011675007048
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010401778536}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65000012789254678
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010233725350}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65000013486424994
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -12255,6 +12430,100 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.347934, y: 1.2855358, z: 3.335531}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &82000013738828582
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010401778536}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1f3c4c2ac10d2aa418825d9f26b57189, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 25
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0.42172998
+      inSlope: -1.8346491
+      outSlope: -1.8346491
+      tangentMode: 0
+    - time: 0.11911384
+      value: 0.25822785
+      inSlope: -0.90083706
+      outSlope: -0.90083706
+      tangentMode: 0
+    - time: 0.25057662
+      value: 0.15274264
+      inSlope: -1.0250082
+      outSlope: -1.0250082
+      tangentMode: 0
+    - time: 0.45329446
+      value: 0.058333352
+      inSlope: -0.2860566
+      outSlope: -0.2860566
+      tangentMode: 0
+    - time: 0.7579775
+      value: 0.016666668
+      inSlope: -0.20923753
+      outSlope: -0.20923753
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: -0.31201154
+      outSlope: -0.31201154
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95000010249723312
 Animator:
   serializedVersion: 3
@@ -13662,3 +13931,14 @@ MonoBehaviour:
   hoverHeight: 2
   startSinHeight: 1.9
   lerpT: 0.02
+--- !u!122 &122000013361640744
+Halo:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010233725350}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4278250235
+  m_Size: 2

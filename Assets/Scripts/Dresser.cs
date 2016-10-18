@@ -26,7 +26,7 @@ public class Dresser : MonoBehaviour
 			//Debug.DrawRay (flaslight.position, flaslight.forward * 1000f, Color.blue);
 			//Debug.Log (rayHitInfo.collider.name);
 			if (rayHitInfo.collider.gameObject  == this.gameObject) {
-				Debug.Log ("it hit");
+			//	Debug.Log ("it hit");
 				if (Input.GetButton ("Ghost Button A")) {
 					if (drawerOpen == false) {
 						dresserAnimator.SetBool ("DrawerIsOpen", true);
