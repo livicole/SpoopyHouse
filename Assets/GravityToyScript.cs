@@ -8,7 +8,7 @@ public class GravityToyScript : MonoBehaviour
     public bool hasSetParent = false;
 
 
-    public Transform theRoom;
+    public Transform theRoom, decoration;
 
     // Use this for initialization
     void Start()
@@ -26,30 +26,46 @@ public class GravityToyScript : MonoBehaviour
 
         Ray rayToPlayer = new Ray(transform.position, theChild.transform.position - transform.position);
         RaycastHit rayToPlayerHit = new RaycastHit();
-
+        //Debug.DrawRay(transform.position, theChild.transform.position - transform.position, Color.red);
         if (Physics.Raycast(rayToPlayer, out rayToPlayerHit))
         {
             if (rayToPlayerHit.collider.name == "ChildPlayer")
             {
-                foreach (Transform anObject in theRoom)
+                //Debug.Log("See!");
+                GameObject[] roomDecors = GameObject.FindGameObjectsWithTag("Decor");
+                foreach (GameObject decors in roomDecors)
                 {
-                    if (anObject.GetComponent<ToyReceptor>() != null)
+                    //Debug.Log(decors);
+                    if(decors.transform.parent.parent.Equals(transform.parent))
                     {
-                        if (anObject.GetComponent<ToyReceptor>().fuckYou == false)
+                        decoration = decors.transform;
+                        //Debug.Log("True");
+                        foreach (Transform anObject in decoration)
                         {
-                            anObject.GetComponent<ToyReceptor>().raycastFound();
+                            //Debug.Log("Checking....");
+                            if (anObject.GetComponent<ToyReceptor>() != null)
+                            {
+                                if (anObject.GetComponent<ToyReceptor>().fuckYou == false)
+                                {
+                                    anObject.GetComponent<ToyReceptor>().raycastFound();
+                                }
+                            }
                         }
                     }
-                }
+                } 
             }
         }
     }
 
     void OnDestroy()
     {
-        foreach (Transform anObject in theRoom)
+        foreach (Transform anObject in decoration)
         {
-            anObject.GetComponent<ToyReceptor>().stopHovering();
+            if(anObject.GetComponent<ToyReceptor>() != null)
+            {
+                anObject.GetComponent<ToyReceptor>().stopHovering();
+            }
+           
         }
     }
 

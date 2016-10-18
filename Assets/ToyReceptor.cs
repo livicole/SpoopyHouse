@@ -71,7 +71,7 @@ public class ToyReceptor : MonoBehaviour
         fuckYou = true;
         GetComponent<Rigidbody>().useGravity = false;
         originalPosition = transform.position;
-        Debug.Log(transform.position);
+        //Debug.Log(transform.position);
         shouldIHover = true;
         
     }
