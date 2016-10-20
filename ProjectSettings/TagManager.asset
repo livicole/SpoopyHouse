@@ -12,6 +12,8 @@ TagManager:
   - Drawer
   - Decor
   - Door
+  - rightDoor
+  - leftDoor
   layers:
   - Default
   - TransparentFX
