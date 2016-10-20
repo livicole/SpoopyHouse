@@ -18,6 +18,7 @@ public class GhostCameraController : MonoBehaviour {
     float midZoom, closeZoom;
     float timer, zoomCD = 0.5f;
     bool isLeftTriggerInUse = false, isRightTriggerInUse = false;
+    Vector3 playerPosition;
     
 
 	// Use this for initialization
@@ -83,6 +84,16 @@ public class GhostCameraController : MonoBehaviour {
             {
                 isRightTriggerInUse = false;
             }
+        }
+
+        if (Input.GetButtonDown("Ghost Left Stick Click"))
+        {
+            Debug.Log("Left Stick Click");
+            playerPosition = GameObject.Find("ChildPlayer").transform.position;
+            camZoomMode = CamZoom.Close;
+            SetZoom(camZoomMode);
+            transform.position = new Vector3(playerPosition.x, transform.position.y, playerPosition.z + 2.5f);
+            
         }
        
 

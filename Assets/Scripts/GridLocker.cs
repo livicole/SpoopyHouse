@@ -77,7 +77,7 @@ public class GridLocker : MonoBehaviour {
         rotationY = transform.eulerAngles.y;
         //UpdateNewBlocks();
 
-        Debug.Log(name);
+        //Debug.Log(name);
         /*foreach (Transform child in transform.GetChild(0))
         {
             if (child.tag == "Door")
@@ -209,12 +209,12 @@ public class GridLocker : MonoBehaviour {
             {
                 gridLocation += direction;
                 gridLocation = new Vector3(Mathf.Clamp(gridLocation.x, gridInfo.gridMin, gridInfo.gridMax), 0, Mathf.Clamp(gridLocation.z, gridInfo.gridMin, gridInfo.gridMax));
-                Debug.Log(gridLocation);
+                //Debug.Log(gridLocation);
                 //Check if available with updated gridlocation.
                 if (CheckFullAvailability(coordinatesOccupied))
                 {
                     transform.position = CalculateGridToReal(gridLocation);
-                    Debug.Log(transform.position);
+                    //Debug.Log(transform.position);
                     //Reset cooldown since we actually moved.
                     moveCooldownTimer = moveTick;   
                     
