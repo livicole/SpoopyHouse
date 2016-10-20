@@ -5,40 +5,28 @@ public class Dresser : MonoBehaviour
 {
 
 	private Animator dresserAnimator;
-	Transform flashlight; 
-	public static bool drawerOpen;
+	Transform flashlight;
 
 	// Use this for initialization
 	void Start ()
 	{
-		drawerOpen = false;
 		dresserAnimator = GetComponent<Animator> ();
-        flashlight = GameObject.Find("Flashlight").transform;
+		flashlight = GameObject.Find ("Flashlight").transform;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-        flashlight = GameObject.Find("Flashlight").transform;
-        Ray drawerRay = new Ray (flashlight.position, flashlight.forward);
+		flashlight = GameObject.Find ("Flashlight").transform;
+		Ray drawerRay = new Ray (flashlight.position, flashlight.forward);
 		RaycastHit rayHitInfo = new RaycastHit ();
 		if (Physics.Raycast (drawerRay, out rayHitInfo, 1000f)) {
 			//Debug.DrawRay (flaslight.position, flaslight.forward * 1000f, Color.blue);
 			//Debug.Log (rayHitInfo.collider.name);
-			if (rayHitInfo.collider.gameObject  == this.gameObject) {
-			//	Debug.Log ("it hit");
-				if (Input.GetButton ("Ghost Button A")) {
-					if (drawerOpen == false) {
-						dresserAnimator.SetBool ("DrawerIsOpen", true);
-						dresserAnimator.SetBool ("DrawerIsClosed", false);
-						drawerOpen = true;
-						Debug.Log (drawerOpen);
-					} else if (drawerOpen == true) {
-						dresserAnimator.SetBool ("DrawerIsOpen", false);
-						dresserAnimator.SetBool ("DrawerIsClosed", true);
-						drawerOpen = false;
-						Debug.Log (drawerOpen);
-					}
+			if (rayHitInfo.collider.gameObject == this.gameObject) {
+				//	Debug.Log ("it hit");
+				if (Input.GetButtonDown ("Ghost Button A")) {
+					dresserAnimator.SetTrigger ("Trigger");
 				}
 			}
 		}
