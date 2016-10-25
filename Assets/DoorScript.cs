@@ -108,6 +108,7 @@ public class DoorScript : MonoBehaviour {
     public void LockDoor()
     {
         transform.GetChild(1).GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        otherDoor.transform.GetChild(1).GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
     }
 
 }
