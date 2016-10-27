@@ -56,8 +56,13 @@ public class CursorController : MonoBehaviour {
     [SerializeField]
     List<ToyIndex> ghostToys;
     private int selector;
-    private Text selectedObjectText;
     private bool isYAxisInUse = false;
+
+    public List<Sprite> toySprites= new List<Sprite>();
+    public List<Sprite> toySpritesShaded = new List<Sprite>();
+    private Image selectedToySprite;
+    private Image previousToySprite;
+    private Image nextToySprite;
 
     private float rotateTimer;
     [SerializeField]
@@ -81,7 +86,7 @@ public class CursorController : MonoBehaviour {
     **/
 
 	public Image BButton, AButton;
-	public Sprite bButtonUp, bButtonDown, aButtonUp, aButtonDown;
+	public Image bButtonUp, bButtonDown, aButtonUp, aButtonDown;
     private bool holdingRoom = false;
 
 
@@ -89,10 +94,13 @@ public class CursorController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         child = GameObject.Find("ChildPlayer").transform;
-        selectedObjectText = GameObject.Find("SelectedToy").GetComponent<Text>();
+
+        selectedToySprite = GameObject.Find("SelectedToySprite").GetComponent<Image>();
+        previousToySprite = GameObject.Find("PreviousToySprite").GetComponent<Image>();
+        nextToySprite = GameObject.Find("NextToySprite").GetComponent<Image>();
 
         //initialize cooldown list
-	}
+    }
 
     // Update is called once per frame
     void Update() {
@@ -223,7 +231,27 @@ public class CursorController : MonoBehaviour {
         }**/
 
         //Display the selected object on screen.
-        selectedObjectText.text = ghostToys[selector].toy.name;
+        /*selectedObjectText.text = ghostToys[selector].toy.name;
+        nextObjectText.text = ghostToys[(selector+1)%6].toy.name;
+        if (selector == 0)
+        {
+            previousObjectText.text = ghostToys[ghostToys.Count - 1].toy.name;
+        }
+        else
+        {
+            previousObjectText.text = ghostToys[selector - 1].toy.name;
+        }*/
+
+        selectedToySprite.sprite = toySprites[selector];
+        nextToySprite.sprite = toySpritesShaded[(selector + 1) % 6];
+        if (selector == 0)
+        {
+            previousToySprite.sprite = toySpritesShaded[toySprites.Count - 1];
+        }
+        else
+        {
+            previousToySprite.sprite = toySpritesShaded[selector - 1];
+        }
 
         //Some preliminary code to set up the ability to drop objects.
         int layermask = 1 << 5; layermask = ~layermask; // Ignoring UI layer      
