@@ -49,8 +49,10 @@ public class CursorController : MonoBehaviour {
     [HideInInspector]
     public float inverterCount = 0;
 
+    
+   
     [SerializeField]
-    List<Transform> ghostToys;
+    List<ToyIndex> ghostToys;
     private int selector;
     private Text selectedObjectText;
     private bool isYAxisInUse = false;
@@ -79,6 +81,8 @@ public class CursorController : MonoBehaviour {
 	public Image BButton, AButton;
 	public Sprite bButtonUp, bButtonDown, aButtonUp, aButtonDown;
     private bool holdingRoom = false;
+
+    
 
 
 
@@ -195,7 +199,7 @@ public class CursorController : MonoBehaviour {
         }**/
 
         //Display the selected object on screen.
-        selectedObjectText.text = ghostToys[selector].name;
+       // selectedObjectText.text = ghostToys[selector].name;
 
         //Some preliminary code to set up the ability to drop objects.
         int layermask = 1 << 5; layermask = ~layermask; // Ignoring UI layer      
@@ -225,7 +229,7 @@ public class CursorController : MonoBehaviour {
                 Debug.Log("Hitting object: " + verticalRayHit.collider.gameObject.name);
 
                 //Layer 14 is gridlocked.
-                if (verticalRayHit.collider.gameObject.layer == 14)
+                if (verticalRayHit.collider.gameObject.layer == 14 && !verticalRayHit.collider.GetComponentInParent<GridLocker>().childLocked)
                 {
                     holdingRoom = true;
                     holdingObject = verticalRayHit.collider.gameObject.transform.parent;
@@ -344,7 +348,7 @@ public class CursorController : MonoBehaviour {
                 if (Physics.Raycast(verticalRay, out verticalRayHit, 1000f, inRoomLayerMask))
                 {
                     Vector3 targetSpawn = verticalRayHit.point + new Vector3(0, 2, 0);
-                    Instantiate(ghostToys[selector], targetSpawn, Quaternion.identity);
+                    //Instantiate(ghostToys[selector], targetSpawn, Quaternion.identity);
                 }
             }
         }
@@ -639,4 +643,12 @@ public class CursorController : MonoBehaviour {
     }
 
 
+}
+
+[Serializable]
+public class ToyIndex
+{
+    public Transform toy;
+    public float cooldown;
+    public float timer;
 }

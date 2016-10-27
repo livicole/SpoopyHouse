@@ -48,6 +48,7 @@ public class GridLocker : MonoBehaviour {
     public float moveTick;
     private float moveCooldownTimer = 0;
     private float rotationY;
+    public bool childLocked = false;
     int counter;
 
     // Use this for initialization

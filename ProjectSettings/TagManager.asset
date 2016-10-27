@@ -12,6 +12,7 @@ TagManager:
   - Drawer
   - Decor
   - Door
+  - Lamp
   layers:
   - Default
   - TransparentFX
