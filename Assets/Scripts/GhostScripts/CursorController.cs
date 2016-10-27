@@ -49,8 +49,10 @@ public class CursorController : MonoBehaviour {
     [HideInInspector]
     public float inverterCount = 0;
 
-    
-   
+    List<float> toyCooldowns = new List<float>();
+
+    public Text toyCDText;
+
     [SerializeField]
     List<ToyIndex> ghostToys;
     private int selector;
@@ -82,18 +84,38 @@ public class CursorController : MonoBehaviour {
 	public Sprite bButtonUp, bButtonDown, aButtonUp, aButtonDown;
     private bool holdingRoom = false;
 
-    
-
 
 
 	// Use this for initialization
 	void Start () {
         child = GameObject.Find("ChildPlayer").transform;
         selectedObjectText = GameObject.Find("SelectedToy").GetComponent<Text>();
+
+        //initialize cooldown list
 	}
 
     // Update is called once per frame
     void Update() {
+        //show cd of toy
+        if (ghostToys[selector].timer > 0)
+        {
+            toyCDText.text = Mathf.Floor(ghostToys[selector].timer).ToString();
+        }
+        else
+        {
+            toyCDText.text = "";
+        }
+
+
+        //tick cooldown timers
+        for (int i=0; i<ghostToys.Count; i++)
+        {
+            if (ghostToys[i].timer > 0)
+            {
+                ghostToys[i].timer -= Time.deltaTime;
+            }
+        }
+
         gridBase = GameObject.Find("GridBase");
 
         float inputX = Input.GetAxis("HorizontalMovement2");
@@ -165,6 +187,8 @@ public class CursorController : MonoBehaviour {
                     }
                     
                 }
+                
+
                 isYAxisInUse = true;
             }
         }
@@ -199,7 +223,7 @@ public class CursorController : MonoBehaviour {
         }**/
 
         //Display the selected object on screen.
-       // selectedObjectText.text = ghostToys[selector].name;
+        selectedObjectText.text = ghostToys[selector].toy.name;
 
         //Some preliminary code to set up the ability to drop objects.
         int layermask = 1 << 5; layermask = ~layermask; // Ignoring UI layer      
@@ -229,7 +253,7 @@ public class CursorController : MonoBehaviour {
                 Debug.Log("Hitting object: " + verticalRayHit.collider.gameObject.name);
 
                 //Layer 14 is gridlocked.
-                if (verticalRayHit.collider.gameObject.layer == 14 && !verticalRayHit.collider.GetComponentInParent<GridLocker>().childLocked)
+                if (verticalRayHit.collider.gameObject.layer == 14)
                 {
                     holdingRoom = true;
                     holdingObject = verticalRayHit.collider.gameObject.transform.parent;
@@ -347,8 +371,16 @@ public class CursorController : MonoBehaviour {
             {
                 if (Physics.Raycast(verticalRay, out verticalRayHit, 1000f, inRoomLayerMask))
                 {
-                    Vector3 targetSpawn = verticalRayHit.point + new Vector3(0, 2, 0);
-                    //Instantiate(ghostToys[selector], targetSpawn, Quaternion.identity);
+                    if (ghostToys[selector].timer <= 0)
+                    {
+                        Vector3 targetSpawn = verticalRayHit.point + new Vector3(0, 2, 0);
+                        Instantiate(ghostToys[selector].toy, targetSpawn, Quaternion.identity);
+                        ghostToys[selector].timer = ghostToys[selector].cooldown;
+                    }
+                    else {
+                        Debug.Log("Cooldown: " + ghostToys[selector].timer + " on " + ghostToys[selector].toy.name);
+                    }
+
                 }
             }
         }
@@ -645,10 +677,11 @@ public class CursorController : MonoBehaviour {
 
 }
 
+
 [Serializable]
 public class ToyIndex
 {
     public Transform toy;
     public float cooldown;
-    public float timer;
+    public float timer = 0;
 }
