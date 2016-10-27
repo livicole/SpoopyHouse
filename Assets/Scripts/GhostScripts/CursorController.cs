@@ -133,28 +133,41 @@ public class CursorController : MonoBehaviour {
         
         if (newPos.x <= minX + panEdgeSize)
         {
-            ghostCam.transform.position = new Vector3(ghostCam.transform.position.x - (ghostCamController.panSpeed * Time.deltaTime), 
-                ghostCam.transform.position.y, 
-                ghostCam.transform.position.z); 
+            if(inputX < 0)
+            {
+                ghostCam.transform.position = new Vector3(ghostCam.transform.position.x - (ghostCamController.panSpeed * Time.deltaTime),
+               ghostCam.transform.position.y,
+               ghostCam.transform.position.z);
+            }
+           
         }
         else if(newPos.x >= maxX - panEdgeSize)
         {
-            ghostCam.transform.position = new Vector3(ghostCam.transform.position.x + (ghostCamController.panSpeed * Time.deltaTime),
-               ghostCam.transform.position.y,
-               ghostCam.transform.position.z);
+            if(inputX > 0)
+            {
+                ghostCam.transform.position = new Vector3(ghostCam.transform.position.x + (ghostCamController.panSpeed * Time.deltaTime),
+             ghostCam.transform.position.y,
+             ghostCam.transform.position.z);
+            }   
         }
 
         if (newPos.y <= minY + panEdgeSize)
         {
-            ghostCam.transform.position = new Vector3(ghostCam.transform.position.x,
-                ghostCam.transform.position.y,
-                ghostCam.transform.position.z - (ghostCamController.panSpeed * Time.deltaTime));
+            if (inputY > 0)
+            {
+                ghostCam.transform.position = new Vector3(ghostCam.transform.position.x,
+                    ghostCam.transform.position.y,
+                    ghostCam.transform.position.z - (ghostCamController.panSpeed * Time.deltaTime));
+            }
         }
         else if (newPos.y >= maxY - panEdgeSize)
         {
-            ghostCam.transform.position = new Vector3(ghostCam.transform.position.x,
-                ghostCam.transform.position.y,
-                ghostCam.transform.position.z + (ghostCamController.panSpeed * Time.deltaTime));
+            if(inputY < 0)
+            {
+                  ghostCam.transform.position = new Vector3(ghostCam.transform.position.x,
+                          ghostCam.transform.position.y,
+                         ghostCam.transform.position.z + (ghostCamController.panSpeed * Time.deltaTime));
+            }
         }
 
 

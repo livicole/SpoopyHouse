@@ -33,6 +33,8 @@ public class FlashlightController : MonoBehaviour {
     public float fireRange, fireAngle, fireIntensity, afterFireRange, afterFireAngle, afterFireIntensity;
     public float fireTime, dechargeTime, rechargeTime;
     public float batteryCount = 0;
+    public LayerMask layermask;
+    public float destroyRange;
     private float changeRate, currentLerp;
 
     // Use this for initialization
@@ -109,6 +111,16 @@ public class FlashlightController : MonoBehaviour {
                 afterFire = true;
                 currentLerp = 0;
                 changeRate = 1.0f / dechargeTime;
+                Ray fireRay = new Ray(transform.position, transform.forward);
+                RaycastHit fireRayInfo = new RaycastHit();
+                if(Physics.Raycast(transform.position, transform.forward, out fireRayInfo, destroyRange, layermask))
+                {
+                    if(fireRayInfo.collider.tag == "Toys")
+                    {
+                        Destroy(fireRayInfo.collider.gameObject);
+                    }
+                }
+
                 return;
             }
             currentLerp += changeRate * Time.deltaTime;
