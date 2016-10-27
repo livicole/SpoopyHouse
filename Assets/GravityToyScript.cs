@@ -64,6 +64,7 @@ public class GravityToyScript : MonoBehaviour
             if(anObject.GetComponent<ToyReceptor>() != null)
             {
                 anObject.GetComponent<ToyReceptor>().stopHovering();
+                anObject.GetComponent<ToyReceptor>().ResetValues();
             }
            
         }

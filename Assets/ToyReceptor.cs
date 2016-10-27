@@ -87,4 +87,24 @@ public class ToyReceptor : MonoBehaviour
         GetComponent<Rigidbody>().useGravity = true;    
     }
 
+    public void ResetValues()
+    {
+    fuckYou = false;
+    startTimer = false;
+    shouldIHover = false;
+    preventInitialLerp = false;
+    startSinWave = false;
+    timer = 1;
+    sinRange = 100f;
+    timerIncrement = .02f;
+    hoverHeight = 2f;
+    startSinHeight = 1.9f;
+    lerpT = .02f;
+    randomNumber = Random.Range(0, 4);
+    startSinHeight = 1.9f + randomNumber;
+    hoverHeight = 2f + randomNumber;
+    sinRange = 100f - (20 * randomNumber);
+    timerIncrement = 0.02f + (randomNumber / 100f);
+    }
+
 }
