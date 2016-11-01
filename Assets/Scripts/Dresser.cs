@@ -6,12 +6,9 @@ public class Dresser : MonoBehaviour
 
 	private Animator dresserAnimator;
 	Transform flashlight; 
-	public static bool drawerOpen;
-
 	// Use this for initialization
 	void Start ()
 	{
-		drawerOpen = false;
 		dresserAnimator = GetComponent<Animator> ();
         flashlight = GameObject.Find("Flashlight").transform;
 	}
@@ -27,18 +24,8 @@ public class Dresser : MonoBehaviour
 			//Debug.Log (rayHitInfo.collider.name);
 			if (rayHitInfo.collider.gameObject  == this.gameObject) {
 			//	Debug.Log ("it hit");
-				if (Input.GetButton ("Ghost Button A")) {
-					if (drawerOpen == false) {
-						dresserAnimator.SetBool ("DrawerIsOpen", true);
-						dresserAnimator.SetBool ("DrawerIsClosed", false);
-						drawerOpen = true;
-						Debug.Log (drawerOpen);
-					} else if (drawerOpen == true) {
-						dresserAnimator.SetBool ("DrawerIsOpen", false);
-						dresserAnimator.SetBool ("DrawerIsClosed", true);
-						drawerOpen = false;
-						Debug.Log (drawerOpen);
-					}
+				if (Input.GetButtonDown ("Use")) {
+					dresserAnimator.SetTrigger ("Trigger");
 				}
 			}
 		}

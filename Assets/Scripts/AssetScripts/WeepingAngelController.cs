@@ -33,6 +33,7 @@ public class WeepingAngelController : MonoBehaviour {
     private float shakeTimer = 0;
     private bool shake;
     private float originalShakeSpeed;
+	public float turnSpeed = 5f;
 
 
     // Use this for initialization
@@ -73,7 +74,14 @@ public class WeepingAngelController : MonoBehaviour {
 
         if (chase)
         {          
-            navMesh.SetDestination(playerLocation);
+			Transform frontWheel = this.gameObject.transform.GetChild (0);
+			Transform backWheel1 = this.gameObject.transform.GetChild (2);
+			Transform backWheel2 = this.gameObject.transform.GetChild (3);
+			frontWheel.transform.Rotate (turnSpeed * Time.deltaTime, 0f, 0f);
+			backWheel1.transform.Rotate (turnSpeed * Time.deltaTime, 0f, 0f);
+			backWheel2.transform.Rotate (turnSpeed * Time.deltaTime, 0f, 0f);
+
+			navMesh.SetDestination(playerLocation);
 
             Vector3 directionToAngel = transform.position - player.position;
             if (Vector3.Angle(playerForward, directionToAngel) < playerFov)
@@ -105,7 +113,6 @@ public class WeepingAngelController : MonoBehaviour {
                 chase = true;
             }
         }
-
 	}
 
     public void exorciseAngel()
