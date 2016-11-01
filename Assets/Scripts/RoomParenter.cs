@@ -4,6 +4,7 @@ using System.Collections;
 
 public class RoomParenter : MonoBehaviour {
 
+    private Transform currentRoom;
     
 
 	// Use this for initialization
@@ -41,6 +42,19 @@ public class RoomParenter : MonoBehaviour {
             {
                 GetComponent<GravityToyScript>().hasSetParent = true;
             }
+            else if (transform.tag == "Lamp")
+            {
+                currentRoom = transform.parent.parent;
+                currentRoom.GetComponent<GridLocker>().childLocked = true;
+            }
         }
 	}
+
+    void OnDestroy()
+    {
+        if(transform.tag == "Lamp")
+        {
+            currentRoom.GetComponent<GridLocker>().childLocked = false;
+        }
+    }
 }

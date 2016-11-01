@@ -104,4 +104,11 @@ public class DoorScript : MonoBehaviour {
         }
         else { Debug.Log("Nothing else to reset. Called from : " + transform.name); }
     }
+
+    public void LockDoor()
+    {
+        transform.GetChild(1).GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        otherDoor.transform.GetChild(1).GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+    }
+
 }

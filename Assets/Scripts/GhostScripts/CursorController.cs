@@ -49,11 +49,23 @@ public class CursorController : MonoBehaviour {
     [HideInInspector]
     public float inverterCount = 0;
 
+    List<float> toyCooldowns = new List<float>();
+
+    private Text selectedToyCDText;
+    private Text previousToyCDText;
+    private Text nextToyCDText;
+
+
     [SerializeField]
-    List<Transform> ghostToys;
+    List<ToyIndex> ghostToys;
     private int selector;
-    private Text selectedObjectText;
     private bool isYAxisInUse = false;
+
+    public List<Sprite> toySprites= new List<Sprite>();
+    public List<Sprite> toySpritesShaded = new List<Sprite>();
+    private Image selectedToySprite;
+    private Image previousToySprite;
+    private Image nextToySprite;
 
     private float rotateTimer;
     [SerializeField]
@@ -77,19 +89,84 @@ public class CursorController : MonoBehaviour {
     **/
 
 	public Image BButton, AButton;
-	public Sprite bButtonUp, bButtonDown, aButtonUp, aButtonDown;
+	public Image bButtonUp, bButtonDown, aButtonUp, aButtonDown;
     private bool holdingRoom = false;
 
-
+    int previousSelector;
+    int nextSelector;
 
 	// Use this for initialization
 	void Start () {
         child = GameObject.Find("ChildPlayer").transform;
-        selectedObjectText = GameObject.Find("SelectedToy").GetComponent<Text>();
-	}
+
+        selectedToySprite = GameObject.Find("SelectedToySprite").GetComponent<Image>();
+        previousToySprite = GameObject.Find("PreviousToySprite").GetComponent<Image>();
+        nextToySprite = GameObject.Find("NextToySprite").GetComponent<Image>();
+
+        selectedToyCDText = GameObject.Find("SelectedToyCD").GetComponent<Text>();
+        previousToyCDText = GameObject.Find("PreviousToyCD").GetComponent<Text>();
+        nextToyCDText = GameObject.Find("NextToyCD").GetComponent<Text>();
+
+        //initialize cooldown list
+    }
 
     // Update is called once per frame
     void Update() {
+        //index of next toy
+        nextSelector = (selector+1) % ghostToys.Count;
+
+        //index of previous toy
+
+        if (selector == 0)
+        {
+            previousSelector = ghostToys.Count - 1;
+        }
+        else
+        {
+            previousSelector = selector - 1;
+        }
+
+        //Debug.Log("previous: " + previousSelector + ". current: " + selector + ". next: " + nextSelector);
+
+        //show cd of toy
+        if (ghostToys[selector].timer > 0)
+        {
+            selectedToyCDText.text = Mathf.Floor(ghostToys[selector].timer).ToString();
+        }
+        else
+        {
+            selectedToyCDText.text = "";
+        }
+
+
+        if (ghostToys[nextSelector].timer > 0)
+        {
+            nextToyCDText.text = Mathf.Floor(ghostToys[nextSelector].timer).ToString();
+        }
+        else
+        {
+            nextToyCDText.text = "";
+        }
+
+        if (ghostToys[previousSelector].timer > 0)
+        {
+            previousToyCDText.text = Mathf.Floor(ghostToys[previousSelector].timer).ToString();
+        }
+        else
+        {
+            previousToyCDText.text = "";
+        }
+
+
+        //tick cooldown timers
+        for (int i=0; i<ghostToys.Count; i++)
+        {
+            if (ghostToys[i].timer > 0)
+            {
+                ghostToys[i].timer -= Time.deltaTime;
+            }
+        }
+
         gridBase = GameObject.Find("GridBase");
 
         float inputX = Input.GetAxis("HorizontalMovement2");
@@ -161,6 +238,8 @@ public class CursorController : MonoBehaviour {
                     }
                     
                 }
+                
+
                 isYAxisInUse = true;
             }
         }
@@ -195,7 +274,20 @@ public class CursorController : MonoBehaviour {
         }**/
 
         //Display the selected object on screen.
-        selectedObjectText.text = ghostToys[selector].name;
+        /*selectedObjectText.text = ghostToys[selector].toy.name;
+        nextObjectText.text = ghostToys[(selector+1)%6].toy.name;
+        if (selector == 0)
+        {
+            previousObjectText.text = ghostToys[ghostToys.Count - 1].toy.name;
+        }
+        else
+        {
+            previousObjectText.text = ghostToys[selector - 1].toy.name;
+        }*/
+
+        selectedToySprite.sprite = toySprites[selector];
+        nextToySprite.sprite = toySpritesShaded[nextSelector];
+        previousToySprite.sprite = toySpritesShaded[previousSelector];
 
         //Some preliminary code to set up the ability to drop objects.
         int layermask = 1 << 5; layermask = ~layermask; // Ignoring UI layer      
@@ -343,8 +435,16 @@ public class CursorController : MonoBehaviour {
             {
                 if (Physics.Raycast(verticalRay, out verticalRayHit, 1000f, inRoomLayerMask))
                 {
-                    Vector3 targetSpawn = verticalRayHit.point + new Vector3(0, 2, 0);
-                    Instantiate(ghostToys[selector], targetSpawn, Quaternion.identity);
+                    if (ghostToys[selector].timer <= 0)
+                    {
+                        Vector3 targetSpawn = verticalRayHit.point + new Vector3(0, 2, 0);
+                        Instantiate(ghostToys[selector].toy, targetSpawn, Quaternion.identity);
+                        ghostToys[selector].timer = ghostToys[selector].cooldown;
+                    }
+                    else {
+                        Debug.Log("Cooldown: " + ghostToys[selector].timer + " on " + ghostToys[selector].toy.name);
+                    }
+
                 }
             }
         }
@@ -639,4 +739,13 @@ public class CursorController : MonoBehaviour {
     }
 
 
+}
+
+
+[Serializable]
+public class ToyIndex
+{
+    public Transform toy;
+    public float cooldown;
+    public float timer = 0;
 }

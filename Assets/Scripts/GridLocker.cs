@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
+
 
 public class GridLocker : MonoBehaviour {
 
@@ -48,6 +48,7 @@ public class GridLocker : MonoBehaviour {
     public float moveTick;
     private float moveCooldownTimer = 0;
     private float rotationY;
+    public bool childLocked = false;
     int counter;
 
     // Use this for initialization
