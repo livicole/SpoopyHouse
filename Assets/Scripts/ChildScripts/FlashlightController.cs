@@ -38,6 +38,10 @@ public class FlashlightController : MonoBehaviour {
     public float destroyRange;
     private float changeRate, currentLerp;
 
+
+    public bool isToyActive = false;
+    public Vector3 toyLocation;
+
     // Use this for initialization
     void Start() {
 
@@ -53,6 +57,17 @@ public class FlashlightController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+
+        if (isToyActive)
+        {
+            float flashlightMath = 1.8f - (Vector3.Distance(toyLocation, transform.position) / 10f);
+            flashlight.intensity = Mathf.Clamp(flashlightMath, .1f, 1.8f);
+            resetIntensity = flashlight.intensity;
+            //make intensity scale from distance
+        }
+
+
+
         if (GameObject.Find("GameManager").GetComponent<GameManager>().gameIsLive)
         {
 
