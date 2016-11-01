@@ -13,7 +13,7 @@ public class CameraController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (GameObject.Find("GameManager").GetComponent<GameManager>().gameIsLive)
+    
         {
             float camYAxis = Input.GetAxis("VerticalCamera");
             //Debug.Log(Mathf.Abs(transform.eulerAngles.x));

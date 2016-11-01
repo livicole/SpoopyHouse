@@ -182,26 +182,26 @@ public class CursorController : MonoBehaviour {
                             0);
         GhostCameraController ghostCamController = ghostCam.GetComponent<GhostCameraController>();
         
-        if (newPos.x <= minX + panEdgeSize)
+        if (newPos.x <= minX + panEdgeSize && inputX < 0)
         {
             ghostCam.transform.position = new Vector3(ghostCam.transform.position.x - (ghostCamController.panSpeed * Time.deltaTime), 
                 ghostCam.transform.position.y, 
                 ghostCam.transform.position.z); 
         }
-        else if(newPos.x >= maxX - panEdgeSize)
+        else if(newPos.x >= maxX - panEdgeSize && inputX > 0)
         {
             ghostCam.transform.position = new Vector3(ghostCam.transform.position.x + (ghostCamController.panSpeed * Time.deltaTime),
                ghostCam.transform.position.y,
                ghostCam.transform.position.z);
         }
 
-        if (newPos.y <= minY + panEdgeSize)
+        if (newPos.y <= minY + panEdgeSize && inputY > 0)
         {
             ghostCam.transform.position = new Vector3(ghostCam.transform.position.x,
                 ghostCam.transform.position.y,
                 ghostCam.transform.position.z - (ghostCamController.panSpeed * Time.deltaTime));
         }
-        else if (newPos.y >= maxY - panEdgeSize)
+        else if (newPos.y >= maxY - panEdgeSize && inputY < 0)
         {
             ghostCam.transform.position = new Vector3(ghostCam.transform.position.x,
                 ghostCam.transform.position.y,

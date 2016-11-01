@@ -54,15 +54,15 @@ public class ChildRemover : MonoBehaviour {
                     if (Physics.Raycast(forwardRay, out forwardRayHit, detectDistance))
                     {
                         //Debug.Log(forwardRayHit.collider.gameObject.layer);
-                        if (forwardRayHit.collider.gameObject.layer == 11)
-                        {
-                            coolingdown = true;
-                            Destroy(forwardRayHit.collider.gameObject);
-                        }
-                        else if (forwardRayHit.collider.gameObject.tag == "Lamp")
+                        if (forwardRayHit.collider.gameObject.tag == "Lamp")
                         {
                             Destroy(forwardRayHit.collider.gameObject);
                             holdingLamp = true;
+                        }
+                        else if(forwardRayHit.collider.gameObject.tag == "Battery")
+                        {
+                            Destroy(forwardRayHit.collider.gameObject);
+                            GameObject.Find("Flashlight").GetComponent<FlashlightController>().batteryCount++;
                         }
                         else if (forwardRayHit.collider.gameObject.tag == "Item")
                         {
