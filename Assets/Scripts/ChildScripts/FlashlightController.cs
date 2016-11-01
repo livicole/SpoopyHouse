@@ -30,6 +30,7 @@ public class FlashlightController : MonoBehaviour {
     private bool isRightTriggerUsed, firing = false, afterFire = false, recharging = false;
 
     private float preFireRange, preFireAngle, preFireIntensity;
+    public float resetRange, resetAngle, resetIntensity;
     public float fireRange, fireAngle, fireIntensity, afterFireRange, afterFireAngle, afterFireIntensity;
     public float fireTime, dechargeTime, rechargeTime;
     public float batteryCount = 0;
@@ -149,9 +150,9 @@ public class FlashlightController : MonoBehaviour {
 
         if (recharging)
         {
-            flashlight.range = Mathf.Lerp(afterFireRange, preFireRange, currentLerp);
-            flashlight.intensity = Mathf.Lerp(afterFireIntensity, preFireIntensity, currentLerp);
-            flashlight.spotAngle = Mathf.Lerp(afterFireAngle, preFireAngle, currentLerp);
+            flashlight.range = Mathf.Lerp(afterFireRange, resetRange, currentLerp);
+            flashlight.intensity = Mathf.Lerp(afterFireIntensity, resetIntensity, currentLerp);
+            flashlight.spotAngle = Mathf.Lerp(afterFireAngle, resetAngle, currentLerp);
             if(currentLerp >= 1.0)
             {
                 recharging = false;

@@ -333,6 +333,102 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.03336671
       objectReference: {fileID: 0}
+    - target: {fileID: 95000010701402370, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013335282346, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: fireRange
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013335282346, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: fireAngle
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013335282346, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: fireIntensity
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013335282346, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: afterFireRange
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013335282346, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: afterFireAngle
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013335282346, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: afterFireIntensity
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013335282346, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: fireTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013335282346, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: dechargeTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013335282346, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: rechargeTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013335282346, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: batteryCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013335282346, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: destroyRange
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013335282346, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: layermask.m_Bits
+      value: 2048
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011689918988, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: holdingLamp
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011689918988, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: lamp
+      value: 
+      objectReference: {fileID: 4000011784891852, guid: 4f84abdd3c52d97419e51e4e513a0c4b,
+        type: 2}
+    - target: {fileID: 114000013335282346, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: recharging
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013335282346, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: resetRange
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013335282346, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: resetAngle
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013335282346, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: resetIntensity
+      value: 1.8
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114000013529485478, guid: dd5f3977f7ae9c042802121835007f55, type: 2}
     - {fileID: 114000013723218082, guid: dd5f3977f7ae9c042802121835007f55, type: 2}
@@ -1703,6 +1799,7 @@ MonoBehaviour:
   - {x: 1, y: 0, z: 2}
   - {x: 2, y: 0, z: 1}
   moveTick: 1
+  childLocked: 0
 --- !u!4 &295393964
 Transform:
   m_ObjectHideFlags: 0
@@ -2992,6 +3089,7 @@ MonoBehaviour:
   - {x: 1, y: 0, z: 0}
   - {x: 2, y: 0, z: 0}
   moveTick: 1
+  childLocked: 0
 --- !u!4 &379146590
 Transform:
   m_ObjectHideFlags: 0
@@ -3273,6 +3371,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa03829812eebbc45848a83e8b458ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &478210775
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4000011015575276, guid: ab66f50161663764997f04b828022640, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -433.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011015575276, guid: ab66f50161663764997f04b828022640, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3.476
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011015575276, guid: ab66f50161663764997f04b828022640, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 165
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011015575276, guid: ab66f50161663764997f04b828022640, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011015575276, guid: ab66f50161663764997f04b828022640, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011015575276, guid: ab66f50161663764997f04b828022640, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011015575276, guid: ab66f50161663764997f04b828022640, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011015575276, guid: ab66f50161663764997f04b828022640, type: 2}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ab66f50161663764997f04b828022640, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &480480182
 Prefab:
   m_ObjectHideFlags: 0
@@ -4483,6 +4623,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 820539473}
   - 114: {fileID: 820539472}
+  - 114: {fileID: 820539474}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4502,6 +4643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 1206821638}
+  totalTime: 71
 --- !u!4 &820539473
 Transform:
   m_ObjectHideFlags: 0
@@ -4515,6 +4657,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 18
+--- !u!114 &820539474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 820539471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a63ad24d7163ca47b0e4ba8c91ae046, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameIsLive: 1
 --- !u!1001 &857490934
 Prefab:
   m_ObjectHideFlags: 0
@@ -6280,6 +6434,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 1}
   - {x: 1, y: 0, z: 0}
   moveTick: 1
+  childLocked: 0
 --- !u!1 &1091468383 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000010721315928, guid: 99a62503987c07c4996f5c13877ac484,
@@ -6886,6 +7041,7 @@ MonoBehaviour:
   - {x: 2, y: 0, z: 0}
   - {x: 2, y: 0, z: 1}
   moveTick: 1
+  childLocked: 0
 --- !u!4 &1210107073
 Transform:
   m_ObjectHideFlags: 0
@@ -6939,6 +7095,7 @@ MonoBehaviour:
   - {x: 1, y: 0, z: 2}
   - {x: 2, y: 0, z: 0}
   moveTick: 1
+  childLocked: 0
 --- !u!4 &1231140441
 Transform:
   m_ObjectHideFlags: 0
@@ -7425,6 +7582,7 @@ MonoBehaviour:
   - {x: 2, y: 0, z: 1}
   - {x: 2, y: 0, z: 2}
   moveTick: 1
+  childLocked: 0
 --- !u!4 &1385769191
 Transform:
   m_ObjectHideFlags: 0
@@ -7474,6 +7632,7 @@ MonoBehaviour:
   coordinatesOccupied:
   - {x: 0, y: 0, z: 0}
   moveTick: 1
+  childLocked: 0
 --- !u!4 &1392352802
 Transform:
   m_ObjectHideFlags: 0
@@ -8582,6 +8741,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}
   moveTick: 1
+  childLocked: 0
 --- !u!4 &1716100490
 Transform:
   m_ObjectHideFlags: 0
@@ -10180,6 +10340,7 @@ MonoBehaviour:
   - {x: 1, y: 0, z: 2}
   - {x: 2, y: 0, z: 0}
   moveTick: 1
+  childLocked: 0
 --- !u!4 &1966448637
 Transform:
   m_ObjectHideFlags: 0
