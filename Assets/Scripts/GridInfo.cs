@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using System.Collections;
 using System.Collections.Generic;
 
@@ -38,6 +40,7 @@ public class GridInfo : MonoBehaviour {
         usedGridBlocks.Remove(newVector);
     }
 }
+#if UNITY_EDITOR
 [CustomEditor(typeof(GridInfo))]
 public class GridInfoEditor : Editor
 {
@@ -56,4 +59,5 @@ public class GridInfoEditor : Editor
         base.OnInspectorGUI();
     }
 }
+#endif
 

@@ -38,51 +38,53 @@ public class ChildRemover : MonoBehaviour {
             }
         }
 
-
-        if (Input.GetButton("Use"))
+        if (GameObject.Find("GameManager").GetComponent<GameManager>().gameIsLive)
         {
-            if (!coolingdown)
+            if (Input.GetButton("Use"))
             {
-                //Vector3 rayPosition = new Vector3(transform.position.x, transform.position.y - heightDifference, transform.position.z);
-                Vector3 rayPosition = flashlight.transform.position;
-                Vector3 rayDirection = flashlight.transform.forward;
-                Ray forwardRay = new Ray(rayPosition, rayDirection);
-                RaycastHit forwardRayHit = new RaycastHit();
-                Debug.DrawRay(rayPosition, rayDirection * detectDistance, Color.red);
-
-                if (Physics.Raycast(forwardRay, out forwardRayHit, detectDistance))
+                if (!coolingdown)
                 {
-                    //Debug.Log(forwardRayHit.collider.gameObject.layer);
-                    if (forwardRayHit.collider.gameObject.layer == 11)
+                    //Vector3 rayPosition = new Vector3(transform.position.x, transform.position.y - heightDifference, transform.position.z);
+                    Vector3 rayPosition = flashlight.transform.position;
+                    Vector3 rayDirection = flashlight.transform.forward;
+                    Ray forwardRay = new Ray(rayPosition, rayDirection);
+                    RaycastHit forwardRayHit = new RaycastHit();
+                    Debug.DrawRay(rayPosition, rayDirection * detectDistance, Color.red);
+
+                    if (Physics.Raycast(forwardRay, out forwardRayHit, detectDistance))
                     {
-                        coolingdown = true;
-                        Destroy(forwardRayHit.collider.gameObject);
+                        //Debug.Log(forwardRayHit.collider.gameObject.layer);
+                        if (forwardRayHit.collider.gameObject.layer == 11)
+                        {
+                            coolingdown = true;
+                            Destroy(forwardRayHit.collider.gameObject);
+                        }
+                        else if (forwardRayHit.collider.gameObject.tag == "Lamp")
+                        {
+                            Destroy(forwardRayHit.collider.gameObject);
+                            holdingLamp = true;
+                        }
+                        else if (forwardRayHit.collider.gameObject.tag == "Item")
+                        {
+                            //inventoryObject.GetComponent<InventoryScript>().pickUp(forwardRayHit.collider.gameObject);
+                            forwardRayHit.collider.gameObject.SetActive(false);
+                            NewInventoryScript invScript = this.gameObject.GetComponent<NewInventoryScript>();
+                            invScript.itemsCollected++;
+                        }
+
                     }
-                    else if (forwardRayHit.collider.gameObject.tag == "Lamp")
-                    {
-                        Destroy(forwardRayHit.collider.gameObject);
-                        holdingLamp = true;
-                    }
-                    else if (forwardRayHit.collider.gameObject.tag == "Item")
-                    {
-                        //inventoryObject.GetComponent<InventoryScript>().pickUp(forwardRayHit.collider.gameObject);
-                        forwardRayHit.collider.gameObject.SetActive(false);
-						NewInventoryScript invScript = this.gameObject.GetComponent<NewInventoryScript> ();
-						invScript.itemsCollected++;                        
-                    }
-                    
+                }
+                else
+                {
+                    Debug.Log("On Cooldown");
                 }
             }
-            else
-            {
-                Debug.Log("On Cooldown");
-            }
-        }
 
-        if (Input.GetButtonDown("Drop") && holdingLamp)
-        {
-            holdingLamp = false;
-            Instantiate(lamp, transform.position + transform.forward * 2, Quaternion.identity);
+            if (Input.GetButtonDown("Drop") && holdingLamp)
+            {
+                holdingLamp = false;
+                Instantiate(lamp, transform.position + transform.forward * 2, Quaternion.identity);
+            }
         }
 
         //if (Input.GetButtonDown())

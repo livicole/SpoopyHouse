@@ -32,87 +32,91 @@ public class GhostCameraController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-        float inputX = Input.GetAxis("HorizontalCamera2");
-        float inputY = -Input.GetAxis("VerticalCamera2");
-
-        float left = -Input.GetAxis("GhostLeftTrigger"); //-1 -> 0
-        float right = Input.GetAxis("GhostRightTrigger"); //0 -> 1
-        //float combination = left + right;
-        //inputX = Input.GetAxis("LeftTrigger");
-        //float inputZ = combination;
-        //Debug.Log(inputZ);
-        if(timer > 0)
+        if (GameObject.Find("GameManager").GetComponent<GameManager>().gameIsLive)
         {
-            timer -= Time.deltaTime;
-        }
-        if(timer <= 0)
-        {
-            if (Input.GetAxisRaw("GhostLeftTrigger") != 0)
+
+
+
+            float inputX = Input.GetAxis("HorizontalCamera2");
+            float inputY = -Input.GetAxis("VerticalCamera2");
+
+            float left = -Input.GetAxis("GhostLeftTrigger"); //-1 -> 0
+            float right = Input.GetAxis("GhostRightTrigger"); //0 -> 1
+                                                              //float combination = left + right;
+                                                              //inputX = Input.GetAxis("LeftTrigger");
+                                                              //float inputZ = combination;
+                                                              //Debug.Log(inputZ);
+            if (timer > 0)
             {
-                if (!isLeftTriggerInUse)
+                timer -= Time.deltaTime;
+            }
+            if (timer <= 0)
+            {
+                if (Input.GetAxisRaw("GhostLeftTrigger") != 0)
                 {
-                    Debug.Log("Use left trigger");
-                    isLeftTriggerInUse = true;
-                    camZoomMode -= 1;
-                    if(camZoomMode < CamZoom.Close)
+                    if (!isLeftTriggerInUse)
                     {
-                        camZoomMode = CamZoom.Close;
+                        Debug.Log("Use left trigger");
+                        isLeftTriggerInUse = true;
+                        camZoomMode -= 1;
+                        if (camZoomMode < CamZoom.Close)
+                        {
+                            camZoomMode = CamZoom.Close;
+                        }
+                        SetZoom(camZoomMode);
                     }
-                    SetZoom(camZoomMode);
+                }
+                if (Input.GetAxisRaw("GhostLeftTrigger") == 0)
+                {
+                    isLeftTriggerInUse = false;
+                }
+                if (Input.GetAxisRaw("GhostRightTrigger") != 0)
+                {
+                    if (!isRightTriggerInUse)
+                    {
+                        Debug.Log("Use right trigger");
+                        isRightTriggerInUse = true;
+                        camZoomMode += 1;
+                        if (camZoomMode > CamZoom.Far)
+                        {
+                            camZoomMode = CamZoom.Far;
+                        }
+                        SetZoom(camZoomMode);
+                    }
+                }
+                if (Input.GetAxisRaw("GhostRightTrigger") == 0)
+                {
+                    isRightTriggerInUse = false;
                 }
             }
-            if (Input.GetAxisRaw("GhostLeftTrigger") == 0)
+
+            if (Input.GetButtonDown("Ghost Left Stick Click"))
             {
-                isLeftTriggerInUse = false;
+                Debug.Log("Left Stick Click");
+                playerPosition = GameObject.Find("ChildPlayer").transform.position;
+                camZoomMode = CamZoom.Close;
+                SetZoom(camZoomMode);
+                transform.position = new Vector3(playerPosition.x, transform.position.y, playerPosition.z + 2.5f);
+
             }
-            if (Input.GetAxisRaw("GhostRightTrigger") != 0)
-            {
-                if (!isRightTriggerInUse)
-                {
-                    Debug.Log("Use right trigger");
-                    isRightTriggerInUse = true;
-                    camZoomMode += 1;
-                    if (camZoomMode > CamZoom.Far)
-                    {
-                        camZoomMode = CamZoom.Far;
-                    }
-                    SetZoom(camZoomMode);
-                }
-            }
-            if (Input.GetAxisRaw("GhostRightTrigger") == 0)
-            {
-                isRightTriggerInUse = false;
-            }
+
+
+            Vector3 movementVector = new Vector3(inputX, 0, inputY);
+            movementVector = movementVector.normalized * panSpeed;
+
+            /* Vector3 zoomVector = new Vector3(0, 
+                 inputZ * zoomSpeed
+                 , 0);*/
+
+            Vector3 totalMovement = movementVector;// + zoomVector;
+
+            Vector3 newPosition = transform.position + totalMovement * Time.deltaTime;
+            newPosition = new Vector3(Mathf.Clamp(newPosition.x, xMin, xMax),
+                Mathf.Clamp(newPosition.y, zoomMin, zoomMax),
+                Mathf.Clamp(newPosition.z, zMin, zMax));
+            transform.position = newPosition;
+
         }
-
-        if (Input.GetButtonDown("Ghost Left Stick Click"))
-        {
-            Debug.Log("Left Stick Click");
-            playerPosition = GameObject.Find("ChildPlayer").transform.position;
-            camZoomMode = CamZoom.Close;
-            SetZoom(camZoomMode);
-            transform.position = new Vector3(playerPosition.x, transform.position.y, playerPosition.z + 2.5f);
-            
-        }
-       
-
-        Vector3 movementVector = new Vector3(inputX, 0, inputY);
-        movementVector = movementVector.normalized * panSpeed;
-
-        /* Vector3 zoomVector = new Vector3(0, 
-             inputZ * zoomSpeed
-             , 0);*/
-
-        Vector3 totalMovement = movementVector;// + zoomVector;
-
-        Vector3 newPosition = transform.position + totalMovement * Time.deltaTime;
-        newPosition = new Vector3(Mathf.Clamp(newPosition.x, xMin, xMax),
-            Mathf.Clamp(newPosition.y, zoomMin, zoomMax),
-            Mathf.Clamp(newPosition.z, zMin, zMax));
-        transform.position = newPosition;
-
- 
 
     }
 

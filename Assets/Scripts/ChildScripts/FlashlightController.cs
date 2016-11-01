@@ -52,52 +52,57 @@ public class FlashlightController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("Trigger: " + Input.GetAxis("LeftTrigger"));
-        /**
-        float left = -Input.GetAxis("LeftTrigger"); //-1 -> 0
-        float right = Input.GetAxis("RightTrigger"); //0 -> 1
-        float combination = left + right;
-        //inputX = Input.GetAxis("LeftTrigger");
-        inputX = (combination + 1) / 2;
-        if(inputX == 1)
+        if (GameObject.Find("GameManager").GetComponent<GameManager>().gameIsLive)
         {
-            inputX = 0.99f;
-        }
-
-        //Debug.Log("Input X: " + (double)(inputX));
-        controlAnimator.SetTime((double)(inputX));
 
 
-        if (Input.GetKey(KeyCode.Space))
-        {
-            GetComponent<Animator>().StartPlayback();
-            //GetComponent<Animator>().Play("ControlAnimation", 0);
-        }**/
-
-
-        //"Fire" the flashlight on right trigger
-        if (Input.GetAxisRaw("RightTrigger") != 0)
-        {
-            if (!isRightTriggerUsed && !firing && !afterFire && !recharging && batteryCount > 0)
+            //Debug.Log("Trigger: " + Input.GetAxis("LeftTrigger"));
+            /**
+            float left = -Input.GetAxis("LeftTrigger"); //-1 -> 0
+            float right = Input.GetAxis("RightTrigger"); //0 -> 1
+            float combination = left + right;
+            //inputX = Input.GetAxis("LeftTrigger");
+            inputX = (combination + 1) / 2;
+            if(inputX == 1)
             {
-                if (Input.GetAxisRaw("RightTrigger") > 0)
+                inputX = 0.99f;
+            }
+
+            //Debug.Log("Input X: " + (double)(inputX));
+            controlAnimator.SetTime((double)(inputX));
+
+
+            if (Input.GetKey(KeyCode.Space))
+            {
+                GetComponent<Animator>().StartPlayback();
+                //GetComponent<Animator>().Play("ControlAnimation", 0);
+            }**/
+
+
+            //"Fire" the flashlight on right trigger
+            if (Input.GetAxisRaw("RightTrigger") != 0)
+            {
+                if (!isRightTriggerUsed && !firing && !afterFire && !recharging && batteryCount > 0)
                 {
-                    firing = true;
-                    currentLerp = 0;
-                    preFireAngle = flashlight.spotAngle;
-                    preFireIntensity = flashlight.intensity;
-                    preFireRange = flashlight.range;
-                    changeRate = 1.0f / fireTime;
-                    batteryCount--;
+                    if (Input.GetAxisRaw("RightTrigger") > 0)
+                    {
+                        firing = true;
+                        currentLerp = 0;
+                        preFireAngle = flashlight.spotAngle;
+                        preFireIntensity = flashlight.intensity;
+                        preFireRange = flashlight.range;
+                        changeRate = 1.0f / fireTime;
+                        batteryCount--;
+                    }
+                    isRightTriggerUsed = true;
                 }
-                isRightTriggerUsed = true;
+            }
+            if (Input.GetAxisRaw("RightTrigger") == 0)
+            {
+                isRightTriggerUsed = false;
             }
         }
-        if (Input.GetAxisRaw("RightTrigger") == 0)
-        {
-            isRightTriggerUsed = false;
-        }
-        Debug.Log(currentLerp);
+
 
         //"fire" on firing being true, then set false when done.
         if (firing)
