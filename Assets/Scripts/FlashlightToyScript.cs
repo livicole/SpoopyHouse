@@ -7,6 +7,8 @@ public class FlashlightToyScript : MonoBehaviour {
     GameObject theFlashlight;
     float theDistance;
 
+    bool foundPlayer = false;
+
 	// Use this for initialization
 	void Start () {
 
@@ -26,7 +28,12 @@ public class FlashlightToyScript : MonoBehaviour {
         {
             if (rayToPlayerHit.collider.name == "ChildPlayer")
             {
-                theFlashlight.GetComponent<Light>().intensity = (theDistance / 10);
+                if (!foundPlayer)
+                {
+                    theFlashlight.GetComponent<FlashlightController>().toyLocation = transform.position;
+                    theFlashlight.GetComponent<FlashlightController>().isToyActive = true;
+                 //   theFlashlight.GetComponent<Light>().intensity = (theDistance / 10);
+                }
                 
             }
         }
@@ -35,8 +42,9 @@ public class FlashlightToyScript : MonoBehaviour {
 
     void OnDestroy()
     {
-        theFlashlight.GetComponent<Light>().intensity = 1.8f;
-
+     //   theFlashlight.GetComponent<Light>().intensity = 1.8f;
+        theFlashlight.GetComponent<FlashlightController>().isToyActive = false;
+        theFlashlight.GetComponent<FlashlightController>().resetIntensity = 1.8f;
     }
 
 }
