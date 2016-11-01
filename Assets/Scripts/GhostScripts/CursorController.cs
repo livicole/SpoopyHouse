@@ -51,7 +51,10 @@ public class CursorController : MonoBehaviour {
 
     List<float> toyCooldowns = new List<float>();
 
-    public Text toyCDText;
+    private Text selectedToyCDText;
+    private Text previousToyCDText;
+    private Text nextToyCDText;
+
 
     [SerializeField]
     List<ToyIndex> ghostToys;
@@ -89,7 +92,8 @@ public class CursorController : MonoBehaviour {
 	public Image bButtonUp, bButtonDown, aButtonUp, aButtonDown;
     private bool holdingRoom = false;
 
-
+    int previousSelector;
+    int nextSelector;
 
 	// Use this for initialization
 	void Start () {
@@ -99,19 +103,58 @@ public class CursorController : MonoBehaviour {
         previousToySprite = GameObject.Find("PreviousToySprite").GetComponent<Image>();
         nextToySprite = GameObject.Find("NextToySprite").GetComponent<Image>();
 
+        selectedToyCDText = GameObject.Find("SelectedToyCD").GetComponent<Text>();
+        previousToyCDText = GameObject.Find("PreviousToyCD").GetComponent<Text>();
+        nextToyCDText = GameObject.Find("NextToyCD").GetComponent<Text>();
+
         //initialize cooldown list
     }
 
     // Update is called once per frame
     void Update() {
-        //show cd of toy
-        if (ghostToys[selector].timer > 0)
+        //index of next toy
+        nextSelector = (selector+1) % ghostToys.Count;
+
+        //index of previous toy
+
+        if (selector == 0)
         {
-            toyCDText.text = Mathf.Floor(ghostToys[selector].timer).ToString();
+            previousSelector = ghostToys.Count - 1;
         }
         else
         {
-            toyCDText.text = "";
+            previousSelector = selector - 1;
+        }
+
+        //Debug.Log("previous: " + previousSelector + ". current: " + selector + ". next: " + nextSelector);
+
+        //show cd of toy
+        if (ghostToys[selector].timer > 0)
+        {
+            selectedToyCDText.text = Mathf.Floor(ghostToys[selector].timer).ToString();
+        }
+        else
+        {
+            selectedToyCDText.text = "";
+        }
+
+
+        if (ghostToys[nextSelector].timer > 0)
+        {
+            nextToyCDText.text = Mathf.Floor(ghostToys[nextSelector].timer).ToString();
+        }
+        else
+        {
+            nextToyCDText.text = "";
+        }
+
+        if (ghostToys[previousSelector].timer > 0)
+        {
+            previousToyCDText.text = Mathf.Floor(ghostToys[previousSelector].timer).ToString();
+        }
+        else
+        {
+            previousToyCDText.text = "";
         }
 
 
@@ -243,15 +286,8 @@ public class CursorController : MonoBehaviour {
         }*/
 
         selectedToySprite.sprite = toySprites[selector];
-        nextToySprite.sprite = toySpritesShaded[(selector + 1) % 6];
-        if (selector == 0)
-        {
-            previousToySprite.sprite = toySpritesShaded[toySprites.Count - 1];
-        }
-        else
-        {
-            previousToySprite.sprite = toySpritesShaded[selector - 1];
-        }
+        nextToySprite.sprite = toySpritesShaded[nextSelector];
+        previousToySprite.sprite = toySpritesShaded[previousSelector];
 
         //Some preliminary code to set up the ability to drop objects.
         int layermask = 1 << 5; layermask = ~layermask; // Ignoring UI layer      
