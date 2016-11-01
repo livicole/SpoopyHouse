@@ -13,6 +13,7 @@ TagManager:
   - Decor
   - Door
   - Lamp
+  - Battery
   layers:
   - Default
   - TransparentFX
