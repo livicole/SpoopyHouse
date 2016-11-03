@@ -16,8 +16,14 @@ public class CameraController : MonoBehaviour {
     
         {
             float camYAxis = Input.GetAxis("VerticalCamera");
+            float rotationY = camYAxis * -turningSpeed;
+            rotationY = Mathf.Clamp(rotationY, 0, 360);
             //Debug.Log(Mathf.Abs(transform.eulerAngles.x));
-            transform.Rotate(new Vector3(turningSpeed * camYAxis, 0, 0));
+            Vector3 rotation = transform.eulerAngles + new Vector3(turningSpeed * camYAxis, 0, 0);
+
+            rotation.x = Mathf.Clamp(rotation.x, 0, 1080);
+
+            transform.eulerAngles = rotation;
             /**
             if (Mathf.Abs(transform.localEulerAngles.x) > 50)
             {

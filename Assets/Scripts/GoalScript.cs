@@ -19,7 +19,7 @@ public class GoalScript : MonoBehaviour {
 			if (col.gameObject.GetComponentInChildren<NewInventoryScript>().itemsCollected == 5)
             {
                 //Debug.Log("He won!");
-                winText.text = "You Win!";
+                winText.text = "Kid Wins!";
             }
         }
     }

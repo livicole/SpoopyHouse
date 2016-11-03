@@ -23,16 +23,17 @@ namespace UnityStandardAssets.ImageEffects
             ImageEffects.RenderDistortion (material, source, destination, angle, center, radius);
         }
 
+        void Start()
+        {
+            
+        }
+
         void Update()
         {
             if (disabling)
             {
-                angle = Mathf.Lerp(previousAngle, 0, rate);
-                center = Vector2.Lerp(previousCenter, new Vector2(0.5f, 0.5f), rate);
-                if(angle == 0)
-                {
-                    disabling = false;
-                }
+                angle = 0;
+                center = new Vector2(0.5f, 0.5f);
             }
         }
 
