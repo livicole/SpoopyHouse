@@ -73,31 +73,6 @@ public class FlashlightController : MonoBehaviour {
 
         if (GameObject.Find("GameManager").GetComponent<GameManager>().gameIsLive)
         {
-
-
-            //Debug.Log("Trigger: " + Input.GetAxis("LeftTrigger"));
-            /**
-            float left = -Input.GetAxis("LeftTrigger"); //-1 -> 0
-            float right = Input.GetAxis("RightTrigger"); //0 -> 1
-            float combination = left + right;
-            //inputX = Input.GetAxis("LeftTrigger");
-            inputX = (combination + 1) / 2;
-            if(inputX == 1)
-            {
-                inputX = 0.99f;
-            }
-
-            //Debug.Log("Input X: " + (double)(inputX));
-            controlAnimator.SetTime((double)(inputX));
-
-
-            if (Input.GetKey(KeyCode.Space))
-            {
-                GetComponent<Animator>().StartPlayback();
-                //GetComponent<Animator>().Play("ControlAnimation", 0);
-            }**/
-
-
             //"Fire" the flashlight on right trigger
             if (Input.GetAxisRaw("RightTrigger") != 0)
             {
