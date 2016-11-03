@@ -3075,6 +3075,7 @@ GameObject:
   - 4: {fileID: 4000010250220804}
   - 54: {fileID: 54000012448258822}
   - 114: {fileID: 114000012909887342}
+  - 65: {fileID: 65000013488009458}
   m_Layer: 12
   m_Name: Wolf Rug
   m_TagString: Untagged
@@ -3423,6 +3424,7 @@ GameObject:
   - 23: {fileID: 23000010474783302}
   - 95: {fileID: 95000011856249814}
   - 64: {fileID: 64000012969115306}
+  - 64: {fileID: 64000011822997862}
   m_Layer: 0
   m_Name: 2x2Room
   m_TagString: Untagged
@@ -5819,7 +5821,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010401778536}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 86.795, y: -3.233, z: 133.9}
+  m_LocalPosition: {x: 86.795, y: -3.116, z: 133.9}
   m_LocalScale: {x: 0.10010011, y: 0.1, z: 0.10010011}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -7590,7 +7592,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 36aac0a3c1444a3408b6b10b47436d5f, type: 2}
+  - {fileID: 2100000, guid: 4d60fff894bbb174780ca0343e7b6469, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -11806,6 +11808,18 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: 98bb209761a679847a39606d9c9044e9, type: 3}
+--- !u!64 &64000011822997862
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013702838412}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: d88e42196ba84dd4cb560faad65d87d7, type: 3}
 --- !u!64 &64000011881690182
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -12392,7 +12406,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 3, y: 3, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65000012789254678
 BoxCollider:
@@ -12418,6 +12432,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.347934, y: 1.2855358, z: 3.335531}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65000013488009458
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013272882616}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9997978, y: 0.16777425, z: 1}
+  m_Center: {x: -0.00043713002, y: -0.17071487, z: -0.0000024439325}
 --- !u!65 &65000013840592942
 BoxCollider:
   m_ObjectHideFlags: 1
