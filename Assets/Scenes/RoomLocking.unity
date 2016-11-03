@@ -564,13 +564,23 @@ Prefab:
     - target: {fileID: 59000010261582338, guid: 860a33eea2fb19241bfcf791c12b89e6,
         type: 2}
       propertyPath: m_ConnectedAnchor.z
-      value: -0.22765984
+      value: -0.22765815
       objectReference: {fileID: 0}
     - target: {fileID: 59000013243484580, guid: 860a33eea2fb19241bfcf791c12b89e6,
         type: 2}
       propertyPath: m_ConnectedAnchor.x
-      value: 2.0658724
+      value: 2.0658755
       objectReference: {fileID: 0}
+    - target: {fileID: 59000014035419850, guid: 860a33eea2fb19241bfcf791c12b89e6,
+        type: 2}
+      propertyPath: m_ConnectedAnchor.x
+      value: 2.0658739
+      objectReference: {fileID: 0}
+    - target: {fileID: 23000014209647146, guid: 860a33eea2fb19241bfcf791c12b89e6,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4d60fff894bbb174780ca0343e7b6469, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 860a33eea2fb19241bfcf791c12b89e6, type: 2}
   m_IsPrefabParent: 0
@@ -2777,6 +2787,26 @@ Prefab:
       propertyPath: m_Name
       value: 1x1Room4Doors (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 59000013243484580, guid: 860a33eea2fb19241bfcf791c12b89e6,
+        type: 2}
+      propertyPath: m_ConnectedAnchor.x
+      value: 2.0658724
+      objectReference: {fileID: 0}
+    - target: {fileID: 59000010261582338, guid: 860a33eea2fb19241bfcf791c12b89e6,
+        type: 2}
+      propertyPath: m_ConnectedAnchor.x
+      value: 2.0658758
+      objectReference: {fileID: 0}
+    - target: {fileID: 59000010261582338, guid: 860a33eea2fb19241bfcf791c12b89e6,
+        type: 2}
+      propertyPath: m_ConnectedAnchor.z
+      value: -0.22765984
+      objectReference: {fileID: 0}
+    - target: {fileID: 23000014209647146, guid: 860a33eea2fb19241bfcf791c12b89e6,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4d60fff894bbb174780ca0343e7b6469, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 860a33eea2fb19241bfcf791c12b89e6, type: 2}
   m_IsPrefabParent: 0
@@ -4902,6 +4932,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 19
       objectReference: {fileID: 0}
+    - target: {fileID: 23000014209647146, guid: 860a33eea2fb19241bfcf791c12b89e6,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4d60fff894bbb174780ca0343e7b6469, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 860a33eea2fb19241bfcf791c12b89e6, type: 2}
   m_IsPrefabParent: 0
@@ -7294,23 +7329,28 @@ Prefab:
     - target: {fileID: 59000010261582338, guid: 860a33eea2fb19241bfcf791c12b89e6,
         type: 2}
       propertyPath: m_ConnectedAnchor.x
-      value: 2.0658758
+      value: 2.0658755
       objectReference: {fileID: 0}
     - target: {fileID: 59000010261582338, guid: 860a33eea2fb19241bfcf791c12b89e6,
         type: 2}
       propertyPath: m_ConnectedAnchor.z
-      value: -0.22765815
+      value: -0.22765642
       objectReference: {fileID: 0}
     - target: {fileID: 59000013243484580, guid: 860a33eea2fb19241bfcf791c12b89e6,
         type: 2}
       propertyPath: m_ConnectedAnchor.x
-      value: 2.0658755
+      value: 2.0658789
       objectReference: {fileID: 0}
     - target: {fileID: 59000014035419850, guid: 860a33eea2fb19241bfcf791c12b89e6,
         type: 2}
       propertyPath: m_ConnectedAnchor.x
-      value: 2.0658739
+      value: 2.0658772
       objectReference: {fileID: 0}
+    - target: {fileID: 23000014209647146, guid: 860a33eea2fb19241bfcf791c12b89e6,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4d60fff894bbb174780ca0343e7b6469, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 860a33eea2fb19241bfcf791c12b89e6, type: 2}
   m_IsPrefabParent: 0
@@ -8856,6 +8896,11 @@ Prefab:
       propertyPath: m_ConnectedAnchor.x
       value: 2.0658772
       objectReference: {fileID: 0}
+    - target: {fileID: 23000014209647146, guid: 860a33eea2fb19241bfcf791c12b89e6,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4d60fff894bbb174780ca0343e7b6469, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 860a33eea2fb19241bfcf791c12b89e6, type: 2}
   m_IsPrefabParent: 0
