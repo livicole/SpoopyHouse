@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class FlashlightController : MonoBehaviour {
@@ -38,9 +39,10 @@ public class FlashlightController : MonoBehaviour {
     public float destroyRange;
     private float changeRate, currentLerp;
 
-
+    public Text batteryCountText;
     public bool isToyActive = false;
     public Vector3 toyLocation;
+    private bool triggerCheck;
 
     // Use this for initialization
     void Start() {
@@ -57,6 +59,7 @@ public class FlashlightController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        batteryCountText.text = "Batteries: " + batteryCount;
 
         if (isToyActive)
         {
@@ -134,6 +137,10 @@ public class FlashlightController : MonoBehaviour {
                 changeRate = 1.0f / dechargeTime;
                 Ray fireRay = new Ray(transform.position, transform.forward);
                 RaycastHit fireRayInfo = new RaycastHit();
+
+                triggerCheck = true;
+
+                
                 if(Physics.Raycast(transform.position, transform.forward, out fireRayInfo, destroyRange, layermask))
                 {
                     if(fireRayInfo.collider.tag == "Toys")
@@ -201,6 +208,19 @@ public class FlashlightController : MonoBehaviour {
             }
         }
       
+    }
+
+    void OnTriggerEnter(Collider col)
+    {/*
+        Debug.Log(col.name);
+        if (triggerCheck)
+        {
+            Debug.Log(col.name);
+            if (col.tag == "Toy")
+            {
+                Destroy(col.gameObject);
+            }
+        */
     }
 
 }

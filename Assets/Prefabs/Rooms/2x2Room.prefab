@@ -3075,6 +3075,7 @@ GameObject:
   - 4: {fileID: 4000010250220804}
   - 54: {fileID: 54000012448258822}
   - 114: {fileID: 114000012909887342}
+  - 65: {fileID: 65000013551343840}
   m_Layer: 12
   m_Name: Wolf Rug
   m_TagString: Untagged
@@ -3423,6 +3424,7 @@ GameObject:
   - 23: {fileID: 23000010474783302}
   - 95: {fileID: 95000011856249814}
   - 64: {fileID: 64000012969115306}
+  - 64: {fileID: 64000012867001928}
   m_Layer: 0
   m_Name: 2x2Room
   m_TagString: Untagged
@@ -12058,6 +12060,18 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 4300000, guid: 6cfaf7ea0d1aa644a9e66846cc1cee8d, type: 3}
+--- !u!64 &64000012867001928
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013702838412}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: d88e42196ba84dd4cb560faad65d87d7, type: 3}
 --- !u!64 &64000012871365570
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -12392,7 +12406,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 5, y: 5, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65000012789254678
 BoxCollider:
@@ -12418,6 +12432,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.347934, y: 1.2855358, z: 3.335531}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65000013551343840
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013272882616}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9997978, y: 0.16777425, z: 1}
+  m_Center: {x: -0.00043713002, y: -0.17071487, z: -0.0000024439325}
 --- !u!65 &65000013840592942
 BoxCollider:
   m_ObjectHideFlags: 1
