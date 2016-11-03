@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
 
 public class FlashlightController : MonoBehaviour {
@@ -39,13 +38,13 @@ public class FlashlightController : MonoBehaviour {
     public float destroyRange;
     private float changeRate, currentLerp;
 
-    public Text batteryCountText;
+
     public bool isToyActive = false;
     public Vector3 toyLocation;
-    private bool triggerCheck;
 
     // Use this for initialization
     void Start() {
+
 
         controlAnimator = GetComponent<Animator>();
         flashlight = GetComponent<Light>();
@@ -59,7 +58,6 @@ public class FlashlightController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        batteryCountText.text = "Batteries: " + batteryCount;
 
         if (isToyActive)
         {
@@ -73,6 +71,31 @@ public class FlashlightController : MonoBehaviour {
 
         if (GameObject.Find("GameManager").GetComponent<GameManager>().gameIsLive)
         {
+
+
+            //Debug.Log("Trigger: " + Input.GetAxis("LeftTrigger"));
+            /**
+            float left = -Input.GetAxis("LeftTrigger"); //-1 -> 0
+            float right = Input.GetAxis("RightTrigger"); //0 -> 1
+            float combination = left + right;
+            //inputX = Input.GetAxis("LeftTrigger");
+            inputX = (combination + 1) / 2;
+            if(inputX == 1)
+            {
+                inputX = 0.99f;
+            }
+
+            //Debug.Log("Input X: " + (double)(inputX));
+            controlAnimator.SetTime((double)(inputX));
+
+
+            if (Input.GetKey(KeyCode.Space))
+            {
+                GetComponent<Animator>().StartPlayback();
+                //GetComponent<Animator>().Play("ControlAnimation", 0);
+            }**/
+
+
             //"Fire" the flashlight on right trigger
             if (Input.GetAxisRaw("RightTrigger") != 0)
             {
@@ -112,10 +135,6 @@ public class FlashlightController : MonoBehaviour {
                 changeRate = 1.0f / dechargeTime;
                 Ray fireRay = new Ray(transform.position, transform.forward);
                 RaycastHit fireRayInfo = new RaycastHit();
-
-                triggerCheck = true;
-
-                
                 if(Physics.Raycast(transform.position, transform.forward, out fireRayInfo, destroyRange, layermask))
                 {
                     if(fireRayInfo.collider.tag == "Toys")
@@ -183,19 +202,6 @@ public class FlashlightController : MonoBehaviour {
             }
         }
       
-    }
-
-    void OnTriggerEnter(Collider col)
-    {/*
-        Debug.Log(col.name);
-        if (triggerCheck)
-        {
-            Debug.Log(col.name);
-            if (col.tag == "Toy")
-            {
-                Destroy(col.gameObject);
-            }
-        */
     }
 
 }

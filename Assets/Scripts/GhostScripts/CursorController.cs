@@ -340,14 +340,7 @@ public class CursorController : MonoBehaviour {
         {
             if (holdingObject != null)
             {
-                foreach (Transform myDoor in holdingObject.transform.GetChild(0))
-                {
-                    if (myDoor.tag == "Door")
-                    {
 
-                        myDoor.GetComponent<DoorScript>().ResetDoors();
-                    }
-                }
                 holdingRoom = false;
                 holdingObject = null;
 
@@ -380,8 +373,17 @@ public class CursorController : MonoBehaviour {
             else if(roundedX != 0 || roundedY != 0)
             {
                 directionToMove = new Vector3(roundedX, 0, roundedY);
-                Debug.Log("Moving the room! Direction: " + directionToMove);
+                //Debug.Log("Moving the room! Direction: " + directionToMove);
                 holdingObject.GetComponent<GridLocker>().MoveDirection(directionToMove);
+
+                foreach (Transform myDoor in holdingObject.transform.GetChild(0))
+                {
+                    if (myDoor.tag == "Door")
+                    {
+
+                        myDoor.GetComponent<DoorScript>().ResetDoors();
+                    }
+                }
             }
             if (rotateTimer >= rotateCD)
             {
