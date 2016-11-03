@@ -61,6 +61,7 @@ GameObject:
   - 23: {fileID: 23000014114730550}
   - 95: {fileID: 95000012920078304}
   - 64: {fileID: 64000012462990270}
+  - 64: {fileID: 64000012033586720}
   m_Layer: 0
   m_Name: ZRoom
   m_TagString: Untagged
@@ -180,7 +181,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 36aac0a3c1444a3408b6b10b47436d5f, type: 2}
+  - {fileID: 2100000, guid: 4d60fff894bbb174780ca0343e7b6469, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -217,6 +218,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012430120596}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!64 &64000012033586720
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013858403472}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: 2bf6b752a41a3304d9dd077b86a12d07, type: 3}
 --- !u!64 &64000012462990270
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -239,7 +252,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 3, y: 3, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65000011635472146
 BoxCollider:
