@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour {
     [SerializeField]
     float sensitivity;
 
-    float xRotation;
+    public float xRotation;
 
     private float currentXRotation, xRotationV, lookSmoothDamp;
 
@@ -26,7 +26,7 @@ public class CameraController : MonoBehaviour {
             xRotation +=  camYAxis * sensitivity;
 
             xRotation = Mathf.Clamp(xRotation, -90, 90);
-            Debug.Log(xRotation);
+            //Debug.Log(xRotation);
             currentXRotation = Mathf.SmoothDamp(currentXRotation, xRotation, ref xRotationV, lookSmoothDamp);
 
             Vector3 rotation = new Vector3(currentXRotation, transform.localEulerAngles.y, 0);

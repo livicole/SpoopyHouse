@@ -11,7 +11,7 @@ public class GridInfo : MonoBehaviour {
     public List<Vector4> usedGridBlocks;
 
     [SerializeField]
-    float gridSize;
+    public float gridSize;
 
     [SerializeField]
     public float blockLength;
@@ -24,7 +24,7 @@ public class GridInfo : MonoBehaviour {
 	void Start () {
         float length = (gridSize + 1) * blockLength;
 	    transform.localScale = new Vector3 (length, 1, length);
-        transform.position = new Vector3(gridSize + 10, 0, gridSize + 10);
+        transform.position = new Vector3(gridSize * 10 / 2, 0, gridSize * 10 /2);
         gridMax = gridSize; gridMin = 0;
 
 
