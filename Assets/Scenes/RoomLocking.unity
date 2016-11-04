@@ -735,7 +735,7 @@ Prefab:
     - target: {fileID: 114000013681549728, guid: dd5f3977f7ae9c042802121835007f55,
         type: 2}
       propertyPath: itemsCollected
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 108000010300237726, guid: dd5f3977f7ae9c042802121835007f55,
         type: 2}
@@ -756,6 +756,46 @@ Prefab:
         type: 2}
       propertyPath: m_CullingMask.m_Bits
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013681549728, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: emptyColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013681549728, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: emptyColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013681549728, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: emptyColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013681549728, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: emptyColor.a
+      value: 0.197
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013681549728, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: collectedColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013681549728, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: collectedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013681549728, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: collectedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013681549728, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: collectedColor.a
+      value: 0.791
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114000013529485478, guid: dd5f3977f7ae9c042802121835007f55, type: 2}
@@ -1971,7 +2011,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.159}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3722,7 +3762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.159}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -8196,7 +8236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.159}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -10694,7 +10734,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7058824}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -11353,7 +11393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.159}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -12439,7 +12479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7058824}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -15229,7 +15269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.159}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

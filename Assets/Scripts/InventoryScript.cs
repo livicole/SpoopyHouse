@@ -25,7 +25,7 @@ public class InventoryScript : MonoBehaviour
            // activeItemText.text = myObject.name;
         }
 
-        Debug.Log("Picked up " + myObject.name + " and I'm holding " + inventoryList.Count + " items. It's at position " + inventoryList.IndexOf(myObject));
+        //Debug.Log("Picked up " + myObject.name + " and I'm holding " + inventoryList.Count + " items. It's at position " + inventoryList.IndexOf(myObject));
 
        /* if (inventoryList.Count==3)
         {
