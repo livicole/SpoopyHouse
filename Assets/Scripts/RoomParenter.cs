@@ -22,6 +22,15 @@ public class RoomParenter : MonoBehaviour {
             //Debug.Log(verticalInfo.collider.gameObject.layer);
             if(transform.name == "ChildPlayer")
             {
+                Debug.Log(currentRoom);
+                if(currentRoom != null)
+                {
+                    if (verticalInfo.collider.transform.parent.parent != currentRoom)
+                    {
+                        currentRoom.GetComponent<GridLocker>().childLocked = false;
+                    }
+                }
+              
                 currentRoom = verticalInfo.collider.transform.parent.parent;
                 currentRoom.GetComponent<GridLocker>().childLocked = true;
             }
