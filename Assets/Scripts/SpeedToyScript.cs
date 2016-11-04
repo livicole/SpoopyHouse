@@ -24,7 +24,7 @@ public class SpeedToyScript : MonoBehaviour {
             if (rayToPlayerHit.collider.name == "ChildPlayer")
             {
                 theChild.GetComponent<PlayerMovement>().walkingSpeed = .05f;
-                theChild.GetComponent<PlayerMovement>().turningSpeed = 1f;
+                theChild.GetComponent<PlayerMovement>().sensitivity = 1f;
             }
         }
 
@@ -34,7 +34,7 @@ public class SpeedToyScript : MonoBehaviour {
     {
         Debug.Log("destroying speed toy");
         theChild.GetComponent<PlayerMovement>().walkingSpeed = .1f;
-        theChild.GetComponent<PlayerMovement>().turningSpeed = 2f;
+        theChild.GetComponent<PlayerMovement>().sensitivity = 2f;
     }
 
 }
