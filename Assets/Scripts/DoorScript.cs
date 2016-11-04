@@ -12,6 +12,8 @@ public class DoorScript : MonoBehaviour {
     
     public Transform otherDoor;
 
+    public bool isConnected;
+
     private bool check = false;
     private float timer = 0, timerEnd = 0.2f;
 
@@ -19,15 +21,21 @@ public class DoorScript : MonoBehaviour {
 	void Start () {
         myChild = transform.GetChild(1) ;
         otherDoor = null;
+        //transform.root.GetComponent<GridLocker>().numDoors++;
 	}
 	
 	// Update is called once per frame
 	void Update () {
         Physics.IgnoreLayerCollision(14, 18, true);
 
-
-
-
+        if (myDoorUI.GetComponent<Renderer>().material.color == Color.green || myDoorUI.GetComponent<Renderer>().enabled == false)
+        {
+            isConnected = true;
+        }
+        else
+        {
+            isConnected = false;
+        }
 
     }
 
@@ -63,6 +71,7 @@ public class DoorScript : MonoBehaviour {
                     col.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
                     //myDoorUI.GetComponent<Renderer>().material.color = Color.green;
                     otherDoor.GetComponent<DoorScript>().myDoorUI.GetComponent<Renderer>().material.color = Color.green;
+                    //isConnected = true;
                     
 
                  
@@ -97,6 +106,7 @@ public class DoorScript : MonoBehaviour {
         transform.GetChild(1).transform.localPosition = originalOrientation;
         transform.GetChild(1).GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         myDoorUI.GetComponent<Renderer>().material.color = Color.red;
+        //isConnected = false;
         
     }
 
