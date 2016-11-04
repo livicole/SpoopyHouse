@@ -797,6 +797,16 @@ Prefab:
       propertyPath: collectedColor.a
       value: 0.791
       objectReference: {fileID: 0}
+    - target: {fileID: 114000010796746212, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: sensitivity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010935779770, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: sensitivity
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114000013529485478, guid: dd5f3977f7ae9c042802121835007f55, type: 2}
     - {fileID: 114000013723218082, guid: dd5f3977f7ae9c042802121835007f55, type: 2}

@@ -19,7 +19,7 @@ namespace UnityStandardAssets.ImageEffects
         // Called by camera to apply image effect
         void OnRenderImage (RenderTexture source, RenderTexture destination)
         {
-            Debug.Log("Rendering");
+            //Debug.Log("Rendering");
             ImageEffects.RenderDistortion (material, source, destination, angle, center, radius);
         }
 
