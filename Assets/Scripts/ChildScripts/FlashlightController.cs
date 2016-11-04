@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class FlashlightController : MonoBehaviour {
@@ -58,7 +59,7 @@ public class FlashlightController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-
+        GameObject.Find("BatteryCount").GetComponent<Text>().text = "Batteries: " + batteryCount;
         if (isToyActive)
         {
             float flashlightMath = 1.8f - (Vector3.Distance(toyLocation, transform.position) / 10f);

@@ -737,6 +737,26 @@ Prefab:
       propertyPath: itemsCollected
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 108000010300237726, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: m_BounceIntensity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 108000010300237726, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 108000010300237726, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: m_DrawHalo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 108000010300237726, guid: dd5f3977f7ae9c042802121835007f55,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114000013529485478, guid: dd5f3977f7ae9c042802121835007f55, type: 2}
     - {fileID: 114000013723218082, guid: dd5f3977f7ae9c042802121835007f55, type: 2}
@@ -16264,7 +16284,7 @@ RectTransform:
   m_GameObject: {fileID: 1838516656}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1041276540}
@@ -16321,12 +16341,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d860c6a1c6299f14ba7c42fd89049dd8, type: 3}
   - {fileID: 21300000, guid: a83cf523344d70641b27c63e26de7df6, type: 3}
   toySpritesShaded:
-  - {fileID: 21300000, guid: 74a0796e11f50ae45ba307e1feb212a2, type: 3}
+  - {fileID: 21300000, guid: 4ece947014207d04f96a48171a88ad98, type: 3}
   - {fileID: 21300000, guid: 9aaf35bb8076b9e4598cc9150d8f4f98, type: 3}
   - {fileID: 21300000, guid: adee29566cab4834bbfc2c0e15717167, type: 3}
   - {fileID: 21300000, guid: 211d18483b453c64ca0482f35485d54d, type: 3}
   - {fileID: 21300000, guid: 94f3bbb2e43cf034eb9f0eb45c5a4560, type: 3}
-  - {fileID: 21300000, guid: 4ece947014207d04f96a48171a88ad98, type: 3}
   rotateCD: 0.5
   panEdgeSize: 0
   BButton: {fileID: 0}
