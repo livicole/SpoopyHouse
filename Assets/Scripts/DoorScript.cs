@@ -8,6 +8,7 @@ public class DoorScript : MonoBehaviour {
     //public GameObject otherDoor;
     public int priority;
     Transform myChild;
+    public GameObject myDoorUI;
     
     public Transform otherDoor;
 
@@ -60,7 +61,12 @@ public class DoorScript : MonoBehaviour {
                     
                     //Debug.Log("I am " + gameObject.name + " with P" + priority + " being turned off by " + col.transform.parent.name + " with P" + priority);
                     col.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-                    col.GetComponentInParent<DoorScript>().SetGreen();
+                    //myDoorUI.GetComponent<Renderer>().material.color = Color.green;
+                    otherDoor.GetComponent<DoorScript>().myDoorUI.GetComponent<Renderer>().material.color = Color.green;
+                    
+
+                 
+
                     //gameObject.SetActive(false);
                     DisableDoor();
                 }
@@ -73,16 +79,7 @@ public class DoorScript : MonoBehaviour {
         
     }
 
-    public void SetGreen()
-    {
-        foreach(Transform child in transform)
-        {
-            if (child.name == "GhostViewPlane")
-            {
-                child.GetComponent<Renderer>().material.color = Color.green;
-            }
-        }
-    }
+
 
     public void ResetDoors()
     {
@@ -99,14 +96,7 @@ public class DoorScript : MonoBehaviour {
 
         transform.GetChild(1).transform.localPosition = originalOrientation;
         transform.GetChild(1).GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-        foreach (Transform child in transform)
-        {
-            if (child.name == "GhostViewPlane")
-            {
-                child.GetComponent<Renderer>().material.color = Color.red;
-
-            }
-        }
+        myDoorUI.GetComponent<Renderer>().material.color = Color.red;
         
     }
 
@@ -134,14 +124,18 @@ public class DoorScript : MonoBehaviour {
         transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
         transform.GetChild(1).GetComponent<MeshRenderer>().enabled = false;
         transform.GetChild(1).GetComponent<BoxCollider>().enabled = false;
+        myDoorUI.GetComponent<Renderer>().enabled = false;
+        
     }
 
     public void EnableDoor()
     {
+        myDoorUI.GetComponent<Renderer>().enabled = true;
         GetComponent<BoxCollider>().enabled = true;
         transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
         transform.GetChild(1).GetComponent<MeshRenderer>().enabled = true;
         transform.GetChild(1).GetComponent<BoxCollider>().enabled = true;
+        
     }
 
 
