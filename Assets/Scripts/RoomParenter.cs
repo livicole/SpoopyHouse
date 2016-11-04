@@ -42,7 +42,7 @@ public class RoomParenter : MonoBehaviour {
             {
                 GetComponent<GravityToyScript>().hasSetParent = true;
             }
-            else if (transform.tag == "Lamp")
+            else if (transform.tag == "Lamp" || transform.tag == "Toys")
             {
                 currentRoom = transform.parent.parent;
                 currentRoom.GetComponent<GridLocker>().childLocked = true;
@@ -52,7 +52,7 @@ public class RoomParenter : MonoBehaviour {
 
     void OnDestroy()
     {
-        if(transform.tag == "Lamp")
+        if(transform.tag == "Lamp" || transform.tag == "Toys")
         {
             currentRoom.GetComponent<GridLocker>().childLocked = false;
         }

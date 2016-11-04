@@ -26,6 +26,9 @@ public class CursorController : MonoBehaviour {
     [SerializeField]
     Transform detectionSphere;
 
+    public float itemsCollected;
+
+
     private GameObject gridBase;
 
     //1 is actions, 2 is Passive, 3 is Active, 4 is Environmental
@@ -104,14 +107,18 @@ public class CursorController : MonoBehaviour {
         nextToySprite = GameObject.Find("NextToySprite").GetComponent<Image>();
 
         selectedToyCDText = GameObject.Find("SelectedToyCD").GetComponent<Text>();
-        previousToyCDText = GameObject.Find("PreviousToyCD").GetComponent<Text>();
-        nextToyCDText = GameObject.Find("NextToyCD").GetComponent<Text>();
+        //previousToyCDText = GameObject.Find("PreviousToyCD").GetComponent<Text>();
+        //nextToyCDText = GameObject.Find("NextToyCD").GetComponent<Text>();
 
         //initialize cooldown list
     }
 
     // Update is called once per frame
     void Update() {
+
+        //Set maxToys relative to number of key items.
+        itemsCollected = child.GetComponent<NewInventoryScript>().itemsCollected;
+
         //index of next toy
         nextSelector = (selector+1) % ghostToys.Count;
 
@@ -135,26 +142,26 @@ public class CursorController : MonoBehaviour {
         }
         else
         {
-            selectedToyCDText.text = "";
+           selectedToyCDText.text = "";
         }
 
 
         if (ghostToys[nextSelector].timer > 0)
         {
-            nextToyCDText.text = Mathf.Floor(ghostToys[nextSelector].timer).ToString();
+            //nextToyCDText.text = Mathf.Floor(ghostToys[nextSelector].timer).ToString();
         }
         else
         {
-            nextToyCDText.text = "";
+            //nextToyCDText.text = "";
         }
 
         if (ghostToys[previousSelector].timer > 0)
         {
-            previousToyCDText.text = Mathf.Floor(ghostToys[previousSelector].timer).ToString();
+            //previousToyCDText.text = Mathf.Floor(ghostToys[previousSelector].timer).ToString();
         }
         else
         {
-            previousToyCDText.text = "";
+           // previousToyCDText.text = "";
         }
 
 
@@ -250,40 +257,6 @@ public class CursorController : MonoBehaviour {
         //Debug.Log(selector);
         //Debug.Log("DPadX: " + dpadX + " DPadY: " + dpadY);
 
-        //Left on DPad
-        /**Redundant inputmode Select
-        if (dpadX < 0)
-        {
-            inputMode = inputModes.Environmental;
-        }
-        //Right on DPad
-        else if (dpadX > 0)
-        {
-            inputMode = inputModes.Actions;
-        }
-        //Down on DPad
-        if (dpadY < 0)
-        {
-            Debug.Log("active mode");
-            inputMode = inputModes.Active;
-        }
-        //Up on DPad
-        else if(dpadY > 0)
-        {
-            inputMode = inputModes.Passive;
-        }**/
-
-        //Display the selected object on screen.
-        /*selectedObjectText.text = ghostToys[selector].toy.name;
-        nextObjectText.text = ghostToys[(selector+1)%6].toy.name;
-        if (selector == 0)
-        {
-            previousObjectText.text = ghostToys[ghostToys.Count - 1].toy.name;
-        }
-        else
-        {
-            previousObjectText.text = ghostToys[selector - 1].toy.name;
-        }*/
 
         selectedToySprite.sprite = toySprites[selector];
         nextToySprite.sprite = toySpritesShaded[nextSelector];
@@ -322,17 +295,6 @@ public class CursorController : MonoBehaviour {
                     holdingRoom = true;
                     holdingObject = verticalRayHit.collider.gameObject.transform.parent;
                     Debug.Log(holdingObject);
-                    /* Old pickup code.
-                    Debug.Log("Correct");
-                    holdingObject = verticalRayHit.collider.gameObject.transform.parent;
-                    Debug.Log(holdingObject);
-                    //holdingObject.gameObject.layer = 5;
-                    //holdingObject.GetComponent<GridLocker>().locked = false;
-                    holdingObject.parent = detectionSphere;
-                    detectionSphere.GetComponent<DetectionSphereController>().invisGrid = false;
-                    holdingObject.transform.GetComponent<GridLocker>().locked = false;
-                    holdingObject.transform.GetComponent<GridLocker>().ClearOldBlocks();
-                    */
                 }
             }
         }
@@ -340,19 +302,8 @@ public class CursorController : MonoBehaviour {
         {
             if (holdingObject != null)
             {
-
                 holdingRoom = false;
                 holdingObject = null;
-
-                /*
-                holdingObject.parent = null;
-                //holdingObject.gameObject.layer = 14; 
-                //holdingObject.GetComponent<GridLocker>().locked = true;
-                holdingObject.transform.GetComponent<GridLocker>().locked = true;
-                holdingObject.transform.GetComponent<GridLocker>().UpdateNewBlocks();
-                detectionSphere.GetComponent<DetectionSphereController>().invisGrid = true;
-                holdingObject = null;
-                */
             }
         }
 
@@ -441,7 +392,8 @@ public class CursorController : MonoBehaviour {
                     {
                         Vector3 targetSpawn = verticalRayHit.point + new Vector3(0, 2, 0);
                         Instantiate(ghostToys[selector].toy, targetSpawn, Quaternion.identity);
-                        ghostToys[selector].timer = ghostToys[selector].cooldown;
+                        Debug.Log(ghostToys[selector].cooldown);
+                        SetAllCooldown(ghostToys[selector].cooldown/(itemsCollected + 1));
                     }
                     else {
                         Debug.Log("Cooldown: " + ghostToys[selector].timer + " on " + ghostToys[selector].toy.name);
@@ -462,214 +414,6 @@ public class CursorController : MonoBehaviour {
         //Debug.Log("Input Mode: " + inputMode);
 
         Debug.DrawRay(transform.position, verticalRay.direction * 1000f, Color.red);
-
-
-
-
-        /** Old code for DPad mode selection.
-        //If in Actions mode
-        if (inputMode == inputModes.Actions)
-        {
-			if (Input.GetButtonDown ("Ghost Button A")) {
-				//AButton.sprite = aButtonDown;
-				if (!handleHolding ()) {
-					if (!holding && holdingObject == null) {
-						if (detectedObj != null && detectedObj.gameObject.layer != 14) {
-							Debug.Log ("Pickup");
-							holdingObject = detectedObj;
-                            previousLayer = holdingObject.gameObject.layer;
-                            holdingObject.gameObject.layer = 5;
-							if (holdingObject.GetComponent<Rigidbody> () != null) {
-								holdingObject.GetComponent<Rigidbody> ().isKinematic = true;
-							}
-							holdingObject.transform.parent = detectionSphere.transform;
-							holding = true;
-							destroyable = false;
-						}
-					}
-				} else {
-					//AButton.sprite = aButtonUp;
-				}
-			} 
-
-            //Smash things around. Currently works kind of like a wrecking ball.
-            if (Input.GetButton("Ghost Button B"))
-            {
-				BButton.sprite = bButtonDown;
-                if (!handleHolding())
-                {
-                    if (Physics.Raycast(verticalRay, out verticalRayHit, 100f, inRoomLayerMask))
-                    {
-                        targetLocation = verticalRayHit.point;
-                        detectionSphere.GetComponent<DetectionSphereController>().moving = true;
-                    }
-                }
-            }
-            else if (Input.GetButtonUp("Ghost Button B"))
-            {
-				BButton.sprite = bButtonUp;
-                detectionSphere.GetComponent<DetectionSphereController>().moving = false;
-            }
-
-            if(Input.GetButtonDown("Ghost Button X"))
-            {
-                if(!handleHolding())
-                {
-                    if (Physics.Raycast(verticalRay, out verticalRayHit, 100f, inRoomLayerMask))
-                    {
-                        Debug.Log(verticalRayHit.collider.name);
-                        if (verticalRayHit.collider.gameObject.layer == 10 && angelCount <= 0)
-                        {
-                            Debug.Log("Angel spawn.");
-                            Instantiate(Actions[2], verticalRayHit.point, Quaternion.identity);
-                            angelCount++;
-                        }
-                    }
-                }
-            }
-            if(Input.GetButton("Ghost Button Y"))
-            {
-                if(!handleHolding())
-                {
-                    if(Physics.Raycast(verticalRay, out verticalRayHit, 100f, inRoomLayerMask))
-                    {
-                        if(verticalRayHit.collider.gameObject.layer == 10 && inverterCount <= 0)
-                        {
-                            Instantiate(Actions[3], verticalRayHit.point, Quaternion.identity);
-                            inverterCount++;
-                        }
-                    }
-                }
-            }
-
-        }
-        //If in Passive mode
-       
-        else if (inputMode == inputModes.Passive)
-        {
-            if (Input.GetButton("Ghost Button A"))
-            {
-
-            }
-
-            if (Input.GetButton("Ghost Button B"))
-            {
-
-            }
-
-            if (Input.GetButton("Ghost Button X"))
-            {
-
-            }
-
-            if (Input.GetButton("Ghost Button Y"))
-            {
-
-            }
-        }
-        //If in Active mode
-        else if (inputMode == inputModes.Active)
-        {
-            //Debug.Log("InputMode");
-            if (Input.GetButtonDown("Ghost Button A"))
-            {
-                //Debug.Log("A BUTTON");
-                if (Physics.Raycast(verticalRay, out verticalRayHit, 10000f, layermask))
-                {
-                    Debug.Log("Hitting object: " + verticalRayHit.collider.gameObject.name);
-                    
-                    //Layer 14 is gridlocked.
-                    if(verticalRayHit.collider.gameObject.layer == 14)
-                    {
-                        Debug.Log("Correct");
-                        holdingObject = verticalRayHit.collider.gameObject.transform.parent;
-                        Debug.Log(holdingObject);
-                        //holdingObject.gameObject.layer = 5;
-                        //holdingObject.GetComponent<GridLocker>().locked = false;
-                        holdingObject.parent = detectionSphere;
-                        detectionSphere.GetComponent<DetectionSphereController>().invisGrid = false;
-                        holdingObject.transform.GetComponent<GridLocker>().locked = false;
-                        holdingObject.transform.GetComponent<GridLocker>().ClearOldBlocks();
-                        
-                    }
-                }
-            }
-            else if(Input.GetButtonUp("Ghost Button A"))
-            {
-                if(holdingObject != null)
-                {
-                    holdingObject.parent = null;
-                    //holdingObject.gameObject.layer = 14; 
-                    //holdingObject.GetComponent<GridLocker>().locked = true;
-                    holdingObject.transform.GetComponent<GridLocker>().locked = true;
-                    holdingObject.transform.GetComponent<GridLocker>().UpdateNewBlocks();
-                    detectionSphere.GetComponent<DetectionSphereController>().invisGrid = true;
-                    holdingObject = null;
-                    
-                }
-            }
-
-            if (Input.GetButton("Ghost Button B"))
-            {
-
-            }
-
-            if (Input.GetButton("Ghost Button X"))
-            {
-
-            }
-
-            if (Input.GetButton("Ghost Button Y"))
-            {
-
-            }
-        }
-        //If in Environmental mode
-        else if (inputMode == inputModes.Environmental)
-        {
-            if (Input.GetButton("Ghost Button A"))
-            {
-
-            }
-
-            if (Input.GetButton("Ghost Button B"))
-            {
-
-            }
-
-            if (Input.GetButton("Ghost Button X"))
-            {
-
-            }
-
-            if (Input.GetButton("Ghost Button Y"))
-            {
-
-            }
-        }**/
-
-
-        /** Old Code
-        if (Input.GetButtonDown("Ghost Button A"))
-        {
-           
-
-            
-            Debug.Log("Detected");
-            Ray verticalRay = new Ray(transform.position, Vector3.down * 100f);
-            Debug.DrawRay(transform.position, Vector3.down * 100f, Color.red);
-            RaycastHit verticalRayHit = new RaycastHit();
-
-            if (Physics.Raycast(verticalRay, out verticalRayHit, 100f))
-            {
-                if (verticalRayHit.collider.gameObject.layer == 10)
-                {
-                    Vector3 spawnPosition = new Vector3(verticalRayHit.point.x, 1, verticalRayHit.point.z);
-                    Instantiate(spawn, spawnPosition, Quaternion.identity);
-                    child.GetComponent<FearInfo>().fearLevel += 1;
-                }
-            }
-        }*/
 	}
 
    public bool handleHolding()
@@ -740,9 +484,14 @@ public class CursorController : MonoBehaviour {
         }
     }
 
-
+    public void SetAllCooldown(float cooldown)
+    {
+        for(int i = 0; i < ghostToys.Count; i++)
+        {
+            ghostToys[i].timer = cooldown;
+        }
+    }
 }
-
 
 [Serializable]
 public class ToyIndex
