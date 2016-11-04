@@ -20,7 +20,12 @@ public class RoomParenter : MonoBehaviour {
         if(Physics.Raycast(verticalRay, out verticalInfo, 100f))
         {
             //Debug.Log(verticalInfo.collider.gameObject.layer);
-            if(verticalInfo.collider.gameObject.layer == 10)
+            if(transform.name == "ChildPlayer")
+            {
+                currentRoom = verticalInfo.collider.transform.parent.parent;
+                currentRoom.GetComponent<GridLocker>().childLocked = true;
+            }
+            else if(verticalInfo.collider.gameObject.layer == 10)
             {
                 Transform temp = verticalInfo.collider.transform;
                 while(temp.gameObject.layer != 14)

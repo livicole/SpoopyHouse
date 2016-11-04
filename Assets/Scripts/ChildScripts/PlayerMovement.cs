@@ -13,7 +13,8 @@ public class PlayerMovement : MonoBehaviour {
 
 	public AudioSource walkingSound;
 
-    private float yRotation, currentYRotation, yRotationV, lookSmoothDamp;
+    public float yRotation;
+    private float currentYRotation, yRotationV, lookSmoothDamp;
 
     // Use this for initialization
     void Start()
