@@ -8,7 +8,7 @@ public class DoorScript : MonoBehaviour {
     //public GameObject otherDoor;
     public int priority;
     Transform myChild;
-
+    
     public Transform otherDoor;
 
     private bool check = false;
@@ -22,21 +22,12 @@ public class DoorScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        /*
-        if(setup && name == "DoubleDoor_Full (12)")
-        {
-            if (timer < timerEnd)
-            {
-                timer += Time.deltaTime;
-            }
-            else
-            {
-                ResetDoors();
-                setup = false;
-            }
-           
-        }*/
         Physics.IgnoreLayerCollision(14, 18, true);
+
+
+
+
+
     }
 
     void OnTriggerStay(Collider col)
@@ -66,9 +57,12 @@ public class DoorScript : MonoBehaviour {
                     }
                     otherDoor = col.transform.parent.transform;
                     col.GetComponentInParent<DoorScript>().otherDoor = transform;
+                    
                     //Debug.Log("I am " + gameObject.name + " with P" + priority + " being turned off by " + col.transform.parent.name + " with P" + priority);
                     col.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-                    gameObject.SetActive(false);
+                    col.GetComponentInParent<DoorScript>().SetGreen();
+                    //gameObject.SetActive(false);
+                    DisableDoor();
                 }
                 else
                 {
@@ -79,20 +73,41 @@ public class DoorScript : MonoBehaviour {
         
     }
 
+    public void SetGreen()
+    {
+        foreach(Transform child in transform)
+        {
+            if (child.name == "GhostViewPlane")
+            {
+                child.GetComponent<Renderer>().material.color = Color.green;
+            }
+        }
+    }
+
     public void ResetDoors()
     {
        // Debug.Log("Resetting: " + transform.name);
         ResetOtherDoor();
         ResetThisDoor();
-
     }
 
     public void ResetThisDoor()
     {
         //Debug.Log("Resetting " + name);
-        gameObject.SetActive(true);
+        //gameObject.SetActive(true);
+        EnableDoor();
+
         transform.GetChild(1).transform.localPosition = originalOrientation;
         transform.GetChild(1).GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        foreach (Transform child in transform)
+        {
+            if (child.name == "GhostViewPlane")
+            {
+                child.GetComponent<Renderer>().material.color = Color.red;
+
+            }
+        }
+        
     }
 
     public void ResetOtherDoor()
@@ -100,15 +115,34 @@ public class DoorScript : MonoBehaviour {
         if (otherDoor != null)
         {
             otherDoor.gameObject.GetComponent<DoorScript>().ResetThisDoor();
-            Debug.Log("Also resetting: " + otherDoor.name);
+            //Debug.Log("Also resetting: " + otherDoor.name);
         }
-        else { Debug.Log("Nothing else to reset. Called from : " + transform.name); }
+        else { //Debug.Log("Nothing else to reset. Called from : " + transform.name); 
+        }
     }
 
     public void LockDoor()
     {
         transform.GetChild(1).GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         otherDoor.transform.GetChild(1).GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+
     }
+
+    public void DisableDoor()
+    {
+        GetComponent<BoxCollider>().enabled = false;
+        transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
+        transform.GetChild(1).GetComponent<MeshRenderer>().enabled = false;
+        transform.GetChild(1).GetComponent<BoxCollider>().enabled = false;
+    }
+
+    public void EnableDoor()
+    {
+        GetComponent<BoxCollider>().enabled = true;
+        transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
+        transform.GetChild(1).GetComponent<MeshRenderer>().enabled = true;
+        transform.GetChild(1).GetComponent<BoxCollider>().enabled = true;
+    }
+
 
 }

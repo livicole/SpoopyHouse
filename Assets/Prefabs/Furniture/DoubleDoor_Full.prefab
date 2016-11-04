@@ -8,8 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 431524}
-  - 95: {fileID: 9503562}
-  - 54: {fileID: 54000010121290188}
+  - 54: {fileID: 54000012243616888}
   m_Layer: 18
   m_Name: doorFrame
   m_TagString: Untagged
@@ -62,10 +61,9 @@ GameObject:
   - 4: {fileID: 436438}
   - 33: {fileID: 3342322}
   - 23: {fileID: 2364044}
-  - 95: {fileID: 9546130}
   - 54: {fileID: 5478880}
   - 59: {fileID: 5937900}
-  - 64: {fileID: 6422124}
+  - 65: {fileID: 65000011253935804}
   m_Layer: 18
   m_Name: doubleDoor
   m_TagString: Untagged
@@ -119,9 +117,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155690}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -432.8422, y: 6.623129, z: -70.80994}
-  m_LocalScale: {x: 0.23071593, y: 0.24893104, z: 0.5648256}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.00046738636, y: -0.2096, z: 0.5042}
+  m_LocalScale: {x: 0.00769823, y: 0.04978621, z: 0.018846368}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 431524}
@@ -222,11 +220,11 @@ HingeJoint:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 195354}
-  m_ConnectedBody: {fileID: 54000010121290188}
+  m_ConnectedBody: {fileID: 54000012243616888}
   m_Anchor: {x: 2.34, y: 0.62, z: -0.57}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 2.0658808, y: 0.19156198, z: -0.2276615}
+  m_ConnectedAnchor: {x: 2.0658808, y: 0.19156338, z: -0.22766438}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -248,52 +246,6 @@ HingeJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
---- !u!64 &6422124
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 195354}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_Mesh: {fileID: 4300000, guid: 4cfe4bf9697b36e46b59d226de5e6247, type: 3}
---- !u!95 &9503562
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 142494}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 2b4ba72a3c40a3e4db35d77675bddfa0, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!95 &9546130
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 195354}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 4cfe4bf9697b36e46b59d226de5e6247, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -348,7 +300,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 398b47140fdb71b4faedcd7058a91c36, type: 2}
+  - {fileID: 2100000, guid: bd28ab41bd041f54da1f28201b8fc9f9, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -371,7 +323,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012829312574}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54000010121290188
+--- !u!54 &54000012243616888
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -386,6 +338,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &65000011253935804
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 195354}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.9498367, y: 10.689619, z: 0.40521777}
+  m_Center: {x: 0.037737202, y: 5.357912, z: -0.21493904}
 --- !u!65 &65000011921028300
 BoxCollider:
   m_ObjectHideFlags: 1

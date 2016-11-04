@@ -100,7 +100,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 0
-    joyNum: 1
+    joyNum: 2
   - serializedVersion: 3
     m_Name: VerticalMovement2
     descriptiveName: 
@@ -116,7 +116,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 1
-    joyNum: 1
+    joyNum: 2
   - serializedVersion: 3
     m_Name: Ghost Button A
     descriptiveName: 
@@ -164,7 +164,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 8
-    joyNum: 1
+    joyNum: 2
   - serializedVersion: 3
     m_Name: RightTrigger
     descriptiveName: 
@@ -196,7 +196,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 9
-    joyNum: 1
+    joyNum: 2
   - serializedVersion: 3
     m_Name: LeftBumper
     descriptiveName: 
@@ -218,7 +218,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: joystick 1 button 4
+    positiveButton: joystick 2 button 4
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1
@@ -250,7 +250,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: joystick 1 button 5
+    positiveButton: joystick 2 button 5
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1
@@ -276,7 +276,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 3
-    joyNum: 1
+    joyNum: 2
   - serializedVersion: 3
     m_Name: VerticalCamera2
     descriptiveName: 
@@ -292,13 +292,13 @@ InputManager:
     invert: 0
     type: 2
     axis: 4
-    joyNum: 1
+    joyNum: 2
   - serializedVersion: 3
     m_Name: Ghost Button B
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: joystick 1 button 1
+    positiveButton: joystick 2 button 1
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -314,7 +314,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: joystick 1 button 2
+    positiveButton: joystick 2 button 2
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -330,7 +330,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: joystick 1 button 3
+    positiveButton: joystick 2 button 3
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -356,7 +356,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 5
-    joyNum: 1
+    joyNum: 2
   - serializedVersion: 3
     m_Name: Ghost DPad Y
     descriptiveName: 
@@ -372,7 +372,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 6
-    joyNum: 1
+    joyNum: 2
   - serializedVersion: 3
     m_Name: VerticalCamera
     descriptiveName: 
@@ -411,7 +411,7 @@ InputManager:
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 
-    altNegativeButton: joystick 1 button 8
+    altNegativeButton: joystick 2 button 8
     altPositiveButton: 
     gravity: 1000
     dead: 0.0001

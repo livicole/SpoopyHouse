@@ -24,8 +24,10 @@ public class GridInfo : MonoBehaviour {
 	void Start () {
         float length = (gridSize + 1) * blockLength;
 	    transform.localScale = new Vector3 (length, 1, length);
-        transform.position = new Vector3(length / 2, 0, length / 2);
+        transform.position = new Vector3(gridSize + 10, 0, gridSize + 10);
         gridMax = gridSize; gridMin = 0;
+
+
 	}
 
     public void AddBlock(Vector3 coordinate, int roomNumber)
