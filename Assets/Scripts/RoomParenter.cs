@@ -20,7 +20,21 @@ public class RoomParenter : MonoBehaviour {
         if(Physics.Raycast(verticalRay, out verticalInfo, 100f))
         {
             //Debug.Log(verticalInfo.collider.gameObject.layer);
-            if(verticalInfo.collider.gameObject.layer == 10)
+            if(transform.name == "ChildPlayer")
+            {
+                Debug.Log(currentRoom);
+                if(currentRoom != null)
+                {
+                    if (verticalInfo.collider.transform.parent.parent != currentRoom)
+                    {
+                        currentRoom.GetComponent<GridLocker>().childLocked = false;
+                    }
+                }
+              
+                currentRoom = verticalInfo.collider.transform.parent.parent;
+                currentRoom.GetComponent<GridLocker>().childLocked = true;
+            }
+            else if(verticalInfo.collider.gameObject.layer == 10)
             {
                 Transform temp = verticalInfo.collider.transform;
                 while(temp.gameObject.layer != 14)
@@ -42,7 +56,7 @@ public class RoomParenter : MonoBehaviour {
             {
                 GetComponent<GravityToyScript>().hasSetParent = true;
             }
-            else if (transform.tag == "Lamp")
+            else if (transform.tag == "Lamp" || transform.tag == "Toys")
             {
                 currentRoom = transform.parent.parent;
                 currentRoom.GetComponent<GridLocker>().childLocked = true;
@@ -52,7 +66,7 @@ public class RoomParenter : MonoBehaviour {
 
     void OnDestroy()
     {
-        if(transform.tag == "Lamp")
+        if(transform.tag == "Lamp" || transform.tag == "Toys")
         {
             currentRoom.GetComponent<GridLocker>().childLocked = false;
         }
