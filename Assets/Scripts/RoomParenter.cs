@@ -22,7 +22,7 @@ public class RoomParenter : MonoBehaviour {
             //Debug.Log(verticalInfo.collider.gameObject.layer);
             if(transform.name == "ChildPlayer")
             {
-                Debug.Log(currentRoom);
+                //Debug.Log(currentRoom);
                 if(currentRoom != null)
                 {
                     if (verticalInfo.collider.transform.parent.parent != currentRoom)
