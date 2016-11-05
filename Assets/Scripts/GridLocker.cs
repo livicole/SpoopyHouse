@@ -19,7 +19,12 @@ public class GridLocker : MonoBehaviour {
 
     **/
 
-    GameObject[] doors = new GameObject[30];
+
+
+    //GameObject[] doors = new GameObject[30];
+
+    List<Transform> doors = new List<Transform>();
+    public bool amIConnected;
 
     Transform gridBase;
 
@@ -53,6 +58,19 @@ public class GridLocker : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+
+        //initialize door open bool list
+        foreach(Transform myObject in transform.GetChild(0))
+        {
+            
+            if (myObject.tag == "Door")
+            {
+                doors.Add(myObject);
+            }
+        }
+        
+
+
         gridBase = GameObject.Find("GridBase").transform;
       
         currentLocation = CalculateGridToReal(gridLocation);
@@ -95,6 +113,21 @@ public class GridLocker : MonoBehaviour {
     // Update is called once per framsdses
     void Update()
     {
+        Debug.Log(transform.name + " has " + doors.Count);
+        //check if any doors are connected
+        foreach (Transform door in doors)
+        {
+            if (door.GetComponent<DoorScript>().isConnected)
+            {
+                amIConnected = true;
+                break;
+            }
+            else
+            {
+                amIConnected = false;
+            }
+        }
+
         gridBase = GameObject.Find("GridBase").transform;
         gridInfo = gridBase.GetComponent<GridInfo>();
         //adjustmentVector = transform.FindChild("RoomFiller").localScale / 2;
