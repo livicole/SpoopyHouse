@@ -287,14 +287,15 @@ public class CursorController : MonoBehaviour {
             //Debug.Log("A BUTTON");
             if (Physics.Raycast(verticalRay, out verticalRayHit, 10000f, layermask))
             {
-                Debug.Log("Hitting object: " + verticalRayHit.collider.gameObject.name);
+                //Debug.Log("Hitting object: " + verticalRayHit.collider.gameObject.name);
 
                 //Layer 14 is gridlocked.
                 if (verticalRayHit.collider.gameObject.layer == 14)
                 {
                     holdingRoom = true;
                     holdingObject = verticalRayHit.collider.gameObject.transform.parent;
-                    Debug.Log(holdingObject);
+                    //holdingObject.GetComponent<GridLocker>().height += 10f;
+                    //Debug.Log(holdingObject);
                 }
             }
         }
@@ -302,7 +303,8 @@ public class CursorController : MonoBehaviour {
         {
             if (holdingObject != null)
             {
-                if(!holdingObject.GetComponent<GridLocker>().amIConnected)
+                //holdingObject.GetComponent<GridLocker>().height -= 10f;
+                if (!holdingObject.GetComponent<GridLocker>().amIConnected)
                 {
                     holdingObject.GetComponent<GridLocker>().ResetLocation();
                     foreach (Transform myDoor in holdingObject.transform.GetChild(0))
@@ -314,6 +316,7 @@ public class CursorController : MonoBehaviour {
                         }
                     }
                 }
+                
                 holdingRoom = false;
                 holdingObject = null;
             }
@@ -323,6 +326,7 @@ public class CursorController : MonoBehaviour {
         {
             //Debug.Log("Holding the room.");
             GetComponent<Image>().enabled = false;
+            
             Vector3 directionToMove;
             //Read in left stick input. If it moves record it. If both X and Y are used, then set Y to 0 and assume using X.
             float roundedX = inputX, roundedY= -inputY;
@@ -354,19 +358,22 @@ public class CursorController : MonoBehaviour {
                 {
                    
                     holdingObject.GetComponent<GridLocker>().ClearOldBlocks();
-                    holdingObject.GetComponent<GridLocker>().UpdateCoordinates(-90);
+                    holdingObject.GetComponent<GridLocker>().UpdateCoordinates(holdingObject.GetComponent<GridLocker>().rotationY -90f);
+                    //Debug.Log(holdingObject.GetComponent<GridLocker>().rotationY - 90f);
                     holdingObject.GetComponent<GridLocker>().UpdateNewBlocks();
                         //holdingObject.GetChild(0).transform.eulerAngles += new Vector3(0, -90, 0);
                         rotateTimer = 0;
+                   
                 }
                 if (Input.GetButtonDown("GhostRightBumper"))
                 {
                    
                     holdingObject.GetComponent<GridLocker>().ClearOldBlocks();
-                    holdingObject.GetComponent<GridLocker>().UpdateCoordinates(90);
+                    holdingObject.GetComponent<GridLocker>().UpdateCoordinates(holdingObject.GetComponent<GridLocker>().rotationY + 90);
                     holdingObject.GetComponent<GridLocker>().UpdateNewBlocks();
                     //holdingObject.GetChild(0).transform.eulerAngles += new Vector3(0, 90, 0);
                     rotateTimer = 0;
+                
                 }
             }
         }

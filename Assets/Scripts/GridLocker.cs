@@ -29,7 +29,7 @@ public class GridLocker : MonoBehaviour {
     Transform gridBase;
 
     [SerializeField]
-    float height;
+    public float height;
 
     [SerializeField]
     public Vector3 gridLocation;
@@ -52,7 +52,8 @@ public class GridLocker : MonoBehaviour {
     private float blockLength;
     public float moveTick;
     private float moveCooldownTimer = 0;
-    private float rotationY;
+    [HideInInspector]
+    public float rotationY;
     public Vector3 previousConnectedPosition;
     public Quaternion previousConnectedRotation;
     public bool childLocked = false;
@@ -144,20 +145,13 @@ public class GridLocker : MonoBehaviour {
 
         //Move pivot on rotation.   
         
-        if (rotationY == 360)
-        {
-            rotationY = 0;
-        }
-        if (rotationY == -90)
-        {
-            rotationY = 270;
-        }
+      
         float positiveMultiplier, negativeMultiplier;
         //Positive should be smaller.
         positiveMultiplier = 0.999f;//.0009995f;
         //Negative should be more negative;
         negativeMultiplier = 0.999f;//0.9990005f;
-
+        //Debug.Log(rotationY);
         //Debug.Log("Rotation: " + rotationY);
         if (rotationY == 0)
         {
@@ -201,6 +195,11 @@ public class GridLocker : MonoBehaviour {
         transform.position = CalculateGridToReal(gridCoordinates);
         gridLocation = gridCoordinates;
         transform.rotation = rotation;
+        float updateRotationY = transform.eulerAngles.y;
+        if (updateRotationY == -90) { updateRotationY = 270; }
+        if (updateRotationY == 360) { updateRotationY = 0;  }
+        UpdateCoordinates(updateRotationY);
+        
         UpdateNewBlocks();
     }
 
@@ -238,9 +237,15 @@ public class GridLocker : MonoBehaviour {
     public void UpdateCoordinates(float rotation)
     {
         List<Vector3> newList = new List<Vector3>();
+        float changeInRotation = rotation - rotationY;
+        if (changeInRotation == -270) { changeInRotation = 90; }
+        if (changeInRotation == -180) { changeInRotation = 180; }
         foreach (Vector3 coordinate in coordinatesOccupied)
         {
-            Vector3 newCoordinate = RotatePositionByOrigin(coordinate, rotation);
+      
+            //Debug.Log(changeInRotation);
+            Vector3 newCoordinate = RotatePositionByOrigin(coordinate, changeInRotation);
+            //Debug.Log(coordinate + " "  + newCoordinate);
             newList.Add(newCoordinate);
         }
 
@@ -274,10 +279,27 @@ public class GridLocker : MonoBehaviour {
         
         if (CheckFullAvailability(tempList))
         {
-            Debug.Log("Rotate!");
+            //Debug.Log("Rotate!");
             coordinatesOccupied = tempList;
-            transform.localEulerAngles += new Vector3(0, rotation, 0);
-            rotationY += rotation;
+            transform.localEulerAngles = new Vector3(0, rotation, 0);
+            rotationY = rotation;
+            if (rotationY == 360)
+            {
+                rotationY = 0;
+            }
+            if (rotationY == -90)
+            {
+                rotationY = 270;
+            }
+            //Debug.Log(rotationY);
+            foreach (Transform myDoor in transform.GetChild(0))
+            {
+                if (myDoor.tag == "Door")
+                {
+                    Debug.Log("Resetting: " + myDoor);
+                    myDoor.GetComponent<DoorScript>().ResetDoors();
+                }
+            }
         }
        
     }
@@ -307,6 +329,7 @@ public class GridLocker : MonoBehaviour {
         float posX = coordinate.x;
         float posY = coordinate.y;
         float posZ = coordinate.z;
+        //Debug.Log(rotation);
         Vector3 newCoordinate = new Vector3(0, 0, 0);
         if (rotation == 90)//Rotate clockwise
         {
@@ -315,6 +338,10 @@ public class GridLocker : MonoBehaviour {
         else if(rotation == -90)//Rotate counter-clockwise
         {
             newCoordinate = new Vector3(-posZ, posY, posX);
+        }
+        else if(rotation == 180)
+        {
+            newCoordinate = new Vector3(-posZ, posY, -posX);
         }
         return newCoordinate;
     }

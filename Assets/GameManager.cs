@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour {
         grid = GameObject.Find("GridBase").GetComponent<GridInfo>().transform;
         gridInfo = grid.GetComponent<GridInfo>();
         startingPosition = new Vector3((gridInfo.gridSize / 2 + 0.5f) * gridInfo.blockLength, 1, (gridInfo.gridSize / 2 + 0.5f) * gridInfo.blockLength);
-        Debug.Log("Starting position: " + startingPosition);
+        //Debug.Log("Starting position: " + startingPosition);
         childPlayer.position = startingPosition;
 	}
 	
