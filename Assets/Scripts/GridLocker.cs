@@ -53,6 +53,8 @@ public class GridLocker : MonoBehaviour {
     public float moveTick;
     private float moveCooldownTimer = 0;
     private float rotationY;
+    public Vector3 previousConnectedPosition;
+    public Quaternion previousConnectedRotation;
     public bool childLocked = false;
     int counter;
 
@@ -113,13 +115,15 @@ public class GridLocker : MonoBehaviour {
     // Update is called once per framsdses
     void Update()
     {
-        Debug.Log(transform.name + " has " + doors.Count);
+        //Debug.Log(transform.name + " has " + doors.Count);
         //check if any doors are connected
         foreach (Transform door in doors)
         {
             if (door.GetComponent<DoorScript>().isConnected)
             {
                 amIConnected = true;
+                previousConnectedPosition = CalculateRealToGrid(transform.position);
+                previousConnectedRotation = transform.rotation;
                 break;
             }
             else
@@ -185,50 +189,19 @@ public class GridLocker : MonoBehaviour {
             newFillerPosition = new Vector3(newFillerPosition.x * positiveMultiplier, newFillerPosition.y, -newFillerPosition.z * negativeMultiplier);
             transform.FindChild("RoomFiller").localPosition = newFillerPosition;
         }
+    }
+    public void ResetLocation()
+    {
+        SetLocation(previousConnectedPosition, previousConnectedRotation);
+    }
 
-
-
-        /*
-        //Check if gridLocation is not where our real position is AND we are supposed to be locked, recalculate grid position.
-        if (CalculateGridToReal(gridLocation) != transform.position && locked)
-        {
-            currentLocation = CalculateGridToReal(gridLocation);
-            //Debug.Log(CalculateGridToReal(gridLocation));
-            transform.position = currentLocation;
-            NavMeshBuilder.BuildNavMesh();
-
-            //currentRoomFillerPosition = transform.FindChild("RoomFiller").localPosition;
-        }
-        //While we aren't locked, constantly check if we can move the block to new coordinates.
-        if (!locked)
-        {
-            
-            Vector3 position = CheckAvailableOrigin(CalculateRealToGrid(transform.position), gridLocation);
-            if(CheckFullAvailability(coordinatesOccupied))
-            {
-                //Debug.Log("All necessary blocks are available.");
-                gridInfo.RemoveBlock(gridLocation, roomNumber);
-                gridLocation = position;
-                //gridInfo.usedGridBlocks.Add(gridLocation);
-                rotation = transform.rotation.eulerAngles.y;
-               
-            }
-            else
-            {
-                //Debug.Log("Place in old position: " + gridLocation + " with old rotation: " + rotation);
-                Vector3 oldRotation = new Vector3(transform.eulerAngles.x, rotation, transform.eulerAngles.z);
-                float rotationDifference = transform.eulerAngles.y - rotation;
-                if(rotationDifference == -90)
-                {
-                    UpdateCoordinates(90);
-                }
-                else if(rotationDifference == 90)
-                {
-                    UpdateCoordinates(-90);
-                }
-                transform.eulerAngles = oldRotation;
-            }
-        }*/
+    public void SetLocation(Vector3 gridCoordinates, Quaternion rotation)
+    {
+        ClearOldBlocks();
+        transform.position = CalculateGridToReal(gridCoordinates);
+        gridLocation = gridCoordinates;
+        transform.rotation = rotation;
+        UpdateNewBlocks();
     }
 
     public void MoveDirection( Vector3 direction)

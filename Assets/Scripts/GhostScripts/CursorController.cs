@@ -302,6 +302,18 @@ public class CursorController : MonoBehaviour {
         {
             if (holdingObject != null)
             {
+                if(!holdingObject.GetComponent<GridLocker>().amIConnected)
+                {
+                    holdingObject.GetComponent<GridLocker>().ResetLocation();
+                    foreach (Transform myDoor in holdingObject.transform.GetChild(0))
+                    {
+                        if (myDoor.tag == "Door")
+                        {
+
+                            myDoor.GetComponent<DoorScript>().ResetDoors();
+                        }
+                    }
+                }
                 holdingRoom = false;
                 holdingObject = null;
             }

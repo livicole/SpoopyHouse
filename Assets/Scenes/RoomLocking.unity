@@ -2508,6 +2508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff4760ce9369074e894edfcef14235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amIConnected: 0
   height: 0
   gridLocation: {x: 29, y: 0, z: 29}
   rotation: 0
@@ -2520,6 +2521,8 @@ MonoBehaviour:
   - {x: 1, y: 0, z: 2}
   - {x: 2, y: 0, z: 1}
   moveTick: 1
+  previousConnectedPosition: {x: 0, y: 0, z: 0}
+  previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
 --- !u!4 &295393964
 Transform:
@@ -3297,6 +3300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff4760ce9369074e894edfcef14235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amIConnected: 0
   height: 0
   gridLocation: {x: 25, y: 0, z: 26}
   rotation: 0
@@ -3307,6 +3311,8 @@ MonoBehaviour:
   - {x: 1, y: 0, z: 0}
   - {x: 2, y: 0, z: 0}
   moveTick: 1
+  previousConnectedPosition: {x: 0, y: 0, z: 0}
+  previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
 --- !u!4 &379146590
 Transform:
@@ -3644,6 +3650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff4760ce9369074e894edfcef14235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amIConnected: 0
   height: 0
   gridLocation: {x: 28, y: 0, z: 26}
   rotation: 0
@@ -3652,6 +3659,8 @@ MonoBehaviour:
   coordinatesOccupied:
   - {x: 0, y: 0, z: 0}
   moveTick: 0
+  previousConnectedPosition: {x: 0, y: 0, z: 0}
+  previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
 --- !u!4 &417891220
 Transform:
@@ -6424,6 +6433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff4760ce9369074e894edfcef14235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amIConnected: 0
   height: 0
   gridLocation: {x: 27, y: 0, z: 32}
   rotation: 0
@@ -6432,6 +6442,8 @@ MonoBehaviour:
   coordinatesOccupied:
   - {x: 0, y: 0, z: 0}
   moveTick: 0
+  previousConnectedPosition: {x: 0, y: 0, z: 0}
+  previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
 --- !u!1 &708524757
 GameObject:
@@ -7718,7 +7730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87232cf920b329f44822cc1c961f76fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateSpeed: 0.3
+  rotateSpeed: 0.15
   holdHeight: 0.25
   holdSide: 0
 --- !u!1 &817007502
@@ -7986,6 +7998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff4760ce9369074e894edfcef14235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amIConnected: 0
   height: 0
   gridLocation: {x: 32, y: 0, z: 30}
   rotation: 0
@@ -7994,6 +8007,8 @@ MonoBehaviour:
   coordinatesOccupied:
   - {x: 0, y: 0, z: 0}
   moveTick: 0
+  previousConnectedPosition: {x: 0, y: 0, z: 0}
+  previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
 --- !u!4 &830278299
 Transform:
@@ -10059,6 +10074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff4760ce9369074e894edfcef14235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amIConnected: 0
   height: 0
   gridLocation: {x: 32, y: 0, z: 35}
   rotation: 0
@@ -10067,6 +10083,8 @@ MonoBehaviour:
   coordinatesOccupied:
   - {x: 0, y: 0, z: 0}
   moveTick: 0
+  previousConnectedPosition: {x: 0, y: 0, z: 0}
+  previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
 --- !u!4 &1051615603
 Transform:
@@ -10390,6 +10408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff4760ce9369074e894edfcef14235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amIConnected: 0
   height: 0
   gridLocation: {x: 27, y: 0, z: 30}
   rotation: 0
@@ -10400,6 +10419,8 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 1}
   - {x: 1, y: 0, z: 0}
   moveTick: 1
+  previousConnectedPosition: {x: 0, y: 0, z: 0}
+  previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
 --- !u!1 &1097034569
 GameObject:
@@ -11446,6 +11467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff4760ce9369074e894edfcef14235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amIConnected: 0
   height: 0
   gridLocation: {x: 27, y: 0, z: 33}
   rotation: 0
@@ -11458,6 +11480,8 @@ MonoBehaviour:
   - {x: 2, y: 0, z: 0}
   - {x: 2, y: 0, z: 1}
   moveTick: 1
+  previousConnectedPosition: {x: 0, y: 0, z: 0}
+  previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
 --- !u!4 &1210107073
 Transform:
@@ -11596,6 +11620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff4760ce9369074e894edfcef14235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amIConnected: 0
   height: 0
   gridLocation: {x: 33, y: 0, z: 29}
   rotation: 0
@@ -11608,6 +11633,8 @@ MonoBehaviour:
   - {x: 1, y: 0, z: 2}
   - {x: 2, y: 0, z: 0}
   moveTick: 1
+  previousConnectedPosition: {x: 0, y: 0, z: 0}
+  previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
 --- !u!4 &1231140441
 Transform:
@@ -12744,6 +12771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff4760ce9369074e894edfcef14235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amIConnected: 0
   height: 0
   gridLocation: {x: 30, y: 0, z: 32}
   rotation: 0
@@ -12756,6 +12784,8 @@ MonoBehaviour:
   - {x: 2, y: 0, z: 1}
   - {x: 2, y: 0, z: 2}
   moveTick: 1
+  previousConnectedPosition: {x: 0, y: 0, z: 0}
+  previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
 --- !u!4 &1385769191
 Transform:
@@ -15713,6 +15743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff4760ce9369074e894edfcef14235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amIConnected: 0
   height: 0
   gridLocation: {x: 29, y: 0, z: 31}
   rotation: 0
@@ -15722,6 +15753,8 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}
   moveTick: 1
+  previousConnectedPosition: {x: 0, y: 0, z: 0}
+  previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
 --- !u!4 &1716100490
 Transform:
@@ -18349,6 +18382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff4760ce9369074e894edfcef14235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amIConnected: 0
   height: 0
   gridLocation: {x: 29, y: 0, z: 26}
   rotation: 0
@@ -18361,6 +18395,8 @@ MonoBehaviour:
   - {x: 1, y: 0, z: 2}
   - {x: 2, y: 0, z: 0}
   moveTick: 1
+  previousConnectedPosition: {x: 0, y: 0, z: 0}
+  previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
 --- !u!4 &1966448637
 Transform:
