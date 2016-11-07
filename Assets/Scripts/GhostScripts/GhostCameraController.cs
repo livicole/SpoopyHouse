@@ -29,7 +29,7 @@ public class GhostCameraController : MonoBehaviour {
         xMax = (gridInfo.gridSize + 1) * gridInfo.blockLength;
         zMax = (gridInfo.gridSize + 1) * gridInfo.blockLength;
 
-        Debug.Log(zoomedOutCenter);
+        //Debug.Log(zoomedOutCenter);
         transform.position = zoomedOutCenter;
         midZoom = (zoomMax - zoomMin) / 2 + zoomMin;
         closeZoom = zoomMin;
