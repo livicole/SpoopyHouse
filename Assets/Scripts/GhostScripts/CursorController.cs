@@ -294,6 +294,7 @@ public class CursorController : MonoBehaviour {
                 {
                     holdingRoom = true;
                     holdingObject = verticalRayHit.collider.gameObject.transform.parent;
+                    holdingObject.GetComponent<GridLocker>().moving = true;
                     //holdingObject.GetComponent<GridLocker>().height += 10f;
                     //Debug.Log(holdingObject);
                 }
@@ -304,9 +305,11 @@ public class CursorController : MonoBehaviour {
             if (holdingObject != null)
             {
                 //holdingObject.GetComponent<GridLocker>().height -= 10f;
+                holdingObject.GetComponent<GridLocker>().moving = false;
                 if (!holdingObject.GetComponent<GridLocker>().amIConnected)
                 {
                     holdingObject.GetComponent<GridLocker>().ResetLocation();
+                   
                     foreach (Transform myDoor in holdingObject.transform.GetChild(0))
                     {
                         if (myDoor.tag == "Door")

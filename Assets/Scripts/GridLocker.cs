@@ -56,7 +56,7 @@ public class GridLocker : MonoBehaviour {
     public float rotationY;
     public Vector3 previousConnectedPosition;
     public Quaternion previousConnectedRotation;
-    public bool childLocked = false;
+    public bool childLocked = false, moving = false;
     int counter;
 
     // Use this for initialization
@@ -81,9 +81,6 @@ public class GridLocker : MonoBehaviour {
         {
             gridInfo.AddBlock(takenBlock + gridLocation, roomNumber);
         }
-        //adjustmentVector = transform.FindChild("RoomFiller").localScale / 2;
-        //adjustmentVector = new Vector3(adjustmentVector.z, 0, adjustmentVector.x);
-        //Debug.Log(adjustmentVector);
         originalRoomFillerPosition = transform.FindChild("RoomFiller").localPosition;
 
        
@@ -92,23 +89,9 @@ public class GridLocker : MonoBehaviour {
         Physics.IgnoreLayerCollision(12, 14, true);
         moveTick = gridInfo.moveTick;
 
-       
-        //Debug.Log(gridLocation);
-        //Debug.Log(CalculateGridToReal(gridLocation));
         transform.position = CalculateGridToReal(gridLocation);
         rotationY = transform.eulerAngles.y;
-        //UpdateNewBlocks();
-
-        //Debug.Log(name);
-        /*foreach (Transform child in transform.GetChild(0))
-        {
-            if (child.tag == "Door")
-            {
-                child.GetComponent<DoorScript>().ResetDoors();
-            }
-
-        }*/
-
+        MoveOrigin(rotationY);
 
 
     }
@@ -116,15 +99,16 @@ public class GridLocker : MonoBehaviour {
     // Update is called once per framsdses
     void Update()
     {
-        //Debug.Log(transform.name + " has " + doors.Count);
-        //check if any doors are connected
         foreach (Transform door in doors)
         {
             if (door.GetComponent<DoorScript>().isConnected)
             {
                 amIConnected = true;
-                previousConnectedPosition = CalculateRealToGrid(transform.position);
-                previousConnectedRotation = transform.rotation;
+                if (!moving)
+                {
+                    previousConnectedPosition = CalculateRealToGrid(transform.position);
+                    previousConnectedRotation = transform.rotation;
+                }          
                 break;
             }
             else
@@ -135,17 +119,16 @@ public class GridLocker : MonoBehaviour {
 
         gridBase = GameObject.Find("GridBase").transform;
         gridInfo = gridBase.GetComponent<GridInfo>();
-        //adjustmentVector = transform.FindChild("RoomFiller").localScale / 2;
-        //3adjustmentVector = new Vector3(adjustmentVector.z, 0, adjustmentVector.x);
-        //Debug.Log(gridBase.GetComponent<GridInfo>().gridMax);
         if (moveCooldownTimer <= moveTick && moveCooldownTimer >= 0)
         {
             moveCooldownTimer -= Time.deltaTime;
         }
+    }
+
+    public void MoveOrigin(float newRotation)
+    {
 
         //Move pivot on rotation.   
-        
-      
         float positiveMultiplier, negativeMultiplier;
         //Positive should be smaller.
         positiveMultiplier = 0.999f;//.0009995f;
@@ -153,7 +136,7 @@ public class GridLocker : MonoBehaviour {
         negativeMultiplier = 0.999f;//0.9990005f;
         //Debug.Log(rotationY);
         //Debug.Log("Rotation: " + rotationY);
-        if (rotationY == 0)
+        if (newRotation == 0 || newRotation == 360)
         {
             //Debug.Log("No rotation.");
             Vector3 newFillerPosition = originalRoomFillerPosition;
@@ -161,22 +144,22 @@ public class GridLocker : MonoBehaviour {
             newFillerPosition = new Vector3(newFillerPosition.x * positiveMultiplier, newFillerPosition.y, newFillerPosition.z * positiveMultiplier);
             transform.FindChild("RoomFiller").localPosition = newFillerPosition;
         }
-        else if (rotationY == 90)
+        else if (newRotation == 90)
         {
             //Debug.Log("detected rotation");
             Vector3 newFillerPosition = originalRoomFillerPosition;
-           
+
             newFillerPosition = new Vector3(-newFillerPosition.x * negativeMultiplier, newFillerPosition.y, newFillerPosition.z * positiveMultiplier);
             transform.FindChild("RoomFiller").localPosition = newFillerPosition;
         }
-        else if (rotationY == 180)
+        else if (newRotation == 180)
         {
-           
+
             Vector3 newFillerPosition = originalRoomFillerPosition;
             newFillerPosition = new Vector3(-newFillerPosition.x * negativeMultiplier, newFillerPosition.y, -newFillerPosition.z * negativeMultiplier);
             transform.FindChild("RoomFiller").localPosition = newFillerPosition;
         }
-        else if (rotationY == 270)
+        else if (newRotation == 270 || newRotation == -90)
         {
             Vector3 newFillerPosition = originalRoomFillerPosition;
 
@@ -184,6 +167,7 @@ public class GridLocker : MonoBehaviour {
             transform.FindChild("RoomFiller").localPosition = newFillerPosition;
         }
     }
+
     public void ResetLocation()
     {
         SetLocation(previousConnectedPosition, previousConnectedRotation);
@@ -238,6 +222,7 @@ public class GridLocker : MonoBehaviour {
     {
         List<Vector3> newList = new List<Vector3>();
         float changeInRotation = rotation - rotationY;
+        if (changeInRotation == 0) { return; }
         if (changeInRotation == -270) { changeInRotation = 90; }
         if (changeInRotation == -180) { changeInRotation = 180; }
         foreach (Vector3 coordinate in coordinatesOccupied)
@@ -301,6 +286,7 @@ public class GridLocker : MonoBehaviour {
                 }
             }
         }
+        MoveOrigin(rotation);
        
     }
 
