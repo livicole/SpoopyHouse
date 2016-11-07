@@ -2,7 +2,8 @@
 using System.Collections;
 using UnityStandardAssets.ImageEffects;
 
-public class VortexManipulator : MonoBehaviour {
+public class UpsideDownToy : MonoBehaviour
+{
 
     private Transform childCamera;
     public bool on = false;
@@ -11,13 +12,15 @@ public class VortexManipulator : MonoBehaviour {
     private Transform theChild;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         childCamera = GameObject.Find("ChildCamera").transform;
         theChild = childCamera.parent;
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         Ray rayToPlayer = new Ray(transform.position, theChild.transform.position - transform.position);
         RaycastHit rayToPlayerHit = new RaycastHit();
 
@@ -44,5 +47,5 @@ public class VortexManipulator : MonoBehaviour {
     {
         childCamera.GetComponent<Vortex>().OnResetVision();
     }
-       
+
 }
