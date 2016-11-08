@@ -28,6 +28,7 @@ public class CursorController : MonoBehaviour {
 
     public float itemsCollected;
 
+    public GameObject gameManager;
 
     private GameObject gridBase;
 
@@ -306,7 +307,7 @@ public class CursorController : MonoBehaviour {
             {
                 //holdingObject.GetComponent<GridLocker>().height -= 10f;
                 holdingObject.GetComponent<GridLocker>().moving = false;
-                if (!holdingObject.GetComponent<GridLocker>().amIConnected)
+                if (!holdingObject.GetComponent<GridLocker>().amIConnected || !gameManager.GetComponent<GameManager>().CheckRooms())
                 {
                     holdingObject.GetComponent<GridLocker>().ResetLocation();
                    

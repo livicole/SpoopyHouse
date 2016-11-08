@@ -4,13 +4,20 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
+    GameObject[] rooms;
+
     public bool gameIsLive = true;
     public Transform childPlayer;
     private Vector3 startingPosition;
     private Transform grid;
     private GridInfo gridInfo;
+
+    float timer, navMeshBuildInterval = 5;
 	// Use this for initialization
 	void Start () {
+
+        rooms = GameObject.FindGameObjectsWithTag("Room");
+
         childPlayer = GameObject.Find("ChildPlayer").transform;
         grid = GameObject.Find("GridBase").GetComponent<GridInfo>().transform;
         gridInfo = grid.GetComponent<GridInfo>();
@@ -29,5 +36,31 @@ public class GameManager : MonoBehaviour {
                 SceneManager.LoadScene("0");
             }
         }
+        else
+        {
+            timer += Time.deltaTime;
+            if(timer > navMeshBuildInterval)
+            {
+                timer = 0;
+                //UnityEditor.NavMeshBuilder.BuildNavMesh();
+
+            }
+        }
 	}
+
+    public bool CheckRooms()
+    {
+        foreach (GameObject room in rooms)
+        {
+            if (!room.GetComponent<GridLocker>().amIConnected)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        return false;
+    }
 }
