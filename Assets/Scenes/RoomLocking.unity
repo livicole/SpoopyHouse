@@ -24798,6 +24798,7 @@ MonoBehaviour:
   spawn: {fileID: 403680, guid: e953592d64d86cd48b6c3c40ec5e9455, type: 2}
   detectionSphere: {fileID: 1113231744}
   itemsCollected: 0
+  gameManager: {fileID: 820539471}
   holdingObject: {fileID: 0}
   targetLocation: {x: 0, y: 0, z: 0}
   angelCount: 0
