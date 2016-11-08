@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour {
     private Vector3 startingPosition;
     private Transform grid;
     private GridInfo gridInfo;
+
+    float timer, navMeshBuildInterval = 5;
 	// Use this for initialization
 	void Start () {
         childPlayer = GameObject.Find("ChildPlayer").transform;
@@ -27,6 +29,16 @@ public class GameManager : MonoBehaviour {
             if(Input.GetButtonDown("Ghost Button A") || Input.GetButtonDown("Use"))
             {
                 SceneManager.LoadScene("0");
+            }
+        }
+        else
+        {
+            timer += Time.deltaTime;
+            if(timer > navMeshBuildInterval)
+            {
+                timer = 0;
+                //UnityEditor.NavMeshBuilder.BuildNavMesh();
+
             }
         }
 	}

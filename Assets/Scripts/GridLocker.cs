@@ -287,7 +287,7 @@ public class GridLocker : MonoBehaviour {
             }
         }
         MoveOrigin(rotation);
-       
+   
     }
 
     public void UpdateNewBlocks()

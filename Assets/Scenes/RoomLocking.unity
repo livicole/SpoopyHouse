@@ -1692,7 +1692,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &236956468
 Transform:
@@ -2521,9 +2521,11 @@ MonoBehaviour:
   - {x: 1, y: 0, z: 2}
   - {x: 2, y: 0, z: 1}
   moveTick: 1
+  rotationY: 0
   previousConnectedPosition: {x: 0, y: 0, z: 0}
   previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
+  moving: 0
 --- !u!4 &295393964
 Transform:
   m_ObjectHideFlags: 0
@@ -2662,7 +2664,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &324724606
 Transform:
@@ -2929,7 +2931,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &337340628
 Transform:
@@ -3311,9 +3313,11 @@ MonoBehaviour:
   - {x: 1, y: 0, z: 0}
   - {x: 2, y: 0, z: 0}
   moveTick: 1
+  rotationY: 0
   previousConnectedPosition: {x: 0, y: 0, z: 0}
   previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
+  moving: 0
 --- !u!4 &379146590
 Transform:
   m_ObjectHideFlags: 0
@@ -3377,7 +3381,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &397892491
 Transform:
@@ -3659,9 +3663,11 @@ MonoBehaviour:
   coordinatesOccupied:
   - {x: 0, y: 0, z: 0}
   moveTick: 0
+  rotationY: 0
   previousConnectedPosition: {x: 0, y: 0, z: 0}
   previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
+  moving: 0
 --- !u!4 &417891220
 Transform:
   m_ObjectHideFlags: 0
@@ -4605,7 +4611,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &486062098
 Transform:
@@ -5386,7 +5392,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &560058409
 Transform:
@@ -6077,7 +6083,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &668306257
 Transform:
@@ -6156,7 +6162,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &670056958
 Transform:
@@ -6442,9 +6448,11 @@ MonoBehaviour:
   coordinatesOccupied:
   - {x: 0, y: 0, z: 0}
   moveTick: 0
+  rotationY: 0
   previousConnectedPosition: {x: 0, y: 0, z: 0}
   previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
+  moving: 0
 --- !u!1 &708524757
 GameObject:
   m_ObjectHideFlags: 0
@@ -6776,7 +6784,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &729647202
 Transform:
@@ -8007,9 +8015,11 @@ MonoBehaviour:
   coordinatesOccupied:
   - {x: 0, y: 0, z: 0}
   moveTick: 0
+  rotationY: 0
   previousConnectedPosition: {x: 0, y: 0, z: 0}
   previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
+  moving: 0
 --- !u!4 &830278299
 Transform:
   m_ObjectHideFlags: 0
@@ -8618,7 +8628,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &919946069
 Transform:
@@ -10083,9 +10093,11 @@ MonoBehaviour:
   coordinatesOccupied:
   - {x: 0, y: 0, z: 0}
   moveTick: 0
+  rotationY: 0
   previousConnectedPosition: {x: 0, y: 0, z: 0}
   previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
+  moving: 0
 --- !u!4 &1051615603
 Transform:
   m_ObjectHideFlags: 0
@@ -10419,9 +10431,11 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 1}
   - {x: 1, y: 0, z: 0}
   moveTick: 1
+  rotationY: 0
   previousConnectedPosition: {x: 0, y: 0, z: 0}
   previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
+  moving: 0
 --- !u!1 &1097034569
 GameObject:
   m_ObjectHideFlags: 0
@@ -11269,7 +11283,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1206241315
 Transform:
@@ -11480,9 +11494,11 @@ MonoBehaviour:
   - {x: 2, y: 0, z: 0}
   - {x: 2, y: 0, z: 1}
   moveTick: 1
+  rotationY: 0
   previousConnectedPosition: {x: 0, y: 0, z: 0}
   previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
+  moving: 0
 --- !u!4 &1210107073
 Transform:
   m_ObjectHideFlags: 0
@@ -11633,9 +11649,11 @@ MonoBehaviour:
   - {x: 1, y: 0, z: 2}
   - {x: 2, y: 0, z: 0}
   moveTick: 1
+  rotationY: 0
   previousConnectedPosition: {x: 0, y: 0, z: 0}
   previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
+  moving: 0
 --- !u!4 &1231140441
 Transform:
   m_ObjectHideFlags: 0
@@ -12651,7 +12669,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1380661823
 Transform:
@@ -12784,9 +12802,11 @@ MonoBehaviour:
   - {x: 2, y: 0, z: 1}
   - {x: 2, y: 0, z: 2}
   moveTick: 1
+  rotationY: 0
   previousConnectedPosition: {x: 0, y: 0, z: 0}
   previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
+  moving: 0
 --- !u!4 &1385769191
 Transform:
   m_ObjectHideFlags: 0
@@ -13284,7 +13304,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1433942074
 Transform:
@@ -14422,7 +14442,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1513163843
 Transform:
@@ -15265,7 +15285,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1631143672
 Transform:
@@ -15753,9 +15773,11 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}
   moveTick: 1
+  rotationY: 0
   previousConnectedPosition: {x: 0, y: 0, z: 0}
   previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
+  moving: 0
 --- !u!4 &1716100490
 Transform:
   m_ObjectHideFlags: 0
@@ -15907,7 +15929,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1728200430
 Transform:
@@ -16054,7 +16076,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1739460433
 Transform:
@@ -16283,7 +16305,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1755644871
 Transform:
@@ -16362,7 +16384,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1762951492
 Transform:
@@ -17116,7 +17138,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1847435151
 Transform:
@@ -17368,7 +17390,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1874890234
 Transform:
@@ -18395,9 +18417,11 @@ MonoBehaviour:
   - {x: 1, y: 0, z: 2}
   - {x: 2, y: 0, z: 0}
   moveTick: 1
+  rotationY: 0
   previousConnectedPosition: {x: 0, y: 0, z: 0}
   previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
+  moving: 0
 --- !u!4 &1966448637
 Transform:
   m_ObjectHideFlags: 0
@@ -18619,7 +18643,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1997684525
 Transform:
@@ -19445,7 +19469,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2092786373
 Transform:
