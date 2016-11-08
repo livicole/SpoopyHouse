@@ -57,6 +57,7 @@ public class GridLocker : MonoBehaviour {
     public Vector3 previousConnectedPosition;
     public Quaternion previousConnectedRotation;
     public bool childLocked = false, moving = false;
+    public List<Transform> connectedDoors;
     int counter;
 
     // Use this for initialization
@@ -108,6 +109,7 @@ public class GridLocker : MonoBehaviour {
                 {
                     previousConnectedPosition = CalculateRealToGrid(transform.position);
                     previousConnectedRotation = transform.rotation;
+                    
                 }          
                 break;
             }
