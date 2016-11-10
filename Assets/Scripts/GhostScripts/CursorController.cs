@@ -10,6 +10,9 @@ public class CursorController : MonoBehaviour {
     LayerMask inRoomLayerMask;
 
     [SerializeField]
+    LayerMask layermask;
+
+    [SerializeField]
     Camera ghostCam;
 
     [SerializeField]
@@ -264,7 +267,7 @@ public class CursorController : MonoBehaviour {
         previousToySprite.sprite = toySpritesShaded[previousSelector];
 
         //Some preliminary code to set up the ability to drop objects.
-        int layermask = 1 << 5; layermask = ~layermask; // Ignoring UI layer      
+       // Ignoring UI layer      
         Vector2 screenPoint = RectTransformUtility.WorldToScreenPoint(null, transform.position);
         //Debug.Log("Screen point: " + screenPoint);
         // Vector3 directionToPoint = ghostCam.ScreenPointToRay(screenPoint).direction.normalized;
@@ -289,8 +292,28 @@ public class CursorController : MonoBehaviour {
             if (Physics.Raycast(verticalRay, out verticalRayHit, 10000f, layermask))
             {
                 //Debug.Log("Hitting object: " + verticalRayHit.collider.gameObject.name);
-
+                Vector3 inGameLocation = verticalRayHit.point;
+                //Debug.Log(inGameLocation);
+                Vector3 coordinates = gridBase.GetComponent<GridInfo>().CalculateRealToGrid(inGameLocation);
+                //Debug.Log(coordinates);
+                Transform selectedRoom = null;
+                foreach (RoomInfo roomInfo in gridBase.GetComponent<GridInfo>().usedGridBlocks)
+                {
+                    if(roomInfo.coordinate == coordinates)
+                    {
+                        selectedRoom = roomInfo.room;
+                        
+                    }
+                }
+                //Debug.Log(selectedRoom);
+                if(selectedRoom != null && !selectedRoom.GetComponent<GridLocker>().childLocked)
+                {
+                    holdingRoom = true;
+                    holdingObject = selectedRoom;
+                    holdingObject.GetComponent<GridLocker>().moving = true;
+                }
                 //Layer 14 is gridlocked.
+                /*
                 if (verticalRayHit.collider.gameObject.layer == 14)
                 {
                     if (!verticalRayHit.collider.gameObject.transform.parent.GetComponent<GridLocker>().childLocked)
@@ -301,7 +324,7 @@ public class CursorController : MonoBehaviour {
                         //holdingObject.GetComponent<GridLocker>().height += 10f;
                         //Debug.Log(holdingObject);
                     }
-                }
+                }*/
             }
         }
         else if (Input.GetButtonUp("Ghost Button A"))

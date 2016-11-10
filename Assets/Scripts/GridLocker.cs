@@ -308,7 +308,7 @@ public class GridLocker : MonoBehaviour {
     {
         foreach(Vector3 temp in coordinatesOccupied)
         {
-            //Debug.Log("Removing: " + (temp + gridLocation));
+            //Debug.Log("Removing: " + (temp + gridLocation) + "" + transform);
             gridInfo.RemoveBlock(temp + gridLocation, transform);
         }
     }
@@ -347,7 +347,7 @@ public class GridLocker : MonoBehaviour {
 
                 if (coordinate.Equals(takenBlock + gridLocation))
                 {
-                    //Debug.Log("Offshoot block: " + (takenBlock + CalculateRealToGrid(transform.position)) + " can't be moved here: " + location);
+                    Debug.Log("Offshoot block: " + (takenBlock + CalculateRealToGrid(transform.position)) + " can't be moved here: " + coordinate);
                     return false;
                 }
             }

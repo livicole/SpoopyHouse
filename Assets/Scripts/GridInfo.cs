@@ -23,7 +23,7 @@ public class GridInfo : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         
-        Debug.Log("The list:" + usedGridBlocks);
+        //Debug.Log("The list:" + usedGridBlocks);
         float length = (gridSize + 1) * blockLength;
 	    transform.localScale = new Vector3 (length, 1, length);
         transform.position = new Vector3(gridSize * 10 / 2, 0, gridSize * 10 /2);
@@ -36,8 +36,8 @@ public class GridInfo : MonoBehaviour {
     {
         RoomInfo newRoom = new RoomInfo();
         newRoom.Create(coordinate, transform);
-        Debug.Log(newRoom.coordinate);
-        Debug.Log(usedGridBlocks);
+        //Debug.Log(newRoom.coordinate);
+        //Debug.Log(usedGridBlocks);
         usedGridBlocks.Add(newRoom);
     }
 
@@ -45,13 +45,44 @@ public class GridInfo : MonoBehaviour {
     {
         RoomInfo newRoom = new RoomInfo();
         newRoom.Create(coordinate, transform);
-
-        usedGridBlocks.Remove(newRoom);
+        RoomInfo temp = null;
+        foreach(RoomInfo room in usedGridBlocks)
+        {
+            if(room.coordinate == coordinate && room.room == transform)
+            {
+                temp = room;
+            }
+        }
+        usedGridBlocks.Remove(temp);
+        //Debug.Log(newRoom.coordinate + "" + newRoom.room);
+        //Debug.Log(usedGridBlocks.Remove(newRoom));
     }
 
     public void InitList()
     {
         usedGridBlocks = new List<RoomInfo>();
+    }
+
+    public Vector3 CalculateRealToGrid(Vector3 position)
+    {
+        GameObject gridBase = GameObject.Find("GridBase");
+        Vector3 coordinates;
+        GridInfo gridInfo = gridBase.GetComponent<GridInfo>();
+        float remainderX = position.x % blockLength;
+        float remainderY = position.y % blockLength;
+        float gridXPosition = Mathf.Clamp((int)(position.x / blockLength), gridInfo.gridMin, gridInfo.gridMax);
+        float gridYPosition = Mathf.Clamp((int)(position.z / blockLength), gridInfo.gridMin, gridInfo.gridMax);
+        /*if (remainderX >= blockLength / 2)
+        {
+            gridXPosition++;
+        }
+        if (remainderY >= blockLength / 2)
+        {
+            gridYPosition++;
+        }*/
+        coordinates = new Vector3(gridXPosition, 0, gridYPosition);
+
+        return coordinates;
     }
 }
 

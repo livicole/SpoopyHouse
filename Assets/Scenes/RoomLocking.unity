@@ -3729,7 +3729,7 @@ GameObject:
   - 65: {fileID: 257215549}
   - 23: {fileID: 257215548}
   - 114: {fileID: 257215547}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25867,6 +25867,9 @@ MonoBehaviour:
   inRoomLayerMask:
     serializedVersion: 2
     m_Bits: 4294950878
+  layermask:
+    serializedVersion: 2
+    m_Bits: 524288
   ghostCam: {fileID: 1953434718}
   speed: 5
   border: 20
@@ -30144,7 +30147,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a06e8b8c9c14bc646b96eb2e758244a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  usedGridBlocks: []
   gridSize: 60
   blockLength: 10
   gridMax: 60
