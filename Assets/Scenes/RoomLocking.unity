@@ -25890,7 +25890,7 @@ MonoBehaviour:
   - toy: {fileID: 4000013344151358, guid: 3e746ab5930141c4ab49469ceca19923, type: 2}
     cooldown: 75
     timer: 0
-  - toy: {fileID: 4000010439388590, guid: 4aa6cf31532a06c43a3ce85ef9a73657, type: 2}
+  - toy: {fileID: 4000010258436626, guid: 757eafe1b1bd9c64dbfa76565674d5e5, type: 2}
     cooldown: 75
     timer: 0
   - toy: {fileID: 4000010087937182, guid: 26c92036b454e71489e755ed86b78bbb, type: 2}
@@ -25899,21 +25899,16 @@ MonoBehaviour:
   - toy: {fileID: 4000011667305274, guid: 8b290d4371accc844837044c6becd728, type: 2}
     cooldown: 75
     timer: 0
-  - toy: {fileID: 4000010258436626, guid: 757eafe1b1bd9c64dbfa76565674d5e5, type: 2}
-    cooldown: 75
-    timer: 0
   toySprites:
   - {fileID: 21300000, guid: bef51e8cf6c133d4bb7b933ce9994daa, type: 3}
-  - {fileID: 21300000, guid: 7eb671d45cf33074abd9bd09fc53effb, type: 3}
+  - {fileID: 21300000, guid: a83cf523344d70641b27c63e26de7df6, type: 3}
   - {fileID: 21300000, guid: 84d7a0149e0e84848ac1778faac9d8df, type: 3}
   - {fileID: 21300000, guid: d860c6a1c6299f14ba7c42fd89049dd8, type: 3}
-  - {fileID: 21300000, guid: a83cf523344d70641b27c63e26de7df6, type: 3}
   toySpritesShaded:
   - {fileID: 21300000, guid: 4ece947014207d04f96a48171a88ad98, type: 3}
-  - {fileID: 21300000, guid: 9aaf35bb8076b9e4598cc9150d8f4f98, type: 3}
+  - {fileID: 21300000, guid: 94f3bbb2e43cf034eb9f0eb45c5a4560, type: 3}
   - {fileID: 21300000, guid: adee29566cab4834bbfc2c0e15717167, type: 3}
   - {fileID: 21300000, guid: 211d18483b453c64ca0482f35485d54d, type: 3}
-  - {fileID: 21300000, guid: 94f3bbb2e43cf034eb9f0eb45c5a4560, type: 3}
   rotateCD: 0.5
   panEdgeSize: 0
   BButton: {fileID: 0}

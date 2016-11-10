@@ -4,6 +4,7 @@ using System.Collections;
 public class DoorScript : MonoBehaviour {
 
     Vector3 originalOrientation = new Vector3(-0.04f, -5.1f, -0.29652f);
+    Vector3 originalRotation;
 
     //public GameObject otherDoor;
     public int priority;
@@ -24,6 +25,7 @@ public class DoorScript : MonoBehaviour {
         myChild = transform.GetChild(1) ;
         otherDoor = null;
         room = transform.root;
+        originalRotation = transform.localEulerAngles;
         //transform.root.GetComponent<GridLocker>().numDoors++;
 	}
 	
@@ -117,6 +119,8 @@ public class DoorScript : MonoBehaviour {
         EnableDoor();
 
         transform.GetChild(1).transform.localPosition = originalOrientation;
+        transform.GetChild(1).transform.localRotation = Quaternion.Euler(originalRotation);
+        Debug.Log(originalRotation);
         transform.GetChild(1).GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         otherDoor = null;
         //myDoorUI.GetComponent<Renderer>().material.color = Color.red;
@@ -137,8 +141,15 @@ public class DoorScript : MonoBehaviour {
 
     public void LockDoor()
     {
+        transform.GetChild(1).transform.localPosition = originalOrientation;
+        transform.GetChild(1).transform.localRotation = Quaternion.Euler(originalRotation);
         transform.GetChild(1).GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+
+
+        otherDoor.transform.GetChild(1).transform.localPosition = originalOrientation;
+        transform.GetChild(1).transform.localRotation = Quaternion.Euler(originalRotation);
         otherDoor.transform.GetChild(1).GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+
 
     }
 

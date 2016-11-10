@@ -20,8 +20,9 @@ public class VortexManipulator : MonoBehaviour {
 	void Update () {
         Ray rayToPlayer = new Ray(transform.position, theChild.transform.position - transform.position);
         RaycastHit rayToPlayerHit = new RaycastHit();
+        Debug.DrawRay(transform.position, theChild.transform.position - transform.position);
 
-        if (Physics.Raycast(rayToPlayer, out rayToPlayerHit, 1000f))
+        if (Physics.Raycast(rayToPlayer, out rayToPlayerHit))
         {
             if (rayToPlayerHit.collider.name == "ChildPlayer")
             {
