@@ -17,10 +17,13 @@ public class DoorScript : MonoBehaviour {
     private bool check = false;
     private float timer = 0, timerEnd = 0.2f;
 
+    public Transform room;
+
 	// Use this for initialization
 	void Start () {
         myChild = transform.GetChild(1) ;
         otherDoor = null;
+        room = transform.root;
         //transform.root.GetComponent<GridLocker>().numDoors++;
 	}
 	
@@ -28,14 +31,24 @@ public class DoorScript : MonoBehaviour {
 	void Update () {
         Physics.IgnoreLayerCollision(14, 18, true);
 
-        if (myDoorUI.GetComponent<Renderer>().material.color == Color.green || myDoorUI.GetComponent<Renderer>().enabled == false)
-        {
-            isConnected = true;
+        if (otherDoor != null) {
+            if (otherDoor.GetComponent<BoxCollider>().enabled == false || GetComponent<BoxCollider>().enabled == false)
+            {
+                myDoorUI.GetComponent<Renderer>().material.color = Color.green;
+                isConnected = true;
+            }
+            else
+            {
+                myDoorUI.GetComponent<Renderer>().material.color = Color.red;
+                isConnected = false;
+            }
         }
         else
         {
+            myDoorUI.GetComponent<Renderer>().material.color = Color.red;
             isConnected = false;
         }
+
 
     }
 
@@ -64,14 +77,14 @@ public class DoorScript : MonoBehaviour {
                         col.GetComponentInParent<DoorScript>().otherDoor.GetComponent<DoorScript>().ResetThisDoor();
                         col.GetComponentInParent<DoorScript>().otherDoor.GetComponent<DoorScript>().check = true;
                     }
-                    otherDoor = col.transform.parent.transform;
+                    otherDoor = col.transform.parent;
                     col.GetComponentInParent<DoorScript>().otherDoor = transform;
                     
                     //Debug.Log("I am " + gameObject.name + " with P" + priority + " being turned off by " + col.transform.parent.name + " with P" + priority);
                     col.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
                     //myDoorUI.GetComponent<Renderer>().material.color = Color.green;
-                    otherDoor.GetComponent<DoorScript>().myDoorUI.GetComponent<Renderer>().material.color = Color.green;
-                    isConnected = true;
+                    //otherDoor.GetComponent<DoorScript>().myDoorUI.GetComponent<Renderer>().material.color = Color.green;
+                    //isConnected = true;
                     
 
                  
@@ -105,8 +118,9 @@ public class DoorScript : MonoBehaviour {
 
         transform.GetChild(1).transform.localPosition = originalOrientation;
         transform.GetChild(1).GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-        myDoorUI.GetComponent<Renderer>().material.color = Color.red;
-        isConnected = false;
+        otherDoor = null;
+        //myDoorUI.GetComponent<Renderer>().material.color = Color.red;
+        //isConnected = false;
         
     }
 
