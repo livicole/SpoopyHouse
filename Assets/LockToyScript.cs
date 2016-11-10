@@ -10,7 +10,7 @@ public class LockToyScript : MonoBehaviour {
 	void Update () {
         if (!done)
         {
-            Debug.Log("Hello?");
+            //Debug.Log("Hello?");
             done = true;
             LockDoors();
         }
@@ -26,7 +26,7 @@ public class LockToyScript : MonoBehaviour {
     {
         foreach (Transform myObject in transform.parent)
         {
-            Debug.Log(myObject.name);
+            //Debug.Log(myObject.name);
             if (myObject.tag == "Door")
             {
                 //Debug.Log(myObject.name);
