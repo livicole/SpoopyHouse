@@ -952,7 +952,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 155690, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_Name
-      value: DoubleDoor_Full (6)
+      value: DoubleDoor_Full (18)
       objectReference: {fileID: 0}
     - target: {fileID: 491938, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_LocalScale.x
@@ -1261,7 +1261,7 @@ MonoBehaviour:
   detectDistance: 3
   destroyCooldown: 2
   holdingLamp: 1
-  lamp: {fileID: 4000011784891852, guid: 4f84abdd3c52d97419e51e4e513a0c4b, type: 2}
+  lamp: {fileID: 0}
 --- !u!143 &101776731
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1414,7 +1414,7 @@ GameObject:
   - 64: {fileID: 109905703}
   m_Layer: 0
   m_Name: TRoom
-  m_TagString: Room
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2989,7 +2989,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 155690, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_Name
-      value: DoubleDoor_Full (4)
+      value: DoubleDoor_Full (27)
       objectReference: {fileID: 0}
     - target: {fileID: 491938, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_LocalScale.x
@@ -6858,21 +6858,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1284049097}
   m_RootOrder: 0
---- !u!1 &475007785 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 155690, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
-  m_PrefabInternal: {fileID: 744251841}
---- !u!114 &475007788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 475007785}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa03829812eebbc45848a83e8b458ba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &475032463
 GameObject:
   m_ObjectHideFlags: 0
@@ -6956,7 +6941,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 155690, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_Name
-      value: DoubleDoor_Full (6)
+      value: DoubleDoor_Full (35)
       objectReference: {fileID: 0}
     - target: {fileID: 491938, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_LocalScale.x
@@ -7904,7 +7889,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 155690, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_Name
-      value: DoubleDoor_Full (4)
+      value: DoubleDoor_Full (25)
       objectReference: {fileID: 0}
     - target: {fileID: 491938, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_LocalScale.x
@@ -8277,7 +8262,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 155690, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_Name
-      value: DoubleDoor_Full (3)
+      value: DoubleDoor_Full (23)
       objectReference: {fileID: 0}
     - target: {fileID: 491938, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_LocalScale.x
@@ -9192,7 +9177,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 155690, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_Name
-      value: DoubleDoor_Full (4)
+      value: DoubleDoor_Full (26)
       objectReference: {fileID: 0}
     - target: {fileID: 491938, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_LocalScale.x
@@ -9841,7 +9826,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 4d60fff894bbb174780ca0343e7b6469, type: 2}
     - target: {fileID: 1000011398017652, guid: d0d46125eb51a9f4493d09b25cc3aa79, type: 2}
       propertyPath: m_TagString
-      value: Room
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0d46125eb51a9f4493d09b25cc3aa79, type: 2}
@@ -10087,7 +10072,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 155690, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_Name
-      value: DoubleDoor_Full (6)
+      value: DoubleDoor_Full (20)
       objectReference: {fileID: 0}
     - target: {fileID: 491938, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_LocalScale.x
@@ -10513,7 +10498,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 155690, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_Name
-      value: DoubleDoor_Full (5)
+      value: DoubleDoor_Full (31)
       objectReference: {fileID: 0}
     - target: {fileID: 491938, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_LocalScale.x
@@ -10607,7 +10592,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 155690, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_Name
-      value: DoubleDoor_Full (21)
+      value: DoubleDoor_Full (19)
       objectReference: {fileID: 0}
     - target: {fileID: 155690, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_Layer
@@ -13530,7 +13515,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 155690, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_Name
-      value: DoubleDoor_Full (6)
+      value: DoubleDoor_Full (34)
       objectReference: {fileID: 0}
     - target: {fileID: 491938, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_LocalScale.x
@@ -13904,7 +13889,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 155690, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_Name
-      value: DoubleDoor_Full (3)
+      value: DoubleDoor_Full (22)
       objectReference: {fileID: 0}
     - target: {fileID: 155690, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_Layer
@@ -14455,7 +14440,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 155690, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_Name
-      value: DoubleDoor_Full (8)
+      value: DoubleDoor_Full (16)
       objectReference: {fileID: 0}
     - target: {fileID: 491938, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_LocalScale.x
@@ -15381,7 +15366,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 155690, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_Name
-      value: DoubleDoor_Full (11)
+      value: DoubleDoor_Full (13)
       objectReference: {fileID: 0}
     - target: {fileID: 155690, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_Layer
@@ -18566,7 +18551,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 4d60fff894bbb174780ca0343e7b6469, type: 2}
     - target: {fileID: 1000010112252390, guid: ea8c890a13be138408ce2a05a106b7ff, type: 2}
       propertyPath: m_TagString
-      value: Room
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea8c890a13be138408ce2a05a106b7ff, type: 2}
@@ -19642,7 +19627,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 155690, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_Name
-      value: DoubleDoor_Full (3)
+      value: DoubleDoor_Full (33)
       objectReference: {fileID: 0}
     - target: {fileID: 491938, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_LocalScale.x
@@ -19744,7 +19729,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 155690, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_Name
-      value: DoubleDoor_Full (7)
+      value: DoubleDoor_Full (17)
       objectReference: {fileID: 0}
     - target: {fileID: 155690, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_Layer
@@ -19954,7 +19939,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 155690, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_Name
-      value: DoubleDoor_Full (3)
+      value: DoubleDoor_Full (24)
       objectReference: {fileID: 0}
     - target: {fileID: 491938, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_LocalScale.x
@@ -21249,7 +21234,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 155690, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_Name
-      value: DoubleDoor_Full (5)
+      value: DoubleDoor_Full (29)
       objectReference: {fileID: 0}
     - target: {fileID: 155690, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_Layer
@@ -21895,7 +21880,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 155690, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_Name
-      value: DoubleDoor_Full (4)
+      value: DoubleDoor_Full (28)
       objectReference: {fileID: 0}
     - target: {fileID: 491938, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_LocalScale.x
@@ -22592,7 +22577,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 155690, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_Name
-      value: DoubleDoor_Full (9)
+      value: DoubleDoor_Full (10)
       objectReference: {fileID: 0}
     - target: {fileID: 155690, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_Layer
@@ -24804,19 +24789,19 @@ MonoBehaviour:
   angelCount: 0
   inverterCount: 0
   ghostToys:
-  - toy: {fileID: 4000013344151358, guid: 3e746ab5930141c4ab49469ceca19923, type: 2}
+  - toy: {fileID: 0}
     cooldown: 75
     timer: 0
-  - toy: {fileID: 4000010439388590, guid: 4aa6cf31532a06c43a3ce85ef9a73657, type: 2}
+  - toy: {fileID: 0}
     cooldown: 75
     timer: 0
-  - toy: {fileID: 4000010087937182, guid: 26c92036b454e71489e755ed86b78bbb, type: 2}
+  - toy: {fileID: 0}
     cooldown: 75
     timer: 0
-  - toy: {fileID: 4000011667305274, guid: 8b290d4371accc844837044c6becd728, type: 2}
+  - toy: {fileID: 0}
     cooldown: 75
     timer: 0
-  - toy: {fileID: 4000010258436626, guid: 757eafe1b1bd9c64dbfa76565674d5e5, type: 2}
+  - toy: {fileID: 0}
     cooldown: 75
     timer: 0
   toySprites:
@@ -25677,7 +25662,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 155690, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_Name
-      value: DoubleDoor_Full (5)
+      value: DoubleDoor_Full (30)
       objectReference: {fileID: 0}
     - target: {fileID: 491938, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_LocalScale.x
@@ -25869,7 +25854,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 155690, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_Name
-      value: DoubleDoor_Full (5)
+      value: DoubleDoor_Full (32)
       objectReference: {fileID: 0}
     - target: {fileID: 491938, guid: b3adf02daaf5e2444a107d800cd4163f, type: 2}
       propertyPath: m_LocalScale.x

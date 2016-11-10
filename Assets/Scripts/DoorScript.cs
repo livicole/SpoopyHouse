@@ -5,83 +5,55 @@ public class DoorScript : MonoBehaviour {
 
     Vector3 originalOrientation = new Vector3(-0.04f, -5.1f, -0.29652f);
 
-    //public GameObject otherDoor;
-    public int priority;
-    Transform myChild;
-    public GameObject myDoorUI;
-    
     public Transform otherDoor;
+    Transform doubleDoorChild;
+    Transform doorFrameChild;
+    public GameObject myDoorUI;
 
-    public bool isConnected;
+    public bool isConnected = false;
+    
+    public int priority;
 
-    private bool check = false;
-    private float timer = 0, timerEnd = 0.2f;
+    bool started = false;
 
 	// Use this for initialization
 	void Start () {
-        myChild = transform.GetChild(1) ;
-        otherDoor = null;
-        //transform.root.GetComponent<GridLocker>().numDoors++;
+        doubleDoorChild = transform.GetChild(1);
+        doorFrameChild = transform.GetChild(0);
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        if (!started)
+        {
+            //ResetDoor();
+            started = true;
+        }
         Physics.IgnoreLayerCollision(14, 18, true);
 
-        if (myDoorUI.GetComponent<Renderer>().material.color == Color.green || myDoorUI.GetComponent<Renderer>().enabled == false)
-        {
-            isConnected = true;
-        }
-        else
-        {
-            isConnected = false;
-        }
 
-    }
-
-    void OnTriggerStay(Collider col)
-    {
-        if (check)
-        {
-            
-            check = false;
-        }
     }
 
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.transform.parent != null)
+
+        if (col.name == "doubleDoor")
         {
-            if (col.transform.parent.tag == "Door")
+            if (col.transform.parent.name != name)
             {
-                //Debug.Log("I am" + name + " colliding with " + col.transform.parent.transform.name);
-                if (priority > col.GetComponentInParent<DoorScript>().priority)
+                //Debug.Log("eheyy");
+                //Debug.Log("I am " + name + ". P:" + priority + " colliding with " + col.transform.parent.name + ". P:" + col.transform.parent.GetComponent<DoorScript>().priority);
+                otherDoor = col.transform.parent;
+                col.transform.parent.GetComponent<DoorScript>().otherDoor = transform;
+                //if my priority is greater: lock this door
+                //if my priority is lower: disable this door
+                if (priority > otherDoor.GetComponent<DoorScript>().priority)
                 {
-                    if (col.GetComponentInParent<DoorScript>().otherDoor != null)
-                    {
-                        //Debug.Log("ERROR! Reading an old other door. Replacing....");
-                        col.GetComponentInParent<DoorScript>().otherDoor.GetComponent<DoorScript>().ResetThisDoor();
-                        col.GetComponentInParent<DoorScript>().otherDoor.GetComponent<DoorScript>().check = true;
-                    }
-                    otherDoor = col.transform.parent.transform;
-                    col.GetComponentInParent<DoorScript>().otherDoor = transform;
-                    
-                    //Debug.Log("I am " + gameObject.name + " with P" + priority + " being turned off by " + col.transform.parent.name + " with P" + priority);
-                    col.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-                    //myDoorUI.GetComponent<Renderer>().material.color = Color.green;
-                    otherDoor.GetComponent<DoorScript>().myDoorUI.GetComponent<Renderer>().material.color = Color.green;
-                    //isConnected = true;
-                    
-
-                 
-
-                    //gameObject.SetActive(false);
-                    DisableDoor();
-                }
-                else
-                {
-                    // Debug.Log("Incorrect object: " + col.transform.parent.name);
+                    UnlockDoor();
+                    isConnected = true;
+                    otherDoor.GetComponent<DoorScript>().isConnected = true;
+                    otherDoor.GetComponent<DoorScript>().HideDoor();   
                 }
             }
         }
@@ -90,63 +62,48 @@ public class DoorScript : MonoBehaviour {
 
 
 
-    public void ResetDoors()
+    public void ResetDoor()
     {
-       // Debug.Log("Resetting: " + transform.name);
-        ResetOtherDoor();
-        ResetThisDoor();
-    }
-
-    public void ResetThisDoor()
-    {
-        //Debug.Log("Resetting " + name);
-        //gameObject.SetActive(true);
-        EnableDoor();
-
-        transform.GetChild(1).transform.localPosition = originalOrientation;
-        transform.GetChild(1).GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        isConnected = false;
+        LockDoor();
+        ShowDoor();
         myDoorUI.GetComponent<Renderer>().material.color = Color.red;
-        //isConnected = false;
-        
-    }
-
-    public void ResetOtherDoor()
-    {
         if (otherDoor != null)
         {
-            otherDoor.gameObject.GetComponent<DoorScript>().ResetThisDoor();
-            //Debug.Log("Also resetting: " + otherDoor.name);
+            otherDoor.GetComponent<DoorScript>().isConnected = false;
+            otherDoor.GetComponent<DoorScript>().LockDoor();
+            otherDoor.GetComponent<DoorScript>().ShowDoor();
         }
-        else { //Debug.Log("Nothing else to reset. Called from : " + transform.name); 
-        }
+
+    }
+
+    public void HideDoor()
+    {
+        GetComponent<BoxCollider>().enabled = false;
+        doorFrameChild.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
+        doubleDoorChild.GetComponent<MeshRenderer>().enabled = false;
+        doubleDoorChild.GetComponent<BoxCollider>().enabled = false;
+        myDoorUI.GetComponent<MeshRenderer>().enabled = false;
+    }
+
+    public void ShowDoor()
+    {
+        GetComponent<BoxCollider>().enabled = true;
+        doorFrameChild.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
+        doubleDoorChild.GetComponent<MeshRenderer>().enabled = true;
+        doubleDoorChild.GetComponent<BoxCollider>().enabled = true;
+        myDoorUI.GetComponent<MeshRenderer>().enabled = true;
     }
 
     public void LockDoor()
     {
-        transform.GetChild(1).GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-        otherDoor.transform.GetChild(1).GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-
+        doubleDoorChild.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
     }
 
-    public void DisableDoor()
+    public void UnlockDoor()
     {
-        GetComponent<BoxCollider>().enabled = false;
-        transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
-        transform.GetChild(1).GetComponent<MeshRenderer>().enabled = false;
-        transform.GetChild(1).GetComponent<BoxCollider>().enabled = false;
-        myDoorUI.GetComponent<Renderer>().enabled = false;
-        
+        doubleDoorChild.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        myDoorUI.GetComponent<Renderer>().material.color = Color.green;
     }
-
-    public void EnableDoor()
-    {
-        myDoorUI.GetComponent<Renderer>().enabled = true;
-        GetComponent<BoxCollider>().enabled = true;
-        transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
-        transform.GetChild(1).GetComponent<MeshRenderer>().enabled = true;
-        transform.GetChild(1).GetComponent<BoxCollider>().enabled = true;
-        
-    }
-
 
 }

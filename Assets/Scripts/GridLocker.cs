@@ -284,7 +284,7 @@ public class GridLocker : MonoBehaviour {
                 if (myDoor.tag == "Door")
                 {
                     Debug.Log("Resetting: " + myDoor);
-                    myDoor.GetComponent<DoorScript>().ResetDoors();
+                    myDoor.GetComponent<DoorScript>().ResetDoor();
                 }
             }
         }

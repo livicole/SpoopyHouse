@@ -316,7 +316,7 @@ public class CursorController : MonoBehaviour {
                         if (myDoor.tag == "Door")
                         {
 
-                            myDoor.GetComponent<DoorScript>().ResetDoors();
+                            myDoor.GetComponent<DoorScript>().ResetDoor();
                         }
                     }
                 }
@@ -352,7 +352,7 @@ public class CursorController : MonoBehaviour {
                     if (myDoor.tag == "Door")
                     {
 
-                        myDoor.GetComponent<DoorScript>().ResetDoors();
+                        myDoor.GetComponent<DoorScript>().ResetDoor();
                     }
                 }
             }

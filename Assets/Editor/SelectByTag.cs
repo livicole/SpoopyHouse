@@ -4,7 +4,7 @@ using UnityEditor;
 
 public class SelectByTag : MonoBehaviour {
 
-	private static string SelectedTag = "Toys";
+	private static string SelectedTag = "Room";
 
 	[MenuItem("Helpers/Select By Tag")]
 	public static void SelectObjectsWithTag()
