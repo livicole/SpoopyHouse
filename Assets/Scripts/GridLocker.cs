@@ -78,10 +78,7 @@ public class GridLocker : MonoBehaviour {
         gridBase = GameObject.Find("GridBase").transform;
       
         currentLocation = CalculateGridToReal(gridLocation);
-        foreach (Vector3 takenBlock in coordinatesOccupied)
-        {
-            gridInfo.AddBlock(takenBlock + gridLocation, roomNumber);
-        }
+       
         originalRoomFillerPosition = transform.FindChild("RoomFiller").localPosition;
 
        
@@ -94,6 +91,11 @@ public class GridLocker : MonoBehaviour {
         rotationY = transform.eulerAngles.y;
         MoveOrigin(rotationY);
 
+        if(gridInfo.usedGridBlocks == null)
+        {
+            gridInfo.InitList();
+        }
+        InitToGridInfo();
 
     }
 
@@ -297,7 +299,7 @@ public class GridLocker : MonoBehaviour {
         foreach(Vector3 temp in coordinatesOccupied)
         {
             //Debug.Log("Adding: " + (temp + gridLocation));
-            gridInfo.AddBlock(temp + gridLocation, roomNumber);
+            gridInfo.AddBlock(temp + gridLocation, transform);
         }
     }
 
@@ -307,7 +309,7 @@ public class GridLocker : MonoBehaviour {
         foreach(Vector3 temp in coordinatesOccupied)
         {
             //Debug.Log("Removing: " + (temp + gridLocation));
-            gridInfo.RemoveBlock(temp + gridLocation, roomNumber);
+            gridInfo.RemoveBlock(temp + gridLocation, transform);
         }
     }
     
@@ -337,11 +339,11 @@ public class GridLocker : MonoBehaviour {
     //Check that all offshoot blocks won't be placed into a used block.
     public bool CheckFullAvailability(List<Vector3> allCoordinates)
     {
-        foreach(Vector4 location in gridInfo.GetComponent<GridInfo>().usedGridBlocks)
+        foreach(RoomInfo roomInfo in gridInfo.GetComponent<GridInfo>().usedGridBlocks)
         {
             foreach(Vector3 takenBlock in allCoordinates)
             {
-                Vector3 coordinate = new Vector3(location.x, location.y, location.z);
+                Vector3 coordinate = new Vector3(roomInfo.coordinate.x, roomInfo.coordinate.y, roomInfo.coordinate.z);
 
                 if (coordinate.Equals(takenBlock + gridLocation))
                 {
@@ -357,9 +359,9 @@ public class GridLocker : MonoBehaviour {
     //First check if the origin point for this room is attempting to be moved to an unavailable position.
     public Vector3 CheckAvailableOrigin (Vector3 newCoordinates, Vector3 oldCoordinates)
     {
-        foreach (Vector3 location in gridInfo.GetComponent<GridInfo>().usedGridBlocks)
+        foreach (RoomInfo room in gridInfo.GetComponent<GridInfo>().usedGridBlocks)
         {
-            if (location.Equals(newCoordinates))
+            if (room.coordinate.Equals(newCoordinates))
             {
                 //Check if origin is a taken block or simply a pivot.
                 foreach(Vector3 takenBlock in coordinatesOccupied)
@@ -411,4 +413,11 @@ public class GridLocker : MonoBehaviour {
         return coordinates;
     }
     
+    public void InitToGridInfo()
+    {
+        foreach (Vector3 takenBlock in coordinatesOccupied)
+        {
+            gridInfo.AddBlock(takenBlock + gridLocation, transform);
+        }
+    }
 }
