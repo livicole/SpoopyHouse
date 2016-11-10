@@ -457,11 +457,11 @@ public class CursorController : MonoBehaviour {
                     {
                         Vector3 targetSpawn = verticalRayHit.point + new Vector3(0, 2, 0);
                         Instantiate(ghostToys[selector].toy, targetSpawn, Quaternion.identity);
-                        Debug.Log(ghostToys[selector].cooldown);
+                        //Debug.Log(ghostToys[selector].cooldown);
                         SetAllCooldown(ghostToys[selector].cooldown/(itemsCollected + 1));
                     }
                     else {
-                        Debug.Log("Cooldown: " + ghostToys[selector].timer + " on " + ghostToys[selector].toy.name);
+                        //Debug.Log("Cooldown: " + ghostToys[selector].timer + " on " + ghostToys[selector].toy.name);
                     }
 
                 }

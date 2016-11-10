@@ -23,6 +23,7 @@ public class InverterToy : MonoBehaviour {
             if (rayToPlayerHit.collider.name == "ChildPlayer")
             {
                 theChild.GetComponent<PlayerMovement>().invert = true;
+                theChild.transform.GetChild(0).GetComponent<CameraController>().invert = true;
             }
         }
 
@@ -32,5 +33,6 @@ public class InverterToy : MonoBehaviour {
     void OnDestroy()
     {
         theChild.GetComponent<PlayerMovement>().invert = false;
+        theChild.transform.GetChild(0).GetComponent<CameraController>().invert = false;
     }
 }

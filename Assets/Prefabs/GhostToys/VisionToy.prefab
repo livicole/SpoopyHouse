@@ -107,6 +107,9 @@ MonoBehaviour:
   radius: {x: 0.4, y: 0.4}
   angle: 0
   center: {x: 0, y: 0}
+  layermask:
+    serializedVersion: 2
+    m_Bits: 4294967295
   switched: 0
   maxAngle: 80
 --- !u!114 &114000013302330156
@@ -120,3 +123,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 791eb0f562324bb4aad890ab492898d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentRoom: {fileID: 0}
