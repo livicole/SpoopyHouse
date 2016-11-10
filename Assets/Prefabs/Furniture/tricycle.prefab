@@ -70,6 +70,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010370350310}
+  - 65: {fileID: 65000013357598074}
   m_Layer: 0
   m_Name: tricycle
   m_TagString: Untagged
@@ -101,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013533877570}
   m_LocalRotation: {x: -0, y: 0.44027185, z: -0, w: 0.8978646}
-  m_LocalPosition: {x: -5.9950533, y: -4.2860003, z: -12.735512}
+  m_LocalPosition: {x: -423.67, y: 1.267, z: 207.68}
   m_LocalScale: {x: 0.25025025, y: 0.25, z: 0.25025025}
   m_LocalEulerAnglesHint: {x: 0, y: 51.976, z: 0}
   m_Children:
@@ -307,3 +308,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013974895632}
   m_Mesh: {fileID: 4300004, guid: fb5bc3f56005e804789bc001952da627, type: 3}
+--- !u!65 &65000013357598074
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013533877570}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8548094, y: 5.3337355, z: 6.018198}
+  m_Center: {x: 0.03960156, y: 0.04174614, z: 0.40383974}
