@@ -4,9 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
-    GameObject[] rooms;
+    public GameObject[] rooms;
 
-    public bool gameIsLive = true;
+    public bool gameIsLive = true, connection;
     public Transform childPlayer;
     private Vector3 startingPosition;
     private Transform grid;
@@ -48,19 +48,18 @@ public class GameManager : MonoBehaviour {
         }
 	}
 
-    public bool CheckRooms()
+    public bool AreAllRoomsConnected()
     {
         foreach (GameObject room in rooms)
         {
             if (!room.GetComponent<GridLocker>().amIConnected)
             {
-                return true;
-            }
-            else
-            {
+                connection = false;
                 return false;
             }
+
         }
-        return false;
+        connection = true;
+        return true;
     }
 }
