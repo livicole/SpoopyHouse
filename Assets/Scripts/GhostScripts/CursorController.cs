@@ -312,19 +312,7 @@ public class CursorController : MonoBehaviour {
                     holdingObject = selectedRoom;
                     holdingObject.GetComponent<GridLocker>().moving = true;
                 }
-                //Layer 14 is gridlocked.
-                /*
-                if (verticalRayHit.collider.gameObject.layer == 14)
-                {
-                    if (!verticalRayHit.collider.gameObject.transform.parent.GetComponent<GridLocker>().childLocked)
-                    {
-                        holdingRoom = true;
-                        holdingObject = verticalRayHit.collider.gameObject.transform.parent;
-                        holdingObject.GetComponent<GridLocker>().moving = true;
-                        //holdingObject.GetComponent<GridLocker>().height += 10f;
-                        //Debug.Log(holdingObject);
-                    }
-                }*/
+               
             }
         }
         else if (Input.GetButtonUp("Ghost Button A"))
@@ -341,15 +329,8 @@ public class CursorController : MonoBehaviour {
                 {
                     Debug.Log("Moving room is not connected.");
                 }
-                if (gameManager.GetComponent<GameManager>().AreAllRoomsConnected())
-                {
-                    Debug.Log("All rooms are connected.");
-                }
-                else
-                {
-                    Debug.Log("Something isn't connected.");
-                }
-                if (!gameManager.GetComponent<GameManager>().AreAllRoomsConnected())
+               
+                if (!gameManager.GetComponent<DoorTracker>().AreAllRoomsConnected())
                 {
                    
                     holdingObject.GetComponent<GridLocker>().ResetLocation();
@@ -363,6 +344,7 @@ public class CursorController : MonoBehaviour {
                         }
                     }
                 }
+                gameManager.GetComponent<DoorTracker>().ResetAllBools();
                 
                 holdingRoom = false;
                 holdingObject = null;
@@ -410,7 +392,15 @@ public class CursorController : MonoBehaviour {
                     holdingObject.GetComponent<GridLocker>().UpdateNewBlocks();
                         //holdingObject.GetChild(0).transform.eulerAngles += new Vector3(0, -90, 0);
                         rotateTimer = 0;
-                   
+                    foreach (Transform myDoor in holdingObject.transform.GetChild(0))
+                    {
+                        if (myDoor.tag == "Door")
+                        {
+
+                            myDoor.GetComponent<DoorScript>().ResetDoors();
+                        }
+                    }
+
                 }
                 if (Input.GetButtonDown("GhostRightBumper"))
                 {
@@ -420,7 +410,16 @@ public class CursorController : MonoBehaviour {
                     holdingObject.GetComponent<GridLocker>().UpdateNewBlocks();
                     //holdingObject.GetChild(0).transform.eulerAngles += new Vector3(0, 90, 0);
                     rotateTimer = 0;
-                
+                    foreach (Transform myDoor in holdingObject.transform.GetChild(0))
+                    {
+                        if (myDoor.tag == "Door")
+                        {
+
+                            myDoor.GetComponent<DoorScript>().ResetDoors();
+                            Debug.Log(myDoor.name);
+                        }
+                    }
+
                 }
             }
         }

@@ -47,7 +47,8 @@ public class GameManager : MonoBehaviour {
             }
         }
 	}
-
+    
+    /**
     public bool AreAllRoomsConnected()
     {
         foreach (GameObject room in rooms)
@@ -61,5 +62,5 @@ public class GameManager : MonoBehaviour {
         }
         connection = true;
         return true;
-    }
+    }**/
 }
