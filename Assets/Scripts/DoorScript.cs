@@ -71,7 +71,7 @@ public class DoorScript : MonoBehaviour {
                     col.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
                     //myDoorUI.GetComponent<Renderer>().material.color = Color.green;
                     otherDoor.GetComponent<DoorScript>().myDoorUI.GetComponent<Renderer>().material.color = Color.green;
-                    //isConnected = true;
+                    isConnected = true;
                     
 
                  
@@ -106,7 +106,7 @@ public class DoorScript : MonoBehaviour {
         transform.GetChild(1).transform.localPosition = originalOrientation;
         transform.GetChild(1).GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         myDoorUI.GetComponent<Renderer>().material.color = Color.red;
-        //isConnected = false;
+        isConnected = false;
         
     }
 

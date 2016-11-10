@@ -293,11 +293,14 @@ public class CursorController : MonoBehaviour {
                 //Layer 14 is gridlocked.
                 if (verticalRayHit.collider.gameObject.layer == 14)
                 {
-                    holdingRoom = true;
-                    holdingObject = verticalRayHit.collider.gameObject.transform.parent;
-                    holdingObject.GetComponent<GridLocker>().moving = true;
-                    //holdingObject.GetComponent<GridLocker>().height += 10f;
-                    //Debug.Log(holdingObject);
+                    if (!verticalRayHit.collider.gameObject.transform.parent.GetComponent<GridLocker>().childLocked)
+                    {
+                        holdingRoom = true;
+                        holdingObject = verticalRayHit.collider.gameObject.transform.parent;
+                        holdingObject.GetComponent<GridLocker>().moving = true;
+                        //holdingObject.GetComponent<GridLocker>().height += 10f;
+                        //Debug.Log(holdingObject);
+                    }
                 }
             }
         }
@@ -307,8 +310,25 @@ public class CursorController : MonoBehaviour {
             {
                 //holdingObject.GetComponent<GridLocker>().height -= 10f;
                 holdingObject.GetComponent<GridLocker>().moving = false;
-                if (!holdingObject.GetComponent<GridLocker>().amIConnected || !gameManager.GetComponent<GameManager>().CheckRooms())
+                if (holdingObject.GetComponent<GridLocker>().amIConnected)
                 {
+                    Debug.Log("Moving room is connected.");
+                }
+                else
+                {
+                    Debug.Log("Moving room is not connected.");
+                }
+                if (gameManager.GetComponent<GameManager>().AreAllRoomsConnected())
+                {
+                    Debug.Log("All rooms are connected.");
+                }
+                else
+                {
+                    Debug.Log("Something isn't connected.");
+                }
+                if (!gameManager.GetComponent<GameManager>().AreAllRoomsConnected())
+                {
+                   
                     holdingObject.GetComponent<GridLocker>().ResetLocation();
                    
                     foreach (Transform myDoor in holdingObject.transform.GetChild(0))
