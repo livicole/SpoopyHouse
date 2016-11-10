@@ -10,6 +10,9 @@ public class CursorController : MonoBehaviour {
     LayerMask inRoomLayerMask;
 
     [SerializeField]
+    LayerMask layermask;
+
+    [SerializeField]
     Camera ghostCam;
 
     [SerializeField]
@@ -264,7 +267,7 @@ public class CursorController : MonoBehaviour {
         previousToySprite.sprite = toySpritesShaded[previousSelector];
 
         //Some preliminary code to set up the ability to drop objects.
-        int layermask = 1 << 5; layermask = ~layermask; // Ignoring UI layer      
+       // Ignoring UI layer      
         Vector2 screenPoint = RectTransformUtility.WorldToScreenPoint(null, transform.position);
         //Debug.Log("Screen point: " + screenPoint);
         // Vector3 directionToPoint = ghostCam.ScreenPointToRay(screenPoint).direction.normalized;
@@ -289,16 +292,27 @@ public class CursorController : MonoBehaviour {
             if (Physics.Raycast(verticalRay, out verticalRayHit, 10000f, layermask))
             {
                 //Debug.Log("Hitting object: " + verticalRayHit.collider.gameObject.name);
-
-                //Layer 14 is gridlocked.
-                if (verticalRayHit.collider.gameObject.layer == 14)
+                Vector3 inGameLocation = verticalRayHit.point;
+                //Debug.Log(inGameLocation);
+                Vector3 coordinates = gridBase.GetComponent<GridInfo>().CalculateRealToGrid(inGameLocation);
+                //Debug.Log(coordinates);
+                Transform selectedRoom = null;
+                foreach (RoomInfo roomInfo in gridBase.GetComponent<GridInfo>().usedGridBlocks)
+                {
+                    if(roomInfo.coordinate == coordinates)
+                    {
+                        selectedRoom = roomInfo.room;
+                        
+                    }
+                }
+                //Debug.Log(selectedRoom);
+                if(selectedRoom != null && !selectedRoom.GetComponent<GridLocker>().childLocked)
                 {
                     holdingRoom = true;
-                    holdingObject = verticalRayHit.collider.gameObject.transform.parent;
+                    holdingObject = selectedRoom;
                     holdingObject.GetComponent<GridLocker>().moving = true;
-                    //holdingObject.GetComponent<GridLocker>().height += 10f;
-                    //Debug.Log(holdingObject);
                 }
+               
             }
         }
         else if (Input.GetButtonUp("Ghost Button A"))
@@ -307,8 +321,18 @@ public class CursorController : MonoBehaviour {
             {
                 //holdingObject.GetComponent<GridLocker>().height -= 10f;
                 holdingObject.GetComponent<GridLocker>().moving = false;
-                if (!holdingObject.GetComponent<GridLocker>().amIConnected || !gameManager.GetComponent<GameManager>().CheckRooms())
+                if (holdingObject.GetComponent<GridLocker>().amIConnected)
                 {
+                    Debug.Log("Moving room is connected.");
+                }
+                else
+                {
+                    Debug.Log("Moving room is not connected.");
+                }
+               
+                if (!gameManager.GetComponent<DoorTracker>().AreAllRoomsConnected())
+                {
+                   
                     holdingObject.GetComponent<GridLocker>().ResetLocation();
                    
                     foreach (Transform myDoor in holdingObject.transform.GetChild(0))
@@ -320,6 +344,7 @@ public class CursorController : MonoBehaviour {
                         }
                     }
                 }
+                gameManager.GetComponent<DoorTracker>().ResetAllBools();
                 
                 holdingRoom = false;
                 holdingObject = null;
@@ -367,7 +392,15 @@ public class CursorController : MonoBehaviour {
                     holdingObject.GetComponent<GridLocker>().UpdateNewBlocks();
                         //holdingObject.GetChild(0).transform.eulerAngles += new Vector3(0, -90, 0);
                         rotateTimer = 0;
-                   
+                    foreach (Transform myDoor in holdingObject.transform.GetChild(0))
+                    {
+                        if (myDoor.tag == "Door")
+                        {
+
+                            myDoor.GetComponent<DoorScript>().ResetDoors();
+                        }
+                    }
+
                 }
                 if (Input.GetButtonDown("GhostRightBumper"))
                 {
@@ -377,7 +410,16 @@ public class CursorController : MonoBehaviour {
                     holdingObject.GetComponent<GridLocker>().UpdateNewBlocks();
                     //holdingObject.GetChild(0).transform.eulerAngles += new Vector3(0, 90, 0);
                     rotateTimer = 0;
-                
+                    foreach (Transform myDoor in holdingObject.transform.GetChild(0))
+                    {
+                        if (myDoor.tag == "Door")
+                        {
+
+                            myDoor.GetComponent<DoorScript>().ResetDoors();
+                            Debug.Log(myDoor.name);
+                        }
+                    }
+
                 }
             }
         }

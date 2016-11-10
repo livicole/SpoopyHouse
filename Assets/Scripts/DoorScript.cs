@@ -4,6 +4,7 @@ using System.Collections;
 public class DoorScript : MonoBehaviour {
 
     Vector3 originalOrientation = new Vector3(-0.04f, -5.1f, -0.29652f);
+    Vector3 originalRotation;
 
     //public GameObject otherDoor;
     public int priority;
@@ -17,10 +18,14 @@ public class DoorScript : MonoBehaviour {
     private bool check = false;
     private float timer = 0, timerEnd = 0.2f;
 
+    public Transform room;
+
 	// Use this for initialization
 	void Start () {
         myChild = transform.GetChild(1) ;
         otherDoor = null;
+        room = transform.root;
+        originalRotation = transform.localEulerAngles;
         //transform.root.GetComponent<GridLocker>().numDoors++;
 	}
 	
@@ -28,14 +33,24 @@ public class DoorScript : MonoBehaviour {
 	void Update () {
         Physics.IgnoreLayerCollision(14, 18, true);
 
-        if (myDoorUI.GetComponent<Renderer>().material.color == Color.green || myDoorUI.GetComponent<Renderer>().enabled == false)
-        {
-            isConnected = true;
+        if (otherDoor != null) {
+            if (otherDoor.GetComponent<BoxCollider>().enabled == false || GetComponent<BoxCollider>().enabled == false)
+            {
+                myDoorUI.GetComponent<Renderer>().material.color = Color.green;
+                isConnected = true;
+            }
+            else
+            {
+                myDoorUI.GetComponent<Renderer>().material.color = Color.red;
+                isConnected = false;
+            }
         }
         else
         {
+            myDoorUI.GetComponent<Renderer>().material.color = Color.red;
             isConnected = false;
         }
+
 
     }
 
@@ -64,13 +79,13 @@ public class DoorScript : MonoBehaviour {
                         col.GetComponentInParent<DoorScript>().otherDoor.GetComponent<DoorScript>().ResetThisDoor();
                         col.GetComponentInParent<DoorScript>().otherDoor.GetComponent<DoorScript>().check = true;
                     }
-                    otherDoor = col.transform.parent.transform;
+                    otherDoor = col.transform.parent;
                     col.GetComponentInParent<DoorScript>().otherDoor = transform;
                     
                     //Debug.Log("I am " + gameObject.name + " with P" + priority + " being turned off by " + col.transform.parent.name + " with P" + priority);
                     col.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
                     //myDoorUI.GetComponent<Renderer>().material.color = Color.green;
-                    otherDoor.GetComponent<DoorScript>().myDoorUI.GetComponent<Renderer>().material.color = Color.green;
+                    //otherDoor.GetComponent<DoorScript>().myDoorUI.GetComponent<Renderer>().material.color = Color.green;
                     //isConnected = true;
                     
 
@@ -104,8 +119,11 @@ public class DoorScript : MonoBehaviour {
         EnableDoor();
 
         transform.GetChild(1).transform.localPosition = originalOrientation;
+        transform.GetChild(1).transform.localRotation = Quaternion.Euler(originalRotation);
+        Debug.Log(originalRotation);
         transform.GetChild(1).GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-        myDoorUI.GetComponent<Renderer>().material.color = Color.red;
+        otherDoor = null;
+        //myDoorUI.GetComponent<Renderer>().material.color = Color.red;
         //isConnected = false;
         
     }
@@ -123,8 +141,15 @@ public class DoorScript : MonoBehaviour {
 
     public void LockDoor()
     {
+        transform.GetChild(1).transform.localPosition = originalOrientation;
+        transform.GetChild(1).transform.localRotation = Quaternion.Euler(originalRotation);
         transform.GetChild(1).GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+
+
+        otherDoor.transform.GetChild(1).transform.localPosition = originalOrientation;
+        transform.GetChild(1).transform.localRotation = Quaternion.Euler(originalRotation);
         otherDoor.transform.GetChild(1).GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+
 
     }
 
