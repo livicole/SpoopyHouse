@@ -7,6 +7,7 @@ public class CameraController : MonoBehaviour {
     float sensitivity;
 
     public float xRotation;
+    public bool invert;
 
     private float currentXRotation, xRotationV, lookSmoothDamp;
 
@@ -21,12 +22,17 @@ public class CameraController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         {
-           
+        
             float camYAxis = Input.GetAxis("VerticalCamera");
+            if (invert)
+            {
+                camYAxis = -camYAxis;
+            }
             xRotation +=  camYAxis * sensitivity;
 
             xRotation = Mathf.Clamp(xRotation, -90, 90);
             //Debug.Log(xRotation);
+           
             currentXRotation = Mathf.SmoothDamp(currentXRotation, xRotation, ref xRotationV, lookSmoothDamp);
 
             Vector3 rotation = new Vector3(currentXRotation, transform.localEulerAngles.y, 0);

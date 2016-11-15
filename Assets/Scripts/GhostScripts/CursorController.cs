@@ -7,6 +7,9 @@ using System;
 public class CursorController : MonoBehaviour {
 
     [SerializeField]
+    Transform placeholder;
+
+    [SerializeField]
     LayerMask inRoomLayerMask;
 
     [SerializeField]
@@ -98,6 +101,7 @@ public class CursorController : MonoBehaviour {
 	public Image BButton, AButton;
 	public Image bButtonUp, bButtonDown, aButtonUp, aButtonDown;
     private bool holdingRoom = false;
+    public Transform selectedRoom = null;
 
     int previousSelector;
     int nextSelector;
@@ -286,7 +290,7 @@ public class CursorController : MonoBehaviour {
         //Debug.Log("Input Mode: " + inputMode);
         //Moving rooms using button A
      
-        if (Input.GetButtonDown("Ghost Button A"))
+        if (Input.GetButtonDown("Ghost Button A") && !holdingRoom)
         {
             //Debug.Log("A BUTTON");
             if (Physics.Raycast(verticalRay, out verticalRayHit, 10000f, layermask))
@@ -296,7 +300,7 @@ public class CursorController : MonoBehaviour {
                 //Debug.Log(inGameLocation);
                 Vector3 coordinates = gridBase.GetComponent<GridInfo>().CalculateRealToGrid(inGameLocation);
                 //Debug.Log(coordinates);
-                Transform selectedRoom = null;
+               
                 foreach (RoomInfo roomInfo in gridBase.GetComponent<GridInfo>().usedGridBlocks)
                 {
                     if(roomInfo.coordinate == coordinates)
@@ -309,19 +313,24 @@ public class CursorController : MonoBehaviour {
                 if(selectedRoom != null && !selectedRoom.GetComponent<GridLocker>().childLocked)
                 {
                     holdingRoom = true;
-                    holdingObject = selectedRoom;
-                    holdingObject.GetComponent<GridLocker>().moving = true;
+                   
+                    holdingObject = selectedRoom.GetComponent<GridLocker>().CreateInvisibleOverlay(placeholder);
+
+                    holdingObject.GetComponent<GridLocker>().gridLocation = selectedRoom.GetComponent<GridLocker>().gridLocation;
+                    selectedRoom.GetComponent<GridLocker>().moving = true;
+                  
+                    //selectedRoom.GetComponent<GridLocker>().CreateInvisibleOverlay(placeholder);
                 }
                
             }
         }
-        else if (Input.GetButtonUp("Ghost Button A"))
+        else if (Input.GetButtonDown("Ghost Button A") && holdingRoom)
         {
             if (holdingObject != null)
             {
                 //holdingObject.GetComponent<GridLocker>().height -= 10f;
-                holdingObject.GetComponent<GridLocker>().moving = false;
-                if (holdingObject.GetComponent<GridLocker>().amIConnected)
+                selectedRoom.GetComponent<GridLocker>().moving = false;
+                if (selectedRoom.GetComponent<GridLocker>().amIConnected)
                 {
                     Debug.Log("Moving room is connected.");
                 }
@@ -333,7 +342,7 @@ public class CursorController : MonoBehaviour {
                 if (!gameManager.GetComponent<DoorTracker>().AreAllRoomsConnected())
                 {
                    
-                    holdingObject.GetComponent<GridLocker>().ResetLocation();
+                    selectedRoom.GetComponent<GridLocker>().ResetLocation();
                    
                     foreach (Transform myDoor in holdingObject.transform.GetChild(0))
                     {
@@ -348,6 +357,7 @@ public class CursorController : MonoBehaviour {
                 
                 holdingRoom = false;
                 holdingObject = null;
+                selectedRoom = null;
             }
         }
 
@@ -370,7 +380,7 @@ public class CursorController : MonoBehaviour {
             {
                 directionToMove = new Vector3(roundedX, 0, roundedY);
                 //Debug.Log("Moving the room! Direction: " + directionToMove);
-                holdingObject.GetComponent<GridLocker>().MoveDirection(directionToMove);
+                holdingObject.GetComponent<GridLocker>().MoveDirectionNoCheck(directionToMove);
 
                 foreach (Transform myDoor in holdingObject.transform.GetChild(0))
                 {
@@ -457,11 +467,11 @@ public class CursorController : MonoBehaviour {
                     {
                         Vector3 targetSpawn = verticalRayHit.point + new Vector3(0, 2, 0);
                         Instantiate(ghostToys[selector].toy, targetSpawn, Quaternion.identity);
-                        Debug.Log(ghostToys[selector].cooldown);
+                        //Debug.Log(ghostToys[selector].cooldown);
                         SetAllCooldown(ghostToys[selector].cooldown/(itemsCollected + 1));
                     }
                     else {
-                        Debug.Log("Cooldown: " + ghostToys[selector].timer + " on " + ghostToys[selector].toy.name);
+                        //Debug.Log("Cooldown: " + ghostToys[selector].timer + " on " + ghostToys[selector].toy.name);
                     }
 
                 }
