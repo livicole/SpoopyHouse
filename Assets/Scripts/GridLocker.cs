@@ -140,7 +140,7 @@ public class GridLocker : MonoBehaviour {
     //Move origin with the room.
     public void MoveOrigin(float newRotation)
     {
-
+        //if(transform.FindChild("RoomFiller") == )
         //Move pivot on rotation.   
         float positiveMultiplier, negativeMultiplier;
         //Positive should be smaller.
