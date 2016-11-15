@@ -29,14 +29,24 @@ public class Dresser : MonoBehaviour
 			//	Debug.Log ("it hit");
 				if (Input.GetButtonDown ("Use")) {
 					dresserAnimator.SetTrigger ("Trigger");
-					if (dresserAnimator.GetCurrentAnimatorStateInfo (0).IsName ("CloseDrawerIdle")) {
-						soundManager.PlayOneShot (drawerOpen, 1.0f);
-					}
-					if (dresserAnimator.GetCurrentAnimatorStateInfo (0).IsName ("OpenDrawerIdle")) {
-						soundManager.PlayOneShot (drawerClose, 1.0f);
-					}
+//					if (dresserAnimator.GetCurrentAnimatorStateInfo (0).IsName ("CloseDrawerIdle")) {
+//						soundManager.PlayOneShot (drawerOpen, 1.0f);
+//					}
+//					if (dresserAnimator.GetCurrentAnimatorStateInfo (0).IsName ("OpenDrawerIdle")) {
+//						soundManager.PlayOneShot (drawerClose, 1.0f);
+//					}
 				}
 			}
 		}
+	}
+
+	//plays drawer opening sound when DrawerOpenAnim begins
+	void PlayOpenSound(){
+		soundManager.PlayOneShot (drawerOpen, 1.0f);
+	}
+
+	//plays drawer closing sound when DrawerCloseAnim begins
+	void PlayCloseSound(){
+		soundManager.PlayOneShot (drawerClose, 1.0f);
 	}
 }

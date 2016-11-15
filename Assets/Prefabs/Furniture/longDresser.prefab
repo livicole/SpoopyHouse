@@ -466,6 +466,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f011f83bfff09248a4af3b46c975068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundManager: {fileID: 0}
+  drawerOpen: {fileID: 8300000, guid: e1b6670611f83a24a9d7a48ca9c720c4, type: 3}
+  drawerClose: {fileID: 8300000, guid: 31b9f32734c715248a1b227312d9b103, type: 3}
 --- !u!114 &114000010749936386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -477,3 +480,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f011f83bfff09248a4af3b46c975068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundManager: {fileID: 0}
+  drawerOpen: {fileID: 8300000, guid: e1b6670611f83a24a9d7a48ca9c720c4, type: 3}
+  drawerClose: {fileID: 8300000, guid: 31b9f32734c715248a1b227312d9b103, type: 3}
