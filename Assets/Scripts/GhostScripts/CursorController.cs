@@ -290,7 +290,7 @@ public class CursorController : MonoBehaviour {
         //Debug.Log("Input Mode: " + inputMode);
         //Moving rooms using button A
      
-        if (Input.GetButtonDown("Ghost Button A"))
+        if (Input.GetButtonDown("Ghost Button A") && !holdingRoom)
         {
             //Debug.Log("A BUTTON");
             if (Physics.Raycast(verticalRay, out verticalRayHit, 10000f, layermask))
@@ -313,9 +313,10 @@ public class CursorController : MonoBehaviour {
                 if(selectedRoom != null && !selectedRoom.GetComponent<GridLocker>().childLocked)
                 {
                     holdingRoom = true;
-                    GameObject temp = new GameObject();
-                    temp.transform.position = transform.position;
+                   
                     holdingObject = selectedRoom.GetComponent<GridLocker>().CreateInvisibleOverlay(placeholder);
+
+                    holdingObject.GetComponent<GridLocker>().gridLocation = selectedRoom.GetComponent<GridLocker>().gridLocation;
                     selectedRoom.GetComponent<GridLocker>().moving = true;
                   
                     //selectedRoom.GetComponent<GridLocker>().CreateInvisibleOverlay(placeholder);
@@ -323,7 +324,7 @@ public class CursorController : MonoBehaviour {
                
             }
         }
-        else if (Input.GetButtonUp("Ghost Button A"))
+        else if (Input.GetButtonDown("Ghost Button A") && holdingRoom)
         {
             if (holdingObject != null)
             {

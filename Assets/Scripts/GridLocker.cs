@@ -102,6 +102,7 @@ public class GridLocker : MonoBehaviour {
         {
             gridInfo.InitList();
         }
+        
         InitToGridInfo();
 
     }
@@ -136,48 +137,100 @@ public class GridLocker : MonoBehaviour {
         }
     }
 
+    //Gives us the dimensions of the whole cubic block this piece theoretically occupies.
+    public Vector2 GetDimensions()
+    {
+        Vector2 dimensions = new Vector2(0, 0);
+        foreach(Vector3 coordinate in coordinatesOccupied)
+        {
+            if(coordinate.x > dimensions.x)
+            {
+                dimensions.x = coordinate.x;
+            }
+            if(coordinate.y > dimensions.y)
+            {
+                dimensions.y = coordinate.y;
+            }
+        }
+        //Correct for 0 being a value in coordinates.
+        dimensions = dimensions + new Vector2(1, 1);
+        return dimensions;
+
+    }
+
 
     //Move origin with the room.
     public void MoveOrigin(float newRotation)
     {
-        //if(transform.FindChild("RoomFiller") == )
-        //Move pivot on rotation.   
-        float positiveMultiplier, negativeMultiplier;
-        //Positive should be smaller.
-        positiveMultiplier = 0.999f;//.0009995f;
-        //Negative should be more negative;
-        negativeMultiplier = 0.999f;//0.9990005f;
-        //Debug.Log(rotationY);
-        //Debug.Log("Rotation: " + rotationY);
-        if (newRotation == 0 || newRotation == 360)
+        if (isRoom())
         {
-            //Debug.Log("No rotation.");
-            Vector3 newFillerPosition = originalRoomFillerPosition;
-            //Debug.Log("Original: " + originalRoomFillerPosition);
-            newFillerPosition = new Vector3(newFillerPosition.x * positiveMultiplier, newFillerPosition.y, newFillerPosition.z * positiveMultiplier);
-            transform.FindChild("RoomFiller").localPosition = newFillerPosition;
-        }
-        else if (newRotation == 90) 
-        {
-            //Debug.Log("detected rotation");
-            Vector3 newFillerPosition = originalRoomFillerPosition;
+            //Move pivot on rotation.   
+            float positiveMultiplier, negativeMultiplier;
+            //Positive should be smaller.
+            positiveMultiplier = 0.999f;//.0009995f;
+            //Negative should be more negative;
+            negativeMultiplier = 0.999f;//0.9990005f;
+            //Debug.Log(rotationY);
+            //Debug.Log("Rotation: " + rotationY);
+            if (newRotation == 0 || newRotation == 360)
+            {
+                //Debug.Log("No rotation.");
+                Vector3 newFillerPosition = originalRoomFillerPosition;
+                //Debug.Log("Original: " + originalRoomFillerPosition);
+                newFillerPosition = new Vector3(newFillerPosition.x * positiveMultiplier, newFillerPosition.y, newFillerPosition.z * positiveMultiplier);
+                transform.FindChild("RoomFiller").localPosition = newFillerPosition;
+            }
+            else if (newRotation == 90)
+            {
+                //Debug.Log("detected rotation");
+                Vector3 newFillerPosition = originalRoomFillerPosition;
 
-            newFillerPosition = new Vector3(-newFillerPosition.x * negativeMultiplier, newFillerPosition.y, newFillerPosition.z * positiveMultiplier);
-            transform.FindChild("RoomFiller").localPosition = newFillerPosition;
-        }
-        else if (newRotation == 180)
-        {
+                newFillerPosition = new Vector3(-newFillerPosition.x * negativeMultiplier, newFillerPosition.y, newFillerPosition.z * positiveMultiplier);
+                transform.FindChild("RoomFiller").localPosition = newFillerPosition;
+            }
+            else if (newRotation == 180)
+            {
 
-            Vector3 newFillerPosition = originalRoomFillerPosition;
-            newFillerPosition = new Vector3(-newFillerPosition.x * negativeMultiplier, newFillerPosition.y, -newFillerPosition.z * negativeMultiplier);
-            transform.FindChild("RoomFiller").localPosition = newFillerPosition;
-        }
-        else if (newRotation == 270 || newRotation == -90)
-        {
-            Vector3 newFillerPosition = originalRoomFillerPosition;
+                Vector3 newFillerPosition = originalRoomFillerPosition;
+                newFillerPosition = new Vector3(-newFillerPosition.x * negativeMultiplier, newFillerPosition.y, -newFillerPosition.z * negativeMultiplier);
+                transform.FindChild("RoomFiller").localPosition = newFillerPosition;
+            }
+            else if (newRotation == 270 || newRotation == -90)
+            {
+                Vector3 newFillerPosition = originalRoomFillerPosition;
 
-            newFillerPosition = new Vector3(newFillerPosition.x * positiveMultiplier, newFillerPosition.y, -newFillerPosition.z * negativeMultiplier);
-            transform.FindChild("RoomFiller").localPosition = newFillerPosition;
+                newFillerPosition = new Vector3(newFillerPosition.x * positiveMultiplier, newFillerPosition.y, -newFillerPosition.z * negativeMultiplier);
+                transform.FindChild("RoomFiller").localPosition = newFillerPosition;
+            }
+        }
+        else
+        {
+            //Move pivot on rotation.   
+            float positiveMultiplier, negativeMultiplier;
+            //Positive should be smaller.
+            positiveMultiplier = 0.999f;//.0009995f;
+            //Negative should be more negative;
+            negativeMultiplier = 0.999f;//0.9990005f;
+            //Debug.Log(rotationY);
+            //Debug.Log("Rotation: " + rotationY);
+            Vector2 dimensions = GetDimensions();
+            Debug.Log(dimensions);
+            if (newRotation == 0 || newRotation == 360)
+            {
+                transform.GetChild(0).localPosition = new Vector3(0, 0, 0);
+            }
+            else if (newRotation == 90)
+            {
+                transform.GetChild(0).localPosition = new Vector3(-dimensions.x * gridInfo.blockLength, 0, 0);
+            }
+            else if (newRotation == 180)
+            {
+                transform.GetChild(0).localPosition = new Vector3(dimensions.x * gridInfo.blockLength, 0, -dimensions.y * gridInfo.blockLength);
+            }
+            else if (newRotation == 270 || newRotation == -90)
+            {
+                transform.GetChild(0).localPosition = new Vector3(0, 0, -dimensions.y * gridInfo.blockLength);
+            }
         }
     }
 
@@ -248,6 +301,16 @@ public class GridLocker : MonoBehaviour {
         }
     }
 
+    //Check if it is a room
+    public bool isRoom()
+    {
+        if(transform.GetChild(0).name == "RoomFiller")
+        {
+            return true;
+        }
+        return false;
+    }
+
     public void UpdateCoordinates(float rotation)
     {
         List<Vector3> newList = new List<Vector3>();
@@ -292,7 +355,7 @@ public class GridLocker : MonoBehaviour {
             tempList.Add(tempCoordinate);
         }
         
-        if (CheckFullAvailability(tempList))
+        if (CheckFullAvailability(tempList) || !isRoom())
         {
             //Debug.Log("Rotate!");
             coordinatesOccupied = tempList;
@@ -373,7 +436,7 @@ public class GridLocker : MonoBehaviour {
 
                 if (coordinate.Equals(takenBlock + gridLocation))
                 {
-                    Debug.Log("Offshoot block: " + (takenBlock + CalculateRealToGrid(transform.position)) + " can't be moved here: " + coordinate);
+                    //Debug.Log("Offshoot block: " + (takenBlock + CalculateRealToGrid(transform.position)) + " can't be moved here: " + coordinate);
                     return false;
                 }
             }
@@ -441,9 +504,12 @@ public class GridLocker : MonoBehaviour {
     
     public void InitToGridInfo()
     {
-        foreach (Vector3 takenBlock in coordinatesOccupied)
+        if (isRoom())
         {
-            gridInfo.AddBlock(takenBlock + gridLocation, transform);
+            foreach (Vector3 takenBlock in coordinatesOccupied)
+            {
+                gridInfo.AddBlock(takenBlock + gridLocation, transform);
+            }
         }
     }
 
@@ -451,15 +517,19 @@ public class GridLocker : MonoBehaviour {
     public Transform CreateInvisibleOverlay(Transform placeholder)
     {
         GameObject overheadParent = new GameObject("Placeholder Collection");
+        GameObject roomRotator = new GameObject("RoomRotator");
+        roomRotator.transform.parent = overheadParent.transform;
         overheadParent.AddComponent<GridLocker>();
         overheadParent.GetComponent<GridLocker>().gridLocation = coordinatesOccupied[0];
+        overheadParent.GetComponent<GridLocker>().coordinatesOccupied = coordinatesOccupied;
         foreach(Vector3 coordinate in coordinatesOccupied)
         {
-            Vector3 realCoordinate = coordinate + gridLocation;
-            Vector3 realPosition = CalculateGridToReal(realCoordinate);
+            //Vector3 realCoordinate = coordinate + gridLocation;
+            Vector3 realPosition = CalculateGridToReal(coordinate);
             realPosition.y = 10.5f;
             Transform temp = Instantiate(placeholder, realPosition, Quaternion.identity) as Transform;
-            temp.parent = overheadParent.transform;
+            temp.parent = roomRotator.transform;
+           
             //Instantiate(placeholder, )
         }
         return overheadParent.transform;
