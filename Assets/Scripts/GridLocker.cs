@@ -23,7 +23,7 @@ public class GridLocker : MonoBehaviour {
 
     //GameObject[] doors = new GameObject[30];
 
-    public List<Transform> doors = new List<Transform>();
+    List<Transform> doors = new List<Transform>();
     public bool amIConnected;
 
     Transform gridBase;
@@ -78,7 +78,10 @@ public class GridLocker : MonoBehaviour {
         gridBase = GameObject.Find("GridBase").transform;
       
         currentLocation = CalculateGridToReal(gridLocation);
-       
+        foreach (Vector3 takenBlock in coordinatesOccupied)
+        {
+            gridInfo.AddBlock(takenBlock + gridLocation, roomNumber);
+        }
         originalRoomFillerPosition = transform.FindChild("RoomFiller").localPosition;
 
        
@@ -91,11 +94,6 @@ public class GridLocker : MonoBehaviour {
         rotationY = transform.eulerAngles.y;
         MoveOrigin(rotationY);
 
-        if(gridInfo.usedGridBlocks == null)
-        {
-            gridInfo.InitList();
-        }
-        InitToGridInfo();
 
     }
 
@@ -285,8 +283,8 @@ public class GridLocker : MonoBehaviour {
             {
                 if (myDoor.tag == "Door")
                 {
-                    //Debug.Log("Resetting: " + myDoor);
-                    myDoor.GetComponent<DoorScript>().ResetDoors();
+                    Debug.Log("Resetting: " + myDoor);
+                    myDoor.GetComponent<DoorScript>().ResetDoor();
                 }
             }
         }
@@ -299,7 +297,7 @@ public class GridLocker : MonoBehaviour {
         foreach(Vector3 temp in coordinatesOccupied)
         {
             //Debug.Log("Adding: " + (temp + gridLocation));
-            gridInfo.AddBlock(temp + gridLocation, transform);
+            gridInfo.AddBlock(temp + gridLocation, roomNumber);
         }
     }
 
@@ -308,8 +306,8 @@ public class GridLocker : MonoBehaviour {
     {
         foreach(Vector3 temp in coordinatesOccupied)
         {
-            //Debug.Log("Removing: " + (temp + gridLocation) + "" + transform);
-            gridInfo.RemoveBlock(temp + gridLocation, transform);
+            //Debug.Log("Removing: " + (temp + gridLocation));
+            gridInfo.RemoveBlock(temp + gridLocation, roomNumber);
         }
     }
     
@@ -339,15 +337,15 @@ public class GridLocker : MonoBehaviour {
     //Check that all offshoot blocks won't be placed into a used block.
     public bool CheckFullAvailability(List<Vector3> allCoordinates)
     {
-        foreach(RoomInfo roomInfo in gridInfo.GetComponent<GridInfo>().usedGridBlocks)
+        foreach(Vector4 location in gridInfo.GetComponent<GridInfo>().usedGridBlocks)
         {
             foreach(Vector3 takenBlock in allCoordinates)
             {
-                Vector3 coordinate = new Vector3(roomInfo.coordinate.x, roomInfo.coordinate.y, roomInfo.coordinate.z);
+                Vector3 coordinate = new Vector3(location.x, location.y, location.z);
 
                 if (coordinate.Equals(takenBlock + gridLocation))
                 {
-                    Debug.Log("Offshoot block: " + (takenBlock + CalculateRealToGrid(transform.position)) + " can't be moved here: " + coordinate);
+                    //Debug.Log("Offshoot block: " + (takenBlock + CalculateRealToGrid(transform.position)) + " can't be moved here: " + location);
                     return false;
                 }
             }
@@ -359,9 +357,9 @@ public class GridLocker : MonoBehaviour {
     //First check if the origin point for this room is attempting to be moved to an unavailable position.
     public Vector3 CheckAvailableOrigin (Vector3 newCoordinates, Vector3 oldCoordinates)
     {
-        foreach (RoomInfo room in gridInfo.GetComponent<GridInfo>().usedGridBlocks)
+        foreach (Vector3 location in gridInfo.GetComponent<GridInfo>().usedGridBlocks)
         {
-            if (room.coordinate.Equals(newCoordinates))
+            if (location.Equals(newCoordinates))
             {
                 //Check if origin is a taken block or simply a pivot.
                 foreach(Vector3 takenBlock in coordinatesOccupied)
@@ -413,11 +411,4 @@ public class GridLocker : MonoBehaviour {
         return coordinates;
     }
     
-    public void InitToGridInfo()
-    {
-        foreach (Vector3 takenBlock in coordinatesOccupied)
-        {
-            gridInfo.AddBlock(takenBlock + gridLocation, transform);
-        }
-    }
 }

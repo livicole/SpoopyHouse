@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour {
     {
         foreach (GameObject room in rooms)
         {
+            Debug.Log(room.name);
             if (!room.GetComponent<GridLocker>().amIConnected)
             {
                 connection = false;
