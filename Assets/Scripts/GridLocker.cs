@@ -78,8 +78,15 @@ public class GridLocker : MonoBehaviour {
         gridBase = GameObject.Find("GridBase").transform;
       
         currentLocation = CalculateGridToReal(gridLocation);
+        if (transform.name.Contains("Room"))
+        {
+            originalRoomFillerPosition = transform.FindChild("RoomFiller").localPosition;
+        }
+        else
+        {
+            originalRoomFillerPosition = transform.position;
+        }
        
-        originalRoomFillerPosition = transform.FindChild("RoomFiller").localPosition;
 
        
         gridInfo = gridBase.GetComponent<GridInfo>();
@@ -129,9 +136,11 @@ public class GridLocker : MonoBehaviour {
         }
     }
 
+
+    //Move origin with the room.
     public void MoveOrigin(float newRotation)
     {
-
+        //if(transform.FindChild("RoomFiller") == )
         //Move pivot on rotation.   
         float positiveMultiplier, negativeMultiplier;
         //Positive should be smaller.
@@ -148,7 +157,7 @@ public class GridLocker : MonoBehaviour {
             newFillerPosition = new Vector3(newFillerPosition.x * positiveMultiplier, newFillerPosition.y, newFillerPosition.z * positiveMultiplier);
             transform.FindChild("RoomFiller").localPosition = newFillerPosition;
         }
-        else if (newRotation == 90)
+        else if (newRotation == 90) 
         {
             //Debug.Log("detected rotation");
             Vector3 newFillerPosition = originalRoomFillerPosition;
@@ -189,6 +198,23 @@ public class GridLocker : MonoBehaviour {
         UpdateCoordinates(updateRotationY);
         
         UpdateNewBlocks();
+    }
+
+
+    public void MoveDirectionNoCheck( Vector3 direction)
+    {
+        if (moveCooldownTimer <= 0)
+        {
+            //Check if we can move the origin in that direction.
+            gridLocation += direction;
+            gridLocation = new Vector3(Mathf.Clamp(gridLocation.x, gridInfo.gridMin, gridInfo.gridMax), 0, Mathf.Clamp(gridLocation.z, gridInfo.gridMin, gridInfo.gridMax));
+            //Debug.Log(gridLocation);
+            //Check if available with updated gridlocation.
+            transform.position = CalculateGridToReal(gridLocation);
+            //Debug.Log(transform.position);
+            //Reset cooldown since we actually moved.
+            moveCooldownTimer = moveTick;
+        }
     }
 
     public void MoveDirection( Vector3 direction)
@@ -419,5 +445,23 @@ public class GridLocker : MonoBehaviour {
         {
             gridInfo.AddBlock(takenBlock + gridLocation, transform);
         }
+    }
+
+    //Create a white overlay invisible to the kid that parents to the transform placeholder.
+    public Transform CreateInvisibleOverlay(Transform placeholder)
+    {
+        GameObject overheadParent = new GameObject("Placeholder Collection");
+        overheadParent.AddComponent<GridLocker>();
+        overheadParent.GetComponent<GridLocker>().gridLocation = coordinatesOccupied[0];
+        foreach(Vector3 coordinate in coordinatesOccupied)
+        {
+            Vector3 realCoordinate = coordinate + gridLocation;
+            Vector3 realPosition = CalculateGridToReal(realCoordinate);
+            realPosition.y = 10.5f;
+            Transform temp = Instantiate(placeholder, realPosition, Quaternion.identity) as Transform;
+            temp.parent = overheadParent.transform;
+            //Instantiate(placeholder, )
+        }
+        return overheadParent.transform;
     }
 }
