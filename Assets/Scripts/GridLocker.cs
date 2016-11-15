@@ -147,9 +147,9 @@ public class GridLocker : MonoBehaviour {
             {
                 dimensions.x = coordinate.x;
             }
-            if(coordinate.y > dimensions.y)
+            if(coordinate.z > dimensions.y)
             {
-                dimensions.y = coordinate.y;
+                dimensions.y = coordinate.z;
             }
         }
         //Correct for 0 being a value in coordinates.
