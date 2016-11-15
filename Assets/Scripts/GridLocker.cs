@@ -23,7 +23,7 @@ public class GridLocker : MonoBehaviour {
 
     //GameObject[] doors = new GameObject[30];
 
-    List<Transform> doors = new List<Transform>();
+    public List<Transform> doors = new List<Transform>();
     public bool amIConnected;
 
     Transform gridBase;
