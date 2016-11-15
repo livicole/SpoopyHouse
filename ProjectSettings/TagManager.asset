@@ -14,6 +14,9 @@ TagManager:
   - Door
   - Lamp
   - Battery
+  - rightDoor
+  - leftDoor
+  - sprayPaint
   layers:
   - Default
   - TransparentFX
@@ -34,7 +37,7 @@ TagManager:
   - HoldingObject
   - ChildPlayer
   - Doors
-  - 
+  - Grid
   - 
   - 
   - 

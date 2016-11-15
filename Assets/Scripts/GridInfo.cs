@@ -8,10 +8,10 @@ using System.Collections.Generic;
 public class GridInfo : MonoBehaviour {
 
     [HideInInspector]
-    public List<Vector4> usedGridBlocks;
+    public List<RoomInfo> usedGridBlocks;
 
     [SerializeField]
-    float gridSize;
+    public float gridSize;
 
     [SerializeField]
     public float blockLength;
@@ -22,24 +22,82 @@ public class GridInfo : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        
+        //Debug.Log("The list:" + usedGridBlocks);
         float length = (gridSize + 1) * blockLength;
 	    transform.localScale = new Vector3 (length, 1, length);
-        transform.position = new Vector3(length / 2, 0, length / 2);
+        transform.position = new Vector3(gridSize * 10 / 2, 0, gridSize * 10 /2);
         gridMax = gridSize; gridMin = 0;
+
+        
 	}
 
-    public void AddBlock(Vector3 coordinate, int roomNumber)
+    public void AddBlock(Vector3 coordinate, Transform transform)
     {
-        Vector4 newVector = new Vector4(coordinate.x, coordinate.y, coordinate.z, roomNumber);
-        usedGridBlocks.Add(newVector);
+        RoomInfo newRoom = new RoomInfo();
+        newRoom.Create(coordinate, transform);
+        //Debug.Log(newRoom.coordinate);
+        //Debug.Log(usedGridBlocks);
+        usedGridBlocks.Add(newRoom);
     }
 
-    public void RemoveBlock(Vector3 coordinate, int roomNumber)
+    public void RemoveBlock(Vector3 coordinate, Transform transform)
     {
-        Vector4 newVector = new Vector4(coordinate.x, coordinate.y, coordinate.z, roomNumber);
-        usedGridBlocks.Remove(newVector);
+        RoomInfo newRoom = new RoomInfo();
+        newRoom.Create(coordinate, transform);
+        RoomInfo temp = null;
+        foreach(RoomInfo room in usedGridBlocks)
+        {
+            if(room.coordinate == coordinate && room.room == transform)
+            {
+                temp = room;
+            }
+        }
+        usedGridBlocks.Remove(temp);
+        //Debug.Log(newRoom.coordinate + "" + newRoom.room);
+        //Debug.Log(usedGridBlocks.Remove(newRoom));
+    }
+
+    public void InitList()
+    {
+        usedGridBlocks = new List<RoomInfo>();
+    }
+
+    public Vector3 CalculateRealToGrid(Vector3 position)
+    {
+        GameObject gridBase = GameObject.Find("GridBase");
+        Vector3 coordinates;
+        GridInfo gridInfo = gridBase.GetComponent<GridInfo>();
+        float remainderX = position.x % blockLength;
+        float remainderY = position.y % blockLength;
+        float gridXPosition = Mathf.Clamp((int)(position.x / blockLength), gridInfo.gridMin, gridInfo.gridMax);
+        float gridYPosition = Mathf.Clamp((int)(position.z / blockLength), gridInfo.gridMin, gridInfo.gridMax);
+        /*if (remainderX >= blockLength / 2)
+        {
+            gridXPosition++;
+        }
+        if (remainderY >= blockLength / 2)
+        {
+            gridYPosition++;
+        }*/
+        coordinates = new Vector3(gridXPosition, 0, gridYPosition);
+
+        return coordinates;
     }
 }
+
+public class RoomInfo{
+    public Vector3 coordinate;
+    public Transform room;
+
+    public void Create(Vector3 coordinates, Transform roomTransform)
+    {
+        coordinate = coordinates;
+        room = roomTransform;
+    }
+}
+
+
 #if UNITY_EDITOR
 [CustomEditor(typeof(GridInfo))]
 public class GridInfoEditor : Editor
@@ -50,9 +108,11 @@ public class GridInfoEditor : Editor
 
         EditorGUILayout.LabelField("Used Coordinates from Origin");
         EditorGUILayout.LabelField("XYZ: Coordinate W: Room Number");
-        foreach (Vector4 coordinate in script.usedGridBlocks)
+        foreach (RoomInfo rooms in script.usedGridBlocks)
         {
-            EditorGUILayout.Vector4Field("", coordinate);
+            EditorGUILayout.Vector3Field("", rooms.coordinate);
+            EditorGUILayout.ObjectField("Transform of above:", rooms.room, typeof(Object));
+            EditorGUILayout.Space();
         } 
        
         //foreach (Vector4 coordinate in script.usedGridBlock)

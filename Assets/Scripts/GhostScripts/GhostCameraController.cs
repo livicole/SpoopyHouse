@@ -25,6 +25,11 @@ public class GhostCameraController : MonoBehaviour {
 	void Start () {
         GridInfo gridInfo = GameObject.Find("GridBase").GetComponent<GridInfo>();
         zoomedOutCenter = new Vector3((gridInfo.gridMax / 2 + 0.5f) * gridInfo.blockLength, zoomMax, (gridInfo.gridMax / 2 + 1) * gridInfo.blockLength);
+        xMin = gridInfo.blockLength; zMin = gridInfo.blockLength;
+        xMax = (gridInfo.gridSize + 1) * gridInfo.blockLength;
+        zMax = (gridInfo.gridSize + 1) * gridInfo.blockLength;
+
+        //Debug.Log(zoomedOutCenter);
         transform.position = zoomedOutCenter;
         midZoom = (zoomMax - zoomMin) / 2 + zoomMin;
         closeZoom = zoomMin;
@@ -34,9 +39,6 @@ public class GhostCameraController : MonoBehaviour {
 	void Update () {
         if (GameObject.Find("GameManager").GetComponent<GameManager>().gameIsLive)
         {
-
-
-
             float inputX = Input.GetAxis("HorizontalCamera2");
             float inputY = -Input.GetAxis("VerticalCamera2");
 
@@ -56,7 +58,7 @@ public class GhostCameraController : MonoBehaviour {
                 {
                     if (!isLeftTriggerInUse)
                     {
-                        Debug.Log("Use left trigger");
+                        //Debug.Log("Use left trigger");
                         isLeftTriggerInUse = true;
                         camZoomMode -= 1;
                         if (camZoomMode < CamZoom.Close)
@@ -74,7 +76,7 @@ public class GhostCameraController : MonoBehaviour {
                 {
                     if (!isRightTriggerInUse)
                     {
-                        Debug.Log("Use right trigger");
+                        //Debug.Log("Use right trigger");
                         isRightTriggerInUse = true;
                         camZoomMode += 1;
                         if (camZoomMode > CamZoom.Far)
@@ -92,7 +94,7 @@ public class GhostCameraController : MonoBehaviour {
 
             if (Input.GetButtonDown("Ghost Left Stick Click"))
             {
-                Debug.Log("Left Stick Click");
+                //Debug.Log("Left Stick Click");
                 playerPosition = GameObject.Find("ChildPlayer").transform.position;
                 camZoomMode = CamZoom.Close;
                 SetZoom(camZoomMode);

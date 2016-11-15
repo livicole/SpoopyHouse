@@ -7,16 +7,22 @@ public class PlayerMovement : MonoBehaviour {
     public float walkingSpeed;
 
     [SerializeField]
-    public float turningSpeed;
+    public float sensitivity;
 
     public bool invert = false;
 
 	public AudioSource walkingSound;
 
+    public float yRotation;
+    private float currentYRotation, yRotationV, lookSmoothDamp;
+
     // Use this for initialization
     void Start()
     {
         Physics.IgnoreLayerCollision(17, 14);
+        yRotation = 0;
+        yRotationV = 1f;
+        lookSmoothDamp = 0.05f;
 
     }
 	// Update is called once per frame
@@ -47,8 +53,13 @@ public class PlayerMovement : MonoBehaviour {
             //transform.Rotate(new Vector3(0, turningSpeed * xAxis, 0));
 
             float camXAxis = Input.GetAxis("HorizontalCamera");
+            
+            yRotation += camXAxis * sensitivity;
+            currentYRotation = Mathf.SmoothDamp(currentYRotation, yRotation, ref yRotationV, lookSmoothDamp);
 
-            transform.Rotate(new Vector3(0, turningSpeed * camXAxis, 0));
+            Vector3 rotation = new Vector3(transform.localEulerAngles.x, currentYRotation, 0);
+            transform.localRotation = Quaternion.Euler(rotation);
+
 
             if (charCont.velocity == Vector3.zero)
             {

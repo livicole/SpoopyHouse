@@ -23,6 +23,7 @@ GameObject:
   - 65: {fileID: 65000011237261936}
   - 23: {fileID: 23000010455501172}
   - 114: {fileID: 114000012499461752}
+  - 114: {fileID: 114000013302330156}
   m_Layer: 11
   m_Name: VisionToy
   m_TagString: Toys
@@ -108,3 +109,14 @@ MonoBehaviour:
   center: {x: 0, y: 0}
   switched: 0
   maxAngle: 80
+--- !u!114 &114000013302330156
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011992328276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 791eb0f562324bb4aad890ab492898d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

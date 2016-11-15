@@ -4,39 +4,54 @@ using System.Collections;
 public class DoorScript : MonoBehaviour {
 
     Vector3 originalOrientation = new Vector3(-0.04f, -5.1f, -0.29652f);
+    Vector3 originalRotation;
 
     //public GameObject otherDoor;
     public int priority;
     Transform myChild;
-
+    public GameObject myDoorUI;
+    
     public Transform otherDoor;
+
+    public bool isConnected;
 
     private bool check = false;
     private float timer = 0, timerEnd = 0.2f;
+
+    public Transform room;
 
 	// Use this for initialization
 	void Start () {
         myChild = transform.GetChild(1) ;
         otherDoor = null;
+        room = transform.root;
+        originalRotation = transform.localEulerAngles;
+        //transform.root.GetComponent<GridLocker>().numDoors++;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        /*
-        if(setup && name == "DoubleDoor_Full (12)")
-        {
-            if (timer < timerEnd)
+        Physics.IgnoreLayerCollision(14, 18, true);
+
+        if (otherDoor != null) {
+            if (otherDoor.GetComponent<BoxCollider>().enabled == false || GetComponent<BoxCollider>().enabled == false)
             {
-                timer += Time.deltaTime;
+                myDoorUI.GetComponent<Renderer>().material.color = Color.green;
+                isConnected = true;
             }
             else
             {
-                ResetDoors();
-                setup = false;
+                myDoorUI.GetComponent<Renderer>().material.color = Color.red;
+                isConnected = false;
             }
-           
-        }*/
-        Physics.IgnoreLayerCollision(14, 18, true);
+        }
+        else
+        {
+            myDoorUI.GetComponent<Renderer>().material.color = Color.red;
+            isConnected = false;
+        }
+
+
     }
 
     void OnTriggerStay(Collider col)
@@ -64,11 +79,20 @@ public class DoorScript : MonoBehaviour {
                         col.GetComponentInParent<DoorScript>().otherDoor.GetComponent<DoorScript>().ResetThisDoor();
                         col.GetComponentInParent<DoorScript>().otherDoor.GetComponent<DoorScript>().check = true;
                     }
-                    otherDoor = col.transform.parent.transform;
+                    otherDoor = col.transform.parent;
                     col.GetComponentInParent<DoorScript>().otherDoor = transform;
+                    
                     //Debug.Log("I am " + gameObject.name + " with P" + priority + " being turned off by " + col.transform.parent.name + " with P" + priority);
                     col.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-                    gameObject.SetActive(false);
+                    //myDoorUI.GetComponent<Renderer>().material.color = Color.green;
+                    //otherDoor.GetComponent<DoorScript>().myDoorUI.GetComponent<Renderer>().material.color = Color.green;
+                    //isConnected = true;
+                    
+
+                 
+
+                    //gameObject.SetActive(false);
+                    DisableDoor();
                 }
                 else
                 {
@@ -79,20 +103,29 @@ public class DoorScript : MonoBehaviour {
         
     }
 
+
+
     public void ResetDoors()
     {
        // Debug.Log("Resetting: " + transform.name);
         ResetOtherDoor();
         ResetThisDoor();
-
     }
 
     public void ResetThisDoor()
     {
         //Debug.Log("Resetting " + name);
-        gameObject.SetActive(true);
+        //gameObject.SetActive(true);
+        EnableDoor();
+
         transform.GetChild(1).transform.localPosition = originalOrientation;
+        transform.GetChild(1).transform.localRotation = Quaternion.Euler(originalRotation);
+        Debug.Log(originalRotation);
         transform.GetChild(1).GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        otherDoor = null;
+        //myDoorUI.GetComponent<Renderer>().material.color = Color.red;
+        //isConnected = false;
+        
     }
 
     public void ResetOtherDoor()
@@ -100,15 +133,45 @@ public class DoorScript : MonoBehaviour {
         if (otherDoor != null)
         {
             otherDoor.gameObject.GetComponent<DoorScript>().ResetThisDoor();
-            Debug.Log("Also resetting: " + otherDoor.name);
+            //Debug.Log("Also resetting: " + otherDoor.name);
         }
-        else { Debug.Log("Nothing else to reset. Called from : " + transform.name); }
+        else { //Debug.Log("Nothing else to reset. Called from : " + transform.name); 
+        }
     }
 
     public void LockDoor()
     {
+        transform.GetChild(1).transform.localPosition = originalOrientation;
+        transform.GetChild(1).transform.localRotation = Quaternion.Euler(originalRotation);
         transform.GetChild(1).GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+
+
+        otherDoor.transform.GetChild(1).transform.localPosition = originalOrientation;
+        transform.GetChild(1).transform.localRotation = Quaternion.Euler(originalRotation);
         otherDoor.transform.GetChild(1).GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+
+
     }
+
+    public void DisableDoor()
+    {
+        GetComponent<BoxCollider>().enabled = false;
+        transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
+        transform.GetChild(1).GetComponent<MeshRenderer>().enabled = false;
+        transform.GetChild(1).GetComponent<BoxCollider>().enabled = false;
+        myDoorUI.GetComponent<Renderer>().enabled = false;
+        
+    }
+
+    public void EnableDoor()
+    {
+        myDoorUI.GetComponent<Renderer>().enabled = true;
+        GetComponent<BoxCollider>().enabled = true;
+        transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
+        transform.GetChild(1).GetComponent<MeshRenderer>().enabled = true;
+        transform.GetChild(1).GetComponent<BoxCollider>().enabled = true;
+        
+    }
+
 
 }
