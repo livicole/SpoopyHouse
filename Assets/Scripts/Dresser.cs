@@ -6,6 +6,9 @@ public class Dresser : MonoBehaviour
 
 	private Animator dresserAnimator;
 	Transform flashlight; 
+	public AudioSource soundManager;
+	public AudioClip drawerOpen, drawerClose;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -26,6 +29,12 @@ public class Dresser : MonoBehaviour
 			//	Debug.Log ("it hit");
 				if (Input.GetButtonDown ("Use")) {
 					dresserAnimator.SetTrigger ("Trigger");
+					if (dresserAnimator.GetCurrentAnimatorStateInfo (0).IsName ("CloseDrawerIdle")) {
+						soundManager.PlayOneShot (drawerOpen, 1.0f);
+					}
+					if (dresserAnimator.GetCurrentAnimatorStateInfo (0).IsName ("OpenDrawerIdle")) {
+						soundManager.PlayOneShot (drawerClose, 1.0f);
+					}
 				}
 			}
 		}
