@@ -5,6 +5,7 @@ public class LockToyScript : MonoBehaviour {
 
     bool done = false;
     float timer;
+    
 
 
 	void Update () {
@@ -41,7 +42,7 @@ public class LockToyScript : MonoBehaviour {
         {
             if (myObject.tag == "Door")
             {
-                myObject.GetComponent<DoorScript>().ResetDoors();
+                myObject.GetComponent<DoorScript>().ResetDoor();
             }
         }
     }
