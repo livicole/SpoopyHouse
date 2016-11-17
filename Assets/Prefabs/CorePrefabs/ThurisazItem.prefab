@@ -52,6 +52,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010284000182}
+  - 122: {fileID: 122000010090290240}
+  - 65: {fileID: 65000011874907110}
   m_Layer: 0
   m_Name: ThurisazItem
   m_TagString: Item
@@ -66,8 +68,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012181557796}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -443.3262, y: 0.663, z: 164.91212}
-  m_LocalScale: {x: 1.480265, y: 1.4802647, z: 1.4802647}
+  m_LocalPosition: {x: -443.3262, y: 0.864, z: 164.731}
+  m_LocalScale: {x: 1.4938114, y: 1.493811, z: 1.493811}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000012962418136}
@@ -136,6 +138,29 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010869261850}
   m_Mesh: {fileID: 4300000, guid: 6c9ab80c55da84a4b986ded4165421c4, type: 3}
+--- !u!65 &65000011874907110
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012181557796}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.20587255, y: 0.064801514, z: 0.15015483}
+  m_Center: {x: 0.00008171736, y: -0.002074975, z: -0.00124619}
+--- !u!122 &122000010090290240
+Halo:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012181557796}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4292530720
+  m_Size: 0.2
 --- !u!212 &212000012883704742
 SpriteRenderer:
   m_ObjectHideFlags: 1
