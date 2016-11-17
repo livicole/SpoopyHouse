@@ -8,27 +8,23 @@ public class DoorScript : MonoBehaviour {
     public Transform otherDoor;
     Transform doubleDoorChild;
     Transform doorFrameChild;
+    Transform doorHinge;
     public GameObject myDoorUI;
 
     public bool isConnected = false;
     
     public int priority;
-
-    bool started = false;
+    
 
 	// Use this for initialization
 	void Start () {
-        doubleDoorChild = transform.GetChild(1);
-        doorFrameChild = transform.GetChild(0);
+        doubleDoorChild = transform.GetChild(0).GetChild(0);
+        doorFrameChild = transform.GetChild(1);
+        doorHinge = transform.GetChild(0);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (!started)
-        {
-            //ResetDoor();
-            started = true;
-        }
         Physics.IgnoreLayerCollision(14, 18, true);
 
 
@@ -37,9 +33,10 @@ public class DoorScript : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
-
-        if (col.name == "doubleDoor")
+        Debug.Log("hey");
+        if (col.name == "DoorHinge")
         {
+            
             if (col.transform.parent.name != name)
             {
                 //Debug.Log("eheyy");
@@ -80,18 +77,18 @@ public class DoorScript : MonoBehaviour {
     public void HideDoor()
     {
         GetComponent<BoxCollider>().enabled = false;
-        doorFrameChild.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
+        doorFrameChild.GetComponent<MeshRenderer>().enabled = false;
         doubleDoorChild.GetComponent<MeshRenderer>().enabled = false;
-        doubleDoorChild.GetComponent<BoxCollider>().enabled = false;
+        doorHinge.GetComponent<BoxCollider>().enabled = false;
         myDoorUI.GetComponent<MeshRenderer>().enabled = false;
     }
 
     public void ShowDoor()
     {
         GetComponent<BoxCollider>().enabled = true;
-        doorFrameChild.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
+        doorFrameChild.GetComponent<MeshRenderer>().enabled = true;
         doubleDoorChild.GetComponent<MeshRenderer>().enabled = true;
-        doubleDoorChild.GetComponent<BoxCollider>().enabled = true;
+        doorHinge.GetComponent<BoxCollider>().enabled = true;
         myDoorUI.GetComponent<MeshRenderer>().enabled = true;
     }
 
