@@ -5,16 +5,19 @@ public class DoorOpener : MonoBehaviour {
 
     bool open = false;
     float angle;
-    Transform hinge;
-    GameObject child;
+    GameObject flashlight;
 
     public float speed;
+
+	AudioSource soundManager;
+	public AudioClip doorOpen, doorClose;
 
 
 	// Use this for initialization
 	void Start () {
-        child = GameObject.Find("ChildPlayer");
-        hinge = transform.GetChild(0);
+		soundManager = GameObject.Find ("SoundManager").GetComponent<AudioSource>();
+        flashlight = GameObject.Find("Flashlight");
+       
 
 	}
 	
@@ -22,25 +25,33 @@ public class DoorOpener : MonoBehaviour {
 	void Update () {
         //Debug.Log(hinge.localEulerAngles.y);
         
-        if (hinge.localEulerAngles.y > 95f)
+		if (transform.localEulerAngles.y > 95f)
         {
             angle = -0.1f;
         }
         else
         {
-            angle = hinge.localEulerAngles.y;
+            angle = transform.localEulerAngles.y;
         }
 
         if (Input.GetButtonDown("Ghost Button A"))
         {
-
-            Ray rayToPlayer = new Ray(transform.position, child.transform.position - transform.position);
+			//Debug.Log ("press");
+		
+			Ray rayToPlayer = new Ray(transform.position, flashlight.transform.position - transform.position);
             RaycastHit rayHitToPlayer = new RaycastHit();
 
             if (Physics.Raycast(rayToPlayer, out rayHitToPlayer))
             {
-                if (rayHitToPlayer.collider.name == "ChildPlayer" && Vector3.Distance(child.transform.position, transform.position) <= 2f)
-                open = !open;
+				if (rayHitToPlayer.collider.name == "ChildPlayer" && Vector3.Distance (flashlight.transform.position, transform.position) <= 3f) {
+					open = !open;
+					if (open) {
+						soundManager.PlayOneShot (doorOpen, 1.0f);
+					} else {
+						soundManager.PlayOneShot (doorClose, 1.0f);
+					}
+				}
+					
             }
         }
         //Debug.Log(hinge.localEulerAngles.y);
@@ -50,12 +61,15 @@ public class DoorOpener : MonoBehaviour {
 
         if (open && angle < 90f) 
         {
-            hinge.Rotate(0, speed * Time.deltaTime, 0);
+			//add open sound
+
+            transform.Rotate(0, speed * Time.deltaTime, 0);
         }
 
         if (!open && angle > 0f)
         {
-            hinge.Rotate(0, -speed * Time.deltaTime, 0);
+			//add close sound
+            transform.Rotate(0, -speed * Time.deltaTime, 0);
         }
 
     }
