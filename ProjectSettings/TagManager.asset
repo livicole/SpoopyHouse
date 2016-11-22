@@ -17,6 +17,7 @@ TagManager:
   - rightDoor
   - leftDoor
   - sprayPaint
+  - Walls
   layers:
   - Default
   - TransparentFX
