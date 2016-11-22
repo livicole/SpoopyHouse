@@ -8,24 +8,24 @@ namespace UnityStandardAssets.ImageEffects
     public class Vortex : ImageEffectBase
     {
         public bool disabling = false;
-        public Vector2 radius = new Vector2(0.4F,0.4F);
+        public Vector2 radius = new Vector2(0.4F, 0.4F);
         public float angle;
         private float previousAngle;
         public Vector2 center = new Vector2(0.5F, 0.5F);
         private Vector2 previousCenter;
         public float rate = 0;
 
-		
+
         // Called by camera to apply image effect
-        void OnRenderImage (RenderTexture source, RenderTexture destination)
+        void OnRenderImage(RenderTexture source, RenderTexture destination)
         {
             //Debug.Log("Rendering");
-            ImageEffects.RenderDistortion (material, source, destination, angle, center, radius);
+            ImageEffects.RenderDistortion(material, source, destination, angle, center, radius);
         }
 
         void Start()
         {
-            
+
         }
 
         void Update()
