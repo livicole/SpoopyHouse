@@ -21,6 +21,7 @@ GameObject:
   - 4: {fileID: 4000012379649384}
   - 122: {fileID: 122000012622111606}
   - 65: {fileID: 65000012561908568}
+  - 82: {fileID: 82000013070084300}
   m_Layer: 0
   m_Name: NauthizItem
   m_TagString: Item
@@ -84,8 +85,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010899229956}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.334522, y: -4.6229987, z: -15.788785}
-  m_LocalScale: {x: 1.4953067, y: 1.4938107, z: 1.4953064}
+  m_LocalPosition: {x: -29.134636, y: -4.7189984, z: -10.631252}
+  m_LocalScale: {x: 1.3348216, y: 1.3321522, z: 1.3348212}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000014160015752}
@@ -113,7 +114,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012558754374}
   m_LocalRotation: {x: 0.44223842, y: -0.55174744, z: 0.55174744, w: 0.44223842}
-  m_LocalPosition: {x: -0.0050256173, y: 5, z: 0.012819414}
+  m_LocalPosition: {x: -0.0050256173, y: 8, z: 0.012819414}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 89.981, y: 0, z: 102.283005}
   m_Children: []
@@ -180,6 +181,100 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.20587255, y: 0.064801514, z: 0.15015483}
   m_Center: {x: 0.00008171736, y: -0.002074975, z: -0.00124619}
+--- !u!82 &82000013070084300
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010899229956}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1f3c4c2ac10d2aa418825d9f26b57189, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 25
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0.42172998
+      inSlope: -1.8346491
+      outSlope: -1.8346491
+      tangentMode: 0
+    - time: 0.11911384
+      value: 0.25822785
+      inSlope: -0.90083706
+      outSlope: -0.90083706
+      tangentMode: 0
+    - time: 0.25057662
+      value: 0.15274264
+      inSlope: -1.0250082
+      outSlope: -1.0250082
+      tangentMode: 0
+    - time: 0.45329446
+      value: 0.058333352
+      inSlope: -0.2860566
+      outSlope: -0.2860566
+      tangentMode: 0
+    - time: 0.7579775
+      value: 0.016666668
+      inSlope: -0.20923753
+      outSlope: -0.20923753
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: -0.31201154
+      outSlope: -0.31201154
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!122 &122000012622111606
 Halo:
   m_ObjectHideFlags: 1
