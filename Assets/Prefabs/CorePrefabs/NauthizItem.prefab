@@ -22,6 +22,7 @@ GameObject:
   - 122: {fileID: 122000012622111606}
   - 65: {fileID: 65000012561908568}
   - 82: {fileID: 82000013070084300}
+  - 114: {fileID: 114000012558237082}
   m_Layer: 0
   m_Name: NauthizItem
   m_TagString: Item
@@ -275,6 +276,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114000012558237082
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010899229956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2a258d362da04c4ba1979684aa694bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!122 &122000012622111606
 Halo:
   m_ObjectHideFlags: 1

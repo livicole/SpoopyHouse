@@ -64,13 +64,13 @@ public class ChildRemover : MonoBehaviour {
                             Destroy(forwardRayHit.collider.gameObject);
                             GameObject.Find("Flashlight").GetComponent<FlashlightController>().batteryCount++;
                         }
-                        else if (forwardRayHit.collider.gameObject.tag == "Item")
-                        {
-                            //inventoryObject.GetComponent<InventoryScript>().pickUp(forwardRayHit.collider.gameObject);
-                            forwardRayHit.collider.gameObject.SetActive(false);
-                            NewInventoryScript invScript = this.gameObject.GetComponent<NewInventoryScript>();
-                            invScript.itemsCollected++;
-                        }
+//                        else if (forwardRayHit.collider.gameObject.tag == "Item")
+//                        {
+//                            //inventoryObject.GetComponent<InventoryScript>().pickUp(forwardRayHit.collider.gameObject);
+//                            forwardRayHit.collider.gameObject.SetActive(false);
+//                            NewInventoryScript invScript = this.gameObject.GetComponent<NewInventoryScript>();
+//                            invScript.itemsCollected++;
+//                        }
 
                     }
                 }
