@@ -9,12 +9,13 @@ public class Timer : MonoBehaviour
 	private Text winText;
 	public float totalTime = 600f;
 
-	float timeBetweenClock;
+	public float timeBetweenClock;
 	float clockVolume;
 
 	public AudioSource soundManager;
 	public AudioClip tickSound;
 	public AudioClip tockSound;
+
 
 	void Awake ()
 	{
@@ -46,7 +47,6 @@ public class Timer : MonoBehaviour
 
 		if (totalTime < 10) {
 			timeBetweenClock = 0.2f;
-			clockVolume += 0.2f;
 		}
 
 		if (totalTime <= 0) {
