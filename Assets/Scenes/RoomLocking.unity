@@ -405,7 +405,7 @@ Prefab:
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4d60fff894bbb174780ca0343e7b6469, type: 2}
+      objectReference: {fileID: 2100000, guid: 444a64227fbc7e645ba3024dfecf9a26, type: 2}
     - target: {fileID: 1000011062907992, guid: 9341d25c3cfa32f448cca5012f752966, type: 2}
       propertyPath: m_TagString
       value: Walls
@@ -1609,7 +1609,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4d60fff894bbb174780ca0343e7b6469, type: 2}
+  - {fileID: 2100000, guid: 444a64227fbc7e645ba3024dfecf9a26, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -6114,7 +6114,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4d60fff894bbb174780ca0343e7b6469, type: 2}
+  - {fileID: 2100000, guid: 444a64227fbc7e645ba3024dfecf9a26, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -9324,7 +9324,7 @@ Prefab:
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4d60fff894bbb174780ca0343e7b6469, type: 2}
+      objectReference: {fileID: 2100000, guid: 444a64227fbc7e645ba3024dfecf9a26, type: 2}
     - target: {fileID: 1000011398017652, guid: d0d46125eb51a9f4493d09b25cc3aa79, type: 2}
       propertyPath: m_TagString
       value: Untagged
@@ -10488,6 +10488,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 1206821638}
   totalTime: 300
+  timeBetweenClock: 0
+  soundManager: {fileID: 0}
+  tickSound: {fileID: 0}
+  tockSound: {fileID: 0}
 --- !u!4 &820539473
 Transform:
   m_ObjectHideFlags: 0
@@ -11863,7 +11867,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4d60fff894bbb174780ca0343e7b6469, type: 2}
+  - {fileID: 2100000, guid: 444a64227fbc7e645ba3024dfecf9a26, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -12207,7 +12211,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4d60fff894bbb174780ca0343e7b6469, type: 2}
+  - {fileID: 2100000, guid: 444a64227fbc7e645ba3024dfecf9a26, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -13850,7 +13854,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4d60fff894bbb174780ca0343e7b6469, type: 2}
+  - {fileID: 2100000, guid: 444a64227fbc7e645ba3024dfecf9a26, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -18125,7 +18129,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4d60fff894bbb174780ca0343e7b6469, type: 2}
+  - {fileID: 2100000, guid: 444a64227fbc7e645ba3024dfecf9a26, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -18788,7 +18792,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4d60fff894bbb174780ca0343e7b6469, type: 2}
+  - {fileID: 2100000, guid: 444a64227fbc7e645ba3024dfecf9a26, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -22505,7 +22509,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4d60fff894bbb174780ca0343e7b6469, type: 2}
+  - {fileID: 2100000, guid: 444a64227fbc7e645ba3024dfecf9a26, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -22901,7 +22905,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4d60fff894bbb174780ca0343e7b6469, type: 2}
+  - {fileID: 2100000, guid: 444a64227fbc7e645ba3024dfecf9a26, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -27353,7 +27357,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4d60fff894bbb174780ca0343e7b6469, type: 2}
+  - {fileID: 2100000, guid: 444a64227fbc7e645ba3024dfecf9a26, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
