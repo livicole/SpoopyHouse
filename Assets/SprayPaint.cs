@@ -11,6 +11,7 @@ public class SprayPaint : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        Debug.Log("hey");
         theCamera = GameObject.Find("ChildCamera");
         paints.Add(bluePaint);
         paints.Add(greenPaint);
@@ -22,6 +23,7 @@ public class SprayPaint : MonoBehaviour {
 	void Update () {
         if (Input.GetButtonDown("LeftBumper"))
         {
+            Debug.Log("hreasdfsf");
             paintsIndex = (paintsIndex + 1) % 4;
             Debug.Log(paints[paintsIndex]);
         }
