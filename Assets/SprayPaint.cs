@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class SprayPaint : MonoBehaviour {
 
@@ -14,7 +15,13 @@ public class SprayPaint : MonoBehaviour {
     public Sprite[] colors = new Sprite[4];
     Color[] canColors = new Color[4];
 
-    float paintRemaining = 22;
+    double dspTime;
+    public AudioSource sprayLoopSource, sprayAttackSource, sprayReleaseSource, sprayEmptySource, sprayEmptyFadeSource;
+    public AudioClip sprayLoopClip, sprayAttackClip, sprayReleaseClip, sprayEmptyClip;
+    bool spraying = false;
+    bool emptySpraying = false;
+
+    public float paintRemaining = 22;
 
     // Use this for initialization
     void Start () {
@@ -43,8 +50,15 @@ public class SprayPaint : MonoBehaviour {
             sprayPaintUI.sprite = colors[paintsIndex];
             canFillUI.color = canColors[paintsIndex];
         }
+
+
         if (Input.GetButton("RightBumper"))
         {
+            paintRemaining =  paintRemaining - 0.1f; 
+            if (paintRemaining < 0)
+            {
+                paintRemaining = 0;
+            }
             if (paintRemaining > 0)
             {
                 Ray sprayRay = new Ray(theCamera.transform.position, theCamera.transform.forward);
@@ -60,15 +74,63 @@ public class SprayPaint : MonoBehaviour {
                             rotationVector = new Vector3(0, 90f, 0);
                         }
 
-
-
                         Transform temp = Instantiate(paints[paintsIndex], sprayRayHit.point - theCamera.transform.forward * .01f, Quaternion.Euler(rotationVector)) as Transform;
                         temp.transform.SetParent(sprayRayHit.collider.transform.GetChild(0));
 
-                        paintRemaining = paintRemaining - 0.1f;
+
                     }
                 }
             }
         }
+
+        if (Input.GetButtonDown("RightBumper"))
+        {
+            if (paintRemaining > 0)
+            {
+                dspTime = AudioSettings.dspTime;
+
+                sprayAttackSource.PlayScheduled(dspTime);
+
+                sprayLoopSource.PlayScheduled(dspTime + sprayAttackClip.length);
+                spraying = true;
+            }
+            else
+            {
+                sprayEmptySource.Play();
+                emptySpraying = true;
+            }
+
+            
+        }
+        if (Input.GetButtonUp("RightBumper"))
+        {
+            if (spraying)
+            {
+                sprayLoopSource.Stop();
+                sprayReleaseSource.Play();
+                spraying = false;
+            }
+
+            if (emptySpraying)
+            {
+                sprayEmptySource.Stop();
+                sprayEmptyFadeSource.Play();
+                emptySpraying = false;
+            }
+            
+        }
+        if (paintRemaining == 0)
+        {
+            
+            if (spraying && !emptySpraying)
+            {
+                sprayLoopSource.Stop();
+                spraying = false;
+                sprayEmptySource.Play();
+                emptySpraying = true;
+            }
+        }
+        
+
     }
 }
