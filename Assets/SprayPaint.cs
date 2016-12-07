@@ -26,7 +26,7 @@ public class SprayPaint : MonoBehaviour {
     // Use this for initialization
     void Start () {
         sprayPaintUI = GameObject.Find("SprayCan").GetComponent<Image>();
-        Debug.Log("hey");
+        //Debug.Log("hey");
         theCamera = GameObject.Find("ChildCamera");
         paints.Add(bluePaint);
         paints.Add(greenPaint);
