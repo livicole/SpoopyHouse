@@ -341,6 +341,7 @@ public class CursorController : MonoBehaviour {
 
                 gameManager.GetComponent<DoorTracker>().DisableRoomDoors(selectedRoom);
                 gameManager.GetComponent<DoorTracker>().ReplaceRoomInData(selectedRoom, holdingObject);
+                //selectedRoom.GetComponent<GridLocker>()
                 bool connected = gameManager.GetComponent<DoorTracker>().AreAllRoomsConnected();
                 bool viableLocation = holdingObject.GetComponent<GridLocker>().isViableLocation();
                 

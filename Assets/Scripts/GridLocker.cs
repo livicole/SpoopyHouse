@@ -923,7 +923,6 @@ public class GridLocker : MonoBehaviour {
         {
             foreach (CoordinateInfo coordInfo in coordinatesOccupied)
             {
-               
                 Vector3 currentLocation = CalculateGridToReal(coordInfo.coordinateOccupied + gridLocation);
                 if (coordInfo.doors.north)
                 {

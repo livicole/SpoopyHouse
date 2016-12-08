@@ -19221,12 +19221,12 @@ Prefab:
     - target: {fileID: 114000011830859736, guid: e836332dfa558844481412d48ee3cc3f,
         type: 2}
       propertyPath: zoomMax
-      value: 180
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 114000011830859736, guid: e836332dfa558844481412d48ee3cc3f,
         type: 2}
       propertyPath: zoomMin
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114000011830859736, guid: e836332dfa558844481412d48ee3cc3f,
         type: 2}
@@ -19251,7 +19251,7 @@ Prefab:
     - target: {fileID: 20000013001494016, guid: e836332dfa558844481412d48ee3cc3f,
         type: 2}
       propertyPath: orthographic
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 20000013001494016, guid: e836332dfa558844481412d48ee3cc3f,
         type: 2}
