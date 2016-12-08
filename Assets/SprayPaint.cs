@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 
-public class SprayPaint : MonoBehaviour {
+public class SprayPaint : MonoBehaviour
+{
 
     GameObject theCamera;
     public Transform bluePaint, greenPaint, redPaint, whitePaint;
@@ -20,11 +21,13 @@ public class SprayPaint : MonoBehaviour {
     public AudioClip sprayLoopClip, sprayAttackClip, sprayReleaseClip, sprayEmptyClip;
     bool spraying = false;
     bool emptySpraying = false;
+    bool ableToSpray;
 
     public float paintRemaining = 22;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         sprayPaintUI = GameObject.Find("SprayCan").GetComponent<Image>();
         //Debug.Log("hey");
         theCamera = GameObject.Find("ChildCamera");
@@ -37,9 +40,10 @@ public class SprayPaint : MonoBehaviour {
         canColors[2] = Color.red;
         canColors[3] = Color.white;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
 
         canFillUI.GetComponent<RectTransform>().sizeDelta = new Vector2(12f, paintRemaining);
 
@@ -54,18 +58,20 @@ public class SprayPaint : MonoBehaviour {
 
         if (Input.GetButton("RightBumper"))
         {
-            paintRemaining =  paintRemaining - 0.1f; 
-            if (paintRemaining < 0)
+
+            Ray sprayRay = new Ray(theCamera.transform.position, theCamera.transform.forward);
+            RaycastHit sprayRayHit = new RaycastHit();
+            if (Physics.Raycast(sprayRay, out sprayRayHit, 3f))
             {
-                paintRemaining = 0;
-            }
-            if (paintRemaining > 0)
-            {
-                Ray sprayRay = new Ray(theCamera.transform.position, theCamera.transform.forward);
-                RaycastHit sprayRayHit = new RaycastHit();
-                if (Physics.Raycast(sprayRay, out sprayRayHit, 3f))
+                if (sprayRayHit.collider.tag == "Walls")
                 {
-                    if (sprayRayHit.collider.tag == "Walls")
+                    ableToSpray = true;
+                    paintRemaining = paintRemaining - 0.1f;
+                    if (paintRemaining < 0)
+                    {
+                        paintRemaining = 0;
+                    }
+                    if (paintRemaining > 0)
                     {
                         //Debug.Log(sprayRayHit.normal);
                         Vector3 rotationVector = Vector3.zero;
@@ -76,23 +82,31 @@ public class SprayPaint : MonoBehaviour {
 
                         Transform temp = Instantiate(paints[paintsIndex], sprayRayHit.point - theCamera.transform.forward * .01f, Quaternion.Euler(rotationVector)) as Transform;
                         temp.transform.SetParent(sprayRayHit.collider.transform.GetChild(0));
-
-
                     }
+
                 }
+                
             }
+            else
+            {
+                ableToSpray = false;
+            }
+
         }
 
         if (Input.GetButtonDown("RightBumper"))
         {
             if (paintRemaining > 0)
             {
-                dspTime = AudioSettings.dspTime;
+                if (ableToSpray)
+                {
+                    dspTime = AudioSettings.dspTime;
 
-                sprayAttackSource.PlayScheduled(dspTime);
+                    sprayAttackSource.PlayScheduled(dspTime);
 
-                sprayLoopSource.PlayScheduled(dspTime + sprayAttackClip.length);
-                spraying = true;
+                    sprayLoopSource.PlayScheduled(dspTime + sprayAttackClip.length);
+                    spraying = true;
+                }
             }
             else
             {
@@ -100,7 +114,7 @@ public class SprayPaint : MonoBehaviour {
                 emptySpraying = true;
             }
 
-            
+
         }
         if (Input.GetButtonUp("RightBumper"))
         {
@@ -117,11 +131,11 @@ public class SprayPaint : MonoBehaviour {
                 sprayEmptyFadeSource.Play();
                 emptySpraying = false;
             }
-            
+
         }
         if (paintRemaining == 0)
         {
-            
+
             if (spraying && !emptySpraying)
             {
                 sprayLoopSource.Stop();
@@ -130,7 +144,7 @@ public class SprayPaint : MonoBehaviour {
                 emptySpraying = true;
             }
         }
-        
+
 
     }
 }
