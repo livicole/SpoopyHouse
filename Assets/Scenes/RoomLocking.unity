@@ -1383,7 +1383,7 @@ MonoBehaviour:
   sprayLoopClip: {fileID: 8300000, guid: 99b0858e0b6e1114986d6d000e9fd15e, type: 3}
   sprayAttackClip: {fileID: 8300000, guid: 0c66af360ef84df45be079fc8c83ee8f, type: 3}
   sprayReleaseClip: {fileID: 8300000, guid: ee8c613f513032d49bdc1245ba275b67, type: 3}
-  sprayEmptyClip: {fileID: 8300000, guid: 58c3629253bceed4b89ff5fade18b240, type: 3}
+  sprayEmptyClip: {fileID: 8300000, guid: 0833b4bdb0d07c84f84450bddd746740, type: 3}
   paintRemaining: 22
 --- !u!82 &101776736
 AudioSource:
@@ -1447,7 +1447,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1521,7 +1521,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1595,7 +1595,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1669,7 +1669,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1743,7 +1743,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -4504,26 +4504,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff4760ce9369074e894edfcef14235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentRotation: 0
   doors: []
   amIConnected: 0
   height: 0
   gridLocation: {x: 29, y: 0, z: 29}
   rotation: 0
+  copyRotationDifference: 0
   locked: 1
   roomNumber: 5
   coordinatesOccupied:
-  - {x: 0, y: 0, z: 1}
-  - {x: 1, y: 0, z: 0}
-  - {x: 1, y: 0, z: 1}
-  - {x: 1, y: 0, z: 2}
-  - {x: 2, y: 0, z: 1}
+  - doors:
+      north: 0
+      east: 0
+      south: 0
+      west: 1
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 0, y: 0, z: 1}
+  - doors:
+      north: 0
+      east: 0
+      south: 0
+      west: 0
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 1, y: 0, z: 0}
+  - doors:
+      north: 0
+      east: 0
+      south: 0
+      west: 0
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 1, y: 0, z: 1}
+  - doors:
+      north: 1
+      east: 0
+      south: 0
+      west: 0
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 1, y: 0, z: 2}
+  - doors:
+      north: 0
+      east: 1
+      south: 0
+      west: 0
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 2, y: 0, z: 1}
   moveTick: 1
   rotationY: 0
-  previousConnectedPosition: {x: 0, y: 0, z: 0}
-  previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
   moving: 0
   connectedDoors: []
+  doorCount: 0
+  copyOf: {fileID: 0}
 --- !u!4 &295393964
 Transform:
   m_ObjectHideFlags: 0
@@ -6055,24 +6102,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff4760ce9369074e894edfcef14235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentRotation: 0
   doors: []
   amIConnected: 0
   height: 0
   gridLocation: {x: 25, y: 0, z: 26}
   rotation: 0
+  copyRotationDifference: 0
   locked: 1
   roomNumber: 2
   coordinatesOccupied:
-  - {x: 0, y: 0, z: 0}
-  - {x: 1, y: 0, z: 0}
-  - {x: 2, y: 0, z: 0}
+  - doors:
+      north: 0
+      east: 0
+      south: 0
+      west: 1
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 0, y: 0, z: 0}
+  - doors:
+      north: 0
+      east: 0
+      south: 0
+      west: 0
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 1, y: 0, z: 0}
+  - doors:
+      north: 0
+      east: 1
+      south: 0
+      west: 0
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 2, y: 0, z: 0}
   moveTick: 1
   rotationY: 0
-  previousConnectedPosition: {x: 0, y: 0, z: 0}
-  previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
   moving: 0
   connectedDoors: []
+  doorCount: 0
+  copyOf: {fileID: 0}
 --- !u!4 &379146590
 Transform:
   m_ObjectHideFlags: 0
@@ -8002,22 +8078,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff4760ce9369074e894edfcef14235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentRotation: 0
   doors: []
   amIConnected: 0
   height: 0
   gridLocation: {x: 32, y: 0, z: 26}
   rotation: 0
+  copyRotationDifference: 0
   locked: 1
   roomNumber: 0
   coordinatesOccupied:
-  - {x: 0, y: 0, z: 0}
+  - doors:
+      north: 1
+      east: 1
+      south: 1
+      west: 1
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 0, y: 0, z: 0}
   moveTick: 0
   rotationY: 0
-  previousConnectedPosition: {x: 0, y: 0, z: 0}
-  previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
   moving: 0
   connectedDoors: []
+  doorCount: 0
+  copyOf: {fileID: 0}
 --- !u!4 &578644977
 Transform:
   m_ObjectHideFlags: 0
@@ -9550,22 +9637,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff4760ce9369074e894edfcef14235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentRotation: 0
   doors: []
   amIConnected: 0
   height: 0
   gridLocation: {x: 27, y: 0, z: 32}
   rotation: 0
+  copyRotationDifference: 0
   locked: 1
   roomNumber: 0
   coordinatesOccupied:
-  - {x: 0, y: 0, z: 0}
+  - doors:
+      north: 1
+      east: 1
+      south: 1
+      west: 1
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 0, y: 0, z: 0}
   moveTick: 0
   rotationY: 0
-  previousConnectedPosition: {x: 0, y: 0, z: 0}
-  previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
   moving: 0
   connectedDoors: []
+  doorCount: 0
+  copyOf: {fileID: 0}
 --- !u!1 &694829632
 GameObject:
   m_ObjectHideFlags: 0
@@ -11023,9 +11121,9 @@ MonoBehaviour:
   timerText: {fileID: 1206821638}
   totalTime: 300
   timeBetweenClock: 0
-  soundManager: {fileID: 0}
-  tickSound: {fileID: 0}
-  tockSound: {fileID: 0}
+  soundManager: {fileID: 1426151369}
+  tickSound: {fileID: 8300000, guid: 8c29a28c013b96348badb113d4aadd3a, type: 3}
+  tockSound: {fileID: 8300000, guid: e304fa57cf26c204a9f6f14abb287cda, type: 3}
 --- !u!4 &820539473
 Transform:
   m_ObjectHideFlags: 0
@@ -11068,9 +11166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doors: []
   rooms: []
-  doorChecked: 
-  roomChecked: 
-  doorUI: {fileID: 1000010169119424, guid: aaba2def77d011e4ab1e9648c66ca6d1, type: 2}
+  index: 0
 --- !u!1001 &826049560
 Prefab:
   m_ObjectHideFlags: 0
@@ -13548,7 +13644,7 @@ RectTransform:
   m_RootOrder: 20
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 312.41977, y: 487.69}
+  m_AnchoredPosition: {x: 312.41977, y: 438.1}
   m_SizeDelta: {x: 12, y: 22}
   m_Pivot: {x: 0.5, y: 0.03}
 --- !u!114 &1014522035
@@ -14669,24 +14765,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff4760ce9369074e894edfcef14235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentRotation: 0
   doors: []
   amIConnected: 0
   height: 0
   gridLocation: {x: 27, y: 0, z: 30}
   rotation: 0
+  copyRotationDifference: 0
   locked: 1
   roomNumber: 4
   coordinatesOccupied:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
-  - {x: 1, y: 0, z: 0}
+  - doors:
+      north: 0
+      east: 0
+      south: 0
+      west: 0
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 0, y: 0, z: 0}
+  - doors:
+      north: 0
+      east: 1
+      south: 0
+      west: 0
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 1, y: 0, z: 0}
+  - doors:
+      north: 1
+      east: 0
+      south: 0
+      west: 0
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 0, y: 0, z: 1}
   moveTick: 1
   rotationY: 0
-  previousConnectedPosition: {x: 0, y: 0, z: 0}
-  previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
   moving: 0
   connectedDoors: []
+  doorCount: 0
+  copyOf: {fileID: 0}
 --- !u!1001 &1084525003
 Prefab:
   m_ObjectHideFlags: 0
@@ -17206,26 +17331,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff4760ce9369074e894edfcef14235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentRotation: 1
   doors: []
   amIConnected: 0
   height: 0
   gridLocation: {x: 25, y: 0, z: 33}
   rotation: 0
+  copyRotationDifference: 0
   locked: 1
   roomNumber: 5
   coordinatesOccupied:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
-  - {x: 1, y: 0, z: 1}
-  - {x: 2, y: 0, z: 0}
-  - {x: 2, y: 0, z: 1}
+  - doors:
+      north: 0
+      east: 0
+      south: 1
+      west: 0
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 0, y: 0, z: 0}
+  - doors:
+      north: 0
+      east: 0
+      south: 0
+      west: 0
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 0, y: 0, z: 1}
+  - doors:
+      north: 0
+      east: 0
+      south: 0
+      west: 0
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 1, y: 0, z: 1}
+  - doors:
+      north: 0
+      east: 0
+      south: 0
+      west: 0
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 2, y: 0, z: 1}
+  - doors:
+      north: 0
+      east: 0
+      south: 1
+      west: 0
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 2, y: 0, z: 0}
   moveTick: 1
   rotationY: 0
-  previousConnectedPosition: {x: 0, y: 0, z: 0}
-  previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
   moving: 0
   connectedDoors: []
+  doorCount: 0
+  copyOf: {fileID: 0}
 --- !u!4 &1210107073
 Transform:
   m_ObjectHideFlags: 0
@@ -17658,26 +17830,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff4760ce9369074e894edfcef14235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentRotation: 0
   doors: []
   amIConnected: 0
   height: 0
   gridLocation: {x: 33, y: 0, z: 29}
   rotation: 0
+  copyRotationDifference: 0
   locked: 1
   roomNumber: 3
   coordinatesOccupied:
-  - {x: 0, y: 0, z: 1}
-  - {x: 1, y: 0, z: 0}
-  - {x: 1, y: 0, z: 1}
-  - {x: 1, y: 0, z: 2}
-  - {x: 2, y: 0, z: 0}
+  - doors:
+      north: 0
+      east: 0
+      south: 0
+      west: 1
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 0, y: 0, z: 1}
+  - doors:
+      north: 0
+      east: 0
+      south: 0
+      west: 0
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 1, y: 0, z: 0}
+  - doors:
+      north: 0
+      east: 0
+      south: 0
+      west: 0
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 1, y: 0, z: 1}
+  - doors:
+      north: 1
+      east: 0
+      south: 0
+      west: 0
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 1, y: 0, z: 2}
+  - doors:
+      north: 0
+      east: 1
+      south: 0
+      west: 0
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 2, y: 0, z: 0}
   moveTick: 1
   rotationY: 0
-  previousConnectedPosition: {x: 0, y: 0, z: 0}
-  previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
   moving: 0
   connectedDoors: []
+  doorCount: 0
+  copyOf: {fileID: 0}
 --- !u!4 &1231140441
 Transform:
   m_ObjectHideFlags: 0
@@ -19427,26 +19646,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff4760ce9369074e894edfcef14235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentRotation: 1
   doors: []
   amIConnected: 0
   height: 0
   gridLocation: {x: 30, y: 0, z: 32}
   rotation: 0
+  copyRotationDifference: 0
   locked: 1
   roomNumber: 5
   coordinatesOccupied:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
-  - {x: 1, y: 0, z: 1}
-  - {x: 2, y: 0, z: 1}
-  - {x: 2, y: 0, z: 2}
+  - doors:
+      north: 0
+      east: 0
+      south: 1
+      west: 0
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 0, y: 0, z: 0}
+  - doors:
+      north: 0
+      east: 0
+      south: 0
+      west: 0
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 0, y: 0, z: 1}
+  - doors:
+      north: 0
+      east: 0
+      south: 0
+      west: 0
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 1, y: 0, z: 1}
+  - doors:
+      north: 0
+      east: 0
+      south: 0
+      west: 0
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 2, y: 0, z: 1}
+  - doors:
+      north: 1
+      east: 0
+      south: 0
+      west: 0
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 2, y: 0, z: 2}
   moveTick: 1
   rotationY: 0
-  previousConnectedPosition: {x: 0, y: 0, z: 0}
-  previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
   moving: 0
   connectedDoors: []
+  doorCount: 0
+  copyOf: {fileID: 0}
 --- !u!4 &1385769191
 Transform:
   m_ObjectHideFlags: 0
@@ -19706,22 +19972,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff4760ce9369074e894edfcef14235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentRotation: 0
   doors: []
   amIConnected: 0
   height: 0
   gridLocation: {x: 28, y: 0, z: 26}
   rotation: 0
+  copyRotationDifference: 0
   locked: 1
   roomNumber: 0
   coordinatesOccupied:
-  - {x: 0, y: 0, z: 0}
+  - doors:
+      north: 1
+      east: 1
+      south: 1
+      west: 1
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 0, y: 0, z: 0}
   moveTick: 0
   rotationY: 0
-  previousConnectedPosition: {x: 0, y: 0, z: 0}
-  previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
   moving: 0
   connectedDoors: []
+  doorCount: 0
+  copyOf: {fileID: 0}
 --- !u!4 &1401708790
 Transform:
   m_ObjectHideFlags: 0
@@ -23337,23 +23614,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff4760ce9369074e894edfcef14235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentRotation: 1
   doors: []
   amIConnected: 0
   height: 0
   gridLocation: {x: 25, y: 0, z: 31}
   rotation: 0
+  copyRotationDifference: 0
   locked: 1
   roomNumber: 1
   coordinatesOccupied:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
+  - doors:
+      north: 0
+      east: 0
+      south: 1
+      west: 0
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 0, y: 0, z: 0}
+  - doors:
+      north: 1
+      east: 0
+      south: 0
+      west: 0
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 0, y: 0, z: 1}
   moveTick: 1
   rotationY: 0
-  previousConnectedPosition: {x: 0, y: 0, z: 0}
-  previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
   moving: 0
   connectedDoors: []
+  doorCount: 0
+  copyOf: {fileID: 0}
 --- !u!4 &1716100490
 Transform:
   m_ObjectHideFlags: 0
@@ -25075,7 +25372,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fc55899d7a8c99439df62b6182aad79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placeholder: {fileID: 0}
+  placeholder: {fileID: 4000012704367000, guid: 184fda4bef1bf4c40a7718259b5b98a8,
+    type: 2}
   inRoomLayerMask:
     serializedVersion: 2
     m_Bits: 4294950878
@@ -25089,6 +25387,7 @@ MonoBehaviour:
   detectionSphere: {fileID: 1113231744}
   itemsCollected: 0
   gameManager: {fileID: 820539471}
+  connectable: 1
   holdingObject: {fileID: 0}
   targetLocation: {x: 0, y: 0, z: 0}
   angelCount: 0
@@ -27187,26 +27486,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff4760ce9369074e894edfcef14235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentRotation: 0
   doors: []
   amIConnected: 0
   height: 0
   gridLocation: {x: 29, y: 0, z: 26}
   rotation: 0
+  copyRotationDifference: 0
   locked: 1
   roomNumber: 5
   coordinatesOccupied:
-  - {x: 0, y: 0, z: 0}
-  - {x: 1, y: 0, z: 0}
-  - {x: 1, y: 0, z: 1}
-  - {x: 1, y: 0, z: 2}
-  - {x: 2, y: 0, z: 0}
+  - doors:
+      north: 0
+      east: 0
+      south: 0
+      west: 1
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 0, y: 0, z: 0}
+  - doors:
+      north: 0
+      east: 0
+      south: 0
+      west: 0
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 1, y: 0, z: 0}
+  - doors:
+      north: 0
+      east: 0
+      south: 0
+      west: 0
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 1, y: 0, z: 1}
+  - doors:
+      north: 1
+      east: 0
+      south: 0
+      west: 0
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 1, y: 0, z: 2}
+  - doors:
+      north: 0
+      east: 1
+      south: 0
+      west: 0
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 2, y: 0, z: 1}
   moveTick: 1
   rotationY: 0
-  previousConnectedPosition: {x: 0, y: 0, z: 0}
-  previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
   moving: 0
   connectedDoors: []
+  doorCount: 0
+  copyOf: {fileID: 0}
 --- !u!4 &1966448637
 Transform:
   m_ObjectHideFlags: 0
@@ -29355,22 +29701,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff4760ce9369074e894edfcef14235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentRotation: 0
   doors: []
   amIConnected: 0
   height: 0
   gridLocation: {x: 32, y: 0, z: 30}
   rotation: 0
+  copyRotationDifference: 0
   locked: 1
   roomNumber: 0
   coordinatesOccupied:
-  - {x: 0, y: 0, z: 0}
+  - doors:
+      north: 1
+      east: 1
+      south: 1
+      west: 1
+      northDoor: {fileID: 0}
+      eastDoor: {fileID: 0}
+      southDoor: {fileID: 0}
+      westDoor: {fileID: 0}
+    coordinateOccupied: {x: 0, y: 0, z: 0}
   moveTick: 0
   rotationY: 0
-  previousConnectedPosition: {x: 0, y: 0, z: 0}
-  previousConnectedRotation: {x: 0, y: 0, z: 0, w: 0}
   childLocked: 0
   moving: 0
   connectedDoors: []
+  doorCount: 0
+  copyOf: {fileID: 0}
 --- !u!4 &2115417613
 Transform:
   m_ObjectHideFlags: 0
