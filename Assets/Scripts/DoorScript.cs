@@ -222,22 +222,19 @@ public class DoorScript : MonoBehaviour {
        
     }
 
-  
-
-
-
     public void ResetDoors()
     {
-       // Debug.Log("Resetting: " + transform.name);
+        //Debug.Log("Resetting: " + transform.name);
         ResetOtherDoor();
         ResetThisDoor();
     }
 
     public void ResetThisDoor()
     {
-        EnableDoor();
         otherDoor = null;
+        //Debug.Log(otherDoor);
         isConnected = false;
+        EnableDoor();
     }
 
     public void DestroySelf()
@@ -275,9 +272,11 @@ public class DoorScript : MonoBehaviour {
         //transform.GetChild(1).GetComponent<BoxCollider>().enabled = false;
         if(myDoorUI != null)
         {
+            //Debug.Log("Disable door UI");
             myDoorUI.GetComponent<Renderer>().enabled = false;
         }
-       
+        //otherDoor.GetComponent<DoorScript>().otherDoor = null;
+        //otherDoor = null;
         transform.GetChild(0).GetComponent<Renderer>().enabled = false;
         
     }

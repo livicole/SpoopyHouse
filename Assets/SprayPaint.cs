@@ -73,7 +73,7 @@ public class SprayPaint : MonoBehaviour
                     }
                     if (paintRemaining > 0)
                     {
-                        Debug.Log(sprayRayHit.normal);
+                        //Debug.Log(sprayRayHit.normal);
                         Vector3 rotationVector = Vector3.zero;
                         if (sprayRayHit.normal.x != 0)
                         {

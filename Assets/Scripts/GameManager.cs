@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour {
                 }
             }
         }
-        Debug.Log("IM FREE");
+        //Debug.Log("IM FREE");
 
         childPlayer = GameObject.Find("ChildPlayer").transform;
         grid = GameObject.Find("GridBase").GetComponent<GridInfo>().transform;

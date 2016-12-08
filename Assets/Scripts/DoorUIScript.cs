@@ -33,7 +33,7 @@ public class DoorUIScript : MonoBehaviour {
             transform.rotation = myDoor.transform.rotation;
             if (myDoor != null)
             {
-                if (myDoor.GetComponent<DoorScript>().isConnected)
+                if (myDoor.GetComponent<DoorScript>().otherDoor != null)
                 {
                     GetComponent<Renderer>().material.color = Color.green;
                 }

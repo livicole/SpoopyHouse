@@ -332,15 +332,16 @@ public class CursorController : MonoBehaviour {
                 //selectedRoom.GetComponent<GridLocker>().moving = false;
                 if (holdingObject.GetComponent<GridLocker>().amIConnected)
                 {
-                    Debug.Log("Moving room is connected.");
+                    //  Debug.Log("Moving room is connected.");
                 }
                 else
                 {
-                    Debug.Log("Moving room is not connected.");
+                    //Debug.Log("Moving room is not connected.");
                 }
 
                 gameManager.GetComponent<DoorTracker>().DisableRoomDoors(selectedRoom);
                 gameManager.GetComponent<DoorTracker>().ReplaceRoomInData(selectedRoom, holdingObject);
+                //selectedRoom.GetComponent<GridLocker>()
                 bool connected = gameManager.GetComponent<DoorTracker>().AreAllRoomsConnected();
                 bool viableLocation = holdingObject.GetComponent<GridLocker>().isViableLocation();
                 
@@ -354,7 +355,7 @@ public class CursorController : MonoBehaviour {
                     gridBase.GetComponent<GridInfo>().RemoveBlock(coordInfo.coordinateOccupied + holdingObject.GetComponent<GridLocker>().gridLocation, holdingObject);
                 }
                 //Should check for connected but changed for temp runnability
-                if (viableLocation)
+                if (viableLocation && connected)
                 {
                     selectedRoom.GetComponent<GridLocker>().SetLocation(holdingObject);
                     //Debug.Log(holdingObject.GetComponent<GridLocker>().gridLocation + " " + holdingObject.transform.eulerAngles);
@@ -365,14 +366,14 @@ public class CursorController : MonoBehaviour {
                
              
                 //Removing it to get working with no doors
-                //gameManager.GetComponent<DoorTracker>().ReplaceRoomInData(holdingObject, selectedRoom);
+                gameManager.GetComponent<DoorTracker>().ReplaceRoomInData(holdingObject, selectedRoom);
                 
                 connectable = false;
                 //selectedRoom.GetComponent<GridLocker>().ConnectAllDoors();
                 connectable = true;
                 Destroy(holdingObject.gameObject);
-                //gameManager.GetComponent<DoorTracker>().ResetAllBools();
-                ResetAllDoors();
+                gameManager.GetComponent<DoorTracker>().ResetAllBools();
+                //ResetAllDoors();
                 holdingRoom = false;
                 holdingObject = null;
                 selectedRoom = null;
@@ -416,8 +417,8 @@ public class CursorController : MonoBehaviour {
                     holdingObject.GetComponent<GridLocker>().MoveDirectionNoCheck(directionToMove);
                 }
                 //All doors should be disabled for this build
-                //ResetAllDoors();
-                //gameManager.GetComponent<DoorTracker>().ConnectAllDoors();
+                ResetAllDoors();
+                gameManager.GetComponent<DoorTracker>().ConnectAllDoors();
             }
             if (rotateTimer >= rotateCD)
             {

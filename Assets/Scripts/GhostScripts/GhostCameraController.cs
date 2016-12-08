@@ -54,6 +54,8 @@ public class GhostCameraController : MonoBehaviour {
             }
             if (timer <= 0)
             {
+                //For Olivia:
+                //Zooms in the camera, jumping steps, until it reaches the closest part.
                 if (Input.GetAxisRaw("GhostLeftTrigger") != 0)
                 {
                     if (!isLeftTriggerInUse)

@@ -65,7 +65,7 @@ public class DoorTracker : MonoBehaviour {
         foreach(Transform door in room.GetComponent<GridLocker>().doors)
         {   
             door.GetComponent<DoorScript>().isLive = false;
-            door.GetComponent<DoorScript>().ResetDoors();
+            door.GetComponent<DoorScript>().DisableDoor();
         }
     }
 
@@ -75,7 +75,7 @@ public class DoorTracker : MonoBehaviour {
         foreach (Transform door in room.GetComponent<GridLocker>().doors)
         {
             door.GetComponent<DoorScript>().isLive = true;
-//door.GetComponent<DoorScript>().ResetDoors();
+            door.GetComponent<DoorScript>().EnableDoor();
         }
     }
 
@@ -84,6 +84,35 @@ public class DoorTracker : MonoBehaviour {
         foreach(ObjectInfo objInfo in doors)
         {
             objInfo.obj.GetComponent<DoorScript>().ConnectDoors();
+        }
+    }
+
+    public void ReplaceRoomInData(Transform realRoom, Transform tempRoom)
+    {
+        foreach (ObjectInfo objInfo in rooms)
+        {
+            if (objInfo.obj.Equals(realRoom))
+            {
+                //Debug.Log("Replacing");
+                objInfo.obj = tempRoom;
+            }
+        }
+
+        int i = 0;
+
+        //Looks at all doors in this collection
+        foreach (ObjectInfo objInfo in doors)
+        {
+            //Looks at all the doors in real room
+            foreach (Transform door in realRoom.GetComponent<GridLocker>().doors)
+            {
+                //Check if these are the same
+                if (objInfo.obj.Equals(door))
+                {
+                    objInfo.obj = tempRoom.GetComponent<GridLocker>().doors[i];
+                    i++;
+                }
+            }
         }
     }
 
@@ -101,48 +130,48 @@ public class DoorTracker : MonoBehaviour {
 
     }
 
-    public void ReplaceRoomInData(Transform realRoom, Transform tempRoom)
+    public bool isInValidRooms(Transform room)
     {
-        foreach (ObjectInfo objInfo in rooms)
+        foreach(ObjectInfo objInfo in rooms)
         {
-            if (objInfo.obj.Equals(realRoom))
+            if (room.Equals(objInfo.obj))
             {
-                //Debug.Log("Replacing");
-                objInfo.obj = tempRoom;
+                return true;
             }
         }
-
-        int i = 0;
-        foreach (ObjectInfo objInfo in doors)
-        {
-            foreach (Transform door in realRoom.GetComponent<GridLocker>().doors)
-            {
-                if (objInfo.obj.Equals(door))
-                {
-                    //Debug.Log("Replacing door...");
-                    objInfo.obj = tempRoom.GetComponent<GridLocker>().doors[i];
-                    i++;
-                }
-            }
-        }
+        Debug.Log("Room issue: " + room);
+        return false;
     }
 
     public void CheckDoorsInRoom(Transform room)
     {
-        foreach(Transform door in room.GetComponent<GridLocker>().doors)
+        if (isInValidRooms(room))
         {
-            ObjectInfo objinfo =  GetDoor(door);
-            if (!objinfo.check)
-            {   
-                //Debug.Log("Checking door: " + door.GetComponent<DoorScript>().room);
-                objinfo.SetCheck(true);
-                if (door.GetComponent<DoorScript>().otherDoor != null)
+            if(room.name == "Placeholder Collection")
+            {
+                Debug.Log(room);
+            }
+            foreach (Transform door in room.GetComponent<GridLocker>().doors)
+            {
+                ObjectInfo objinfo = GetDoor(door);
+
+                if (objinfo == null)
                 {
-                    CheckDoorsInRoom(door.GetComponent<DoorScript>().otherDoor.GetComponent<DoorScript>().room);
+                    Debug.Log("problems: " + door.GetComponent<DoorScript>().room);
+                }
+
+                if (!objinfo.check)
+                {
+                    Debug.Log("Checking door: " + door.GetComponent<DoorScript>().room);
+                    objinfo.SetCheck(true);
+                    if (door.GetComponent<DoorScript>().otherDoor != null)
+                    {
+                        CheckDoorsInRoom(door.GetComponent<DoorScript>().otherDoor.GetComponent<DoorScript>().room);
+                    }
                 }
             }
+            GetRoom(room).SetCheck(true);
         }
-        GetRoom(room).SetCheck(true);
     }
 
     public ObjectInfo GetRoom(Transform room)
@@ -163,6 +192,7 @@ public class DoorTracker : MonoBehaviour {
         {
             if (objInfo.obj.Equals(door))
             {
+                //Debug.Log("Obj: " + objInfo.obj + " Check: " + objInfo.check);
                 return objInfo;
             }
         }
@@ -209,7 +239,7 @@ public class ObjectInfo
 
     public bool Equals(ObjectInfo temp)
     {
-        if (this.check == temp.check && this.obj.Equals(temp.obj))
+        if (check == temp.check && obj.Equals(temp.obj))
         {
             return true;
         }
