@@ -65,6 +65,7 @@ public class GridLocker : MonoBehaviour {
     public List<Transform> connectedDoors;
     Vector2 dimensions;
     int counter;
+    Transform copyParent;
     public int doorCount = 0;
     [HideInInspector]
     public Transform copyOf;
@@ -105,9 +106,9 @@ public class GridLocker : MonoBehaviour {
         InitToGridInfo();
         if (isRoom())
         {
-            //InitDoors();
+            InitDoors();
         }
-
+        MoveOrigin();
         dimensions = GetDimensions();
 
     }
@@ -242,7 +243,7 @@ public class GridLocker : MonoBehaviour {
             }
             else if (comparisonRotation.Equals(Rotation.CCW))
             {
-                Debug.Log("No rotation.");
+                //Debug.Log("No rotation.");
                 Vector3 newFillerPosition = originalRoomFillerPosition;
                 //Debug.Log("Original: " + originalRoomFillerPosition);
                 newFillerPosition = new Vector3(newFillerPosition.x * positiveMultiplier, newFillerPosition.y, -newFillerPosition.z * positiveMultiplier);
@@ -312,7 +313,7 @@ public class GridLocker : MonoBehaviour {
         {
             rotationinput -= 360;
         }
-        Debug.Log("Rotation Input: " + rotationinput);
+        //Debug.Log("Rotation Input: " + rotationinput);
         currentRotation = targetScript.currentRotation;
         MoveOrigin();
 
@@ -330,8 +331,8 @@ public class GridLocker : MonoBehaviour {
        
        
        
-        //RemoveAllDoors();
-        //InitDoors();
+        RemoveAllDoors();
+        InitDoors();
         UpdateNewBlocks();
     }
 
@@ -352,7 +353,7 @@ public class GridLocker : MonoBehaviour {
             transform.position = CalculateGridToReal(gridLocation);
             //Debug.Log(transform.position);
             //Reset cooldown since we actually moved.
-            ResetAllDoors();
+            //ConnectAllDoors();
             moveCooldownTimer = moveTick;
 
             /*
@@ -364,7 +365,7 @@ public class GridLocker : MonoBehaviour {
             }*/
 
 
-            ConnectAllDoors();
+            ResetAllDoors();
            
             UpdateNewBlocks();
             amIConnected = CheckIfConnected();
@@ -520,30 +521,30 @@ public class GridLocker : MonoBehaviour {
             if (doorBool.north)
             {
                 newDoors.east = true;
-                //newDoors.eastDoor = doorBool.northDoor;
-                //newDoors.eastDoor.GetComponent<DoorScript>().coordinateOfDoor = newCoordinate;
-                //newDoors.eastDoor.GetComponent<DoorScript>().location = DoorScript.Direction.East;
+                newDoors.eastDoor = doorBool.northDoor;
+                newDoors.eastDoor.GetComponent<DoorScript>().coordinateOfDoor = newCoordinate;
+                newDoors.eastDoor.GetComponent<DoorScript>().location = DoorScript.Direction.East;
             }
             if (doorBool.east)
             {
                 newDoors.south = true;
-                //newDoors.southDoor = doorBool.eastDoor;
-                //newDoors.southDoor.GetComponent<DoorScript>().coordinateOfDoor = newCoordinate;
-                //newDoors.southDoor.GetComponent<DoorScript>().location = DoorScript.Direction.South;
+                newDoors.southDoor = doorBool.eastDoor;
+                newDoors.southDoor.GetComponent<DoorScript>().coordinateOfDoor = newCoordinate;
+                newDoors.southDoor.GetComponent<DoorScript>().location = DoorScript.Direction.South;
             }
             if (doorBool.south)
             {
                 newDoors.west = true;
-                //newDoors.westDoor = doorBool.southDoor;
-                //newDoors.westDoor.GetComponent<DoorScript>().coordinateOfDoor = newCoordinate;
-                //newDoors.westDoor.GetComponent<DoorScript>().location = DoorScript.Direction.West;
+                newDoors.westDoor = doorBool.southDoor;
+                newDoors.westDoor.GetComponent<DoorScript>().coordinateOfDoor = newCoordinate;
+                newDoors.westDoor.GetComponent<DoorScript>().location = DoorScript.Direction.West;
             }
             if (doorBool.west)
             {
                 newDoors.north = true;
-                //newDoors.northDoor = doorBool.westDoor;
-                //newDoors.northDoor.GetComponent<DoorScript>().coordinateOfDoor = newCoordinate;
-                //newDoors.northDoor.GetComponent<DoorScript>().location = DoorScript.Direction.North;
+                newDoors.northDoor = doorBool.westDoor;
+                newDoors.northDoor.GetComponent<DoorScript>().coordinateOfDoor = newCoordinate;
+                newDoors.northDoor.GetComponent<DoorScript>().location = DoorScript.Direction.North;
             }
         }
         else if (rotationChange == -90 || rotationChange == 270)
@@ -551,30 +552,30 @@ public class GridLocker : MonoBehaviour {
             if (doorBool.north)
             {
                 newDoors.west = true;
-                //newDoors.westDoor = doorBool.northDoor;
-                //newDoors.westDoor.GetComponent<DoorScript>().coordinateOfDoor = newCoordinate;
-                //newDoors.westDoor.GetComponent<DoorScript>().location = DoorScript.Direction.West;
+                newDoors.westDoor = doorBool.northDoor;
+                newDoors.westDoor.GetComponent<DoorScript>().coordinateOfDoor = newCoordinate;
+                newDoors.westDoor.GetComponent<DoorScript>().location = DoorScript.Direction.West;
             }
             if (doorBool.west)
             {   
                 newDoors.south = true;
-                //newDoors.southDoor = doorBool.westDoor;
-                //newDoors.southDoor.GetComponent<DoorScript>().coordinateOfDoor = newCoordinate;
-                //newDoors.southDoor.GetComponent<DoorScript>().location = DoorScript.Direction.South;
+                newDoors.southDoor = doorBool.westDoor;
+                newDoors.southDoor.GetComponent<DoorScript>().coordinateOfDoor = newCoordinate;
+                newDoors.southDoor.GetComponent<DoorScript>().location = DoorScript.Direction.South;
             }
             if (doorBool.south)
             {
                 newDoors.east = true;
-                //newDoors.eastDoor = doorBool.southDoor;
-                //newDoors.eastDoor.GetComponent<DoorScript>().coordinateOfDoor = newCoordinate;
-                //newDoors.eastDoor.GetComponent<DoorScript>().location = DoorScript.Direction.East;
+                newDoors.eastDoor = doorBool.southDoor;
+                newDoors.eastDoor.GetComponent<DoorScript>().coordinateOfDoor = newCoordinate;
+                newDoors.eastDoor.GetComponent<DoorScript>().location = DoorScript.Direction.East;
             }
             if (doorBool.east)
             {
                 newDoors.north = true;
-                //newDoors.northDoor = doorBool.eastDoor;
-                //newDoors.northDoor.GetComponent<DoorScript>().coordinateOfDoor = newCoordinate;
-                //newDoors.northDoor.GetComponent<DoorScript>().location = DoorScript.Direction.North;
+                newDoors.northDoor = doorBool.eastDoor;
+                newDoors.northDoor.GetComponent<DoorScript>().coordinateOfDoor = newCoordinate;
+                newDoors.northDoor.GetComponent<DoorScript>().location = DoorScript.Direction.North;
             }
         }
         else if (rotationChange == 180)
@@ -582,30 +583,30 @@ public class GridLocker : MonoBehaviour {
             if (doorBool.north)
             {
                 newDoors.south = true;
-                //newDoors.southDoor = doorBool.northDoor;
-                //newDoors.southDoor.GetComponent<DoorScript>().coordinateOfDoor = newCoordinate;
-                //newDoors.southDoor.GetComponent<DoorScript>().location = DoorScript.Direction.South;
+                newDoors.southDoor = doorBool.northDoor;
+                newDoors.southDoor.GetComponent<DoorScript>().coordinateOfDoor = newCoordinate;
+                newDoors.southDoor.GetComponent<DoorScript>().location = DoorScript.Direction.South;
             }
             if (doorBool.south)
             {
                 newDoors.north = true;
-                //newDoors.northDoor = doorBool.southDoor;
-                //newDoors.northDoor.GetComponent<DoorScript>().coordinateOfDoor = newCoordinate;
-                //newDoors.northDoor.GetComponent<DoorScript>().location = DoorScript.Direction.North;
+                newDoors.northDoor = doorBool.southDoor;
+                newDoors.northDoor.GetComponent<DoorScript>().coordinateOfDoor = newCoordinate;
+                newDoors.northDoor.GetComponent<DoorScript>().location = DoorScript.Direction.North;
             }
             if (doorBool.west)
             {
                 newDoors.east = true;
-                //newDoors.eastDoor = doorBool.westDoor;
-                //newDoors.eastDoor.GetComponent<DoorScript>().coordinateOfDoor = newCoordinate;
-                //newDoors.eastDoor.GetComponent<DoorScript>().location = DoorScript.Direction.East;
+                newDoors.eastDoor = doorBool.westDoor;
+                newDoors.eastDoor.GetComponent<DoorScript>().coordinateOfDoor = newCoordinate;
+                newDoors.eastDoor.GetComponent<DoorScript>().location = DoorScript.Direction.East;
             }
             if (doorBool.east)
             {
                 newDoors.west = true;
-                //newDoors.westDoor = doorBool.eastDoor;
-                //newDoors.westDoor.GetComponent<DoorScript>().coordinateOfDoor = newCoordinate;
-                //newDoors.westDoor.GetComponent<DoorScript>().location = DoorScript.Direction.West;        
+                newDoors.westDoor = doorBool.eastDoor;
+                newDoors.westDoor.GetComponent<DoorScript>().coordinateOfDoor = newCoordinate;
+                newDoors.westDoor.GetComponent<DoorScript>().location = DoorScript.Direction.West;        
             }
         }
         return newDoors;
@@ -627,7 +628,7 @@ public class GridLocker : MonoBehaviour {
             }
         }
         Vector3 updateVector = new Vector3((lowestX), 0, (lowestZ));
-        Debug.Log(updateVector);
+        //Debug.Log(updateVector);
         return updateVector;
     }
 
@@ -635,7 +636,7 @@ public class GridLocker : MonoBehaviour {
     {
         List<CoordinateInfo> newList = new List<CoordinateInfo>();
         float changeInRotation = rotation - rotationY;
-        Debug.Log("ALERT: " + changeInRotation);
+        //Debug.Log("ALERT: " + changeInRotation);
         if (changeInRotation == 0) { return; }
         if (changeInRotation == -270) { changeInRotation = 90; }
         if (changeInRotation == -180) { changeInRotation = 180; }
@@ -648,7 +649,9 @@ public class GridLocker : MonoBehaviour {
             CoordinateInfo newCoordInfo = new CoordinateInfo();
             newCoordInfo.coordinateOccupied = newCoordinate;
             newCoordInfo.doors = newDoors;
-            Debug.Log(newCoordInfo.coordinateOccupied);
+            //Debug.Log(newCoordInfo.coordinateOccupied);
+            //Debug.Log("Doors: " + newCoordInfo.doors.north + " | " + newCoordInfo.doors.east + " | " + newCoordInfo.doors.south + " | " + newCoordInfo.doors.west);
+            //Debug.Log("Door Transforms: " + newCoordInfo.doors.westDoor);
             newList.Add(newCoordInfo);
         }
         float lowestX = 0;
@@ -674,7 +677,7 @@ public class GridLocker : MonoBehaviour {
             Vector3 tempCoordinate = coordInfo.coordinateOccupied - updateVector;
             CoordinateInfo newCoordInfo = new CoordinateInfo();
             newCoordInfo.coordinateOccupied = tempCoordinate;
-            //newCoordInfo.doors = UpdateAllDoorCoordinates(coordInfo.doors, updateVector);
+            newCoordInfo.doors = UpdateAllDoorCoordinates(coordInfo.doors, updateVector);
             //Debug.Log(updateVector + " " + newCoordInfo.doors);
             tempList.Add(newCoordInfo);
         }
@@ -703,7 +706,7 @@ public class GridLocker : MonoBehaviour {
                 }
             }
         /*}*/
-        Debug.Log("Rotation: " + rotation);
+        //Debug.Log("Rotation: " + rotation);
         MoveOrigin();
         //ResetAllDoors();
         //ConnectAllDoors();
@@ -713,6 +716,7 @@ public class GridLocker : MonoBehaviour {
     public DoorLocation UpdateAllDoorCoordinates(DoorLocation doors, Vector3 updateVector)
     {
         DoorLocation newDoors = doors;
+        //Debug.Log("Doors: " + doors.north + " | " + doors.east + " | " + doors.south + " | " + doors.west);
         if (doors.north)
         {
             newDoors.northDoor.GetComponent<DoorScript>().coordinateOfDoor -= updateVector;
@@ -972,8 +976,9 @@ public class GridLocker : MonoBehaviour {
         overheadParent.GetComponent<GridLocker>().coordinatesOccupied = coordinatesOccupied;
         overheadParent.GetComponent<GridLocker>().copyOf = transform;
         overheadParent.GetComponent<GridLocker>().currentRotation = currentRotation;
-        //overheadParent.GetComponent<GridLocker>().InitDoorUIOnly();
+        overheadParent.GetComponent<GridLocker>().InitDoorUIOnly();
         overheadParent.GetComponent<GridLocker>().copyRotationDifference = transform.eulerAngles.y;
+        overheadParent.GetComponent<GridLocker>().copyParent = transform;
         foreach (CoordinateInfo coordInfo in coordinatesOccupied)
         {
             //Vector3 realCoordinate = coordinate + gridLocation;
@@ -1003,8 +1008,9 @@ public class GridLocker : MonoBehaviour {
         {
             foreach(RoomInfo roomInfo in gridBase.GetComponent<GridInfo>().usedGridBlocks)
             {
-                if(roomInfo.coordinate == (coordInfo.coordinateOccupied + gridLocation) && roomInfo.room != transform)
+                if(roomInfo.coordinate == (coordInfo.coordinateOccupied + gridLocation) && roomInfo.room != transform && roomInfo.room != copyParent)
                 {
+                    Debug.Log("Conflicting room: " + roomInfo.room);
                     return false;
                 }
             }

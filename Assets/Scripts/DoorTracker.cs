@@ -113,15 +113,18 @@ public class DoorTracker : MonoBehaviour {
         }
 
         int i = 0;
+        
+        //Looks at all doors in this collection
         foreach (ObjectInfo objInfo in doors)
         {
+            //Looks at all the doors in real room
             foreach (Transform door in realRoom.GetComponent<GridLocker>().doors)
             {
+                //Check if these are the same
                 if (objInfo.obj.Equals(door))
-                {
-                    //Debug.Log("Replacing door...");
+                {                   
                     objInfo.obj = tempRoom.GetComponent<GridLocker>().doors[i];
-                    i++;
+                    i++;    
                 }
             }
         }
@@ -132,6 +135,10 @@ public class DoorTracker : MonoBehaviour {
         foreach(Transform door in room.GetComponent<GridLocker>().doors)
         {
             ObjectInfo objinfo =  GetDoor(door);
+            if(objinfo == null)
+            {
+                Debug.Log("Problems");
+            }
             if (!objinfo.check)
             {   
                 //Debug.Log("Checking door: " + door.GetComponent<DoorScript>().room);
@@ -163,6 +170,7 @@ public class DoorTracker : MonoBehaviour {
         {
             if (objInfo.obj.Equals(door))
             {
+                //Debug.Log("Obj: " + objInfo.obj + " Check: " + objInfo.check);
                 return objInfo;
             }
         }
@@ -209,7 +217,7 @@ public class ObjectInfo
 
     public bool Equals(ObjectInfo temp)
     {
-        if (this.check == temp.check && this.obj.Equals(temp.obj))
+        if (check == temp.check && obj.Equals(temp.obj))
         {
             return true;
         }

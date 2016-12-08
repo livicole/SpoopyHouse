@@ -4508,7 +4508,7 @@ MonoBehaviour:
   doors: []
   amIConnected: 0
   height: 0
-  gridLocation: {x: 29, y: 0, z: 29}
+  gridLocation: {x: 24, y: 0, z: 24}
   rotation: 0
   copyRotationDifference: 0
   locked: 1
@@ -4527,7 +4527,7 @@ MonoBehaviour:
   - doors:
       north: 0
       east: 0
-      south: 0
+      south: 1
       west: 0
       northDoor: {fileID: 0}
       eastDoor: {fileID: 0}
@@ -6106,7 +6106,7 @@ MonoBehaviour:
   doors: []
   amIConnected: 0
   height: 0
-  gridLocation: {x: 25, y: 0, z: 26}
+  gridLocation: {x: 26, y: 0, z: 21}
   rotation: 0
   copyRotationDifference: 0
   locked: 1
@@ -8082,7 +8082,7 @@ MonoBehaviour:
   doors: []
   amIConnected: 0
   height: 0
-  gridLocation: {x: 32, y: 0, z: 26}
+  gridLocation: {x: 24, y: 0, z: 21}
   rotation: 0
   copyRotationDifference: 0
   locked: 1
@@ -9641,7 +9641,7 @@ MonoBehaviour:
   doors: []
   amIConnected: 0
   height: 0
-  gridLocation: {x: 27, y: 0, z: 32}
+  gridLocation: {x: 30, y: 0, z: 23}
   rotation: 0
   copyRotationDifference: 0
   locked: 1
@@ -14746,10 +14746,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1084167635}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
   m_LocalPosition: {x: -450, y: 0, z: -100}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
   m_Children:
   - {fileID: 375097601}
   m_Father: {fileID: 0}
@@ -14765,11 +14765,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff4760ce9369074e894edfcef14235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentRotation: 0
+  currentRotation: 3
   doors: []
   amIConnected: 0
   height: 0
-  gridLocation: {x: 27, y: 0, z: 30}
+  gridLocation: {x: 29, y: 0, z: 21}
   rotation: 0
   copyRotationDifference: 0
   locked: 1
@@ -14779,7 +14779,7 @@ MonoBehaviour:
       north: 0
       east: 0
       south: 0
-      west: 0
+      west: 1
       northDoor: {fileID: 0}
       eastDoor: {fileID: 0}
       southDoor: {fileID: 0}
@@ -14787,7 +14787,7 @@ MonoBehaviour:
     coordinateOccupied: {x: 0, y: 0, z: 0}
   - doors:
       north: 0
-      east: 1
+      east: 0
       south: 0
       west: 0
       northDoor: {fileID: 0}
@@ -14804,7 +14804,7 @@ MonoBehaviour:
       eastDoor: {fileID: 0}
       southDoor: {fileID: 0}
       westDoor: {fileID: 0}
-    coordinateOccupied: {x: 0, y: 0, z: 1}
+    coordinateOccupied: {x: 1, y: 0, z: 1}
   moveTick: 1
   rotationY: 0
   childLocked: 0
@@ -17335,7 +17335,7 @@ MonoBehaviour:
   doors: []
   amIConnected: 0
   height: 0
-  gridLocation: {x: 25, y: 0, z: 33}
+  gridLocation: {x: 25, y: 0, z: 27}
   rotation: 0
   copyRotationDifference: 0
   locked: 1
@@ -17830,11 +17830,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff4760ce9369074e894edfcef14235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentRotation: 0
+  currentRotation: 1
   doors: []
   amIConnected: 0
   height: 0
-  gridLocation: {x: 33, y: 0, z: 29}
+  gridLocation: {x: 21, y: 0, z: 24}
   rotation: 0
   copyRotationDifference: 0
   locked: 1
@@ -17843,13 +17843,13 @@ MonoBehaviour:
   - doors:
       north: 0
       east: 0
-      south: 0
-      west: 1
+      south: 1
+      west: 0
       northDoor: {fileID: 0}
       eastDoor: {fileID: 0}
       southDoor: {fileID: 0}
       westDoor: {fileID: 0}
-    coordinateOccupied: {x: 0, y: 0, z: 1}
+    coordinateOccupied: {x: 0, y: 0, z: 0}
   - doors:
       north: 0
       east: 0
@@ -17859,7 +17859,7 @@ MonoBehaviour:
       eastDoor: {fileID: 0}
       southDoor: {fileID: 0}
       westDoor: {fileID: 0}
-    coordinateOccupied: {x: 1, y: 0, z: 0}
+    coordinateOccupied: {x: 0, y: 0, z: 1}
   - doors:
       north: 0
       east: 0
@@ -17889,7 +17889,7 @@ MonoBehaviour:
       eastDoor: {fileID: 0}
       southDoor: {fileID: 0}
       westDoor: {fileID: 0}
-    coordinateOccupied: {x: 2, y: 0, z: 0}
+    coordinateOccupied: {x: 2, y: 0, z: 1}
   moveTick: 1
   rotationY: 0
   childLocked: 0
@@ -17903,10 +17903,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1231140439}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -450, y: 0, z: 100}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_Children:
   - {fileID: 1829157608}
   m_Father: {fileID: 0}
@@ -19646,11 +19646,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff4760ce9369074e894edfcef14235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentRotation: 1
+  currentRotation: 0
   doors: []
   amIConnected: 0
   height: 0
-  gridLocation: {x: 30, y: 0, z: 32}
+  gridLocation: {x: 27, y: 0, z: 23}
   rotation: 0
   copyRotationDifference: 0
   locked: 1
@@ -19659,13 +19659,13 @@ MonoBehaviour:
   - doors:
       north: 0
       east: 0
-      south: 1
-      west: 0
+      south: 0
+      west: 1
       northDoor: {fileID: 0}
       eastDoor: {fileID: 0}
       southDoor: {fileID: 0}
       westDoor: {fileID: 0}
-    coordinateOccupied: {x: 0, y: 0, z: 0}
+    coordinateOccupied: {x: 0, y: 0, z: 2}
   - doors:
       north: 0
       east: 0
@@ -19675,7 +19675,7 @@ MonoBehaviour:
       eastDoor: {fileID: 0}
       southDoor: {fileID: 0}
       westDoor: {fileID: 0}
-    coordinateOccupied: {x: 0, y: 0, z: 1}
+    coordinateOccupied: {x: 1, y: 0, z: 0}
   - doors:
       north: 0
       east: 0
@@ -19695,17 +19695,17 @@ MonoBehaviour:
       eastDoor: {fileID: 0}
       southDoor: {fileID: 0}
       westDoor: {fileID: 0}
-    coordinateOccupied: {x: 2, y: 0, z: 1}
+    coordinateOccupied: {x: 1, y: 0, z: 2}
   - doors:
-      north: 1
-      east: 0
+      north: 0
+      east: 1
       south: 0
       west: 0
       northDoor: {fileID: 0}
       eastDoor: {fileID: 0}
       southDoor: {fileID: 0}
       westDoor: {fileID: 0}
-    coordinateOccupied: {x: 2, y: 0, z: 2}
+    coordinateOccupied: {x: 2, y: 0, z: 0}
   moveTick: 1
   rotationY: 0
   childLocked: 0
@@ -19719,10 +19719,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1385769189}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -450, y: 0, z: -294.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 329668923}
   m_Father: {fileID: 0}
@@ -19976,7 +19976,7 @@ MonoBehaviour:
   doors: []
   amIConnected: 0
   height: 0
-  gridLocation: {x: 28, y: 0, z: 26}
+  gridLocation: {x: 25, y: 0, z: 20}
   rotation: 0
   copyRotationDifference: 0
   locked: 1
@@ -23618,7 +23618,7 @@ MonoBehaviour:
   doors: []
   amIConnected: 0
   height: 0
-  gridLocation: {x: 25, y: 0, z: 31}
+  gridLocation: {x: 25, y: 0, z: 22}
   rotation: 0
   copyRotationDifference: 0
   locked: 1
@@ -27486,11 +27486,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ff4760ce9369074e894edfcef14235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentRotation: 0
+  currentRotation: 2
   doors: []
   amIConnected: 0
   height: 0
-  gridLocation: {x: 29, y: 0, z: 26}
+  gridLocation: {x: 21, y: 0, z: 27}
   rotation: 0
   copyRotationDifference: 0
   locked: 1
@@ -27505,11 +27505,11 @@ MonoBehaviour:
       eastDoor: {fileID: 0}
       southDoor: {fileID: 0}
       westDoor: {fileID: 0}
-    coordinateOccupied: {x: 0, y: 0, z: 0}
+    coordinateOccupied: {x: 0, y: 0, z: 2}
   - doors:
       north: 0
       east: 0
-      south: 0
+      south: 1
       west: 0
       northDoor: {fileID: 0}
       eastDoor: {fileID: 0}
@@ -27527,7 +27527,7 @@ MonoBehaviour:
       westDoor: {fileID: 0}
     coordinateOccupied: {x: 1, y: 0, z: 1}
   - doors:
-      north: 1
+      north: 0
       east: 0
       south: 0
       west: 0
@@ -27545,7 +27545,7 @@ MonoBehaviour:
       eastDoor: {fileID: 0}
       southDoor: {fileID: 0}
       westDoor: {fileID: 0}
-    coordinateOccupied: {x: 2, y: 0, z: 1}
+    coordinateOccupied: {x: 2, y: 0, z: 2}
   moveTick: 1
   rotationY: 0
   childLocked: 0
@@ -27559,10 +27559,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1966448635}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -450, y: 0, z: 200}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_Children:
   - {fileID: 819309060}
   m_Father: {fileID: 0}
@@ -29549,9 +29549,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a06e8b8c9c14bc646b96eb2e758244a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridSize: 60
+  gridSize: 50
   blockLength: 10
-  gridMax: 60
+  gridMax: 50
   gridMin: 0
   moveTick: 0.2
 --- !u!1001 &2095304263
@@ -29705,7 +29705,7 @@ MonoBehaviour:
   doors: []
   amIConnected: 0
   height: 0
-  gridLocation: {x: 32, y: 0, z: 30}
+  gridLocation: {x: 25, y: 0, z: 21}
   rotation: 0
   copyRotationDifference: 0
   locked: 1

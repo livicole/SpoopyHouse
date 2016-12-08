@@ -222,13 +222,9 @@ public class DoorScript : MonoBehaviour {
        
     }
 
-  
-
-
-
     public void ResetDoors()
     {
-       // Debug.Log("Resetting: " + transform.name);
+        //Debug.Log("Resetting: " + transform.name);
         ResetOtherDoor();
         ResetThisDoor();
     }
