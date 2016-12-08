@@ -20,6 +20,17 @@ ModelImporter:
     100024: Pillow_R
     100026: Side_L
     100028: Side_R
+    100030: Bottom 1
+    100032: Couch
+    100034: transform1
+    100036: transform2
+    100038: transform3
+    100040: transform4
+    100042: transform5
+    100044: transform6
+    100046: transform7
+    100048: transform8
+    100050: transform9
     400000: Back
     400002: Blanket
     400004: Blanket1
@@ -35,6 +46,17 @@ ModelImporter:
     400024: Pillow_R
     400026: Side_L
     400028: Side_R
+    400030: Bottom 1
+    400032: Couch
+    400034: transform1
+    400036: transform2
+    400038: transform3
+    400040: transform4
+    400042: transform5
+    400044: transform6
+    400046: transform7
+    400048: transform8
+    400050: transform9
     2300000: Back
     2300002: Blanket
     2300004: Blanket1
