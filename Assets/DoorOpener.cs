@@ -63,12 +63,13 @@ public class DoorOpener : MonoBehaviour {
         {
 			//Debug.Log ("press");
 		
-			Ray rayToPlayer = new Ray(transform.position, flashlight.transform.position - transform.position);
+			Ray rayToPlayer = new Ray(flashlight.transform.position, flashlight.transform.forward);
             RaycastHit rayHitToPlayer = new RaycastHit();
 
             if (Physics.Raycast(rayToPlayer, out rayHitToPlayer))
             {
-				if (rayHitToPlayer.collider.name == "ChildPlayer" && Vector3.Distance (flashlight.transform.position, transform.position) <= 3f) {
+                //Debug.Log(rayHitToPlayer.collider.name);
+				if (rayHitToPlayer.collider.name == "DoorHinge" && Vector3.Distance (flashlight.transform.position, transform.position) <= 3f) {
 					open = !open;
 					if (open) {
                         opening = true;
