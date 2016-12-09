@@ -30,7 +30,7 @@ public class GhostCameraController : MonoBehaviour {
         zMax = (gridInfo.gridSize + 1) * gridInfo.blockLength;
 
         //Debug.Log(zoomedOutCenter);
-        transform.position = zoomedOutCenter;
+        SetZoom(CamZoom.Far);
         midZoom = (zoomMax - zoomMin) / 2 + zoomMin;
         closeZoom = zoomMin;
 	}
@@ -54,6 +54,8 @@ public class GhostCameraController : MonoBehaviour {
             }
             if (timer <= 0)
             {
+                //For Olivia:
+                //Zooms in the camera, jumping steps, until it reaches the closest part.
                 if (Input.GetAxisRaw("GhostLeftTrigger") != 0)
                 {
                     if (!isLeftTriggerInUse)
@@ -128,18 +130,21 @@ public class GhostCameraController : MonoBehaviour {
         {
             transform.position = zoomedOutCenter;
             panSpeed = 50f;
+            GetComponent<Camera>().orthographicSize = zoomMax;
             return true;
         }
         else if(zoom == CamZoom.Mid)
         {
             transform.position = new Vector3(transform.position.x, midZoom, transform.position.z);
             panSpeed = 30f;
+            GetComponent<Camera>().orthographicSize = midZoom;
             return true;
         }
         else if(zoom == CamZoom.Close)
         {
             transform.position = new Vector3(transform.position.x, closeZoom, transform.position.z);
             panSpeed = 10f;
+            GetComponent<Camera>().orthographicSize = zoomMin;
             return true;
         }
         return false;

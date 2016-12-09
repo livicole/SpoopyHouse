@@ -31,7 +31,7 @@ public class LockToyScript : MonoBehaviour {
             if (myObject.tag == "Door")
             {
                 //Debug.Log(myObject.name);
-                myObject.GetComponent<DoorScript>().LockDoor();
+                //myObject.GetComponent<DoorScript>().LockDoor();
             }
         }
     }
@@ -42,7 +42,7 @@ public class LockToyScript : MonoBehaviour {
         {
             if (myObject.tag == "Door")
             {
-                myObject.GetComponent<DoorScript>().ResetDoor();
+                //myObject.GetComponent<DoorScript>().ResetDoor();
             }
         }
     }

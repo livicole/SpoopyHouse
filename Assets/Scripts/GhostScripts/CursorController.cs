@@ -49,6 +49,7 @@ public class CursorController : MonoBehaviour {
     [SerializeField]
     List<Transform> Actions;**/
     private bool holding = false, destroyable = false;
+    public bool connectable = true;
     [HideInInspector]
     public Transform holdingObject;
     private int previousLayer;
@@ -315,7 +316,6 @@ public class CursorController : MonoBehaviour {
                     holdingRoom = true;
                    
                     holdingObject = selectedRoom.GetComponent<GridLocker>().CreateInvisibleOverlay(placeholder);
-
                     holdingObject.GetComponent<GridLocker>().gridLocation = selectedRoom.GetComponent<GridLocker>().gridLocation;
                     selectedRoom.GetComponent<GridLocker>().moving = true;
                   
@@ -329,42 +329,70 @@ public class CursorController : MonoBehaviour {
             if (holdingObject != null)
             {
                 //holdingObject.GetComponent<GridLocker>().height -= 10f;
-                selectedRoom.GetComponent<GridLocker>().moving = false;
-                if (selectedRoom.GetComponent<GridLocker>().amIConnected)
+                //selectedRoom.GetComponent<GridLocker>().moving = false;
+                if (holdingObject.GetComponent<GridLocker>().amIConnected)
                 {
-                    Debug.Log("Moving room is connected.");
+                    //  Debug.Log("Moving room is connected.");
                 }
                 else
                 {
-                    Debug.Log("Moving room is not connected.");
+                    //Debug.Log("Moving room is not connected.");
+                }
+
+                gameManager.GetComponent<DoorTracker>().DisableRoomDoors(selectedRoom);
+                gameManager.GetComponent<DoorTracker>().ReplaceRoomInData(selectedRoom, holdingObject);
+                //selectedRoom.GetComponent<GridLocker>()
+                bool connected = gameManager.GetComponent<DoorTracker>().AreAllRoomsConnected();
+                bool viableLocation = holdingObject.GetComponent<GridLocker>().isViableLocation();
+                
+                foreach (Transform myDoor in holdingObject.GetComponent<GridLocker>().doors)
+                {
+                    Destroy(myDoor.GetComponent<DoorScript>().myDoorUI);
+                    Destroy(myDoor.gameObject);
+                }
+                foreach (CoordinateInfo coordInfo in holdingObject.GetComponent<GridLocker>().coordinatesOccupied)
+                {
+                    gridBase.GetComponent<GridInfo>().RemoveBlock(coordInfo.coordinateOccupied + holdingObject.GetComponent<GridLocker>().gridLocation, holdingObject);
+                }
+                //Should check for connected but changed for temp runnability
+                if (viableLocation && connected)
+                {
+                    selectedRoom.GetComponent<GridLocker>().SetLocation(holdingObject);
+                    //Debug.Log(holdingObject.GetComponent<GridLocker>().gridLocation + " " + holdingObject.transform.eulerAngles);
                 }
                
-                if (!gameManager.GetComponent<DoorTracker>().AreAllRoomsConnected())
-                {
-                   
-                    selectedRoom.GetComponent<GridLocker>().ResetLocation();
-                   
-                    foreach (Transform myDoor in holdingObject.transform.GetChild(0))
-                    {
-                        if (myDoor.tag == "Door")
-                        {
-
-                            myDoor.GetComponent<DoorScript>().ResetDoor();
-                        }
-                    }
-                }
-                gameManager.GetComponent<DoorTracker>().ResetAllBools();
+                gameManager.GetComponent<DoorTracker>().EnableRoomDoors(selectedRoom);
+                selectedRoom.GetComponent<GridLocker>().moving = false;
+               
+             
+                //Removing it to get working with no doors
+                gameManager.GetComponent<DoorTracker>().ReplaceRoomInData(holdingObject, selectedRoom);
                 
+                connectable = false;
+                //selectedRoom.GetComponent<GridLocker>().ConnectAllDoors();
+                connectable = true;
+                Destroy(holdingObject.gameObject);
+                gameManager.GetComponent<DoorTracker>().ResetAllBools();
+                //ResetAllDoors();
                 holdingRoom = false;
                 holdingObject = null;
                 selectedRoom = null;
+                //gameManager.GetComponent<DoorTracker>().ConnectAllDoors();
             }
         }
 
-        if (holdingRoom)
+        if (holdingRoom && holdingObject != null)
         {
             //Debug.Log("Holding the room.");
             GetComponent<Image>().enabled = false;
+            Vector3 cursorPosition = ghostCam.WorldToScreenPoint(holdingObject.position);
+            Vector3 correction = new Vector3(
+                holdingObject.GetComponent<GridLocker>().GetDimensions().x * gridBase.GetComponent<GridInfo>().blockLength,
+                holdingObject.GetComponent<GridLocker>().GetDimensions().y * gridBase.GetComponent<GridInfo>().blockLength,
+                0
+                );
+            cursorPosition += correction;
+            transform.position = cursorPosition;
             
             Vector3 directionToMove;
             //Read in left stick input. If it moves record it. If both X and Y are used, then set Y to 0 and assume using X.
@@ -380,16 +408,17 @@ public class CursorController : MonoBehaviour {
             {
                 directionToMove = new Vector3(roundedX, 0, roundedY);
                 //Debug.Log("Moving the room! Direction: " + directionToMove);
-                holdingObject.GetComponent<GridLocker>().MoveDirectionNoCheck(directionToMove);
-
-                foreach (Transform myDoor in holdingObject.transform.GetChild(0))
+                if(holdingObject == null)
                 {
-                    if (myDoor.tag == "Door")
-                    {
-
-                        myDoor.GetComponent<DoorScript>().ResetDoor();
-                    }
+                    Debug.Log("BADDDDDD");
                 }
+                else
+                {
+                    holdingObject.GetComponent<GridLocker>().MoveDirectionNoCheck(directionToMove);
+                }
+                //All doors should be disabled for this build
+                ResetAllDoors();
+                gameManager.GetComponent<DoorTracker>().ConnectAllDoors();
             }
             if (rotateTimer >= rotateCD)
             {
@@ -398,37 +427,23 @@ public class CursorController : MonoBehaviour {
                    
                     holdingObject.GetComponent<GridLocker>().ClearOldBlocks();
                     holdingObject.GetComponent<GridLocker>().UpdateCoordinates(holdingObject.GetComponent<GridLocker>().rotationY -90f);
+                    holdingObject.GetComponent<GridLocker>().RotateCCW();
+                   
                     //Debug.Log(holdingObject.GetComponent<GridLocker>().rotationY - 90f);
                     holdingObject.GetComponent<GridLocker>().UpdateNewBlocks();
                         //holdingObject.GetChild(0).transform.eulerAngles += new Vector3(0, -90, 0);
                         rotateTimer = 0;
-                    foreach (Transform myDoor in holdingObject.transform.GetChild(0))
-                    {
-                        if (myDoor.tag == "Door")
-                        {
-
-                            myDoor.GetComponent<DoorScript>().ResetDoor();
-                        }
-                    }
-
                 }
                 if (Input.GetButtonDown("GhostRightBumper"))
                 {
                    
                     holdingObject.GetComponent<GridLocker>().ClearOldBlocks();
                     holdingObject.GetComponent<GridLocker>().UpdateCoordinates(holdingObject.GetComponent<GridLocker>().rotationY + 90);
+                    holdingObject.GetComponent<GridLocker>().RotateCW();
+
                     holdingObject.GetComponent<GridLocker>().UpdateNewBlocks();
                     //holdingObject.GetChild(0).transform.eulerAngles += new Vector3(0, 90, 0);
                     rotateTimer = 0;
-                    foreach (Transform myDoor in holdingObject.transform.GetChild(0))
-                    {
-                        if (myDoor.tag == "Door")
-                        {
-
-                            myDoor.GetComponent<DoorScript>().ResetDoor();
-                            Debug.Log(myDoor.name);
-                        }
-                    }
 
                 }
             }
@@ -564,6 +579,15 @@ public class CursorController : MonoBehaviour {
         for(int i = 0; i < ghostToys.Count; i++)
         {
             ghostToys[i].timer = cooldown;
+        }
+    }
+
+    public void ResetAllDoors()
+    {
+        foreach (ObjectInfo objInfo in gameManager.GetComponent<DoorTracker>().doors)
+        {
+            objInfo.obj.GetComponent<DoorScript>().ResetDoors();
+            //objInfo.obj.GetComponent<DoorScript>().ConnectDoors();
         }
     }
 }
