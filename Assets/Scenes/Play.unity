@@ -356,10 +356,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 17
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 3
     m_AlignByGeometry: 0
@@ -711,26 +711,6 @@ RectTransform:
   m_AnchoredPosition: {x: -107, y: 4}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &538558899 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000010484310298, guid: acb762877b35d134ca4bdf0e951b74f0,
-    type: 2}
-  m_PrefabInternal: {fileID: 800827743}
---- !u!114 &538558901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 538558899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24bf60eacf36d7d418f845834796f190, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotateAmount: 1.5
-  soundManager: {fileID: 1229664538}
-  tickSound: {fileID: 8300000, guid: 8c29a28c013b96348badb113d4aadd3a, type: 3}
-  tockSound: {fileID: 8300000, guid: e304fa57cf26c204a9f6f14abb287cda, type: 3}
 --- !u!1 &565715554
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,56 +792,45 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4000013704900360, guid: acb762877b35d134ca4bdf0e951b74f0, type: 2}
+    - target: {fileID: 4000011514094048, guid: 8569f592a9a9eb34ba1cb485913bcc4a, type: 2}
       propertyPath: m_LocalPosition.x
       value: 217.5
       objectReference: {fileID: 0}
-    - target: {fileID: 4000013704900360, guid: acb762877b35d134ca4bdf0e951b74f0, type: 2}
+    - target: {fileID: 4000011514094048, guid: 8569f592a9a9eb34ba1cb485913bcc4a, type: 2}
       propertyPath: m_LocalPosition.y
       value: 32.6
       objectReference: {fileID: 0}
-    - target: {fileID: 4000013704900360, guid: acb762877b35d134ca4bdf0e951b74f0, type: 2}
+    - target: {fileID: 4000011514094048, guid: 8569f592a9a9eb34ba1cb485913bcc4a, type: 2}
       propertyPath: m_LocalPosition.z
       value: -127.3
       objectReference: {fileID: 0}
-    - target: {fileID: 4000013704900360, guid: acb762877b35d134ca4bdf0e951b74f0, type: 2}
+    - target: {fileID: 4000011514094048, guid: 8569f592a9a9eb34ba1cb485913bcc4a, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4000013704900360, guid: acb762877b35d134ca4bdf0e951b74f0, type: 2}
+    - target: {fileID: 4000011514094048, guid: 8569f592a9a9eb34ba1cb485913bcc4a, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.976296
+      value: 0.97629607
       objectReference: {fileID: 0}
-    - target: {fileID: 4000013704900360, guid: acb762877b35d134ca4bdf0e951b74f0, type: 2}
+    - target: {fileID: 4000011514094048, guid: 8569f592a9a9eb34ba1cb485913bcc4a, type: 2}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4000013704900360, guid: acb762877b35d134ca4bdf0e951b74f0, type: 2}
+    - target: {fileID: 4000011514094048, guid: 8569f592a9a9eb34ba1cb485913bcc4a, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -0.21643949
+      value: -0.2164395
       objectReference: {fileID: 0}
-    - target: {fileID: 4000013704900360, guid: acb762877b35d134ca4bdf0e951b74f0, type: 2}
+    - target: {fileID: 4000011514094048, guid: 8569f592a9a9eb34ba1cb485913bcc4a, type: 2}
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 4000013704900360, guid: acb762877b35d134ca4bdf0e951b74f0, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 9.253873
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000013704900360, guid: acb762877b35d134ca4bdf0e951b74f0, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 9.23536
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000013704900360, guid: acb762877b35d134ca4bdf0e951b74f0, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 9.253873
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000013704900360, guid: acb762877b35d134ca4bdf0e951b74f0, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 205
-      objectReference: {fileID: 0}
+    - target: {fileID: 114000013266199086, guid: 8569f592a9a9eb34ba1cb485913bcc4a,
+        type: 2}
+      propertyPath: soundManager
+      value: 
+      objectReference: {fileID: 1229664538}
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: acb762877b35d134ca4bdf0e951b74f0, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 8569f592a9a9eb34ba1cb485913bcc4a, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &803845636
 GameObject:
@@ -2109,10 +2078,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 15
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 3
     m_AlignByGeometry: 0
@@ -2233,7 +2202,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 15
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 1
@@ -2307,10 +2276,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 15
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 3
     m_AlignByGeometry: 0
@@ -2505,7 +2474,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 18
+    m_FontSize: 13
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 1
@@ -2623,7 +2592,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 97c6a85b847fbc4408d3f3ef938a9a5a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d05bb21ff212cf446a81850c23a5a20d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

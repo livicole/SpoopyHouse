@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012260140198}
+  - 114: {fileID: 114000014054743316}
   m_Layer: 0
   m_Name: clock_Hand
   m_TagString: Untagged
@@ -282,3 +283,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.8782177, y: 10.4007, z: 1.1906494}
   m_Center: {x: 0.009999754, y: 5.096114, z: 0.18042238}
+--- !u!114 &114000014054743316
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010484310298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1be9c8bdbd508e4489a1cb77801b3f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateAmount: 1.5
