@@ -14,13 +14,30 @@ public class KeyItemPickUp : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		Ray keyItemRay = new Ray (flashlight.position, flashlight.forward);
+		Ray keyItemRay = new Ray (this.transform.position, this.transform.forward);
 		RaycastHit rayHitInfo = new RaycastHit ();
-		if (Physics.Raycast (keyItemRay, out rayHitInfo, 5f)) {
-			if (rayHitInfo.collider.gameObject == this.gameObject) {
+		if (Physics.Raycast (keyItemRay, out rayHitInfo, 10f)) {
+			if (rayHitInfo.collider.gameObject == flashlight.gameObject) {
 				if (Input.GetButtonDown ("Use")) {
 					//inventoryObject.GetComponent<InventoryScript>().pickUp(forwardRayHit.collider.gameObject);
-					NewInventoryScript invScript = GameObject.Find("ChildPlayer").GetComponent<NewInventoryScript> ();
+					NewInventoryScript invScript = GameObject.Find("flashlightPlayer").GetComponent<NewInventoryScript> ();
+					if (this.gameObject.name == "NauthizItem") {
+						invScript.nauthCollected = true;
+					}
+					if (this.gameObject.name == "OthalaItem") {
+						invScript.othalCollected = true;
+					}
+					if (this.gameObject.name == "PerthroItem") {
+						invScript.perthCollected = true;
+					}
+					if (this.gameObject.name == "ThurisazItem") {
+						invScript.thuriCollected = true;
+					}
+					if (this.gameObject.name == "AlgizItem") {
+						invScript.algizCollected = true;
+
+					}
+
 					invScript.itemsCollected++;
 					this.gameObject.SetActive (false);
 				}
