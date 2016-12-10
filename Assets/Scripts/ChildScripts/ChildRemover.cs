@@ -59,18 +59,33 @@ public class ChildRemover : MonoBehaviour {
                             Destroy(forwardRayHit.collider.gameObject);
                             holdingLamp = true;
                         }
-                        else if(forwardRayHit.collider.gameObject.tag == "Battery")
-                        {
-                            Destroy(forwardRayHit.collider.gameObject);
-                            GameObject.Find("Flashlight").GetComponent<FlashlightController>().batteryCount++;
-                        }
-//                        else if (forwardRayHit.collider.gameObject.tag == "Item")
+//                        else if(forwardRayHit.collider.gameObject.tag == "Battery")
 //                        {
-//                            //inventoryObject.GetComponent<InventoryScript>().pickUp(forwardRayHit.collider.gameObject);
-//                            forwardRayHit.collider.gameObject.SetActive(false);
-//                            NewInventoryScript invScript = this.gameObject.GetComponent<NewInventoryScript>();
-//                            invScript.itemsCollected++;
+//                            Destroy(forwardRayHit.collider.gameObject);
+//                            GameObject.Find("Flashlight").GetComponent<FlashlightController>().batteryCount++;
 //                        }
+                        else if (forwardRayHit.collider.gameObject.tag == "Item")
+                        {
+                            //inventoryObject.GetComponent<InventoryScript>().pickUp(forwardRayHit.collider.gameObject);
+                            NewInventoryScript invScript = this.gameObject.GetComponent<NewInventoryScript>();
+                            invScript.itemsCollected++;
+							if (forwardRayHit.collider.gameObject.name == "NauthizItem") {
+								invScript.nauthCollected = true;
+							}
+							if (forwardRayHit.collider.gameObject.name == "OthalaItem") {
+								invScript.othalCollected = true;
+							}
+							if (forwardRayHit.collider.gameObject.name == "PerthroItem") {
+								invScript.perthCollected = true;
+							}
+							if (forwardRayHit.collider.gameObject.name == "ThurisazItem") {
+								invScript.thuriCollected = true;
+							}
+							if (forwardRayHit.collider.gameObject.name == "AlgizItem") {
+								invScript.algizCollected = true;
+							}
+							forwardRayHit.collider.gameObject.SetActive(false);
+                        }
 
                     }
                 }

@@ -7,7 +7,7 @@ public class Dresser : MonoBehaviour
 
 	private Animator dresserAnimator;
 	Transform flashlight; 
-	public AudioSource soundManager;
+	AudioSource soundManager;
 	public AudioClip drawerOpen, drawerClose;
 	Transform handCursor;
 
@@ -15,6 +15,7 @@ public class Dresser : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		soundManager = GameObject.Find ("SoundManager").GetComponent<AudioSource>();
 		handCursor = this.gameObject.GetComponent<Transform> ().Find ("Quad");
 		dresserAnimator = GetComponent<Animator> ();
         flashlight = GameObject.Find("Flashlight").transform;
