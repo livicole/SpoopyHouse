@@ -20,6 +20,7 @@ public class DoorOpener : MonoBehaviour {
 
 	AudioSource soundManager;
 	public AudioClip doorOpen, doorClose;
+	public AudioClip doorRattle;
 
 
 	// Use this for initialization
@@ -90,7 +91,7 @@ public class DoorOpener : MonoBehaviour {
             //When kid locks and tries to open it
             else
             {
-
+				soundManager.PlayOneShot (doorRattle, 1f);
             }
         }
         //Debug.Log(hinge.localEulerAngles.y);

@@ -199,7 +199,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012212429886}
-  m_Mesh: {fileID: 4300000, guid: 2b4ba72a3c40a3e4db35d77675bddfa0, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 811726cff2fa7db4fa1ed90f26d8fb33, type: 3}
 --- !u!33 &33000013203055594
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -261,10 +261,13 @@ MonoBehaviour:
   myDoorUI: {fileID: 0}
   otherDoor: {fileID: 0}
   isConnected: 0
+  firstConnect: 0
   isLive: 1
   location: 0
   coordinateOfDoor: {x: 0, y: 0, z: 0}
   room: {fileID: 0}
+  placeholder: 0
+  locked: 0
   doorUIprefab: {fileID: 0}
 --- !u!114 &114000012557973788
 MonoBehaviour:
@@ -278,5 +281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 45
+  autoCloseTimer: 0
   doorOpen: {fileID: 8300000, guid: 01b6f669f64f5984d861dc65f8d818ef, type: 3}
   doorClose: {fileID: 8300000, guid: f059249dd8203df46a30572004d73a9c, type: 3}
+  doorRattle: {fileID: 0}
