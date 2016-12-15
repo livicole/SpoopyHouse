@@ -66,7 +66,7 @@ public class SprayPaint : MonoBehaviour
                 if (sprayRayHit.collider.tag == "Walls")
                 {
                     ableToSpray = true;
-                    paintRemaining = paintRemaining - 0.1f;
+                    paintRemaining = paintRemaining - 0.05f;
                     if (paintRemaining < 0)
                     {
                         paintRemaining = 0;
