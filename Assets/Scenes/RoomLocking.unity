@@ -2832,6 +2832,9 @@ MonoBehaviour:
   destroyCooldown: 2
   holdingLamp: 1
   lamp: {fileID: 4000011784891852, guid: 4f84abdd3c52d97419e51e4e513a0c4b, type: 2}
+  soundManager: {fileID: 0}
+  chimeSound: {fileID: 0}
+  gameManager: {fileID: 0}
 --- !u!143 &101776731
 CharacterController:
   m_ObjectHideFlags: 0
@@ -20717,6 +20720,7 @@ GameObject:
   - 114: {fileID: 820539472}
   - 114: {fileID: 820539474}
   - 114: {fileID: 820539475}
+  - 114: {fileID: 820539476}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -20766,6 +20770,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rooms: []
+  OpenableDrawers: []
+  OpenableRightDoors: []
+  OpenableLeftDoors: []
   keyItem: {fileID: 1000014217443842, guid: ed16d34c4879ba146a4c795a005b9485, type: 2}
   gameIsLive: 1
   connection: 0
@@ -20784,6 +20791,24 @@ MonoBehaviour:
   doors: []
   rooms: []
   index: 0
+--- !u!114 &820539476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 820539471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 464bcb9061f51f744a7add42e3a06940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RuneTransform:
+  - {fileID: 4000012561536990, guid: d46dacfb05488fb41b912266b406efaf, type: 2}
+  - {fileID: 4000012379649384, guid: 4a82bbeb5a32a1e44a1bd2a6c49c2a6b, type: 2}
+  - {fileID: 4000013396657352, guid: c61d9d88d1a20334e9287aef18c80b07, type: 2}
+  - {fileID: 4000010298018220, guid: 14b87189fb8f59b46aec47977494c4b4, type: 2}
+  - {fileID: 4000010284000182, guid: 92f5d66b713680c41a0d0fe1e90b34ab, type: 2}
+  RuneUsed: 
 --- !u!1001 &824765265
 Prefab:
   m_ObjectHideFlags: 0
