@@ -61,25 +61,36 @@ public class DoorOpener : MonoBehaviour {
         //Debug.Log(transform.localEulerAngles.y + " " + closing);
         if (Input.GetButtonDown("Ghost Button A"))
         {
-			//Debug.Log ("press");
-		
-			Ray rayToPlayer = new Ray(flashlight.transform.position, flashlight.transform.forward);
-            RaycastHit rayHitToPlayer = new RaycastHit();
-
-            if (Physics.Raycast(rayToPlayer, out rayHitToPlayer))
+            if (!transform.parent.GetComponent<DoorScript>().locked)
             {
-                //Debug.Log(rayHitToPlayer.collider.name);
-				if (rayHitToPlayer.collider.name == "DoorHinge" && Vector3.Distance (flashlight.transform.position, transform.position) <= 3f) {
-					open = !open;
-					if (open) {
-                        opening = true;
-						soundManager.PlayOneShot (doorOpen, 1.0f);
-					} else {
-                        closing = true;
-						soundManager.PlayOneShot (doorClose, 1.0f);
-					}
-				}
-					
+                //Debug.Log ("press");
+
+                Ray rayToPlayer = new Ray(flashlight.transform.position, flashlight.transform.forward);
+                RaycastHit rayHitToPlayer = new RaycastHit();
+
+                if (Physics.Raycast(rayToPlayer, out rayHitToPlayer))
+                {
+                    //Debug.Log(rayHitToPlayer.collider.name);
+                    if (rayHitToPlayer.collider.name == "DoorHinge" && Vector3.Distance(flashlight.transform.position, transform.position) <= 3f)
+                    {
+                        open = !open;
+                        if (open)
+                        {
+                            opening = true;
+                            soundManager.PlayOneShot(doorOpen, 1.0f);
+                        }
+                        else {
+                            closing = true;
+                            soundManager.PlayOneShot(doorClose, 1.0f);
+                        }
+                    }
+
+                }
+            }
+            //When kid locks and tries to open it
+            else
+            {
+
             }
         }
         //Debug.Log(hinge.localEulerAngles.y);
