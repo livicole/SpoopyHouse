@@ -101,6 +101,16 @@ public class GameManager : MonoBehaviour {
         {
             OpenableDrawers[i].GetComponent<Dresser>().CheckAndTrigger();
         }
+
+        for(int i =0; i < OpenableLeftDoors.Length; i++)
+        {
+            OpenableLeftDoors[i].GetComponent<Closets>().CheckAndTrigger();
+        }
+
+        for(int i = 0; i < OpenableRightDoors.Length; i++)
+        {
+            OpenableRightDoors[i].GetComponent<Closets>().CheckAndTrigger();
+        }
     }
     
     /**
