@@ -22,7 +22,6 @@ GameObject:
   - 122: {fileID: 122000012622111606}
   - 65: {fileID: 65000012561908568}
   - 82: {fileID: 82000013070084300}
-  - 114: {fileID: 114000012558237082}
   m_Layer: 0
   m_Name: NauthizItem
   m_TagString: Item
@@ -86,7 +85,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010899229956}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -29.134636, y: -4.7189984, z: -10.631252}
+  m_LocalPosition: {x: -443.98495, y: 0.6542274, z: 162.39943}
   m_LocalScale: {x: 1.3348216, y: 1.3321522, z: 1.3348212}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -115,8 +114,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012558754374}
   m_LocalRotation: {x: 0.44223842, y: -0.55174744, z: 0.55174744, w: 0.44223842}
-  m_LocalPosition: {x: -0.0050256173, y: 8, z: 0.012819414}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 8, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_LocalEulerAnglesHint: {x: 89.981, y: 0, z: 102.283005}
   m_Children: []
   m_Father: {fileID: 4000012379649384}
@@ -191,14 +190,14 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1f3c4c2ac10d2aa418825d9f26b57189, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 752381089b79aab4090831f4123e8e31, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
-  Priority: 128
+  Priority: 96
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 25
@@ -211,27 +210,27 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 0.42172998
+      value: 0.90600663
       inSlope: -1.8346491
       outSlope: -1.8346491
       tangentMode: 0
-    - time: 0.11911384
-      value: 0.25822785
+    - time: 0.14715122
+      value: 0.47269326
       inSlope: -0.90083706
       outSlope: -0.90083706
       tangentMode: 0
-    - time: 0.25057662
-      value: 0.15274264
+    - time: 0.31599718
+      value: 0.24959797
       inSlope: -1.0250082
       outSlope: -1.0250082
       tangentMode: 0
-    - time: 0.45329446
-      value: 0.058333352
-      inSlope: -0.2860566
-      outSlope: -0.2860566
+    - time: 0.4860047
+      value: 0.1205975
+      inSlope: -0.6401536
+      outSlope: -0.6401536
       tangentMode: 0
-    - time: 0.7579775
-      value: 0.016666668
+    - time: 0.79068774
+      value: 0.04433962
       inSlope: -0.20923753
       outSlope: -0.20923753
       tangentMode: 0
@@ -276,17 +275,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114000012558237082
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010899229956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2a258d362da04c4ba1979684aa694bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!122 &122000012622111606
 Halo:
   m_ObjectHideFlags: 1
@@ -296,8 +284,8 @@ Halo:
   m_Enabled: 1
   m_Color:
     serializedVersion: 2
-    rgba: 4280295642
-  m_Size: 0.2
+    rgba: 3222738842
+  m_Size: 0.15
 --- !u!212 &212000011219607244
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -328,7 +316,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fd570b992e81b6f4c998434a37d8c12f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7529412}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!212 &212000012821481574

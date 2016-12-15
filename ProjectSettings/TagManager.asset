@@ -18,6 +18,8 @@ TagManager:
   - leftDoor
   - sprayPaint
   - Walls
+  - rightQuad
+  - leftQuad
   layers:
   - Default
   - TransparentFX
