@@ -24,6 +24,7 @@ public class DoorScript : MonoBehaviour {
     public Vector3 coordinateOfDoor;
     public Transform room;
     public bool placeholder = false;
+    public bool locked;
 
     float doorAdjusment = 1.98f;
 
@@ -76,6 +77,14 @@ public class DoorScript : MonoBehaviour {
         {
             ConnectDoors();
             firstConnect = true;
+        }
+        if(otherDoor != null)
+        {
+            locked = false;
+        }
+        else
+        {
+            locked = true;
         }
     }
 
@@ -314,18 +323,6 @@ public class DoorScript : MonoBehaviour {
         }
         else { //Debug.Log("Nothing else to reset. Called from : " + transform.name); 
         }
-    }
-
-    public void LockDoor()
-    {
-        transform.GetChild(1).transform.localPosition = originalOrientation;
-        transform.GetChild(1).transform.localRotation = Quaternion.Euler(originalRotation);
-        transform.GetChild(1).GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-
-
-        otherDoor.transform.GetChild(1).transform.localPosition = originalOrientation;
-        transform.GetChild(1).transform.localRotation = Quaternion.Euler(originalRotation);
-        otherDoor.transform.GetChild(1).GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
     }
 
     public void DisableDoor()
