@@ -8698,7 +8698,7 @@ AudioSource:
   Loop: 1
   Mute: 0
   Spatialize: 0
-  Priority: 128
+  Priority: 101
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -18160,7 +18160,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013323935714, guid: 44572ecfe0db3f5438924d30c4f66031, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.24260736
+      value: 0.24260734
       objectReference: {fileID: 0}
     - target: {fileID: 4000013323935714, guid: 44572ecfe0db3f5438924d30c4f66031, type: 2}
       propertyPath: m_RootOrder
@@ -26166,7 +26166,7 @@ RectTransform:
   m_RootOrder: 19
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 353.1, y: 202.2}
+  m_AnchoredPosition: {x: 353.1, y: 152.2}
   m_SizeDelta: {x: 12, y: 22}
   m_Pivot: {x: 0.5, y: 0.03}
 --- !u!114 &1014522035
@@ -35178,7 +35178,7 @@ Prefab:
     - target: {fileID: 114000011830859736, guid: e836332dfa558844481412d48ee3cc3f,
         type: 2}
       propertyPath: zoomMin
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 114000011830859736, guid: e836332dfa558844481412d48ee3cc3f,
         type: 2}
@@ -48002,22 +48002,6 @@ Prefab:
     - target: {fileID: 1000010588544910, guid: e57baebe1f45d494ba214711e0553235, type: 2}
       propertyPath: m_Name
       value: bookcase (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012890330448, guid: e57baebe1f45d494ba214711e0553235, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012890330448, guid: e57baebe1f45d494ba214711e0553235, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.0010039
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012890330448, guid: e57baebe1f45d494ba214711e0553235, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1.0010039
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012890330448, guid: e57baebe1f45d494ba214711e0553235, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1.2000002
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e57baebe1f45d494ba214711e0553235, type: 2}

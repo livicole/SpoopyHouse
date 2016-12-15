@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
-using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 
 public class GridLocker : MonoBehaviour {
@@ -1032,7 +1034,7 @@ public class DoorLocation
     public Transform northDoor, eastDoor, southDoor, westDoor;
 }
 
-
+#if UNITY_EDITOR
 //CoordinateInfo Drawer for Inspector
 [CustomPropertyDrawer(typeof(CoordinateInfo))]
 public class CoordinateInfoDrawer : PropertyDrawer
@@ -1071,7 +1073,9 @@ public class CoordinateInfoDrawer : PropertyDrawer
         return base.GetPropertyHeight(property, label) + extraHeight;
     }
 }
+#endif
 
+#if UNITY_EDITOR
 //DoorLocation Drawer for Inspector
 [CustomPropertyDrawer (typeof(DoorLocation))]
 public class DoorLocationDrawer : PropertyDrawer
@@ -1106,4 +1110,5 @@ public class DoorLocationDrawer : PropertyDrawer
         EditorGUI.EndProperty();
     }
 }
+#endif
 
