@@ -46,10 +46,18 @@ public class GameManager : MonoBehaviour {
                         if (findChild.name == "KeyItemSpawns")
                         {
 
-
                             int useSpawnNumber = Random.Range(0, findChild.childCount);
                             GameObject newKeyItem = Instantiate(runes[roomsFound], findChild.GetChild(useSpawnNumber).position, Quaternion.identity) as GameObject;
-                            newKeyItem.transform.SetParent(findChild.GetChild(useSpawnNumber));
+
+                            if (findChild.GetChild(useSpawnNumber).GetComponent<ItemInADrawer>() != null)
+                            {
+                                Debug.Log("im in a drawer");
+                                newKeyItem.transform.SetParent(findChild.GetChild(useSpawnNumber).GetComponent<ItemInADrawer>().drawer);
+                            }
+                            else
+                            {
+                                newKeyItem.transform.SetParent(findChild.GetChild(useSpawnNumber));
+                            }
                             
                         }
                     }
