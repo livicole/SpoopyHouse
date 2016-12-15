@@ -7,6 +7,7 @@ public class DoorUIScript : MonoBehaviour {
     public GameObject myDoor;
     [HideInInspector]
     public bool overrideOtherUI = false;
+    bool retrievedBool = false;
 
 	// Use this for initialization
 	void Start () {
@@ -17,10 +18,18 @@ public class DoorUIScript : MonoBehaviour {
 	void Update () {
         if(myDoor == null)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
         else
         {
+            //Retrive the bool only once. No need to continuosly retrive it (optimization)
+            if(!retrievedBool)
+            {
+                overrideOtherUI = myDoor.GetComponent<DoorScript>().placeholder;
+                retrievedBool = true;
+            }
+            
+            //Override causes the UI to be above the other UI around it. Giving it priority for the GhostCam
             if (!overrideOtherUI)
             {
 
@@ -30,10 +39,18 @@ public class DoorUIScript : MonoBehaviour {
             {
                 transform.position = new Vector3(myDoor.transform.position.x, 14f, myDoor.transform.position.z);
             }
+
+            //Alligning the rotation to its door's rotation
             transform.rotation = myDoor.transform.rotation;
+
+            //As long as we have a door, either make it yellow because it is a placeholder door, green because it is connected, or red because it isn't connected
             if (myDoor != null)
             {
-                if (myDoor.GetComponent<DoorScript>().otherDoor != null)
+                if (overrideOtherUI)
+                {
+                    GetComponent<Renderer>().material.color = Color.yellow;
+                }
+                else if (myDoor.GetComponent<DoorScript>().otherDoor != null)
                 {
                     GetComponent<Renderer>().material.color = Color.green;
                 }

@@ -318,6 +318,7 @@ public class CursorController : MonoBehaviour {
                     holdingObject = selectedRoom.GetComponent<GridLocker>().CreateInvisibleOverlay(placeholder);
                     holdingObject.GetComponent<GridLocker>().gridLocation = selectedRoom.GetComponent<GridLocker>().gridLocation;
                     selectedRoom.GetComponent<GridLocker>().moving = true;
+                    
                   
                     //selectedRoom.GetComponent<GridLocker>().CreateInvisibleOverlay(placeholder);
                 }
@@ -330,18 +331,11 @@ public class CursorController : MonoBehaviour {
             {
                 //holdingObject.GetComponent<GridLocker>().height -= 10f;
                 //selectedRoom.GetComponent<GridLocker>().moving = false;
-                if (holdingObject.GetComponent<GridLocker>().amIConnected)
-                {
-                    //  Debug.Log("Moving room is connected.");
-                }
-                else
-                {
-                    //Debug.Log("Moving room is not connected.");
-                }
 
                 gameManager.GetComponent<DoorTracker>().DisableRoomDoors(selectedRoom);
                 gameManager.GetComponent<DoorTracker>().ReplaceRoomInData(selectedRoom, holdingObject);
                 //selectedRoom.GetComponent<GridLocker>()
+                holdingObject.GetComponent<GridLocker>().ConnectAllDoors();
                 bool connected = gameManager.GetComponent<DoorTracker>().AreAllRoomsConnected();
                 bool viableLocation = holdingObject.GetComponent<GridLocker>().isViableLocation();
                 
@@ -357,7 +351,10 @@ public class CursorController : MonoBehaviour {
                 //Should check for connected but changed for temp runnability
                 if (viableLocation && connected)
                 {
+                    //holdingObject.GetComponent<GridLocker>().ResetAllDoors();
+                   
                     selectedRoom.GetComponent<GridLocker>().SetLocation(holdingObject);
+                    selectedRoom.GetComponent<GridLocker>().ResetAllDoors();
                     //Debug.Log(holdingObject.GetComponent<GridLocker>().gridLocation + " " + holdingObject.transform.eulerAngles);
                 }
                
@@ -374,6 +371,7 @@ public class CursorController : MonoBehaviour {
                 Destroy(holdingObject.gameObject);
                 gameManager.GetComponent<DoorTracker>().ResetAllBools();
                 //ResetAllDoors();
+               
                 holdingRoom = false;
                 holdingObject = null;
                 selectedRoom = null;
@@ -480,8 +478,16 @@ public class CursorController : MonoBehaviour {
                 {
                     if (ghostToys[selector].timer <= 0)
                     {
-                        Vector3 targetSpawn = verticalRayHit.point + new Vector3(0, 2, 0);
-                        Instantiate(ghostToys[selector].toy, targetSpawn, Quaternion.identity);
+                        
+                        Transform toyModel = GetComponent<RandomToyModelSelector>().getRandomModel();
+                        Vector3 targetSpawn = verticalRayHit.point;
+                        targetSpawn.y = toyModel.position.y;
+                        Transform toy = Instantiate(ghostToys[selector].toyObject, targetSpawn, Quaternion.identity) as Transform;
+                        Transform model = Instantiate(toyModel, targetSpawn, toyModel.rotation) as Transform;
+                        model.transform.parent = toy.transform;
+                        toy.gameObject.AddComponent<ShakeTimer>();
+                      
+                        //Instantiate(ghostToys[selector].toy, targetSpawn, Quaternion.identity);
                         //Debug.Log(ghostToys[selector].cooldown);
                         SetAllCooldown(ghostToys[selector].cooldown/(itemsCollected + 1));
                     }
@@ -595,7 +601,7 @@ public class CursorController : MonoBehaviour {
 [Serializable]
 public class ToyIndex
 {
-    public Transform toy;
+    public Transform toyObject;
     public float cooldown;
     public float timer = 0;
     public AudioClip spawnSound;

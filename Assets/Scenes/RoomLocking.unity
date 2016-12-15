@@ -916,8 +916,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 101776724}
   m_LocalRotation: {x: -0, y: 0.6798789, z: -0, w: 0.73332447}
-  m_LocalPosition: {x: -449.53, y: 2.09, z: 165}
-  m_LocalScale: {x: 1, y: 1.2, z: 1}
+  m_LocalPosition: {x: -441.32367, y: 2.09, z: 165}
+  m_LocalScale: {x: 1, y: 1.3, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1997690103}
@@ -2076,11 +2076,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4000012730378024, guid: 05fb2abd32fb9c04bac14f350a83ec29,
     type: 2}
   m_PrefabInternal: {fileID: 69280954}
---- !u!4 &74865615 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4000011805478494, guid: 05fb2abd32fb9c04bac14f350a83ec29,
-    type: 2}
-  m_PrefabInternal: {fileID: 551681931}
 --- !u!1001 &74902842
 Prefab:
   m_ObjectHideFlags: 0
@@ -2837,6 +2832,8 @@ MonoBehaviour:
   destroyCooldown: 2
   holdingLamp: 1
   lamp: {fileID: 0}
+  soundManager: {fileID: 1426151369}
+  chimeSound: {fileID: 8300000, guid: 5f239eb6fd03b88429e04af422793287, type: 3}
 --- !u!143 &101776731
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2867,7 +2864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f24a13725baea544ba57d36f00601db8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkingSpeed: 0.2
+  walkingSpeed: 0.1
   sensitivity: 2
   invert: 0
   walkingSound: {fileID: 101776727}
@@ -7599,7 +7596,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 272163069}
-  - 114: {fileID: 272163070}
   m_Layer: 14
   m_Name: Spawn4
   m_TagString: Untagged
@@ -7614,24 +7610,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 272163068}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3673, y: -0.267, z: -0.4554}
+  m_LocalPosition: {x: 0.3673, y: -0.3948, z: -0.4193}
   m_LocalScale: {x: 1, y: 1.0000002, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 57067277}
   m_RootOrder: 3
---- !u!114 &272163070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 272163068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2276af0166a33a04586636d986d62603, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drawer: {fileID: 74865615}
 --- !u!1 &274418807 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000011398017652, guid: d0d46125eb51a9f4493d09b25cc3aa79,
@@ -8074,6 +8058,7 @@ MonoBehaviour:
   connectedDoors: []
   doorCount: 0
   copyOf: {fileID: 0}
+  doorAdjustment: 1.98
 --- !u!4 &295393964
 Transform:
   m_ObjectHideFlags: 0
@@ -8661,7 +8646,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5f5e37f866ce0b9448134d3fa9c2c0cd, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -10638,6 +10623,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 57
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013702355564, guid: 05fb2abd32fb9c04bac14f350a83ec29,
+        type: 2}
+      propertyPath: soundManager
+      value: 
+      objectReference: {fileID: 1426151369}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 05fb2abd32fb9c04bac14f350a83ec29, type: 2}
   m_IsPrefabParent: 0
@@ -10880,6 +10870,7 @@ MonoBehaviour:
   connectedDoors: []
   doorCount: 0
   copyOf: {fileID: 0}
+  doorAdjustment: 1.98
 --- !u!4 &379146590
 Transform:
   m_ObjectHideFlags: 0
@@ -14860,6 +14851,7 @@ MonoBehaviour:
   connectedDoors: []
   doorCount: 0
   copyOf: {fileID: 0}
+  doorAdjustment: 1.98
 --- !u!4 &578644977
 Transform:
   m_ObjectHideFlags: 0
@@ -17636,6 +17628,7 @@ MonoBehaviour:
   connectedDoors: []
   doorCount: 0
   copyOf: {fileID: 0}
+  doorAdjustment: 1.98
 --- !u!1001 &694727344
 Prefab:
   m_ObjectHideFlags: 0
@@ -18095,19 +18088,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013323935714, guid: 44572ecfe0db3f5438924d30c4f66031, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.6563825
+      value: -0.65638244
       objectReference: {fileID: 0}
     - target: {fileID: 4000013323935714, guid: 44572ecfe0db3f5438924d30c4f66031, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.6617473
+      value: -0.6617472
       objectReference: {fileID: 0}
     - target: {fileID: 4000013323935714, guid: 44572ecfe0db3f5438924d30c4f66031, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.26906204
+      value: 0.269062
       objectReference: {fileID: 0}
     - target: {fileID: 4000013323935714, guid: 44572ecfe0db3f5438924d30c4f66031, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.24260737
+      value: 0.24260736
       objectReference: {fileID: 0}
     - target: {fileID: 4000013323935714, guid: 44572ecfe0db3f5438924d30c4f66031, type: 2}
       propertyPath: m_RootOrder
@@ -20733,12 +20726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rooms: []
-  runes:
-  - {fileID: 1000011517269692, guid: d46dacfb05488fb41b912266b406efaf, type: 2}
-  - {fileID: 1000010899229956, guid: 4a82bbeb5a32a1e44a1bd2a6c49c2a6b, type: 2}
-  - {fileID: 1000012419080066, guid: c61d9d88d1a20334e9287aef18c80b07, type: 2}
-  - {fileID: 1000014250691552, guid: 14b87189fb8f59b46aec47977494c4b4, type: 2}
-  - {fileID: 1000012181557796, guid: 92f5d66b713680c41a0d0fe1e90b34ab, type: 2}
+  keyItem: {fileID: 1000014217443842, guid: ed16d34c4879ba146a4c795a005b9485, type: 2}
   gameIsLive: 1
   connection: 0
   childPlayer: {fileID: 0}
@@ -27916,6 +27904,7 @@ MonoBehaviour:
   connectedDoors: []
   doorCount: 0
   copyOf: {fileID: 0}
+  doorAdjustment: 1.98
 --- !u!1001 &1084525003
 Prefab:
   m_ObjectHideFlags: 0
@@ -31415,6 +31404,7 @@ MonoBehaviour:
   connectedDoors: []
   doorCount: 0
   copyOf: {fileID: 0}
+  doorAdjustment: 1.98
 --- !u!4 &1210107073
 Transform:
   m_ObjectHideFlags: 0
@@ -32096,6 +32086,7 @@ MonoBehaviour:
   connectedDoors: []
   doorCount: 0
   copyOf: {fileID: 0}
+  doorAdjustment: 1.98
 --- !u!4 &1231140441
 Transform:
   m_ObjectHideFlags: 0
@@ -36159,6 +36150,7 @@ MonoBehaviour:
   connectedDoors: []
   doorCount: 0
   copyOf: {fileID: 0}
+  doorAdjustment: 1.98
 --- !u!4 &1385769191
 Transform:
   m_ObjectHideFlags: 0
@@ -36692,6 +36684,7 @@ MonoBehaviour:
   connectedDoors: []
   doorCount: 0
   copyOf: {fileID: 0}
+  doorAdjustment: 1.98
 --- !u!4 &1401708790
 Transform:
   m_ObjectHideFlags: 0
@@ -41659,11 +41652,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4000014114731276, guid: 7bf63f16b2549bd4cb2959c7ef0f092a,
     type: 2}
   m_PrefabInternal: {fileID: 1624925118}
---- !u!4 &1626141481 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4000011805478494, guid: 05fb2abd32fb9c04bac14f350a83ec29,
-    type: 2}
-  m_PrefabInternal: {fileID: 519570341}
 --- !u!1001 &1627818376
 Prefab:
   m_ObjectHideFlags: 0
@@ -43276,6 +43264,7 @@ MonoBehaviour:
   connectedDoors: []
   doorCount: 0
   copyOf: {fileID: 0}
+  doorAdjustment: 1.98
 --- !u!4 &1716100490
 Transform:
   m_ObjectHideFlags: 0
@@ -46775,22 +46764,18 @@ MonoBehaviour:
   angelCount: 0
   inverterCount: 0
   ghostToys:
-  - toy: {fileID: 0}
+  - toyObject: {fileID: 0}
     cooldown: 75
     timer: 0
-    spawnSound: {fileID: 0}
-  - toy: {fileID: 0}
+  - toyObject: {fileID: 0}
     cooldown: 75
     timer: 0
-    spawnSound: {fileID: 0}
-  - toy: {fileID: 0}
+  - toyObject: {fileID: 0}
     cooldown: 75
     timer: 0
-    spawnSound: {fileID: 0}
-  - toy: {fileID: 0}
+  - toyObject: {fileID: 0}
     cooldown: 75
     timer: 0
-    spawnSound: {fileID: 0}
   toySprites:
   - {fileID: 21300000, guid: bef51e8cf6c133d4bb7b933ce9994daa, type: 3}
   - {fileID: 21300000, guid: a83cf523344d70641b27c63e26de7df6, type: 3}
@@ -50585,6 +50570,7 @@ MonoBehaviour:
   connectedDoors: []
   doorCount: 0
   copyOf: {fileID: 0}
+  doorAdjustment: 1.98
 --- !u!4 &1966448637
 Transform:
   m_ObjectHideFlags: 0
@@ -52788,7 +52774,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2055986357}
-  - 114: {fileID: 2055986358}
   m_Layer: 14
   m_Name: Spawn3
   m_TagString: Untagged
@@ -52803,24 +52788,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2055986356}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.4643, y: -0.266, z: -0.1912}
+  m_LocalPosition: {x: 0.25279, y: -0.2514, z: -0.47441}
   m_LocalScale: {x: 1, y: 1.0000002, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 57067277}
   m_RootOrder: 2
---- !u!114 &2055986358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2055986356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2276af0166a33a04586636d986d62603, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drawer: {fileID: 1626141481}
 --- !u!1001 &2057248160
 Prefab:
   m_ObjectHideFlags: 0
@@ -54479,6 +54452,7 @@ MonoBehaviour:
   connectedDoors: []
   doorCount: 0
   copyOf: {fileID: 0}
+  doorAdjustment: 1.98
 --- !u!4 &2115417613
 Transform:
   m_ObjectHideFlags: 0
