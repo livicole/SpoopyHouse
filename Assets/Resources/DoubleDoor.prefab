@@ -140,9 +140,11 @@ MonoBehaviour:
   myDoorUI: {fileID: 0}
   otherDoor: {fileID: 0}
   isConnected: 0
+  firstConnect: 0
   isLive: 1
   location: 0
   coordinateOfDoor: {x: 0, y: 0, z: 0}
   room: {fileID: 0}
+  placeholder: 0
   doorUIprefab: {fileID: 4000010053557694, guid: aaba2def77d011e4ab1e9648c66ca6d1,
     type: 2}
