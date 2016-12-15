@@ -14,7 +14,7 @@ public class DoorScript : MonoBehaviour {
     public Transform otherDoor;
 
     public bool isConnected;
-
+    public bool firstConnect = false;
     public bool isLive = true;
     private float timer = 0, timerEnd = 0.2f;
 
@@ -23,6 +23,9 @@ public class DoorScript : MonoBehaviour {
     public Direction location;
     public Vector3 coordinateOfDoor;
     public Transform room;
+    public bool placeholder = false;
+
+    float doorAdjusment = 1.98f;
 
     public Transform doorUIprefab;
 
@@ -40,7 +43,7 @@ public class DoorScript : MonoBehaviour {
         temp.GetComponent<DoorUIScript>().myDoor = gameObject;
         priority = GameObject.Find("GameManager").GetComponent<DoorTracker>().index;
         GameObject.Find("GameManager").GetComponent<DoorTracker>().index++;
-        ConnectDoors();
+        //ConnectDoors();
     }
 	
 	// Update is called once per frame
@@ -50,25 +53,44 @@ public class DoorScript : MonoBehaviour {
         Vector3 position = room.GetComponent<GridLocker>().CalculateGridToReal(coordinateOfDoor + room.GetComponent<GridLocker>().gridLocation);
         if (location == Direction.North)
         {
-            position += new Vector3(gridBase.blockLength / 2, 0, gridBase.blockLength);
+            position += new Vector3(gridBase.blockLength / 2, doorAdjusment, gridBase.blockLength);
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
         }
         if (location == Direction.East)
         {
-            position += new Vector3(gridBase.blockLength, 0, gridBase.blockLength / 2);
+            position += new Vector3(gridBase.blockLength, doorAdjusment, gridBase.blockLength / 2);
             transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
         }
         if (location == Direction.South)
         {
-            position += new Vector3(gridBase.blockLength / 2, 0, 0);
+            position += new Vector3(gridBase.blockLength / 2, doorAdjusment, 0);
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
         }
         if (location == Direction.West)
         {
-            position += new Vector3(0, 0, gridBase.blockLength / 2);
+            position += new Vector3(0, doorAdjusment, gridBase.blockLength / 2);
             transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
         }
         transform.position = position;
+        if (!firstConnect)
+        {
+            ConnectDoors();
+            firstConnect = true;
+        }
+    }
+
+    //Give us the room in this coordinate, null if none
+    public Transform FindRoomInCoordinate(Vector3 coordinate)
+    {
+        foreach (RoomInfo roomTransform in gridBase.usedGridBlocks)
+        {
+             if (roomTransform.coordinate == coordinate)
+             {
+                  if (roomTransform.room != room)
+                        return roomTransform.room;
+             }
+        }
+        return null;
     }
 
     //Searches for the transform of the adjacent coordinate based on direction. Returns null if false;
@@ -157,48 +179,90 @@ public class DoorScript : MonoBehaviour {
             //Debug.Log("Door with priority: " + priority);
             Vector3 doorGridLocation = room.GetComponent<GridLocker>().gridLocation + coordinateOfDoor;
             Vector3 doorSearchLocation = new Vector3(0, 0, 0);
+            Direction searchOrientation = Direction.North;
             Transform adjacentRoom = null;
             //Use helper function to get releveant room.
             if (location == Direction.North)
             {
-                //Debug.Log("North");
-                adjacentRoom = FindRelativeRoom(doorGridLocation, Direction.North);
+                //Debug.Log("North");         
                 doorSearchLocation = doorGridLocation + new Vector3(0, 0, 1);
+                searchOrientation = Direction.South;
             }
             else if (location == Direction.East)
             {
                 //Debug.Log("East");
                 adjacentRoom = FindRelativeRoom(doorGridLocation, Direction.East);
                 doorSearchLocation = doorGridLocation + new Vector3(1, 0, 0);
+                searchOrientation = Direction.West;
             }
             else if (location == Direction.South)
             {
                 //Debug.Log("South");
                 adjacentRoom = FindRelativeRoom(doorGridLocation, Direction.South);
                 doorSearchLocation = doorGridLocation + new Vector3(0, 0, -1);
+                searchOrientation = Direction.North;
             }
             else if (location == Direction.West)
             {
                 //Debug.Log("West");
                 adjacentRoom = FindRelativeRoom(doorGridLocation, Direction.West);
                 doorSearchLocation = doorGridLocation + new Vector3(-1, 0, 0);
+                searchOrientation = Direction.East;
+            }
+            adjacentRoom = FindRoomInCoordinate(doorSearchLocation);
+                
+            DoorTracker doorTracker = GameObject.Find("GameManager").GetComponent<DoorTracker>();
+            foreach(ObjectInfo door in doorTracker.doors)
+            {
+                if (door.obj.GetComponent<DoorScript>().coordinateOfDoor + door.obj.GetComponent<DoorScript>().room.GetComponent<GridLocker>().gridLocation == doorSearchLocation)
+                {
+                    //Debug.Log("Correct location");
+                    if (door.obj.GetComponent<DoorScript>().location == searchOrientation)
+                    {
+                        ResetThisDoor();
+                        Transform adjacentDoor = FindAdjacentDoor(adjacentRoom, location, doorSearchLocation);
+                        if (adjacentDoor != null)
+                        {
+                            DoorScript adjacentDoorScript = adjacentDoor.GetComponent<DoorScript>();
+                            otherDoor = adjacentDoor;
+                            adjacentDoorScript.otherDoor = transform;
+                            isConnected = true;
+                            adjacentDoorScript.isConnected = true;
+                            if (priority < adjacentDoorScript.priority)
+                            {
+                                DisableDoor();
+                            }
+                            else
+                            {
+                                adjacentDoorScript.DisableDoor();
+                            }
+                        }
+                    }
+                }
             }
 
+            /*
+            if (room.name == "Placeholder Collection")
+            {
+                Debug.Log("here fam");
+            }
 
             //No adjacent room if null, return and cease function;
             if (adjacentRoom == null)
             {
+                Debug.Log("No adjacent Door: " + room.name);
                 ResetDoors();
                 return;
             }
             else if (adjacentRoom == room.GetComponent<GridLocker>().copyOf)
             {
-                //Debug.Log("Same room");
+                Debug.Log("Same room : " + room.name);
                 ResetDoors();
                 return;
             }
             else
             {
+              
                 ResetThisDoor();
                 Transform adjacentDoor = FindAdjacentDoor(adjacentRoom, location, doorSearchLocation);
                 if (adjacentDoor != null)
@@ -217,7 +281,7 @@ public class DoorScript : MonoBehaviour {
                         adjacentDoorScript.DisableDoor();
                     }
                 }
-            }
+            }*/
         }
        
     }
@@ -277,7 +341,9 @@ public class DoorScript : MonoBehaviour {
         }
         //otherDoor.GetComponent<DoorScript>().otherDoor = null;
         //otherDoor = null;
-        transform.GetChild(0).GetComponent<Renderer>().enabled = false;
+        transform.GetChild(0).GetComponent<Collider>().enabled = false;
+        transform.GetChild(0).GetChild(0).GetComponent<Renderer>().enabled = false;
+        transform.GetChild(1).GetComponent<Renderer>().enabled = false;
         
     }
 
@@ -288,7 +354,9 @@ public class DoorScript : MonoBehaviour {
             myDoorUI.GetComponent<Renderer>().enabled = true;
             //GetComponent<BoxCollider>().enabled = true;
             //transform.GetChild(0).transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
-            transform.GetChild(0).GetComponent<MeshRenderer>().enabled = true;
+            transform.GetChild(0).GetComponent<Collider>().enabled = true;
+            transform.GetChild(0).GetChild(0).GetComponent<Renderer>().enabled = true;
+            transform.GetChild(1).GetComponent<Renderer>().enabled = true;
             //transform.GetChild(1).GetComponent<BoxCollider>().enabled = true;
         }
 
@@ -300,7 +368,7 @@ public class DoorScript : MonoBehaviour {
         //door.GetChild(0).GetComponent<Renderer>().enabled = false;
         Transform temp = Instantiate(doorUIprefab);
         temp.GetComponent<DoorUIScript>().myDoor = door.gameObject;
-        temp.GetComponent<DoorUIScript>().overrideOtherUI = true;
+        //temp.GetComponent<DoorUIScript>().overrideOtherUI = true;
         door.GetComponent<DoorScript>().myDoorUI = temp.gameObject;
         door.GetComponent<DoorScript>().priority = 999;
 
