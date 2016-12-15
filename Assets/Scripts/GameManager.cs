@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour {
 
     public GameObject[] rooms;
 
-    public GameObject keyItem;
+    public GameObject[] runes = new GameObject[5];
 
     bool[] randomNumBools;
 
@@ -45,8 +45,10 @@ public class GameManager : MonoBehaviour {
                     {
                         if (findChild.name == "KeyItemSpawns")
                         {
+
+
                             int useSpawnNumber = Random.Range(0, findChild.childCount);
-                            GameObject newKeyItem = Instantiate(keyItem, findChild.GetChild(useSpawnNumber).position, Quaternion.identity) as GameObject;
+                            GameObject newKeyItem = Instantiate(runes[roomsFound], findChild.GetChild(useSpawnNumber).position, Quaternion.identity) as GameObject;
                             newKeyItem.transform.SetParent(findChild.GetChild(useSpawnNumber));
                             
                         }

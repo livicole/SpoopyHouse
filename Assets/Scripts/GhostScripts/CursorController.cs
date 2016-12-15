@@ -598,4 +598,5 @@ public class ToyIndex
     public Transform toy;
     public float cooldown;
     public float timer = 0;
+    public AudioClip spawnSound;
 }
