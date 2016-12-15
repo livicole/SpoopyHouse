@@ -59,7 +59,7 @@ public class DoorOpener : MonoBehaviour {
             closing = false;
         }
         //Debug.Log(transform.localEulerAngles.y + " " + closing);
-        if (Input.GetButtonDown("Ghost Button A"))
+        if (Input.GetButtonDown("Use"))
         {
             if (!transform.parent.GetComponent<DoorScript>().locked)
             {
