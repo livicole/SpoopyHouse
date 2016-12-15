@@ -5,6 +5,8 @@ public class KeyItemPickUp : MonoBehaviour
 {
 
 	Transform flashlight;
+	public AudioSource soundManager;
+	public AudioClip chimeSound;
 
 	void Start ()
 	{
@@ -19,6 +21,7 @@ public class KeyItemPickUp : MonoBehaviour
 		if (Physics.Raycast (keyItemRay, out rayHitInfo, 10f)) {
 			if (rayHitInfo.collider.gameObject == flashlight.gameObject) {
 				if (Input.GetButtonDown ("Use")) {
+					soundManager.PlayOneShot (chimeSound, 1f);
 					//inventoryObject.GetComponent<InventoryScript>().pickUp(forwardRayHit.collider.gameObject);
 					NewInventoryScript invScript = GameObject.Find("flashlightPlayer").GetComponent<NewInventoryScript> ();
 					if (this.gameObject.name == "NauthizItem") {

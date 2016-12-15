@@ -2832,6 +2832,8 @@ MonoBehaviour:
   destroyCooldown: 2
   holdingLamp: 1
   lamp: {fileID: 0}
+  soundManager: {fileID: 1426151369}
+  chimeSound: {fileID: 8300000, guid: 5f239eb6fd03b88429e04af422793287, type: 3}
 --- !u!143 &101776731
 CharacterController:
   m_ObjectHideFlags: 0
@@ -8643,7 +8645,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5f5e37f866ce0b9448134d3fa9c2c0cd, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
