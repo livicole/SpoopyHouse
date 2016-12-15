@@ -2839,6 +2839,7 @@ MonoBehaviour:
   lamp: {fileID: 0}
   soundManager: {fileID: 1426151369}
   chimeSound: {fileID: 8300000, guid: 5f239eb6fd03b88429e04af422793287, type: 3}
+  gameManager: {fileID: 0}
 --- !u!143 &101776731
 CharacterController:
   m_ObjectHideFlags: 0
@@ -20785,6 +20786,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rooms: []
+  OpenableDrawers: []
+  OpenableRightDoors: []
+  OpenableLeftDoors: []
   runes:
   - {fileID: 1000011517269692, guid: d46dacfb05488fb41b912266b406efaf, type: 2}
   - {fileID: 1000010899229956, guid: 4a82bbeb5a32a1e44a1bd2a6c49c2a6b, type: 2}
