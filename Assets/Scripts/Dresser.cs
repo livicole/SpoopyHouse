@@ -11,6 +11,8 @@ public class Dresser : MonoBehaviour
 	public AudioClip drawerOpen, drawerClose;
 	Transform handCursor;
 
+    float Timer = 0;
+
 
 	// Use this for initialization
 	void Start ()
@@ -22,6 +24,18 @@ public class Dresser : MonoBehaviour
 		handCursor.GetComponent<MeshRenderer> ().enabled = false;
 	}	
 
+    void Update()
+    {
+        Timer += Time.deltaTime;
+        if(Timer >= 2)
+        {
+            handCursor.GetComponent<MeshRenderer>().enabled = false;
+            Timer = 0f;
+        }
+
+
+    }
+
     public void CheckAndTrigger()
     {
         flashlight = GameObject.Find("Flashlight").transform;
@@ -29,27 +43,24 @@ public class Dresser : MonoBehaviour
         RaycastHit rayHitInfo = new RaycastHit();
         if (Physics.Raycast(drawerRay, out rayHitInfo, 5f))
         {
-            //Debug.DrawRay (flaslight.position, flaslight.forward * 1000f, Color.blue);
-            //Debug.Log (rayHitInfo.collider.name);
+            Debug.DrawRay (flashlight.position, flashlight.forward * 1000f, Color.blue);
+            Debug.Log (rayHitInfo.collider.name);
             if (rayHitInfo.collider.gameObject == this.gameObject)
             {
                 handCursor.GetComponent<MeshRenderer>().enabled = true;
                 handCursor.transform.LookAt(flashlight);
                 //	Debug.Log ("it hit");
-                if (Input.GetButtonDown("Use"))
-                {
-                    dresserAnimator.SetTrigger("Trigger");
-                    //					if (dresserAnimator.GetCurrentAnimatorStateInfo (0).IsName ("CloseDrawerIdle")) {
-                    //						soundManager.PlayOneShot (drawerOpen, 1.0f);
-                    //					}
-                    //					if (dresserAnimator.GetCurrentAnimatorStateInfo (0).IsName ("OpenDrawerIdle")) {
-                    //						soundManager.PlayOneShot (drawerClose, 1.0f);
-                    //					}
-                }
+                dresserAnimator.SetTrigger("Trigger");
+                //					if (dresserAnimator.GetCurrentAnimatorStateInfo (0).IsName ("CloseDrawerIdle")) {
+                //						soundManager.PlayOneShot (drawerOpen, 1.0f);
+                //					}
+                //					if (dresserAnimator.GetCurrentAnimatorStateInfo (0).IsName ("OpenDrawerIdle")) {
+                //						soundManager.PlayOneShot (drawerClose, 1.0f);
+                //					}
+                //handCursor.GetComponent<MeshRenderer>().enabled = false;
+                Timer = 0;
+                
             }
-        }
-        else {
-            handCursor.GetComponent<MeshRenderer>().enabled = false;
         }
     }
 

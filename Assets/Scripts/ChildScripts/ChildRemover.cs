@@ -20,12 +20,15 @@ public class ChildRemover : MonoBehaviour {
 	public AudioSource soundManager;
 	public AudioClip chimeSound;
 
+    public Transform gameManager;
+
     //public Transform inventoryObject;
 
 
 	// Use this for initialization
 	void Start () {
         flashlight = GameObject.Find("Flashlight").transform;
+        gameManager = GameObject.Find("GameManager").transform;
 	}
 	
 	// Update is called once per frame
@@ -43,10 +46,17 @@ public class ChildRemover : MonoBehaviour {
 
         if (GameObject.Find("GameManager").GetComponent<GameManager>().gameIsLive)
         {
+            
+            if (Input.GetButtonDown("Use"))
+            {
+                gameManager.GetComponent<GameManager>().CheckToTrigger();
+            }
+
             if (Input.GetButton("Use"))
             {
                 if (!coolingdown)
                 {
+                    
                     //Vector3 rayPosition = new Vector3(transform.position.x, transform.position.y - heightDifference, transform.position.z);
                     Vector3 rayPosition = flashlight.transform.position;
                     Vector3 rayDirection = flashlight.transform.forward;
@@ -73,19 +83,19 @@ public class ChildRemover : MonoBehaviour {
                             NewInventoryScript invScript = this.gameObject.GetComponent<NewInventoryScript>();
                             invScript.itemsCollected++;
 							soundManager.PlayOneShot (chimeSound, 1f);
-							if (forwardRayHit.collider.gameObject.name == "NauthizItem") {
+							if (forwardRayHit.collider.gameObject.name == "NauthizItem(Clone)") {
 								invScript.nauthCollected = true;
 							}
-							if (forwardRayHit.collider.gameObject.name == "OthalaItem") {
+							if (forwardRayHit.collider.gameObject.name == "OthalaItem(Clone)") {
 								invScript.othalCollected = true;
 							}
-							if (forwardRayHit.collider.gameObject.name == "PerthroItem") {
+							if (forwardRayHit.collider.gameObject.name == "PerthroItem(Clone)") {
 								invScript.perthCollected = true;
 							}
-							if (forwardRayHit.collider.gameObject.name == "ThurisazItem") {
+							if (forwardRayHit.collider.gameObject.name == "ThurisazItem(Clone)") {
 								invScript.thuriCollected = true;
 							}
-							if (forwardRayHit.collider.gameObject.name == "AlgizItem") {
+							if (forwardRayHit.collider.gameObject.name == "AlgizItem(Clone)") {
 								invScript.algizCollected = true;
 							}
 							forwardRayHit.collider.gameObject.SetActive(false);

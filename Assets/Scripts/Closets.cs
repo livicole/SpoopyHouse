@@ -11,6 +11,8 @@ public class Closets : MonoBehaviour
 	public AudioClip closetClose;
 	Transform leftCursor, rightCursor;
 
+    float Timer = 0f;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -30,35 +32,62 @@ public class Closets : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		flashlight = GameObject.Find ("Flashlight").transform;
-		Ray closetRay = new Ray (flashlight.position, flashlight.forward);
-		RaycastHit rayHitInfo = new RaycastHit ();
-		if (Physics.Raycast (closetRay, out rayHitInfo, 5f)) {
-			if (rayHitInfo.collider.gameObject == this.gameObject && this.gameObject.tag == "leftDoor") {
-				leftCursor.GetComponent<MeshRenderer> ().enabled = true;
-				leftCursor.transform.LookAt (flashlight);
-				if (Input.GetButtonDown ("Use")) {
-					closetAnimator.SetTrigger ("ClosetTrigger");
-				}
-			} else {
-				if (this.gameObject.tag == "leftDoor"){
-				leftCursor.GetComponent<MeshRenderer> ().enabled = false;
-				}
-			}
-
-			if (rayHitInfo.collider.gameObject == this.gameObject && this.gameObject.tag == "rightDoor") {
-				rightCursor.GetComponent<MeshRenderer> ().enabled = true;
-				rightCursor.transform.LookAt (flashlight);
-				if (Input.GetButtonDown ("Use")) {
-					closetAnimator.SetTrigger ("ClosetTrigger");
-				}
-			} else {
-				if(this.gameObject.tag == "rightDoor"){
-				rightCursor.GetComponent<MeshRenderer> ().enabled = false;
-				}
-			}
-		}
+        Timer += Time.deltaTime;
+        if(Timer >= 2)
+        {
+            if(leftCursor != null)
+            {
+                leftCursor.GetComponent<MeshRenderer>().enabled = false;
+            }
+            if(rightCursor != null)
+            {
+                rightCursor.GetComponent<MeshRenderer>().enabled = false;
+            }
+         
+            Timer = 0;
+        }
+		
 	}
+
+    public void CheckAndTrigger()
+    {
+        Ray closetRay = new Ray(flashlight.position, flashlight.forward);
+        RaycastHit rayHitInfo = new RaycastHit();
+        if (Physics.Raycast(closetRay, out rayHitInfo, 5f))
+        {
+            if (rayHitInfo.collider.gameObject == this.gameObject && this.gameObject.tag == "leftDoor")
+            {
+                leftCursor.GetComponent<MeshRenderer>().enabled = true;
+                leftCursor.transform.LookAt(flashlight);
+                if (Input.GetButtonDown("Use"))
+                {
+                    closetAnimator.SetTrigger("ClosetTrigger");
+                }
+            }
+            else {
+                if (this.gameObject.tag == "leftDoor")
+                {
+                    leftCursor.GetComponent<MeshRenderer>().enabled = false;
+                }
+            }
+
+            if (rayHitInfo.collider.gameObject == this.gameObject && this.gameObject.tag == "rightDoor")
+            {
+                rightCursor.GetComponent<MeshRenderer>().enabled = true;
+                rightCursor.transform.LookAt(flashlight);
+                if (Input.GetButtonDown("Use"))
+                {
+                    closetAnimator.SetTrigger("ClosetTrigger");
+                }
+            }
+            else {
+                if (this.gameObject.tag == "rightDoor")
+                {
+                    rightCursor.GetComponent<MeshRenderer>().enabled = false;
+                }
+            }
+        }
+    }
 
 	//plays closet opening sound when ClosetOpenAnim begins
 	void PlayOpenSound ()
