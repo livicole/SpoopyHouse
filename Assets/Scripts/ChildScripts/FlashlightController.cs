@@ -180,7 +180,7 @@ public class FlashlightController : MonoBehaviour {
 
 
         //When not firing you can tighten and widen the flashlight
-        if (!firing)
+        /*if (!firing)
         {
             //Increased range and narrower beam.
             if (Input.GetButton("LeftBumper"))
@@ -201,7 +201,7 @@ public class FlashlightController : MonoBehaviour {
                     flashlight.spotAngle += angleChange * Time.deltaTime;
                 }
             }
-        }
+        }*/
       
     }
 

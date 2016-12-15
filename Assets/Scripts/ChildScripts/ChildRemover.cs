@@ -83,19 +83,19 @@ public class ChildRemover : MonoBehaviour {
                             NewInventoryScript invScript = this.gameObject.GetComponent<NewInventoryScript>();
                             invScript.itemsCollected++;
 							soundManager.PlayOneShot (chimeSound, 1f);
-							if (forwardRayHit.collider.gameObject.name == "NauthizItem") {
+							if (forwardRayHit.collider.gameObject.name == "NauthizItem(Clone)") {
 								invScript.nauthCollected = true;
 							}
-							if (forwardRayHit.collider.gameObject.name == "OthalaItem") {
+							if (forwardRayHit.collider.gameObject.name == "OthalaItem(Clone)") {
 								invScript.othalCollected = true;
 							}
-							if (forwardRayHit.collider.gameObject.name == "PerthroItem") {
+							if (forwardRayHit.collider.gameObject.name == "PerthroItem(Clone)") {
 								invScript.perthCollected = true;
 							}
-							if (forwardRayHit.collider.gameObject.name == "ThurisazItem") {
+							if (forwardRayHit.collider.gameObject.name == "ThurisazItem(Clone)") {
 								invScript.thuriCollected = true;
 							}
-							if (forwardRayHit.collider.gameObject.name == "AlgizItem") {
+							if (forwardRayHit.collider.gameObject.name == "AlgizItem(Clone)") {
 								invScript.algizCollected = true;
 							}
 							forwardRayHit.collider.gameObject.SetActive(false);
