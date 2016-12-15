@@ -17,6 +17,9 @@ public class ChildRemover : MonoBehaviour {
     [SerializeField]
     Transform lamp;
 
+	public AudioSource soundManager;
+	public AudioClip chimeSound;
+
     //public Transform inventoryObject;
 
 
@@ -69,6 +72,7 @@ public class ChildRemover : MonoBehaviour {
                             //inventoryObject.GetComponent<InventoryScript>().pickUp(forwardRayHit.collider.gameObject);
                             NewInventoryScript invScript = this.gameObject.GetComponent<NewInventoryScript>();
                             invScript.itemsCollected++;
+							soundManager.PlayOneShot (chimeSound, 1f);
 							if (forwardRayHit.collider.gameObject.name == "NauthizItem") {
 								invScript.nauthCollected = true;
 							}
