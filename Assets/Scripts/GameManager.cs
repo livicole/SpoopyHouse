@@ -6,6 +6,10 @@ public class GameManager : MonoBehaviour {
 
     public GameObject[] rooms;
 
+    public GameObject[] OpenableDrawers;
+    public GameObject[] OpenableRightDoors;
+    public GameObject[] OpenableLeftDoors;
+
     public GameObject keyItem;
 
     bool[] randomNumBools;
@@ -22,7 +26,9 @@ public class GameManager : MonoBehaviour {
         
 
         rooms = GameObject.FindGameObjectsWithTag("Room");
-
+        OpenableDrawers = GameObject.FindGameObjectsWithTag("Drawer");
+        OpenableRightDoors = GameObject.FindGameObjectsWithTag("leftDoor");
+        OpenableLeftDoors = GameObject.FindGameObjectsWithTag("rightDoor");
         randomNumBools = new bool[rooms.Length];
 
         //pick rooms to instantiate key items in
@@ -87,6 +93,15 @@ public class GameManager : MonoBehaviour {
             }
         }
 	}
+
+    
+    public void CheckToTrigger()
+    {
+        for(int i = 0; i < OpenableDrawers.Length; i++)
+        {
+            OpenableDrawers[i].GetComponent<Dresser>().CheckAndTrigger();
+        }
+    }
     
     /**
     public bool AreAllRoomsConnected()

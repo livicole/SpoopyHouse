@@ -20,12 +20,15 @@ public class ChildRemover : MonoBehaviour {
 	public AudioSource soundManager;
 	public AudioClip chimeSound;
 
+    public Transform gameManager;
+
     //public Transform inventoryObject;
 
 
 	// Use this for initialization
 	void Start () {
         flashlight = GameObject.Find("Flashlight").transform;
+        gameManager = GameObject.Find("GameManager").transform;
 	}
 	
 	// Update is called once per frame
@@ -43,10 +46,17 @@ public class ChildRemover : MonoBehaviour {
 
         if (GameObject.Find("GameManager").GetComponent<GameManager>().gameIsLive)
         {
+            
+            if (Input.GetButtonDown("Use"))
+            {
+                gameManager.GetComponent<GameManager>().CheckToTrigger();
+            }
+
             if (Input.GetButton("Use"))
             {
                 if (!coolingdown)
                 {
+                    
                     //Vector3 rayPosition = new Vector3(transform.position.x, transform.position.y - heightDifference, transform.position.z);
                     Vector3 rayPosition = flashlight.transform.position;
                     Vector3 rayDirection = flashlight.transform.forward;
