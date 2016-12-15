@@ -149,7 +149,7 @@ public class DoorTracker : MonoBehaviour {
         {
             if(room.name == "Placeholder Collection")
             {
-                Debug.Log(room);
+                //Debug.Log(room);
             }
             foreach (Transform door in room.GetComponent<GridLocker>().doors)
             {
@@ -157,12 +157,12 @@ public class DoorTracker : MonoBehaviour {
 
                 if (objinfo == null)
                 {
-                    Debug.Log("problems: " + door.GetComponent<DoorScript>().room);
+                    //Debug.Log("problems: " + door.GetComponent<DoorScript>().room);
                 }
 
                 if (!objinfo.check)
                 {
-                    Debug.Log("Checking door: " + door.GetComponent<DoorScript>().room);
+                    //Debug.Log("Checking door: " + door.GetComponent<DoorScript>().room);
                     objinfo.SetCheck(true);
                     if (door.GetComponent<DoorScript>().otherDoor != null)
                     {
