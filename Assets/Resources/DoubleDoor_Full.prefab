@@ -248,6 +248,7 @@ MonoBehaviour:
   autoCloseTimer: 5
   doorOpen: {fileID: 8300000, guid: 01b6f669f64f5984d861dc65f8d818ef, type: 3}
   doorClose: {fileID: 8300000, guid: f059249dd8203df46a30572004d73a9c, type: 3}
+  doorRattle: {fileID: 8300000, guid: a2e8b6662859e7c4fa98c15f1f941ffd, type: 3}
 --- !u!114 &114000011662385198
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -269,5 +270,6 @@ MonoBehaviour:
   coordinateOfDoor: {x: 0, y: 0, z: 0}
   room: {fileID: 0}
   placeholder: 0
+  locked: 0
   doorUIprefab: {fileID: 4000010053557694, guid: aaba2def77d011e4ab1e9648c66ca6d1,
     type: 2}
