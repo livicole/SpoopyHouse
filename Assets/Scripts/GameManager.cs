@@ -6,7 +6,11 @@ public class GameManager : MonoBehaviour {
 
     public GameObject[] rooms;
 
-    public GameObject[] runes = new GameObject[5];
+    public GameObject[] OpenableDrawers;
+    public GameObject[] OpenableRightDoors;
+    public GameObject[] OpenableLeftDoors;
+
+    public GameObject keyItem;
 
     bool[] randomNumBools;
 
@@ -22,7 +26,9 @@ public class GameManager : MonoBehaviour {
         
 
         rooms = GameObject.FindGameObjectsWithTag("Room");
-
+        OpenableDrawers = GameObject.FindGameObjectsWithTag("Drawer");
+        OpenableRightDoors = GameObject.FindGameObjectsWithTag("leftDoor");
+        OpenableLeftDoors = GameObject.FindGameObjectsWithTag("rightDoor");
         randomNumBools = new bool[rooms.Length];
 
         //pick rooms to instantiate key items in
@@ -45,19 +51,9 @@ public class GameManager : MonoBehaviour {
                     {
                         if (findChild.name == "KeyItemSpawns")
                         {
-
                             int useSpawnNumber = Random.Range(0, findChild.childCount);
-                            GameObject newKeyItem = Instantiate(runes[roomsFound], findChild.GetChild(useSpawnNumber).position, Quaternion.identity) as GameObject;
-
-                            if (findChild.GetChild(useSpawnNumber).GetComponent<ItemInADrawer>() != null)
-                            {
-                                Debug.Log("im in a drawer");
-                                newKeyItem.transform.SetParent(findChild.GetChild(useSpawnNumber).GetComponent<ItemInADrawer>().drawer);
-                            }
-                            else
-                            {
-                                newKeyItem.transform.SetParent(findChild.GetChild(useSpawnNumber));
-                            }
+                            GameObject newKeyItem = Instantiate(keyItem, findChild.GetChild(useSpawnNumber).position, Quaternion.identity) as GameObject;
+                            newKeyItem.transform.SetParent(findChild.GetChild(useSpawnNumber));
                             
                         }
                     }
@@ -97,6 +93,15 @@ public class GameManager : MonoBehaviour {
             }
         }
 	}
+
+    
+    public void CheckToTrigger()
+    {
+        for(int i = 0; i < OpenableDrawers.Length; i++)
+        {
+            OpenableDrawers[i].GetComponent<Dresser>().CheckAndTrigger();
+        }
+    }
     
     /**
     public bool AreAllRoomsConnected()
