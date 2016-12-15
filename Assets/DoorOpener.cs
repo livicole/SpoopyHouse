@@ -32,7 +32,10 @@ public class DoorOpener : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	/// <summary>
+    /// 
+    /// </summary>
+    void Update () {
 
         //Debug.Log("Timer: " + timer + ". Time: " + Time.time + ". theTime: " + theTime);
         if (timer)
@@ -62,36 +65,35 @@ public class DoorOpener : MonoBehaviour {
         //Debug.Log(transform.localEulerAngles.y + " " + closing);
         if (Input.GetButtonDown("Use"))
         {
-            if (!transform.parent.GetComponent<DoorScript>().locked)
-            {
                 //Debug.Log ("press");
 
                 Ray rayToPlayer = new Ray(flashlight.transform.position, flashlight.transform.forward);
                 RaycastHit rayHitToPlayer = new RaycastHit();
 
-                if (Physics.Raycast(rayToPlayer, out rayHitToPlayer))
+                if (Physics.Raycast(rayToPlayer, out rayHitToPlayer, 1f))
                 {
-                    //Debug.Log(rayHitToPlayer.collider.name);
-                    if (rayHitToPlayer.collider.name == "DoorHinge" && Vector3.Distance(flashlight.transform.position, transform.position) <= 3f)
+                    if (!transform.parent.GetComponent<DoorScript>().locked && transform.GetComponent<BoxCollider>().enabled)
                     {
-                        open = !open;
-                        if (open)
+                        if (rayHitToPlayer.collider.name == "DoorHinge" && Vector3.Distance(flashlight.transform.position, transform.position) <= 3f)
                         {
-                            opening = true;
-                            soundManager.PlayOneShot(doorOpen, 1.0f);
+                            open = !open;
+                            if (open)
+                            {
+                                opening = true;
+                                soundManager.PlayOneShot(doorOpen, 1.0f);
+                            }
+                            else {
+                                closing = true;
+                                soundManager.PlayOneShot(doorClose, 1.0f);
+                            }
                         }
-                        else {
-                            closing = true;
-                            soundManager.PlayOneShot(doorClose, 1.0f);
-                        }
-                    }
 
-                }
+                    }              
             }
-            //When kid locks and tries to open it
             else
             {
-				soundManager.PlayOneShot (doorRattle, 1f);
+                soundManager.PlayOneShot(doorRattle, 1f);
+                Debug.Log(transform.parent.GetComponent<DoorScript>().priority);
             }
         }
         //Debug.Log(hinge.localEulerAngles.y);

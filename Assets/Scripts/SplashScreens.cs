@@ -11,7 +11,7 @@ public class SplashScreens : MonoBehaviour {
 	public Button playButton;
 	public Button controlButton;
 	public Button creditButton;
-	string[] tipText = new string[]{"As the child, press A near a Haunted Object to destroy it.", "As the ghost, press L3 to zoom to the child's location.", "Rooms cannot be moved if they're not connected to at least one other room.",
+	string[] tipText = new string[]{"As the child, press Right Trigger near a Haunted Object to destroy it.", "As the ghost, press L3 to zoom to the child's location.", "Rooms cannot be moved if they're not connected to at least one other room.",
 		"As the child, press X to drop a lamp, causing the ghost to be unable to move that room until you pick it back up.", "As the ghost, use the bumpers to rotate a selected room.", "The child's goal is to collect runes and escape the house. Listen to your surroundings to help find the runes.",
 		"As the child, heavy breathing implies there's a haunted object nearby."};
 

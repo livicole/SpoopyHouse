@@ -16,6 +16,7 @@ public class DoorScript : MonoBehaviour {
     public bool isConnected;
     public bool firstConnect = false;
     public bool isLive = true;
+    public bool lockedOverride = false;
     private float timer = 0, timerEnd = 0.2f;
 
     public enum Direction { North, East, South, West };
@@ -78,14 +79,18 @@ public class DoorScript : MonoBehaviour {
             ConnectDoors();
             firstConnect = true;
         }
-        if(otherDoor != null)
+        if (!lockedOverride)
         {
-            locked = false;
+            if (otherDoor != null)
+            {
+                locked = false;
+            }
+            else
+            {
+                locked = true;
+            }
         }
-        else
-        {
-            locked = true;
-        }
+        
     }
 
     //Give us the room in this coordinate, null if none

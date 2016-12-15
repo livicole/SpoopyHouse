@@ -371,7 +371,8 @@ public class CursorController : MonoBehaviour {
                 Destroy(holdingObject.gameObject);
                 gameManager.GetComponent<DoorTracker>().ResetAllBools();
                 //ResetAllDoors();
-               
+                //gameManager.GetComponent<DoorTracker>().ConnectAllDoors();
+                
                 holdingRoom = false;
                 holdingObject = null;
                 selectedRoom = null;

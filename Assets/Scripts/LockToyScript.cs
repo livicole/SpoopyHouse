@@ -25,25 +25,24 @@ public class LockToyScript : MonoBehaviour {
 
     void LockDoors()
     {
-        foreach (Transform myObject in transform.parent)
+        foreach (Transform myObject in transform.root.GetComponent<GridLocker>().doors)
         {
-            //Debug.Log(myObject.name);
-            if (myObject.tag == "Door")
-            {
-                //Debug.Log(myObject.name);
-                //myObject.GetComponent<DoorScript>().LockDoor();
-            }
+            myObject.GetComponent<DoorScript>().lockedOverride = true;
+            myObject.GetComponent<DoorScript>().locked = true;
+            myObject.GetComponent<DoorScript>().otherDoor.GetComponent<DoorScript>().lockedOverride = true;
+            myObject.GetComponent<DoorScript>().otherDoor.GetComponent<DoorScript>().locked= true;
+
         }
     }
 
     void OnDestroy()
     {
-        foreach (Transform myObject in transform.parent)
+
+        foreach (Transform myObject in transform.root.GetComponent<GridLocker>().doors)
         {
-            if (myObject.tag == "Door")
-            {
-                //myObject.GetComponent<DoorScript>().ResetDoor();
-            }
+            myObject.GetComponent<DoorScript>().lockedOverride = false;
+            myObject.GetComponent<DoorScript>().otherDoor.GetComponent<DoorScript>().lockedOverride = false;
+
         }
     }
 }

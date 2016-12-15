@@ -2836,7 +2836,7 @@ MonoBehaviour:
   detectDistance: 3
   destroyCooldown: 2
   holdingLamp: 1
-  lamp: {fileID: 0}
+  lamp: {fileID: 4000011784891852, guid: 4f84abdd3c52d97419e51e4e513a0c4b, type: 2}
   soundManager: {fileID: 1426151369}
   chimeSound: {fileID: 8300000, guid: 5f239eb6fd03b88429e04af422793287, type: 3}
   gameManager: {fileID: 0}
@@ -8691,7 +8691,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5f5e37f866ce0b9448134d3fa9c2c0cd, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f6d2d31ba4f386f44ab6e558a22d4e57, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -34061,10 +34061,10 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1314382980}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.49, z: 0}
   m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 37487599}
   m_RootOrder: 2
@@ -46870,6 +46870,7 @@ GameObject:
   - 222: {fileID: 1838516660}
   - 114: {fileID: 1838516659}
   - 114: {fileID: 1838516658}
+  - 114: {fileID: 1838516661}
   m_Layer: 5
   m_Name: GhostCursor
   m_TagString: Untagged
@@ -46927,19 +46928,23 @@ MonoBehaviour:
   angelCount: 0
   inverterCount: 0
   ghostToys:
-  - toyObject: {fileID: 0}
+  - toyObject: {fileID: 4000013344151358, guid: 3e746ab5930141c4ab49469ceca19923,
+      type: 2}
     cooldown: 75
     timer: 0
     spawnSound: {fileID: 0}
-  - toyObject: {fileID: 0}
+  - toyObject: {fileID: 4000010258436626, guid: 757eafe1b1bd9c64dbfa76565674d5e5,
+      type: 2}
     cooldown: 75
     timer: 0
     spawnSound: {fileID: 0}
-  - toyObject: {fileID: 0}
+  - toyObject: {fileID: 4000010087937182, guid: 26c92036b454e71489e755ed86b78bbb,
+      type: 2}
     cooldown: 75
     timer: 0
     spawnSound: {fileID: 0}
-  - toyObject: {fileID: 0}
+  - toyObject: {fileID: 4000011667305274, guid: 8b290d4371accc844837044c6becd728,
+      type: 2}
     cooldown: 75
     timer: 0
     spawnSound: {fileID: 0}
@@ -46995,6 +47000,22 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1838516656}
+--- !u!114 &1838516661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1838516656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b49edadbcb22c0e4a85497e8ba56925c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ToyModels:
+  - {fileID: 4000012350296886, guid: 5fef28c36530faf478ee9474a4b3b744, type: 2}
+  - {fileID: 4000013720306270, guid: 96797925cbc96a146994e9b224cd2ad1, type: 2}
+  - {fileID: 4000013323935714, guid: 44572ecfe0db3f5438924d30c4f66031, type: 2}
+  - {fileID: 4000012389360490, guid: e545f108c8733b945b4383447c1e0287, type: 2}
 --- !u!1 &1839622200
 GameObject:
   m_ObjectHideFlags: 0
