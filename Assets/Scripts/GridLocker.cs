@@ -69,6 +69,7 @@ public class GridLocker : MonoBehaviour {
     public int doorCount = 0;
     [HideInInspector]
     public Transform copyOf;
+    public float doorAdjustment = 1.98f;
 
     // Use this for initialization
     void Start () {
@@ -110,6 +111,7 @@ public class GridLocker : MonoBehaviour {
         }
         MoveOrigin();
         dimensions = GetDimensions();
+        //ConnectAllDoors();
 
     }
 
@@ -122,6 +124,8 @@ public class GridLocker : MonoBehaviour {
         {
             moveCooldownTimer -= Time.deltaTime;
         }
+
+        //ConnectAllDoors();
 
         /*
         //0 Degrees
@@ -341,32 +345,20 @@ public class GridLocker : MonoBehaviour {
     {
         if (moveCooldownTimer <= 0)
         {
+            //Clear the old blocks so we can replace them with new ones
             ClearOldBlocks();
+
             //Check if we can move the origin in that direction.
             gridLocation += direction;
             gridLocation = new Vector3(Mathf.Clamp(gridLocation.x, gridInfo.gridMin, gridInfo.gridMax), 0, Mathf.Clamp(gridLocation.z, gridInfo.gridMin, gridInfo.gridMax));
 
-            
-
-            //Debug.Log(gridLocation);
             //Check if available with updated gridlocation.
             transform.position = CalculateGridToReal(gridLocation);
             //Debug.Log(transform.position);
             //Reset cooldown since we actually moved.
-            //ConnectAllDoors();
+            ConnectAllDoors();
             moveCooldownTimer = moveTick;
-
-            /*
-            foreach (CoordinateInfo coordInfo in coordinatesOccupied)
-            {
-                Vector3 updatedCoordinates = coordInfo.coordinateOccupied + direction + gridLocation;
-                gridBase.GetComponent<GridInfo>().RemoveBlock(coordInfo.coordinateOccupied, transform);
-                gridBase.GetComponent<GridInfo>().AddBlock(updatedCoordinates, transform);
-            }*/
-
-
             ResetAllDoors();
-           
             UpdateNewBlocks();
             amIConnected = CheckIfConnected();
         }
@@ -927,22 +919,26 @@ public class GridLocker : MonoBehaviour {
                 if (coordInfo.doors.north)
                 {
                     coordInfo.doors.northDoor = PlaceDoor(currentLocation + new Vector3(gridInfo.blockLength / 2, 0, gridInfo.blockLength), new Vector3(0, 0, 0), DoorScript.Direction.North, coordInfo.coordinateOccupied);
-                    coordInfo.doors.northDoor.GetChild(0).GetComponent<Renderer>().enabled = false;
+                    coordInfo.doors.northDoor.GetComponent<DoorScript>().DisableDoor();
+                    coordInfo.doors.northDoor.GetComponent<DoorScript>().placeholder = true;
                 }
                 if (coordInfo.doors.east)
                 {
                     coordInfo.doors.eastDoor = PlaceDoor(currentLocation + new Vector3(gridInfo.blockLength, 0, gridInfo.blockLength / 2), new Vector3(0, 90, 0), DoorScript.Direction.East, coordInfo.coordinateOccupied);
-                    coordInfo.doors.eastDoor.GetChild(0).GetComponent<Renderer>().enabled = false;
+                    coordInfo.doors.eastDoor.GetComponent<DoorScript>().DisableDoor();
+                    coordInfo.doors.eastDoor.GetComponent<DoorScript>().placeholder = true;
                 }
                 if (coordInfo.doors.south)
                 {
                     coordInfo.doors.southDoor = PlaceDoor(currentLocation + new Vector3(gridInfo.blockLength / 2, 0, 0), new Vector3(0, 0, 0), DoorScript.Direction.South, coordInfo.coordinateOccupied);
-                    coordInfo.doors.southDoor.GetChild(0).GetComponent<Renderer>().enabled = false;
+                    coordInfo.doors.southDoor.GetComponent<DoorScript>().DisableDoor();
+                    coordInfo.doors.southDoor.GetComponent<DoorScript>().placeholder = true;
                 }
                 if (coordInfo.doors.west)
                 {
                     coordInfo.doors.westDoor = PlaceDoor(currentLocation + new Vector3(0, 0, gridInfo.blockLength / 2), new Vector3(0, 90, 0), DoorScript.Direction.West, coordInfo.coordinateOccupied);
-                    coordInfo.doors.westDoor.GetChild(0).GetComponent<Renderer>().enabled = false;
+                    coordInfo.doors.westDoor.GetComponent<DoorScript>().DisableDoor();
+                    coordInfo.doors.westDoor.GetComponent<DoorScript>().placeholder = true;
                 }
                 //Instantiate(Resources.Load("doubleDoor"), )
             }
@@ -952,9 +948,9 @@ public class GridLocker : MonoBehaviour {
     
     public Transform PlaceDoor(Vector3 position, Vector3 rotation, DoorScript.Direction direction, Vector3 relativeCoordinate)
     {
-        GameObject temp = Instantiate(Resources.Load("DoubleDoor")) as GameObject;
+        GameObject temp = Instantiate(Resources.Load("DoubleDoor_Full")) as GameObject;
         doors.Add(temp.transform);
-        temp.transform.position = position;
+        temp.transform.position = new Vector3(position.x, doorAdjustment, position.z);
         temp.transform.rotation = Quaternion.Euler(rotation);
         temp.GetComponent<DoorScript>().room = transform;
         temp.GetComponent<DoorScript>().location = direction;
@@ -997,6 +993,7 @@ public class GridLocker : MonoBehaviour {
     {
         foreach(Transform door in doors)
         {
+            
             door.GetComponent<DoorScript>().ConnectDoors();
         }
     }
